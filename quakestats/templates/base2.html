@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <title>Quake Stats</title>
+   </head>
+   <script>
+      context = {{ js_context|tojson }}
+      {% if user() %}
+        context.user = {
+          username: "{{user()}}",
+          role: "admin",
+        }
+      {% else %}
+        context.user = {
+          username: undefined,
+          role: undefined,
+        }
+      {% endif %}
+   </script>
+
+  <body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/riot@3.9/riot+compiler.min.js"></script>
+    <script src="/static/js/api/quakestats.js"></script>
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/resources.js"></script>
+    <script type="riot/tag" src="/static/tags/sample.tag"></script>
+
+    <script>
+      // this should be a global context with data shared across components
+      // it's probably a bad design but it's easy to implement and works fine :P
+      context.api = {}
+      context.matches = []
+      context.routes = {
+        'match': '/api/v2/match/'
+      }
+      qapi = new QuakeStatsApi()
+
+    </script>
+    {% block body_top %}
+    {% endblock %}
+
+    <div class="layout-0">
+      <h3 style="margin-bottom: 0px"><a href="/">Quake Stats</a></h3>
+      <h3 style="margin-bottom: 0px"><a href="/maps">Maps</a></h3>
+      <div style="grid-column-end: -1">
+        {% if user() %}
+          {{user()}}
+          <a href="/logout">Logout</a>
+        {% else %}
+          <form method='POST' action="/login">
+            <input type='text' name='username'/>
+            <input type='password' name='password'/>
+            <input type='submit' name='submit'/>
+          </form>
+        {% endif %}
+      </div>
+      {% block body %}
+      {% endblock %}
+    </div>
+
+  </body>
+
+
+</html>

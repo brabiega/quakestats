@@ -1,0 +1,88 @@
+{% extends "base2.html" %}
+
+{% block body_top %}
+<script>
+  qapi.getMatches().then(function(json) {
+    for (entry of json) {
+      entry['link'] = "/match/" + entry['match_guid']
+    }
+    riot.mount('match-list', {'matches': json, 'datefmt': datefmt})
+  })
+  var fetch_players = qapi.getAllPlayers()
+    .then(function(json) {
+      var data = []
+      context.players = {}
+      for (entry of json) {
+        context.players[entry.id] = entry
+      }
+    })
+
+  fetch_players.then(() => {
+    qapi.getBoardBadges().then((json) => {
+      // such trickery :D
+      var badges_per_player = d3.nest()
+        .key((d) => {return d.player_id})
+        .key((d) => {return d.name})
+        .rollup((v) => {return v[0].count})
+        .entries(json)
+  
+      // even more trickery
+      var groupped = badges_per_player.map(
+        (e) => {
+          return {
+            player_id: e.key,
+            badges: e.values.reduce(
+              (prev, current) => {prev[current.key] = current.value; return prev}, {})
+          }
+        })
+
+      // also need max medals
+      var max_badge_list = d3.nest()
+        .key((d) => {return d.name})
+        .rollup((v) => {
+          return Math.max.apply(Math, v.map((e) => {return e.count}))
+        })
+        .entries(json)
+      var max_badges = max_badge_list.reduce(
+        (prev, current) => {prev[current.key] = current.value; return prev}, {})
+  
+      riot.mount('board-badges', {
+        'badges': groupped,
+        'max_badges': max_badges,
+        'badgeres': resources.badges,
+        'players': context.players})
+    })
+  })
+
+  fetch_players.then(() => {
+    qapi.getTotalStats().then((json) => {
+      riot.mount('#total-kills', {
+        'data': json['kills'],
+        'players': context.players,
+        'type': 'kills',
+      })
+      riot.mount('#total-deaths', {
+        'data': json['deaths'],
+        'players': context.players,
+        'type': 'deaths',
+      })
+    })
+  })
+</script>
+{% endblock %}
+
+{% block body %}
+  <div style="grid-column: 1 / 2; grid-row: 2 / 6">
+    <match-list></match-list>
+  </div>
+  <div style="grid-column: 2 / -1; grid-row-start: 2">
+    <board-badges></board-badges>
+  </div>
+  <div style="grid-column: 2 / 4; grid-row-start: 3">
+    <total-chart id='total-kills'></total-chart>
+  </div>
+  <div style="grid-column: 4 / 6; grid-row-start: 3">
+    <total-chart id='total-deaths'></total-chart>
+  </div>
+
+{% endblock %}

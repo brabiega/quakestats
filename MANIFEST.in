@@ -1,0 +1,3 @@
+recursive-include quakestats/static *
+recursive-include quakestats/templates *
+

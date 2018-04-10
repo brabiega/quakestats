@@ -1,0 +1,17 @@
+{% extends "base2.html" %}
+
+{% block body_top %}
+<script>
+  var fetch_players = qapi.getMaps()
+  .then(function(json) {
+    riot.mount('map-list', {'maps': json})
+  })
+</script>
+
+{% endblock body_top %}
+
+{% block body %}
+<map-list style="grid-row-start: 2">
+</map-list>
+{% endblock %}
+
