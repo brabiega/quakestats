@@ -240,3 +240,16 @@ def api2_admin_rebuild():
         return 'OK'
 
     return 'No Data'
+
+
+@app.route('/api/v2/admin/delete', methods=['POST'])
+def api2_admin_delete():
+    if not auth(flask.request.form['token']):
+        return 'Bye'
+
+    if not flask.request.form['match_guid']:
+        return 'Bye'
+
+    data_store().drop_match_info(
+        flask.request.form['match_guid'])
+    return 'OK'

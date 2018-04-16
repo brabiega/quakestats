@@ -138,7 +138,8 @@ class DataStoreMongo():
                 results.append({
                     'game_time': score[0],
                     'match_guid': match_guid,
-                    'killer_id': score[1],  # TODO rename killer_id to scorer_id
+                    'killer_id': score[1],
+                    # TODO rename killer_id to scorer_id
                     'victim_id': score[2],  # TODO rename to scored_on
                     'score_type': score_type,
                     'value': score[3]})
@@ -175,7 +176,8 @@ class DataStoreMongo():
 
     def get_matches(self, latest=None):
         if latest:
-            result = self.db.match.find().sort('start_date', pymongo.DESCENDING).limit(latest)
+            result = self.db.match.find().sort(
+                'start_date', pymongo.DESCENDING).limit(latest)
         else:
             result = self.db.match.find()
         return self.strip_id(result)
@@ -288,3 +290,11 @@ class DataStoreMongo():
         self.db.map.update(
             {'map_name': map_name}, {'map_name': map_name, 'size': size},
             upsert=True)
+
+    def drop_match_info(self, match_guid):
+        skip = ['user']
+        for name in self.db.list_collection_names():
+            if name in skip:
+                continue
+            c = pymongo.collection.Collection(self.db, name)
+            c.delete_many({"match_guid": match_guid})
