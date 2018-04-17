@@ -66,25 +66,25 @@ var resources = {
 
   weapons: {
     'ROCKET_SPLASH': {
-      img: '/static/img/weapons/icona_rocket.png'
+      img: '/static/img/weapons/icona_rocket.svg'
     },
     'ROCKET': {
-      img: '/static/img/weapons/icona_rocket.png'
+      img: '/static/img/weapons/icona_rocket.svg'
     },
     'GRENADE': {
-      img: '/static/img/weapons/icona_grenade.png'
+      img: '/static/img/weapons/icona_grenade.svg'
     },
     'GRENADE_SPLASH': {
-      img: '/static/img/weapons/icona_grenade.png'
+      img: '/static/img/weapons/icona_grenade.svg'
     },
     'PLASMA': {
-      img: '/static/img/weapons/icona_plasma.png'
+      img: '/static/img/weapons/icona_plasma.svg'
     },
     'MACHINEGUN': {
-      img: '/static/img/weapons/icona_machinegun.png'
+      img: '/static/img/weapons/icona_machinegun.svg'
     },
     'SHOTGUN': {
-      img: '/static/img/weapons/icona_shotgun.png'
+      img: '/static/img/weapons/icona_shotgun.svg'
     },
     'GAUNTLET': {
       img: '/static/img/weapons/icona_gauntlet.png'
@@ -96,11 +96,14 @@ var resources = {
       img: '/static/img/weapons/icona_bfg.png'
     },
     'LIGHTNING': {
-      img: '/static/img/weapons/icona_lightning.png'
+      img: '/static/img/weapons/icona_lightning.svg'
     },
     'RAILGUN': {
       img: '/static/img/weapons/icona_railgun.svg'
     },
+    'FALLING': {
+      img: '/static/img/weapons/falling.svg'
+    }
   }
 }
 
