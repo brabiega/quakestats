@@ -99,7 +99,7 @@ var resources = {
       img: '/static/img/weapons/icona_lightning.png'
     },
     'RAILGUN': {
-      img: '/static/img/weapons/icona_railgun.png'
+      img: '/static/img/weapons/icona_railgun.svg'
     },
   }
 }
