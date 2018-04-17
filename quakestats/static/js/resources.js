@@ -14,7 +14,7 @@ var resources = {
       name: 'Excellent',
       desc: 'You killed two opponents within 2 seconds'},
     'GAUNTLET_DEATH': {
-      img: '/static/img/badges/swine.png',
+      img: '/static/img/badges/swine.svg',
       name: 'Humiliation',
       desc: 'You got killed with Gauntlet'},
     'HEADHUNTER': {
