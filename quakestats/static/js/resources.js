@@ -6,7 +6,7 @@ var resources = {
       name: 'Butcher',
       desc: 'You killed an opponent with Gauntlet'},
     'DEATH': {
-      img: '/static/img/badges/youlose.jpg',
+      img: '/static/img/badges/topdeaths.svg',
       name: 'Crap like me',
       desc: 'You got killed'},
     'KILLING_SPREE': {
@@ -103,6 +103,9 @@ var resources = {
     },
     'FALLING': {
       img: '/static/img/weapons/falling.svg'
+    },
+    'LAVA': {
+      img: '/static/img/weapons/lava.svg'
     }
   }
 }
