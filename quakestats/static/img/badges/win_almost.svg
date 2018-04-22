@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="42.429302mm"
+   height="42.429302mm"
+   viewBox="0 0 42.429302 42.429302"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="win_almost.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient5787"
+       inkscape:collect="always">
+      <stop
+         id="stop5783"
+         offset="0"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+      <stop
+         id="stop5785"
+         offset="1"
+         style="stop-color:#b2b2b2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5777">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop5773" />
+      <stop
+         style="stop-color:#ababab;stop-opacity:1"
+         offset="1"
+         id="stop5775" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5753"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5749"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5739"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5658">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0"
+         id="stop5654" />
+      <stop
+         style="stop-color:#bdbdbd;stop-opacity:0.96862745"
+         offset="1"
+         id="stop5656" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5607">
+      <stop
+         style="stop-color:#6773d6;stop-opacity:1"
+         offset="0"
+         id="stop5603" />
+      <stop
+         style="stop-color:#00185f;stop-opacity:1"
+         offset="1"
+         id="stop5605" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5564"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5560"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5548"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <linearGradient
+       id="linearGradient12174"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop12172" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient12166"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#fffefe;stop-opacity:1;"
+         offset="0"
+         id="stop12164" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient10298">
+      <stop
+         style="stop-color:#ebd1d1;stop-opacity:1;"
+         offset="0"
+         id="stop10294" />
+      <stop
+         style="stop-color:#ebd1d1;stop-opacity:0;"
+         offset="1"
+         id="stop10296" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10284"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10185"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4799"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4540"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-4"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-9"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-6"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-8"
+       is_visible="true" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10298"
+       id="linearGradient10300"
+       x1="90.639771"
+       y1="74.50798"
+       x2="111.18412"
+       y2="74.50798"
+       gradientUnits="userSpaceOnUse" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-5"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-3"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-5-5"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-1"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-5-8"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-1-5"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-5-8-6"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-1-5-8"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-5-8-6-9"
+       is_visible="true" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5607"
+       id="radialGradient5615"
+       cx="47.313499"
+       cy="76.286201"
+       fx="47.313499"
+       fy="76.286201"
+       r="20.911581"
+       gradientTransform="matrix(0.99999991,0,0,1.0082623,4.2301498e-6,-0.73159216)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5658"
+       id="linearGradient5660"
+       x1="45.268078"
+       y1="76.853081"
+       x2="63.724659"
+       y2="99.971893"
+       gradientUnits="userSpaceOnUse" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-1-7"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-5-8-8"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-1-7-0"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4544-5-8-8-2"
+       is_visible="true" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5777"
+       id="linearGradient5779"
+       x1="142.28459"
+       y1="93.669083"
+       x2="154.86214"
+       y2="135.24963"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-0.90913012,-3.9386393)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5787"
+       id="linearGradient5781"
+       x1="156.79639"
+       y1="93.669083"
+       x2="169.82628"
+       y2="135.5181"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-0.90913012,-3.9386393)" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5749-2"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5753-3"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5753-3-9"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5749-2-9"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+    <linearGradient
+       gradientTransform="matrix(0.96592583,0.24279428,-0.27590146,0.96592583,12.06934,-34.590604)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5777"
+       id="linearGradient5779-4"
+       x1="142.28459"
+       y1="93.669083"
+       x2="154.86214"
+       y2="135.24963"
+       gradientUnits="userSpaceOnUse" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5749-1"
+       is_visible="true"
+       steps="1"
+       threshold="0.00307692"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       simplifyindividualpaths="false"
+       simplifyJustCoalesce="false" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="259.52867"
+     inkscape:cy="-3.7598205"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-midpoints="true"
+     inkscape:window-width="1896"
+     inkscape:window-height="994"
+     inkscape:window-x="1985"
+     inkscape:window-y="1089"
+     inkscape:window-maximized="0"
+     inkscape:pagecheckerboard="true"
+     borderlayer="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-32.646951,-67.331468)">
+    <g
+       id="g12380">
+      <g
+         id="g14249">
+        <g
+           id="g13593">
+          <g
+             id="g14262">
+            <ellipse
+               style="fill:url(#radialGradient5615);fill-opacity:1;stroke:#ededed;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               id="path4487"
+               cx="53.861603"
+               cy="88.54612"
+               rx="20.514706"
+               ry="20.687483" />
+            <g
+               id="g10620"
+               transform="matrix(0.25735804,0,0,0.27434403,16.27592,57.625726)"
+               style="stroke-width:1.9477272">
+              <g
+                 id="g5813"
+                 transform="translate(1.928104,5.2142717)">
+                <path
+                   inkscape:original-d="m 139.25764,80.182472 14.69537,51.128518"
+                   inkscape:path-effect="#path-effect5749"
+                   inkscape:connector-curvature="0"
+                   id="path5747"
+                   d="m 139.25764,80.182472 c 4.89846,17.042839 9.79691,34.085678 14.69537,51.128518"
+                   style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient5779);stroke-width:13.54206085;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                   sodipodi:nodetypes="cc" />
+                <path
+                   inkscape:original-d="M 153.95301,131.31099 169.38273,80.526908"
+                   inkscape:path-effect="#path-effect5753"
+                   inkscape:connector-curvature="0"
+                   id="path5751"
+                   d="m 153.95301,131.31099 c 5.14324,-16.92803 10.28648,-33.856055 15.42972,-50.784082"
+                   style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient5781);stroke-width:13.54206085;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                   sodipodi:nodetypes="cc" />
+                <path
+                   inkscape:original-d="m 124.2509,80.695836 0.0882,52.954304"
+                   inkscape:path-effect="#path-effect5749-1"
+                   inkscape:connector-curvature="0"
+                   id="path5747-5"
+                   d="m 124.2509,80.695836 c 0.0294,17.651435 0.0588,35.302874 0.0882,52.954304"
+                   style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient5779-4);stroke-width:13.54206085;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                   sodipodi:nodetypes="cc" />
+              </g>
+            </g>
+            <ellipse
+               style="fill:none;fill-opacity:1;stroke:url(#linearGradient5660);stroke-width:2.64583333;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               id="path4487-5"
+               cx="53.861603"
+               cy="88.54612"
+               rx="14.152801"
+               ry="14.273014" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

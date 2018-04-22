@@ -14,7 +14,7 @@ var resources = {
       name: 'Top 3',
       desc: 'You finished 3rd'},
     'WIN_ALMOST': {
-      img: '/static/img/badges/win_almost.png',
+      img: '/static/img/badges/win_wooden.svg',
       name: 'Almost won',
       desc: 'You finished 4th'},
     'RISING_STAR': {
