@@ -1,6 +1,26 @@
 var resources = {
   badges: {
   data: {
+    'WIN_GOLD': {
+      img: '/static/img/badges/badge-gold.png',
+      name: 'Top 1',
+      desc: 'You finished 1st'},
+    'WIN_SILVER': {
+      img: '/static/img/badges/badge-silver.png',
+      name: 'Top 2',
+      desc: 'You finished 2nd'},
+    'WIN_BRONZE': {
+      img: '/static/img/badges/badge-bronze.png',
+      name: 'Top 3',
+      desc: 'You finished 3rd'},
+    'WIN_ALMOST': {
+      img: '/static/img/badges/win_almost.png',
+      name: 'Almost won',
+      desc: 'You finished 4th'},
+    'RISING_STAR': {
+      img: '/static/img/badges/star.gif',
+      name: 'Rising star',
+      desc: 'Got 0 <= ratio <= 0.1'},
     'GAUNTLET_KILL': {
       img: '/static/img/badges/humiliation.jpg',
       name: 'Butcher',
@@ -40,27 +60,7 @@ var resources = {
     'LAVASAURUS': {
       img: '/static/img/badges/badge-lavasaurus.png',
       name: 'Lavasaurus',
-      desc: 'You died in LAVA!'},
-    'WIN_GOLD': {
-      img: '/static/img/badges/badge-gold.png',
-      name: 'Top 1',
-      desc: 'You finished 1st'},
-    'WIN_SILVER': {
-      img: '/static/img/badges/badge-silver.png',
-      name: 'Top 2',
-      desc: 'You finished 2nd'},
-    'WIN_BRONZE': {
-      img: '/static/img/badges/badge-bronze.png',
-      name: 'Top 3',
-      desc: 'You finished 3rd'},
-    'WIN_ALMOST': {
-      img: '/static/img/badges/win_almost.png',
-      name: 'Almost won',
-      desc: 'You finished 4th'},
-    'RISING_STAR': {
-      img: '/static/img/badges/star.gif',
-      name: 'Rising star',
-      desc: 'Got 0 <= ratio <= 0.1'}
+      desc: 'You died in LAVA!'}
   }
   },
 
