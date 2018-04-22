@@ -18,11 +18,11 @@ var resources = {
       name: 'Almost won',
       desc: 'You finished 4th'},
     'RISING_STAR': {
-      img: '/static/img/badges/star.gif',
+      img: '/static/img/badges/sea-star.svg',
       name: 'Rising star',
       desc: 'Got 0 <= ratio <= 0.1'},
     'GAUNTLET_KILL': {
-      img: '/static/img/badges/humiliation.jpg',
+      img: '/static/img/badges/circular-sawblade.svg',
       name: 'Butcher',
       desc: 'You killed an opponent with Gauntlet'},
     'DEATH': {
@@ -30,7 +30,7 @@ var resources = {
       name: 'Crap like me',
       desc: 'You got killed'},
     'KILLING_SPREE': {
-      img: '/static/img/badges/excellent.png',
+      img: '/static/img/badges/icicles-aura.svg',
       name: 'Excellent',
       desc: 'You killed two opponents within 2 seconds'},
     'GAUNTLET_DEATH': {
@@ -38,11 +38,11 @@ var resources = {
       name: 'Humiliation',
       desc: 'You got killed with Gauntlet'},
     'HEADHUNTER': {
-      img: '/static/img/badges/headhunter.png',
+      img: '/static/img/badges/crowned-skull.svg',
       name: 'Headhunter',
       desc: 'You killed highest score player with Gauntlet'},
     'DUCKHUNTER': {
-      img: '/static/img/badges/duckhunter.png',
+      img: '/static/img/badges/surprised-skull.svg',
       name: 'Duckhunter',
       desc: 'You killed lowest score player with Gauntlet'},
     'SELFKILL': {
