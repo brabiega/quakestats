@@ -18,7 +18,7 @@ var resources = {
       name: 'Almost won',
       desc: 'You finished 4th'},
     'RISING_STAR': {
-      img: '/static/img/badges/sea-star.svg',
+      img: '/static/img/badges/star.svg',
       name: 'Rising star',
       desc: 'Got 0 <= ratio <= 0.1'},
     'GAUNTLET_KILL': {
@@ -46,7 +46,7 @@ var resources = {
       name: 'Duckhunter',
       desc: 'You killed lowest score player with Gauntlet'},
     'SELFKILL': {
-      img: '/static/img/badges/emo.png',
+      img: '/static/img/badges/emo.svg',
       name: 'Black matters',
       desc: 'You killed yourself'},
     'KILLING_SPREE_R': {
@@ -54,7 +54,7 @@ var resources = {
       name: 'Killing Spree',
       desc: 'You killed that many without dying'},
     'DYING_SPREE': {
-      img: '/static/img/badges/dyingspree.png',
+      img: '/static/img/badges/crapcake.svg',
       name: 'Dying Spree',
       desc: 'You got top number of deaths without a kill'},
     'LAVASAURUS': {
@@ -87,7 +87,7 @@ var resources = {
       img: '/static/img/weapons/icona_shotgun.svg'
     },
     'GAUNTLET': {
-      img: '/static/img/weapons/icona_gauntlet.png'
+      img: '/static/img/weapons/gauntlet.svg'
     },
     'BFG': {
       img: '/static/img/weapons/icona_bfg.png'
