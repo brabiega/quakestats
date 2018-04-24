@@ -106,6 +106,9 @@ var resources = {
     },
     'LAVA': {
       img: '/static/img/weapons/lava.svg'
+    },
+    'SLIME': {
+      img: '/static/img/weapons/slime.svg'
     }
   }
 }
