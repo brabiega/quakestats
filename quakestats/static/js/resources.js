@@ -56,7 +56,7 @@ var resources = {
     'DYING_SPREE': {
       img: '/static/img/badges/dyingspree.png',
       name: 'Dying Spree',
-      desc: 'You died that many times without a kill'},
+      desc: 'You got top number of deaths without a kill'},
     'LAVASAURUS': {
       img: '/static/img/badges/badge-lavasaurus.png',
       name: 'Lavasaurus',

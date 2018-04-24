@@ -350,7 +350,7 @@
     <div each={opts.singlebadges}>
       <div each={values} style="display: grid; grid-template-columns: repeat(4, 1fr)">
         <div class="badge-board-img-container">
-          <img each={range(count)} class="badge-board-img" src={context.resources.badges.getInfo(key).img}></img>
+          <img each={range(count)} class="badge-board-img" src={context.resources.badges.getInfo(key).img} title={context.resources.badges.getInfo(key).desc}></img>
         </div>
         <span class="badge-board-player-container">{opts.players[player_id].name}</span>
       </div>
@@ -360,7 +360,7 @@
     <div each={opts.multibadges}>
       <div each={values} style="display: grid; grid-template-columns: repeat(4, 1fr)">
         <div class="badge-board-img-container">
-          <img each={range(count)} class="badge-board-img" src={context.resources.badges.getInfo(key).img}></img>
+          <img each={range(count)} class="badge-board-img" src={context.resources.badges.getInfo(key).img} title={context.resources.badges.getInfo(key).desc}></img>
         </div>
         <span class="badge-board-player-container">{opts.players[player_id].name}</span>
       </div>
@@ -375,7 +375,7 @@
     <tr>
       <td>Player</td>
       <td each={opts.badgeres.getMedalNames()}>
-        <img class="badge-board-img" src={opts.badgeres.getInfo(name).img}></img>
+        <img class="badge-board-img" src={opts.badgeres.getInfo(name).img} title={opts.badgeres.getInfo(name).desc}></img>
       </td>
     </tr>
     <tr each={opts.badges}>
