@@ -60,7 +60,7 @@ class QuakeStatsApi {
     return this.get(`maps`)
   }
 
-  setMapSize(map_name, size) {
+  setMapInfo(map_name, info) {
     var headers = new Headers()
     headers.set('Content-type', 'application/json')
     var req = new Request(
@@ -70,7 +70,8 @@ class QuakeStatsApi {
         headers: headers,
         body: JSON.stringify({
           map_name: map_name,
-          size: size})
+          size: info.size,
+          rate: info.rate})
       })
     fetch(req)
   }

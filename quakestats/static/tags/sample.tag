@@ -444,22 +444,40 @@
 
 <map-list>
   <table>
+    <tr>
+      <th>Games</th>
+      <th>Map name</th>
+      <th>Size</th>
+      <th>Rate</th>
+    </tr>
     <tr each={maps}>
       <td>{count}</td>
       <td>{map_name}</td>
       <td>{size}</td>
+      <td>{rate}</td>
       <td if={context.user.role == 'admin'}>
         <span
           click={update_map_size} 
           each={map_size in this.map_sizes}
           class='map-size-btn'>{map_size}</span>
       </td>
+      <td if={context.user.role == 'admin'}>
+        <span
+          click={update_map_rate}
+          each={map_rate in this.map_rates}
+          class='map-size-btn'>{map_rate}</span>
+      </td>
+
     </tr>
   </table>
 
   <style>
     .map-size-btn {
       padding: 0px 10px;
+      cursor: pointer;
+    }
+    .map-size-btn:hover {
+      color: red;
     }
   </style>
 
@@ -467,13 +485,22 @@
     var data = this.opts.maps.sort((a, b) => {return a.count - b.count})
     this.maps = data
     this.map_sizes = ['S', 'M', 'L', 'XL']
+    this.map_rates = [1, 2, 3, 4, 5]
   })
 
   update_map_size(e) {
     // bad design
     var tag = e.target._tag
-    qapi.setMapSize(
+    qapi.setMapInfo(
       tag.map_name,
-      tag.map_size)
+      {'size': tag.map_size})
   }
+  update_map_rate(e) {
+    // bad design
+    var tag = e.target._tag
+    qapi.setMapInfo(
+      tag.map_name,
+      {'rate': tag.map_rate})
+  }
+
 </map-list>

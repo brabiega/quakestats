@@ -86,11 +86,13 @@ def api2_maps():
 
 
 @app.route('/api/v2/map/size', methods=['POST'])
-def api2_map_size():
+def api2_map_info():
     if flask.g.user == 'admin':
-        data_store().set_map_size(
+        data_store().set_map_info(
             flask.request.json['map_name'],
-            flask.request.json['size'])
+            flask.request.json.get('size', None),
+            flask.request.json.get('rate', None),
+        )
         return 'OK'
     return 'Bye'
 

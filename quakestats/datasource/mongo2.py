@@ -264,20 +264,35 @@ class DataStoreMongo():
                 'count': {'$sum': 1}
             }
         }])
+
         maps = {
-            entry['map_name']: entry['size']
+            entry['map_name']: {
+                'size': entry.get('size', None),
+                'rate': entry.get('rate', None),
+            }
             for entry in self.db.map.find()
         }
-        return [{
-            'map_name': entry['_id']['map_name'],
-            'size': maps.get(entry['_id']['map_name'], None),
-            'count': entry['count']} for entry in stats]
+
+        result = []
+        for entry in stats:
+            map_name = entry['_id']['map_name']
+            info = {
+                'map_name': map_name,
+                'count': entry['count'],
+            }
+            if map_name in maps:
+                info.update({
+                    'size': maps[map_name]['size'],
+                    'rate': maps[map_name]['rate'],
+                })
+            result.append(info)
+        return result
 
     def prepare_for_rebuild(self):
         """
         Should drop all match related collections
         """
-        skip = ['user']
+        skip = ['user', 'map']
         for name in self.db.list_collection_names():
             if name in skip:
                 continue
@@ -286,13 +301,21 @@ class DataStoreMongo():
     def get_user(self, username):
         return self.db.user.find_one({'username': username})
 
-    def set_map_size(self, map_name, size):
+    def set_map_info(self, map_name, size=None, rate=None):
+        info = {
+            'map_name': map_name
+        }
+        if size:
+            info['size'] = size
+        if rate:
+            info['rate'] = rate
+
         self.db.map.update(
-            {'map_name': map_name}, {'map_name': map_name, 'size': size},
-            upsert=True)
+            {'map_name': map_name},
+            {'$set': info}, upsert=True)
 
     def drop_match_info(self, match_guid):
-        skip = ['user']
+        skip = ['user', 'map']
         for name in self.db.list_collection_names():
             if name in skip:
                 continue
