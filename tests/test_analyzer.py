@@ -117,6 +117,48 @@ class TestPlayerScores():
         assert ps.player_score['B'] == [0, 0]
         assert ps.deaths[0] == (3, 'A', 'B', 'MOD_ROCKET')
 
+    def test_players_sorted_by_score(self):
+        ps = analyze.PlayerScores()
+        ps.match_duration = 900
+        ps.from_player_kill({
+            "TIME": 1, "MOD": "SHOTGUN",
+            "KILLER": {"STEAM_ID": "A"},
+            "VICTIM": {"STEAM_ID": "B"},
+        })
+        ps.from_player_kill({
+            "TIME": 2, "MOD": "SHOTGUN",
+            "KILLER": {"STEAM_ID": "A"},
+            "VICTIM": {"STEAM_ID": "B"},
+        })
+        ps.from_player_kill({
+            "TIME": 1, "MOD": "SHOTGUN",
+            "KILLER": {"STEAM_ID": "B"},
+            "VICTIM": {"STEAM_ID": "C"},
+        })
+        assert ps.players_sorted_by_score() == ['A', 'B']
+
+        ps.from_player_kill({
+            "TIME": 3, "MOD": "SHOTGUN",
+            "KILLER": {"STEAM_ID": "B"},
+            "VICTIM": {"STEAM_ID": "C"},
+        })
+        assert ps.players_sorted_by_score() == ['B', 'A']
+
+        ps.from_player_kill({
+            "TIME": 4, "MOD": "SHOTGUN",
+            "KILLER": {"STEAM_ID": "A"},
+            "VICTIM": {"STEAM_ID": "B"},
+        })
+        assert ps.players_sorted_by_score() == ['A', 'B']
+
+        ps.from_player_disconnect({"TIME": 10, "STEAM_ID": 'A'})
+        assert ps.players_sorted_by_score() == ['B']
+
+        ps.from_player_switchteam({
+            "TIME": 10,
+            "KILLER": {"STEAM_ID": 'B'}})
+        assert ps.players_sorted_by_score() == []
+
 
 class TestSpecialScores():
 

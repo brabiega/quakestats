@@ -282,6 +282,9 @@ class PlayerScores():
             (player_id, kdr.r) for player_id, kdr in self.kdr.items()]
 
     def players_sorted_by_score(self, reverse=True):
+        """
+        Active players sorted by score
+        """
         return sorted(
             self.player_score.keys(),
             reverse=reverse,
@@ -332,7 +335,10 @@ class PlayerScores():
     def from_player_switchteam(self, player_switchteam):
         game_time = player_switchteam['TIME']
         player_id = player_switchteam['KILLER']['STEAM_ID']
-        self.player_score[player_id][0] = 0
+        try:
+            del self.player_score[player_id]
+        except KeyError:
+            pass
         self.scores.append((
             game_time, player_id, 0, 'SWITCHTEAM'))
 
@@ -342,7 +348,10 @@ class PlayerScores():
             # ignore events after match end
             return
         player_id = player_disconnect['STEAM_ID']
-        self.player_score[player_id][0] = 0
+        try:
+            del self.player_score[player_id]
+        except KeyError:
+            pass
         self.scores.append((
             game_time, player_id, 0, 'DISCONNECTED'))
 
