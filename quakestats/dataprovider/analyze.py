@@ -189,13 +189,15 @@ class SpecialScores():
         killer_state = self.player_state[killer_id]
         victim_state = self.player_state[victim_id]
 
-        last_spree = killer_state.setdefault('killing_spree', {'max': [], 'current': []})
+        last_spree = killer_state.setdefault(
+            'killing_spree', {'max': [], 'current': []})
         if not self._is_selfkill(player_kill):
             last_spree['current'].append(player_kill)
             if len(last_spree['current']) > len(last_spree['max']):
                 last_spree['max'] = last_spree['current']
 
-        last_spree = victim_state.setdefault('killing_spree', {'max': [], 'current': []})
+        last_spree = victim_state.setdefault(
+            'killing_spree', {'max': [], 'current': []})
         last_spree['current'] = []
 
     @on_event('REPORT')
@@ -216,11 +218,13 @@ class SpecialScores():
         killer_state = self.player_state[killer_id]
         victim_state = self.player_state[victim_id]
 
-        last_spree = killer_state.setdefault('dying_spree', {'max': [], 'current': []})
+        last_spree = killer_state.setdefault(
+            'dying_spree', {'max': [], 'current': []})
         if not self._is_selfkill(player_kill):
             last_spree['current'] = []
 
-        last_spree = victim_state.setdefault('dying_spree', {'max': [], 'current': []})
+        last_spree = victim_state.setdefault(
+            'dying_spree', {'max': [], 'current': []})
         last_spree['current'].append(player_kill)
         if len(last_spree['current']) > len(last_spree['max']):
             last_spree['max'] = last_spree['current']
@@ -270,6 +274,7 @@ class PlayerScores():
         self.scores = []
 
         self.kdr = defaultdict(lambda: KDR())
+        # store score, timestamp
         self.player_score = defaultdict(lambda: [0, 0])
 
     def get_final_kdr(self):
@@ -538,7 +543,9 @@ class Badger():
 
     @badge()
     def kdr_stars(self):
-        kdrs = [(ratio, player_id) for player_id, ratio in self.scores.get_final_kdr()]
+        kdrs = [
+            (ratio, player_id) for player_id, ratio
+            in self.scores.get_final_kdr()]
         rising_star = filter(lambda v: 0 <= v[0] <= 0.1, kdrs)
         try:
             self.add_badge('RISING_STAR', sorted(rising_star)[0][1], 1)
