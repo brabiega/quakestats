@@ -239,6 +239,7 @@ def api2_admin_rebuild():
                 report = analyzer.analyze(fmi)
                 data_store().store_analysis_report(report)
 
+        data_store().post_rebuild()
         return 'OK'
 
     return 'No Data'

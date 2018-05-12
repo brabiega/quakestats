@@ -57,6 +57,17 @@ class DataStoreMongo():
                 {'$set': {'player_id': target_player_id}})
         ])
 
+        rows = self.db.player_merge.find({
+            'src_player_id': src_player_id,
+            'target_player_id': target_player_id
+        })
+
+        if not list(rows):
+            self.db.player_merge.insert_one({
+                'src_player_id': src_player_id,
+                'target_player_id': target_player_id
+            })
+
     def store_match(self, analysis_report):
         match_info = self.attr2dict(
             analysis_report.match_metadata, [
@@ -292,11 +303,17 @@ class DataStoreMongo():
         """
         Should drop all match related collections
         """
-        skip = ['user', 'map']
+        skip = ['user', 'map', 'player_merge']
         for name in self.db.list_collection_names():
             if name in skip:
                 continue
             self.db.drop_collection(name)
+
+    def post_rebuild(self):
+        for merge in self.db.player_merge.find():
+            self.merge_players(
+                merge['src_player_id'],
+                merge['target_player_id'])
 
     def get_user(self, username):
         return self.db.user.find_one({'username': username})
@@ -315,7 +332,7 @@ class DataStoreMongo():
             {'$set': info}, upsert=True)
 
     def drop_match_info(self, match_guid):
-        skip = ['user', 'map']
+        skip = ['user', 'map', 'player_merge']
         for name in self.db.list_collection_names():
             if name in skip:
                 continue
