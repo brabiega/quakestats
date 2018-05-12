@@ -46,6 +46,8 @@
       var max_badges = max_badge_list.reduce(
         (prev, current) => {prev[current.key] = current.value; return prev}, {})
   
+      // sort by total medal count
+      groupped = groupped.sort((a, b) => {return d3.sum(Object.values(b.badges)) - d3.sum(Object.values(a.badges))})
       riot.mount('board-badges', {
         'badges': groupped,
         'max_badges': max_badges,
