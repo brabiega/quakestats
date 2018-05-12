@@ -298,6 +298,39 @@ class TestSpecialScores():
             (10, 'B', 'A', 1)
         ]
 
+    def test_score_headduckhunter_empty(self, pss):
+        pss.player_scores = mock.Mock(name='player_scores')
+        pss.player_scores.players_sorted_by_score.return_value = []
+        pss.score_headduckhunter({
+            'MOD': 'GAUNTLET',
+            'KILLER': {'STEAM_ID': 'A'},
+            'VICTIM': {'STEAM_ID': 'B'},
+        })
+        assert pss.scores['HEADHUNTER'] == []
+        assert pss.scores['DUCKHUNTER'] == []
+
+    def test_score_headduckhunter_world(self, pss):
+        pss.player_scores = mock.Mock(name='player_scores')
+        pss.player_scores.players_sorted_by_score.return_value = [
+            'A', 'B']
+        pss.score_headduckhunter({
+            'MOD': 'GAUNTLET', 'TIME': 1,
+            'KILLER': {'STEAM_ID': 'A'},
+            'VICTIM': {'STEAM_ID': 'B'},
+        })
+        assert pss.scores['HEADHUNTER'] == []
+        assert pss.scores['DUCKHUNTER'] == [(1, 'A', 'B', 1)]
+
+        pss.score_headduckhunter({
+            'MOD': 'GAUNTLET', 'TIME': 1,
+            'KILLER': {'STEAM_ID': 'B'},
+            'VICTIM': {'STEAM_ID': 'A'},
+        })
+        assert pss.scores['HEADHUNTER'] == [(1, 'B', 'A', 1)]
+        assert pss.scores['DUCKHUNTER'] == [(1, 'A', 'B', 1)]
+        pss.player_scores.players_sorted_by_score.assert_called_with(
+            skip_world=True)
+
 
 class TestBadger():
     @pytest.fixture

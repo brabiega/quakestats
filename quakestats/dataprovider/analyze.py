@@ -157,7 +157,11 @@ class SpecialScores():
         if mod != 'GAUNTLET':
             return
 
-        sorted_players = self.player_scores.players_sorted_by_score()
+        sorted_players = self.player_scores.players_sorted_by_score(
+            skip_world=True)
+
+        if len(sorted_players) < 2:
+            return
 
         if victim_id == sorted_players[0]:
             self.add_score('HEADHUNTER', player_kill)
@@ -281,14 +285,19 @@ class PlayerScores():
         return [
             (player_id, kdr.r) for player_id, kdr in self.kdr.items()]
 
-    def players_sorted_by_score(self, reverse=True):
+    def players_sorted_by_score(self, reverse=True, skip_world=False):
         """
         Active players sorted by score
         """
-        return sorted(
+        sorted_players = sorted(
             self.player_score.keys(),
             reverse=reverse,
             key=lambda k: (self.player_score[k]))
+
+        if skip_world:
+            sorted_players = [
+                pid for pid in sorted_players if pid != 'q3-world']
+        return sorted_players
 
     def from_player_kill(self, player_kill):
         game_time = player_kill['TIME']
@@ -335,6 +344,9 @@ class PlayerScores():
     def from_player_switchteam(self, player_switchteam):
         game_time = player_switchteam['TIME']
         player_id = player_switchteam['KILLER']['STEAM_ID']
+        # well to be 100% accurate the score should be deleted
+        # when switch is done TO team FREE (Spectator)
+        # otherwise it would be better to set it to [0, 0]
         try:
             del self.player_score[player_id]
         except KeyError:
