@@ -214,10 +214,12 @@
 </special-scores>
 
 <special-score-details>
-  <ul if={opts.list} style="list-style: none; padding: 0px">
-    <li each={opts.list}>{this.player.name} - {this.value}</li>
-  </ul>
-  <span if={!opts.list}>Click for details</span>
+  <table>
+    <tr each={opts.list}>
+      <td>{this.player.name}</td>
+      <td>{this.value}</td>
+    </tr>
+  </table>
 </special-score-details>
 
 <special-score-info>
