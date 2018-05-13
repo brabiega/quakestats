@@ -657,6 +657,8 @@ class Badger():
 
     @badge()
     def dreadnought(self):
+        if not self.special_scores.lifespan:
+            return
         sorted_lifespan = sorted(
             self.special_scores.lifespan, reverse=True,
             key=lambda pid: self.special_scores.lifespan[pid])
