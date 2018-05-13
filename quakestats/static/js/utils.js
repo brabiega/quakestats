@@ -1,3 +1,4 @@
+// this 'module' should be removed, it's bad to have util/tool module
 function datefmt(d) {
   var H = d.getHours()
   var m = d.getMinutes()
@@ -55,13 +56,12 @@ function close_popups() {
   document.getElementsByClassName('popup-cover')[0].remove()
 }
 
-function create_popup(element) {
+function create_popup() {
   var popup_cover = document.createElement('div')
   popup_cover.classList.add('popup-cover')
   popup_cover.onclick = close_popups
   var popup = document.createElement('div')
   popup.classList.add('popup')
   document.body.appendChild(popup_cover)
-  element.appendChild(popup)
   return popup
 }
