@@ -173,7 +173,7 @@
           <th>{context.resources.badges.getInfo(this.key).name} <span class="hint-mark" data={this.key} onclick={info}>[?]</span></th>
           <th><img class="badge-img" src={context.resources.badges.getInfo(this.key).img}></img></th>
         </tr>
-        <tr medal-class={this.parent.key} onclick={detail} each={sorted(this.values)}>
+        <tr medal-class={this.parent.key} onclick={detail} each={sorted(this.values)} style="cursor: pointer">
           <td>{context.players[this.key].name}</td>
           <td>
             <span>{this.value.total}</span>
@@ -181,15 +181,6 @@
         </tr>
       </table>
     </div>
-  </div>
-  <div class="special-score-container">
-    <div>
-      <special-score-details></special-score-details>
-    </div>
-    <div>
-      <special-score-info></special-score-info>
-    </div>
-
   </div>
 
   sorted(scores) {
@@ -202,32 +193,36 @@
 
   detail(e) {
     // TODO rename medal to badge
+    var popup = create_popup()
+    e.target.parentElement.insertAdjacentElement('afterend', popup)
     var medal = e.target.parentNode.getAttribute('medal-class')
     var details = this.opts.details.find(function (d) {return d.key==medal})
       .values.find(function(d) {return d.key==e.item.key})
 
     details = this.sorted(details.values).map(function(d)
       {return {player: context.players[d.key], value: d.value}})
-    riot.mount('special-score-details', {list: details})
+    riot.mount(popup, 'special-score-details', {list: details})
   }
 
   info(e) {
+    var popup = create_popup()
+    e.target.parentElement.appendChild(popup)
     var medal_id = e.target.getAttribute('data')
     var medal_info = context.resources.badges.getInfo(medal_id)
-    riot.mount('special-score-info', {badge: medal_info})
+    riot.mount(popup, 'special-score-info', {badge: medal_info})
   }
 </special-scores>
 
 <special-score-details>
-  <h5>Score Details</h5>
-  <ul if={opts.list}>
-    <li each={opts.list}>{this.player.name} - {this.value}</li>
-  </ul>
-  <span if={!opts.list}>Click for details</span>
+  <table>
+    <tr each={opts.list}>
+      <td>{this.player.name}</td>
+      <td>{this.value}</td>
+    </tr>
+  </table>
 </special-score-details>
 
 <special-score-info>
-  <h5>Score Info</h5>
   <ul if={opts.badge} style="list-style: none; padding: 0px">
     <li><img class="badge-img" src={this.opts.badge.img}></img></li>
     <li>{this.opts.badge.name}</li>
