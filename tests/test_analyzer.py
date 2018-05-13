@@ -186,8 +186,12 @@ class TestSpecialScores():
         assert pss.scores['TEST'][1] == (12, 'B', 'A', 12)
 
     @pytest.mark.parametrize('event, expected', [
-        ({'KILLER': {'STEAM_ID': 'A'}, 'VICTIM': {'STEAM_ID': 'A'}}, (10, 'A', 'A', 1)),
-        ({'KILLER': {'STEAM_ID': 'q3-world'}, 'VICTIM': {'STEAM_ID': 'A'}}, (10, 'A', 'q3-world', 1)),
+        (
+            {'KILLER': {'STEAM_ID': 'A'}, 'VICTIM': {'STEAM_ID': 'A'}},
+            (10, 'A', 'A', 1)),
+        (
+            {'KILLER': {'STEAM_ID': 'q3-world'}, 'VICTIM': {'STEAM_ID': 'A'}},
+            (10, 'A', 'q3-world', 1)),
     ])
     def test_score_selfkill(self, pss, event, expected):
         event['TIME'] = 10
@@ -328,6 +332,32 @@ class TestSpecialScores():
         })
         assert pss.scores['HEADHUNTER'] == [(1, 'B', 'A', 1)]
         assert pss.scores['DUCKHUNTER'] == [(1, 'A', 'B', 1)]
+        pss.player_scores.players_sorted_by_score.assert_called_with(
+            skip_world=True)
+
+    def test_lifespan(self, pss):
+        pss.process_lifespan({'TIME': 1, 'VICTIM': {'STEAM_ID': 'A'}})
+        assert pss.player_state['A']['lifespan']['max'] == 0
+        assert pss.player_state['A']['lifespan']['last_death'] == 1
+
+        pss.process_lifespan({'TIME': 15, 'VICTIM': {'STEAM_ID': 'A'}})
+        assert pss.player_state['A']['lifespan']['max'] == 14
+        assert pss.player_state['A']['lifespan']['last_death'] == 15
+
+        pss.process_lifespan({'TIME': 17, 'VICTIM': {'STEAM_ID': 'A'}})
+        assert pss.player_state['A']['lifespan']['max'] == 14
+        assert pss.player_state['A']['lifespan']['last_death'] == 17
+
+    def test_lifespan_postprocess(self, pss):
+        pss.player_scores = mock.Mock(name='player_scores')
+        pss.player_scores.players_sorted_by_score.return_value = ['A', 'B']
+        pss.postprocess_lifespan({})
+        assert pss.lifespan == {}
+
+        pss.player_state['A']['lifespan'] = {'max': 1024}
+        pss.postprocess_lifespan({})
+        assert pss.lifespan == {'A': 1024}
+
         pss.player_scores.players_sorted_by_score.assert_called_with(
             skip_world=True)
 
@@ -512,4 +542,13 @@ class TestBadger():
         badger.lavasaurus()
         assert badger.badges == [
             ('LAVASAURUS', 'B', 1),
+        ]
+
+    def test_dreadnought(self, badger):
+        badger.special_scores.lifespan = {
+            'A': 100, 'B': 500, 'C': 50}
+        badger.dreadnought()
+
+        assert badger.badges == [
+            ('DREADNOUGHT', 'B', 1)
         ]

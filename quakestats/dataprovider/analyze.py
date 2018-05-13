@@ -69,6 +69,7 @@ class SpecialScores():
     def __init__(self, player_scores):
         self.scores = defaultdict(lambda: [])
         self.player_state = defaultdict(lambda: {})
+        self.lifespan = {}
 
         # we need player scores at given time
         # to score HEADHUNTER and DUCKHUNTER
@@ -242,6 +243,33 @@ class SpecialScores():
                     self.add_score('DYING_SPREE', kill, swap_kv=True)
             except KeyError:
                 pass
+
+    @on_event('PLAYER_DEATH')
+    def process_lifespan(self, report):
+        # Currently no info when player joined so let's
+        # count lifespan from first death
+        victim_id = report['VICTIM']['STEAM_ID']
+        ts = report['TIME']
+
+        state = self.player_state[victim_id].setdefault(
+            'lifespan', {'last_death': ts, 'max': 0})
+
+        if (ts - state['last_death']) > state['max']:
+            state['max'] = ts - state['last_death']
+
+        state['last_death'] = ts
+
+    @on_event('REPORT')
+    def postprocess_lifespan(self, report):
+        sorted_players = self.player_scores.players_sorted_by_score(
+            skip_world=True)
+
+        for player_id in sorted_players:
+            try:
+                lifespan = self.player_state[player_id]['lifespan']
+            except KeyError:
+                continue
+            self.lifespan[player_id] = lifespan['max']
 
     @on_event('PLAYER_KILL')
     def score_lavasaurus(self, player_kill):
@@ -626,6 +654,14 @@ class Badger():
         scores = self.from_special_score('LAVASAURUS', 'sum', 1, False)
         for count, (index, ts, value) in enumerate(scores, start=1):
             self.add_badge('LAVASAURUS', index, count)
+
+    @badge()
+    def dreadnought(self):
+        sorted_lifespan = sorted(
+            self.special_scores.lifespan, reverse=True,
+            key=lambda pid: self.special_scores.lifespan[pid])
+
+        self.add_badge('DREADNOUGHT', sorted_lifespan[0], 1)
 
 
 class Analyzer():

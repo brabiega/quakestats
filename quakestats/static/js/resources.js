@@ -60,7 +60,11 @@ var resources = {
     'LAVASAURUS': {
       img: '/static/img/badges/badge-lavasaurus.png',
       name: 'Lavasaurus',
-      desc: 'You died in LAVA!'}
+      desc: 'You died in LAVA!'},
+    'DREADNOUGHT': {
+      img: '/static/img/badges/badge-dreadnought.svg',
+      name: 'Dreadnought',
+      desc: 'You had the longest life'},
   }
   },
 
