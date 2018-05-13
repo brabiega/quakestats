@@ -212,9 +212,10 @@
   }
 
   info(e) {
+    var popup = create_popup(e.target.parentElement)
     var medal_id = e.target.getAttribute('data')
     var medal_info = context.resources.badges.getInfo(medal_id)
-    riot.mount('special-score-info', {badge: medal_info})
+    riot.mount(popup, 'special-score-info', {badge: medal_info})
   }
 </special-scores>
 
