@@ -121,7 +121,14 @@
         .key(function(d) {return d.killer_id})
 
       var specials_summary = specials.rollup(
-          function(v) {return {total: v.length, timestamp: v[v.length-1].game_time}}
+          function(v) {
+            // TODO make some generic mechanism
+            if (v[0].score_type == "DREADNOUGHT") {
+              if (v.length > 1) { throw "Unexpected value" }
+              return {total: Math.round(v[0].value), timestamp: 0}
+	    }
+            return {total: v.length, timestamp: v[v.length-1].game_time}
+	  }
         ).entries(json)
 
       var specials_details = specials

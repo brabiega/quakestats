@@ -270,6 +270,11 @@ class SpecialScores():
             except KeyError:
                 continue
             self.lifespan[player_id] = lifespan['max']
+            self.add_score(
+                'DREADNOUGHT', {
+                    'KILLER': {'STEAM_ID': player_id},
+                    'VICTIM': {'STEAM_ID': player_id},
+                    'TIME': 0}, weight=lifespan['max'])
 
     @on_event('PLAYER_KILL')
     def score_lavasaurus(self, player_kill):
