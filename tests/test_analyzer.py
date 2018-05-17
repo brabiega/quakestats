@@ -366,6 +366,48 @@ class TestSpecialScores():
         pss.player_scores.players_sorted_by_score.assert_called_with(
             skip_world=True)
 
+    def test_vengeance_start(self, pss):
+        event = {
+            'TIME': 10,
+            'MOD': 'LAVA',
+            'KILLER': {'STEAM_ID': 'A'},
+            'VICTIM': {'STEAM_ID': 'B'}
+        }
+        pss.vengeance_start(event)
+        assert pss.player_state['B']['vengeance_target'] == 'A'
+
+        event = {
+            'TIME': 10,
+            'MOD': 'LAVA',
+            'KILLER': {'STEAM_ID': 'C'},
+            'VICTIM': {'STEAM_ID': 'B'}
+        }
+        pss.vengeance_start(event)
+        assert pss.player_state['B']['vengeance_target'] == 'C'
+
+        event = {
+            'TIME': 10,
+            'MOD': 'LAVA',
+            'KILLER': {'STEAM_ID': 'B'},
+            'VICTIM': {'STEAM_ID': 'B'}
+        }
+        pss.vengeance_start(event)
+        assert pss.player_state['B']['vengeance_target'] is None
+
+    def test_score_vengeance(self, pss):
+        event = {
+            'TIME': 10,
+            'MOD': 'LAVA',
+            'KILLER': {'STEAM_ID': 'A'},
+            'VICTIM': {'STEAM_ID': 'B'}
+        }
+        pss.score_vengeance(event)
+        assert pss.scores['VENGEANCE'] == []
+
+        pss.player_state['A']['vengeance_target'] = 'B'
+        pss.score_vengeance(event)
+        assert pss.scores['VENGEANCE'] == [(10, 'A', 'B', 1)]
+
 
 class TestBadger():
     @pytest.fixture
@@ -547,6 +589,23 @@ class TestBadger():
         badger.lavasaurus()
         assert badger.badges == [
             ('LAVASAURUS', 'B', 1),
+        ]
+
+    def test_vengeance(self, badger):
+        badger.special_scores.scores = {
+            'VENGEANCE': [
+                (10, 'A', 'B', 1),
+                (11, 'A', 'B', 1),
+                (10, 'B', 'C', 1),
+                (12, 'B', 'C', 1),
+                (10, 'C', 'D', 1),
+            ]
+        }
+        badger.vengeance()
+        assert badger.badges == [
+            ('VENGEANCE', 'C', 1),
+            ('VENGEANCE', 'A', 2),
+            ('VENGEANCE', 'B', 3),
         ]
 
     def test_dreadnought(self, badger):

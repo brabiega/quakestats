@@ -281,6 +281,28 @@ class SpecialScores():
         if player_kill['MOD'] == 'LAVA':
             self.add_score('LAVASAURUS', player_kill, swap_kv=True)
 
+    @on_event('PLAYER_DEATH')
+    def vengeance_start(self, player_kill):
+        killer_id = player_kill['KILLER']['STEAM_ID']
+        victim_id = player_kill['VICTIM']['STEAM_ID']
+        if self._is_selfkill(player_kill):
+            self.player_state[victim_id]['vengeance_target'] = None
+        else:
+            self.player_state[victim_id]['vengeance_target'] = killer_id
+
+    @on_event('PLAYER_KILL')
+    def score_vengeance(self, player_death):
+        killer_id = player_death['KILLER']['STEAM_ID']
+        victim_id = player_death['VICTIM']['STEAM_ID']
+
+        try:
+            vengeance_target = self.player_state[killer_id]['vengeance_target']
+        except KeyError:
+            return
+
+        if victim_id == vengeance_target:
+            self.add_score('VENGEANCE', player_death)
+
 
 class KDR():
     def __init__(self):
@@ -669,6 +691,12 @@ class Badger():
             key=lambda pid: self.special_scores.lifespan[pid])
 
         self.add_badge('DREADNOUGHT', sorted_lifespan[0], 1)
+
+    @badge()
+    def vengeance(self):
+        scores = self.from_special_score('VENGEANCE', 'sum', 3, False)
+        for count, (index, ts, value) in enumerate(scores, start=1):
+            self.add_badge('VENGEANCE', index, count)
 
 
 class Analyzer():
