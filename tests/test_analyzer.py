@@ -210,7 +210,8 @@ class TestSpecialScores():
 
         pss.score_killing_spree(event)
         assert pss.player_state['A']['killing_spree']['max'] == [event, event]
-        assert pss.player_state['A']['killing_spree']['current'] == [event, event]
+        assert pss.player_state['A']['killing_spree']['current'] == \
+            [event, event]
 
         pss.score_killing_spree({
             'KILLER': {'STEAM_ID': 'A'},
@@ -246,22 +247,26 @@ class TestSpecialScores():
 
         pss.score_dying_spree(event)
         assert pss.player_state['B']['dying_spree']['max'] == [event, event]
-        assert pss.player_state['B']['dying_spree']['current'] == [event, event]
+        assert pss.player_state['B']['dying_spree']['current'] == \
+            [event, event]
 
         event_selfkill = {
             'KILLER': {'STEAM_ID': 'B'},
             'VICTIM': {'STEAM_ID': 'B'}
         }
         pss.score_dying_spree(event_selfkill)
-        assert pss.player_state['B']['dying_spree']['max'] == [event, event, event_selfkill]
-        assert pss.player_state['B']['dying_spree']['current'] == [event, event, event_selfkill]
+        assert pss.player_state['B']['dying_spree']['max'] == \
+            [event, event, event_selfkill]
+        assert pss.player_state['B']['dying_spree']['current'] == \
+            [event, event, event_selfkill]
 
         event_kill = {
             'KILLER': {'STEAM_ID': 'B'},
             'VICTIM': {'STEAM_ID': 'A'}
         }
         pss.score_dying_spree(event_kill)
-        assert pss.player_state['B']['dying_spree']['max'] == [event, event, event_selfkill]
+        assert pss.player_state['B']['dying_spree']['max'] == \
+            [event, event, event_selfkill]
         assert pss.player_state['B']['dying_spree']['current'] == []
 
     def test_postprocess_dying_spree(self, pss):
