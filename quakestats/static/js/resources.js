@@ -65,6 +65,10 @@ var resources = {
       img: '/static/img/badges/badge-dreadnought.svg',
       name: 'Dreadnought',
       desc: 'You had the longest life'},
+    'VENGEANCE': {
+      img: '/static/img/badges/vengeance.png',
+      name: 'Vengeance',
+      desc: 'You killed your latest killer'},
   }
   },
 
