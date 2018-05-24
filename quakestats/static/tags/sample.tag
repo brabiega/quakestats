@@ -499,3 +499,28 @@
   }
 
 </map-list>
+
+<weapon-kills>
+  <h4>Weapon Kills</h4>
+  <table>
+    <tr>
+      <th>Player</th>
+      <th each={weapon in opts.weapons}>
+          <img if={context.resources.weapons[weapon]} src="{context.resources.weapons[weapon].img}" class="fav-weapon"></img>
+          <span if={!context.resources.weapons[weapon]}>{weapon}</span></td>
+      </th>
+    </tr>
+    <tr each={player_id in Object.keys(opts.player_weapon_kills)}>
+      <td style="text-align: left">{opts.players[player_id].name}</td>
+      <td each={weapon in opts.weapons}>
+        {opts.player_weapon_kills[player_id][weapon] || 0}
+      </td>
+    </tr>
+  </table>
+
+  <style>
+    td {
+      text-align: center;
+    }
+  </style>
+</weapon-kills>

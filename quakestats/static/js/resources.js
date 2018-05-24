@@ -121,6 +121,12 @@ var resources = {
   }
 }
 
+var weapon_map = {
+  'ROCKET_SPLASH': 'ROCKET',
+  'GRENADE_SPLASH': 'GRENADE',
+  'PLASMA_SPLASH': 'PLASMA',
+}
+
 resources.badges.getInfo = (badgeName) => {
   badgeInfo = context.resources.badges.data[badgeName]
   if (badgeInfo) {

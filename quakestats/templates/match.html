@@ -56,7 +56,8 @@
   fetch_players.then(
     function() {
       qapi.getMatchKills(context.match_guid).then(function(json) {
-        riot.mount('kill-info', {'kills': json})
+
+	json = json.map((e) => {e.by_weapon = weapon_map[e.by] || e.by; return e})
 
         var enemy_kills = json.filter(function(e) 
           {return !isSelfKill(e)}
@@ -111,6 +112,23 @@
         riot.mount('worst-enemy', {'kills': json, 'players': context.players})
         riot.mount('kdr-chart', {'kills': json, 'players': context.players})
         riot.mount('match-kdr-chart', {'kills': json, 'players': context.players})
+
+
+	// weapon stats
+	var weapon_kills = d3.nest()
+	  .key((e) => {return e.killer_id})
+	  .key((e) => {return e.by_weapon})
+	  .rollup((v) => {return v.length})
+	  .object(enemy_kills)
+
+	var weapons = new Set(Object.keys(
+	  d3.nest()
+	  .key((e) => {return e.by_weapon})
+	  .object(enemy_kills)))
+        riot.mount(
+	  'weapon-kills',
+	  {'player_weapon_kills': weapon_kills, 'players': context.players, 'weapons': [...weapons]}
+	)
       })
   })
 
@@ -162,14 +180,17 @@
   <div style="grid-column: 1 / -1">
     <match-badges></match-badges>
   </div>
-  <div style="grid-column: auto / span 2">
+  <div style="grid-column: auto / span 1">
     <match-info></match-info>
+  </div>
+  <div style="grid-column: auto / span 1">
+    <team-switches></team-switches>
   </div>
   <div style="grid-column: auto / span 2">
     <score-summary></score-summary>
   </div>
   <div style="grid-column: auto / span 2">
-    <team-switches></team-switches>
+    <weapon-kills></weapon-kills>
   </div>
   <div style="grid-column: auto / span 2">
     <worst-enemy></worst-enemy>
