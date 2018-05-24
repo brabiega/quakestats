@@ -127,7 +127,7 @@
 	  .object(enemy_kills)))
         riot.mount(
 	  'weapon-kills',
-	  {'player_weapon_kills': weapon_kills, 'players': context.players, 'weapons': [...weapons]}
+	  {'player_weapon_kills': weapon_kills, 'players': context.players, 'weapons': [...weapons].sort()}
 	)
       })
   })

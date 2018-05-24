@@ -98,10 +98,10 @@ var resources = {
       img: '/static/img/weapons/gauntlet.svg'
     },
     'BFG': {
-      img: '/static/img/weapons/icona_bfg.png'
+      img: '/static/img/weapons/bfg.svg'
     },
     'BFG_SPLASH': {
-      img: '/static/img/weapons/icona_bfg.png'
+      img: '/static/img/weapons/bfg.svg'
     },
     'LIGHTNING': {
       img: '/static/img/weapons/icona_lightning.svg'
@@ -125,7 +125,10 @@ var weapon_map = {
   'ROCKET_SPLASH': 'ROCKET',
   'GRENADE_SPLASH': 'GRENADE',
   'PLASMA_SPLASH': 'PLASMA',
+  'BFG_SPLASH': 'BFG',
 }
+
+
 
 resources.badges.getInfo = (badgeName) => {
   badgeInfo = context.resources.badges.data[badgeName]
