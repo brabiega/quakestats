@@ -1,174 +1,187 @@
 {% extends "base2.html" %}
 
 {% block body_top %}
-<script>
-  var fetch_players = qapi.getMatchPlayers(context.match_guid)
-    .then(function(json) {
-      var data = []
-      context.players = {}
-      for (entry of json) {
-        context.players[entry.id] = entry
-      }
-    })
 
-  qapi.getMatch(context.match_guid).then(function(json) {
+<script>
+
+  var fetch_players = qapi.getMatchPlayers(context.match_guid)
+  var fetch_match = qapi.getMatch(context.match_guid)
+  var fetch_match_scores = qapi.getMatchScores(context.match_guid)
+  var fetch_match_teams = qapi.getMatchTeams(context.match_guid)
+  var fetch_match_kills = qapi.getMatchKills(context.match_guid)
+  var fetch_match_specials = qapi.getMatchSpecial(context.match_guid)
+  var fetch_match_badges = qapi.getMatchBadges(context.match_guid)
+
+
+  fetch_players.then(json => {
+    var data = []
+    context.players = {}
+    for (entry of json) {
+      context.players[entry.id] = entry
+    }
+  })
+
+  fetch_match.then(json => {
     riot.mount('match-info', {'match': json})
   })
 
-  fetch_players.then(
-    function() {
-      qapi.getMatchScores(context.match_guid).then(function(json) {
-        var series = d3.nest().key(function(d) {return d.player_id}).entries(json)
+  Promise.all([fetch_players, fetch_match_scores])
+  .then(values => {
+    // ignore fetch_players result
+    var json = values[1]
+    var series = d3.nest().key(function(d) {return d.player_id}).entries(json)
 
-        var entries = series.map(function(d) {return {
-          x: d.values.map(function(d) {return d.game_time}),
-          y: d.values.map(function(d) {return d.score}),
-          type: 'scatter',
-          mode: 'lines+markers',
-          name: `${context.players[d.key].name} (${d.values[d.values.length-1].score})`
-        }}).sort(function(a, b) {
-          return b.y[b.y.length-1] - a.y[a.y.length-1]
-        })
-        
-        var final_scores = series.map(function(d) {
-          return {
-            player_id: d.key,
-            score: d.values[d.values.length-1].score,
-            fav_weapon: d3.nest()
-              .key((d) => {return d.by})
-              .rollup((v) => {return v.length})
-              .entries(d.values)
-              .sort((a, b) => {return b.value - a.value})[0].key}
-        }).sort(function(a, b) {return b.score - a.score})
+    var entries = series.map(function(d) {return {
+      x: d.values.map(function(d) {return d.game_time}),
+      y: d.values.map(function(d) {return d.score}),
+      type: 'scatter',
+      mode: 'lines+markers',
+      name: `${context.players[d.key].name} (${d.values[d.values.length-1].score})`
+    }}).sort(function(a, b) {
+      return b.y[b.y.length-1] - a.y[a.y.length-1]
+    })
 
-        riot.mount('score-summary', {'scores': final_scores, 'players': context.players})
-        riot.mount('match-score-chart', {'series': entries})
-      })
+    var final_scores = series.map(function(d) {
+      return {
+        player_id: d.key,
+        score: d.values[d.values.length-1].score,
+        fav_weapon: d3.nest()
+          .key((d) => {return d.by})
+          .rollup((v) => {return v.length})
+          .entries(d.values)
+          .sort((a, b) => {return b.value - a.value})[0].key}
+    }).sort(function(a, b) {return b.score - a.score})
+
+    riot.mount('score-summary', {'scores': final_scores, 'players': context.players})
+    riot.mount('match-score-chart', {'series': entries})
   })
 
-  fetch_players.then(
-    function() {
-      qapi.getMatchTeams(context.match_guid).then(function(json) {
-        riot.mount('team-switches', {'switches': json})
-      })
+  Promise.all([fetch_players, fetch_match_teams])
+  .then(values => {
+    //ignore fetch players result
+    var json = values[1]
+    riot.mount('team-switches', {'switches': json})
   })
 
-  fetch_players.then(
-    function() {
-      qapi.getMatchKills(context.match_guid).then(function(json) {
+  Promise.all([fetch_players, fetch_match_kills])
+  .then(values => {
+    var json = values[1]
+    json = json.map((e) => {e.by_weapon = weapon_map[e.by] || e.by; return e})
 
-	json = json.map((e) => {e.by_weapon = weapon_map[e.by] || e.by; return e})
+    var enemy_kills = json.filter(function(e)
+      {return !isSelfKill(e)}
+    )
 
-        var enemy_kills = json.filter(function(e) 
-          {return !isSelfKill(e)}
-        )
+    var kill_series = d3.nest()
+      .key(function(d) {return d.killer_id})
+      .entries(enemy_kills)
 
-        var kill_series = d3.nest()
-          .key(function(d) {return d.killer_id})
-          .entries(enemy_kills)
+    var death_series = d3.nest()
+      .key(function(d) {return d.victim_id})
+      .entries(json)
 
-        var death_series = d3.nest()
-          .key(function(d) {return d.victim_id})
-          .entries(json)
- 
-        kill_series = kill_series.map(function(d) {
-          var total=0; return {
-            key: d.key,
-            values: d.values.map(function(v) {
-              total++; v.kills=total; return v
-            })
-          }
+    kill_series = kill_series.map(function(d) {
+      var total=0; return {
+        key: d.key,
+        values: d.values.map(function(v) {
+          total++; v.kills=total; return v
         })
-        death_series = death_series.map(function(d) {
-          var total=0; return {
-            key: d.key,
-            values: d.values.map(function(v) {
-              total++; v.deaths=total; return v
-            })
-          }
+      }
+    })
+    death_series = death_series.map(function(d) {
+      var total=0; return {
+        key: d.key,
+        values: d.values.map(function(v) {
+          total++; v.deaths=total; return v
         })
+      }
+    })
 
-        var kill_entries = kill_series.map(function(d) {return {
-          x: d.values.map(function(d) {return d.game_time}),
-          y: d.values.map(function(d) {return d.kills}),
-          type: 'scatter',
-          mode: 'lines+markers',
-          name: `${context.players[d.key].name} (${d.values[d.values.length-1].kills})`
-        }}).sort(function(a, b) {
-          return b.y[b.y.length-1] - a.y[a.y.length-1]
-        })
-        var death_entries = death_series.map(function(d) {return {
-          x: d.values.map(function(d) {return d.game_time}),
-          y: d.values.map(function(d) {return d.deaths}),
-          type: 'scatter',
-          mode: 'lines+markers',
-          name: `${context.players[d.key].name} (${d.values[d.values.length-1].deaths})`
-        }}).sort(function(a, b) {
-          return b.y[b.y.length-1] - a.y[a.y.length-1]
-        })
+    var kill_entries = kill_series.map(function(d) {return {
+      x: d.values.map(function(d) {return d.game_time}),
+      y: d.values.map(function(d) {return d.kills}),
+      type: 'scatter',
+      mode: 'lines+markers',
+      name: `${context.players[d.key].name} (${d.values[d.values.length-1].kills})`
+    }}).sort(function(a, b) {
+      return b.y[b.y.length-1] - a.y[a.y.length-1]
+    })
 
-        riot.mount('match-kills-chart', {'series': kill_entries})
-        riot.mount('match-deaths-chart', {'series': death_entries})
-        riot.mount('worst-enemy', {'kills': json, 'players': context.players})
-        riot.mount('kdr-chart', {'kills': json, 'players': context.players})
-        riot.mount('match-kdr-chart', {'kills': json, 'players': context.players})
+    var death_entries = death_series.map(function(d) {return {
+      x: d.values.map(function(d) {return d.game_time}),
+      y: d.values.map(function(d) {return d.deaths}),
+      type: 'scatter',
+      mode: 'lines+markers',
+      name: `${context.players[d.key].name} (${d.values[d.values.length-1].deaths})`
+    }}).sort(function(a, b) {
+      return b.y[b.y.length-1] - a.y[a.y.length-1]
+    })
 
+    riot.mount('match-kills-chart', {'series': kill_entries})
+    riot.mount('match-deaths-chart', {'series': death_entries})
+    riot.mount('worst-enemy', {'kills': json, 'players': context.players})
+    riot.mount('kdr-chart', {'kills': json, 'players': context.players})
+    riot.mount('match-kdr-chart', {'kills': json, 'players': context.players})
 
-	// weapon stats
-	var weapon_kills = d3.nest()
-	  .key((e) => {return e.killer_id})
-	  .key((e) => {return e.by_weapon})
-	  .rollup((v) => {return v.length})
-	  .object(enemy_kills)
+    // weapon stats
+    var weapon_kills = d3.nest()
+    .key((e) => {return e.killer_id})
+    .key((e) => {return e.by_weapon})
+    .rollup((v) => {return v.length})
+    .object(enemy_kills)
 
-	var weapons = new Set(Object.keys(
-	  d3.nest()
-	  .key((e) => {return e.by_weapon})
-	  .object(enemy_kills)))
-        riot.mount(
-	  'weapon-kills',
-	  {'player_weapon_kills': weapon_kills, 'players': context.players, 'weapons': [...weapons].sort()}
-	)
-      })
-  })
+    var weapons = new Set(Object.keys(
+      d3.nest()
+      .key((e) => {return e.by_weapon})
+      .object(enemy_kills))
+    )
 
-  fetch_players.then(function() {
-    qapi.getMatchSpecial(context.match_guid).then(function(json) {
-      var specials = d3.nest()
-        .key(function(d) {return d.score_type})
-        .key(function(d) {return d.killer_id})
-
-      var specials_summary = specials.rollup(
-          function(v) {
-            // TODO make some generic mechanism
-            if (v[0].score_type == "DREADNOUGHT") {
-              if (v.length > 1) { throw "Unexpected value" }
-              return {total: Math.round(v[0].value), timestamp: 0}
-	    }
-            return {total: v.length, timestamp: v[v.length-1].game_time}
-	  }
-        ).entries(json)
-
-      var specials_details = specials
-        .key(function(d) {return d.victim_id})
-        .rollup(function(v) {return v.length})
-        .entries(json)
-      riot.mount('special-scores', {'specials': specials_summary, 'details': specials_details})
+    riot.mount('weapon-kills', {
+        'player_weapon_kills': weapon_kills,
+        'players': context.players,
+        'weapons': [...weapons].sort()
     })
   })
 
-  fetch_players.then(function() {
-    qapi.getMatchBadges(context.match_guid).then(function(json) {
-      var badges = d3.nest()
-        .key((d) => {return d.name})
-        .sortValues((a, b) => {return b.count - a.count})
-        .entries(json)
+  Promise.all([fetch_players, fetch_match_specials])
+  .then(values => {
+    var json = values[1]
+    var specials = d3.nest()
+    .key(function(d) {return d.score_type})
+    .key(function(d) {return d.killer_id})
 
-      var multibadges = badges.filter((e) => {return e.values.length > 1})
-      var singlebadges = badges.filter((e) => {return e.values.length == 1})
-      riot.mount('match-badges', {
-        'multibadges': multibadges, 'players': context.players,
-        'singlebadges': singlebadges})
+    var specials_summary = specials
+      .rollup(v => {
+        // TODO make some generic mechanism
+        if (v[0].score_type == "DREADNOUGHT") {
+          if (v.length > 1) { throw "Unexpected value" }
+          return {total: Math.round(v[0].value), timestamp: 0}
+        }
+        return {total: v.length, timestamp: v[v.length-1].game_time}
+      })
+      .entries(json)
+
+    var specials_details = specials
+    .key(function(d) {return d.victim_id})
+    .rollup(function(v) {return v.length})
+    .entries(json)
+
+    riot.mount('special-scores', {'specials': specials_summary, 'details': specials_details})
+  })
+
+  Promise.all([fetch_players, fetch_match_badges])
+  .then(values => {
+    var json = values[1]
+    var badges = d3.nest()
+    .key((d) => {return d.name})
+    .sortValues((a, b) => {return b.count - a.count})
+    .entries(json)
+
+    var multibadges = badges.filter((e) => {return e.values.length > 1})
+    var singlebadges = badges.filter((e) => {return e.values.length == 1})
+    riot.mount('match-badges', {
+      'multibadges': multibadges, 'players': context.players,
+      'singlebadges': singlebadges
     })
   })
 
