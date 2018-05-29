@@ -4,11 +4,11 @@
 
 <script>
 
+  var fetch_match_kills = qapi.getMatchKills(context.match_guid)
   var fetch_players = qapi.getMatchPlayers(context.match_guid)
   var fetch_match = qapi.getMatch(context.match_guid)
   var fetch_match_scores = qapi.getMatchScores(context.match_guid)
   var fetch_match_teams = qapi.getMatchTeams(context.match_guid)
-  var fetch_match_kills = qapi.getMatchKills(context.match_guid)
   var fetch_match_specials = qapi.getMatchSpecial(context.match_guid)
   var fetch_match_badges = qapi.getMatchBadges(context.match_guid)
 
