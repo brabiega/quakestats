@@ -1,0 +1,13 @@
+[Unit]
+Description=Quakestats webservice
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/path/to/workdir
+Environment="QUAKESTATS_SETTINGS=/path/to/settings.py"
+ExecStart=/path/to/venv/bin/twistd -u someuser --nodaemon --pidfile= web --listen tcp:80 --wsgi quakestats.web.app
+
+[Install]
+WantedBy=multi-user.target
