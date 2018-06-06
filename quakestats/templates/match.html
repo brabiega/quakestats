@@ -130,14 +130,40 @@
     .rollup((v) => {return v.length})
     .object(enemy_kills)
 
+    var weapon_deaths = d3.nest()
+    .key((e) => {return e.victim_id})
+    .key((e) => {return e.by_weapon})
+    .rollup((v) => {return v.length})
+    .object(json)
+
+    var weapon_kd = {}
+    Object.entries(weapon_kills).forEach(
+      ([player_id, stats]) => {
+        var stat = {}
+        weapon_kd[player_id] = stat;
+        Object.entries(stats).forEach(([weapon_name, kills]) => {
+          stat[weapon_name] = {"kills": kills}
+        })
+      })
+    Object.entries(weapon_deaths).forEach(
+      ([player_id, stats]) => {
+        var stat = weapon_kd[player_id] || {}
+        weapon_kd[player_id] = stat;
+        Object.entries(stats).forEach(([weapon_name, deaths]) => {
+          var weapon_stat = stat[weapon_name] || {}
+          stat[weapon_name] = weapon_stat
+          weapon_stat["deaths"] = deaths
+        })
+      })
+
     var weapons = new Set(Object.keys(
       d3.nest()
       .key((e) => {return e.by_weapon})
-      .object(enemy_kills))
+      .object(json))
     )
 
     riot.mount('weapon-kills', {
-        'player_weapon_kills': weapon_kills,
+        'player_weapon_kills': weapon_kd,
         'players': context.players,
         'weapons': [...weapons].sort()
     })
@@ -191,24 +217,24 @@
 
 {% block body %}
   <div style="grid-column: 1 / -1">
-    <match-badges></match-badges>
+    <match-badges>Loading</match-badges>
   </div>
-  <div style="grid-column: auto / span 1">
+  <div style="grid-column: auto / span 2">
     <match-info></match-info>
-  </div>
-  <div style="grid-column: auto / span 1">
-    <team-switches></team-switches>
   </div>
   <div style="grid-column: auto / span 2">
     <score-summary></score-summary>
   </div>
   <div style="grid-column: auto / span 2">
+    <team-switches></team-switches>
+  </div>
+  <div style="grid-column: auto / span 3">
     <weapon-kills></weapon-kills>
   </div>
-  <div style="grid-column: auto / span 2">
+  <div style="grid-column: auto / span 3">
     <worst-enemy></worst-enemy>
   </div>
-  <div style="grid-column: auto / span 4">
+  <div style="grid-column: auto / span 6">
     <kdr-chart></kdr-chart>
   </div>
   <div style="grid-column: 1 / -1">

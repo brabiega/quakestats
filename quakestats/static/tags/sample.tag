@@ -513,7 +513,12 @@
     <tr each={player_id in Object.keys(opts.player_weapon_kills)}>
       <td style="text-align: left">{opts.players[player_id].name}</td>
       <td each={weapon in opts.weapons}>
-        {opts.player_weapon_kills[player_id][weapon] || 0}
+        <span style='color: green'>
+          {opts.player_weapon_kills[player_id][weapon] && opts.player_weapon_kills[player_id][weapon]['kills'] || 0}
+        </span>
+        <span style='color: red'>
+          {opts.player_weapon_kills[player_id][weapon] && opts.player_weapon_kills[player_id][weapon]['deaths'] || 0}
+        </span>
       </td>
     </tr>
   </table>
