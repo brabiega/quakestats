@@ -501,7 +501,7 @@
 </map-list>
 
 <weapon-kills>
-  <h4>Weapon Kills</h4>
+  <h4>Weapon Kills & Deaths</h4>
   <table>
     <tr>
       <th>Player</th>
