@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='quakestats',
-    version='0.9.33',
+    version='0.9.34',
     long_description=__doc__,
     packages=[
         'quakestats',
