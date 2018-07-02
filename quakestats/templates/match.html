@@ -156,11 +156,12 @@
       return {
         player_id: d.key,
         score: d.values[d.values.length-1].score,
-        fav_weapon: d3.nest()
+        fav_weapon: (d.key in enemy_kills_by_id) ? d3.nest()
           .key((d) => {return d.by_weapon})
           .rollup((v) => {return v.length})
           .entries(enemy_kills_by_id[d.key])
-          .sort((a, b) => {return b.value - a.value})[0].key}
+          .sort((a, b) => {return b.value - a.value})[0].key : null
+      }
     }).sort(function(a, b) {return b.score - a.score})
 
     riot.mount('score-summary', {'scores': final_scores, 'players': context.players})
