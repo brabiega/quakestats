@@ -117,6 +117,9 @@ var resources = {
     },
     'SLIME': {
       img: '/static/img/weapons/slime.svg'
+    },
+    'TELEFRAG': {
+      img: '/static/img/weapons/telefrag.svg'
     }
   }
 }
