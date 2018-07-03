@@ -75,4 +75,16 @@ class QuakeStatsApi {
       })
     fetch(req)
   }
+
+  getPlayerKills(playerId) {
+    return this.get(`player/${playerId}/kills`)
+  }
+
+  getPlayerDeaths(playerId) {
+    return this.get(`player/${playerId}/deaths`)
+  }
+
+  getPlayer(playerId) {
+    return this.get(`player/${playerId}`)
+  }
 }

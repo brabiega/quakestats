@@ -1,0 +1,56 @@
+{% extends "base2.html" %}
+
+{% block body_top %}
+
+<script>
+
+  var fetch_player_kills = qapi.getPlayerKills(context.player_id)
+  var fetch_player_info = qapi.getPlayer(context.player_id)
+  var fetch_player_deaths = qapi.getPlayerDeaths(context.player_id)
+
+  fetch_player_kills.then(json => {
+    var kills = json.map((e) => {e.by_weapon = weapon_map[e.by] || e.by; return e})
+    var enemy_kills = kills.filter(function(e)
+      {return !isSelfKill(e)}
+    )
+
+    var enemy_kills_by_weapon = d3.nest()
+    .key((e) => {return e.by_weapon})
+    .rollup((v) => {return v.length})
+    .entries(enemy_kills)
+    .sort((a, b) => {return a.key.localeCompare(b.key)})
+
+    riot.mount('player-weapons', {'kills_by_weapon': enemy_kills_by_weapon})
+  })
+
+  fetch_player_info.then(json => {
+    riot.mount('player-info', {'info': json})
+  })
+
+  Promise.all([fetch_player_deaths, fetch_player_kills])
+  .then(values => {
+    var deaths = values[0]
+    var kills = values[1]
+    riot.mount(
+      'player-kdr',
+      {'kill_count': kills.length, 'death_count': deaths.length}
+    )
+  })
+
+
+</script>
+
+{% endblock %}
+
+{% block body %}
+  <div style="grid-column: 1 / -1">
+    <player-info></player-info>
+  </div>
+  <div style="grid-column: auto / span 6">
+    <player-weapons></player-weapons>
+  </div>
+  <div style="grid-column: auto / span 6">
+    <player-kdr></player-kdr>
+  </div>
+
+{% endblock %}
