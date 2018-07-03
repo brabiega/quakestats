@@ -44,3 +44,39 @@
     }
   </style>
 </player-kdr>
+
+<player-top-target>
+  <h4>Top 5 targets</h4>
+  <table>
+    <tr each={opts.targets}>
+      <td style="text-align: right" class="fancyfont">{opts.players[key].name}</td>
+      <td style='color: green; text-align: center' class="fancyfont">{value}</td>
+    </tr>
+  </table>
+
+  <style>
+    .fancyfont {
+      font-family: 'Wallpoet';
+      font-size: 24px
+    }
+  </style>
+
+</player-top-target>
+
+<player-top-enemy>
+  <h4>Top 5 enemies</h4>
+  <table>
+    <tr each={opts.enemies}>
+      <td style='color: red; text-align: center' class="fancyfont">{value}</td>
+      <td class="fancyfont">{opts.players[key].name}</td>
+    </tr>
+  </table>
+
+  <style>
+    .fancyfont {
+      font-family: 'Wallpoet';
+      font-size: 24px
+    }
+  </style>
+
+</player-top-enemy>

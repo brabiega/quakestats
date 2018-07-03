@@ -7,12 +7,11 @@
   var fetch_player_kills = qapi.getPlayerKills(context.player_id)
   var fetch_player_info = qapi.getPlayer(context.player_id)
   var fetch_player_deaths = qapi.getPlayerDeaths(context.player_id)
+  var fetch_all_players = qapi.getAllPlayers()
 
   fetch_player_kills.then(json => {
     var kills = json.map((e) => {e.by_weapon = weapon_map[e.by] || e.by; return e})
-    var enemy_kills = kills.filter(function(e)
-      {return !isSelfKill(e)}
-    )
+    var enemy_kills = kills.filter((e) => {return !isSelfKill(e)})
 
     var enemy_kills_by_weapon = d3.nest()
     .key((e) => {return e.by_weapon})
@@ -31,12 +30,52 @@
   .then(values => {
     var deaths = values[0]
     var kills = values[1]
+
     riot.mount(
       'player-kdr',
       {'kill_count': kills.length, 'death_count': deaths.length}
     )
   })
 
+  Promise.all([fetch_player_deaths, fetch_player_kills, fetch_all_players])
+  .then(values => {
+    var deaths = values[0]
+    var kills = values[1]
+    var all_players = values[2]
+    var enemy_kills = kills.filter((e) => {return !isSelfKill(e)})
+    var players_by_id = d3.nest()
+    .key((d) => {return d.id})
+    .rollup((v) => {return v[0]})
+    .object(all_players)
+
+    var enemies = d3.nest()
+    .key((d) => {return d.killer_id})
+    .rollup((v) => {return v.length})
+    .entries(deaths)
+    .sort((a, b) => {return b.value - a.value})
+    .slice(0, 5)
+
+    var targets = d3.nest()
+    .key((d) => {return d.victim_id})
+    .rollup((v) => {return v.length})
+    .entries(enemy_kills)
+    .sort((a, b) => {return b.value - a.value})
+    .slice(0, 5)
+
+    riot.mount(
+      'player-top-target',
+      {'targets': targets, 'players': players_by_id}
+    )
+    riot.mount(
+      'player-top-enemy',
+      {'enemies': enemies, 'players': players_by_id}
+    )
+
+    riot.mount(
+      'player-kdr',
+      {'kill_count': kills.length, 'death_count': deaths.length}
+    )
+  })
 
 </script>
 
@@ -51,6 +90,12 @@
   </div>
   <div style="grid-column: auto / span 6">
     <player-kdr></player-kdr>
+  </div>
+  <div style="grid-column: auto / span 3">
+    <player-top-target></player-top-target>
+  </div>
+  <div style="grid-column: auto / span 3">
+    <player-top-enemy></player-top-enemy>
   </div>
 
 {% endblock %}
