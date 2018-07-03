@@ -85,6 +85,16 @@ def api2_maps():
     return flask.jsonify(data_store().get_map_stats())
 
 
+@app.route('/api/v2/player/<player_id>/kills')
+def api2_player_kills(player_id):
+    return flask.jsonify(data_store().get_player_kills(player_id))
+
+
+@app.route('/api/v2/player/<player_id>/deaths')
+def api2_player_deaths(player_id):
+    return flask.jsonify(data_store().get_player_deaths(player_id))
+
+
 @app.route('/api/v2/map/size', methods=['POST'])
 def api2_map_info():
     if flask.g.user == 'admin':

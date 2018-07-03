@@ -32,7 +32,7 @@ def match(match_guid):
 @app.route('/player/<id>')
 def player(id):
     return flask.render_template(
-        'base.html', js_context={'view': 'Player', 'id': id})
+        'player.html', js_context={'view': 'PLAYER', 'player_id': id})
 
 
 @app.route('/maps')

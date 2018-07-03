@@ -374,7 +374,9 @@
       </td>
     </tr>
     <tr each={opts.badges}>
-      <td nowrap>{opts.players[this.player_id].name}</td>
+      <td nowrap>
+        <a href="/player/{this.player_id}">{opts.players[this.player_id].name}</a>
+      </td>
       <td each={opts.badgeres.getMedalNames()} style={getStyle(name, this.badges[name])}>
         {this.badges[name]}
       </td>

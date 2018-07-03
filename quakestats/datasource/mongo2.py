@@ -338,3 +338,11 @@ class DataStoreMongo():
                 continue
             c = pymongo.collection.Collection(self.db, name)
             c.delete_many({"match_guid": match_guid})
+
+    def get_player_kills(self, player_id):
+        res = self.db.kill.find({'killer_id': player_id})
+        return self.strip_id(res or [])
+
+    def get_player_deaths(self, player_id):
+        res = self.db.kill.find({'victim_id': player_id})
+        return self.strip_id(res or [])
