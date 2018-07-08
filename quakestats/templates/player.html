@@ -22,8 +22,11 @@
     riot.mount('player-weapons', {'kills_by_weapon': enemy_kills_by_weapon})
   })
 
-  fetch_player_info.then(json => {
-    riot.mount('player-info', {'info': json})
+  Promise.all([fetch_player_info, fetch_player_kills])
+  .then(values => {
+    var json = values[0]
+    var unique_matches = new Set(values[1].map((e) => {return e.match_guid}))
+    riot.mount('player-info', {'info': json, 'total_games': unique_matches.size})
   })
 
   Promise.all([fetch_player_deaths, fetch_player_kills])
@@ -53,14 +56,14 @@
     .rollup((v) => {return v.length})
     .entries(deaths)
     .sort((a, b) => {return b.value - a.value})
-    .slice(0, 5)
+    .slice(0, 16)
 
     var targets = d3.nest()
     .key((d) => {return d.victim_id})
     .rollup((v) => {return v.length})
     .entries(enemy_kills)
     .sort((a, b) => {return b.value - a.value})
-    .slice(0, 5)
+    .slice(0, 16)
 
     riot.mount(
       'player-top-target',
