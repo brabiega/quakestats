@@ -1,6 +1,6 @@
 <player-weapons>
   <h4>Kills by weapon</h4>
-  <div style="display: grid; grid-template-columns: repeat(6, 1fr)">
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr)">
     <div each={opts.kills_by_weapon}>
         <img if={context.resources.weapons[key]} src="{context.resources.weapons[key].img}" class="weapon-img"></img>
         <span if={!context.resources.weapons[key]}>{key}</span>
