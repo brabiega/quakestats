@@ -95,6 +95,11 @@ def api2_player_deaths(player_id):
     return flask.jsonify(data_store().get_player_deaths(player_id))
 
 
+@app.route('/api/v2/player/<player_id>/badges')
+def api2_player_badges(player_id):
+    return flask.jsonify(data_store().get_player_badges(player_id))
+
+
 @app.route('/api/v2/map/size', methods=['POST'])
 def api2_map_info():
     if flask.g.user == 'admin':

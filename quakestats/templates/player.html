@@ -8,6 +8,7 @@
   var fetch_player_info = qapi.getPlayer(context.player_id)
   var fetch_player_deaths = qapi.getPlayerDeaths(context.player_id)
   var fetch_all_players = qapi.getAllPlayers()
+  var fetch_player_badges = qapi.getPlayerBadges(context.player_id)
 
   fetch_player_kills.then(json => {
     var kills = json.map((e) => {e.by_weapon = weapon_map[e.by] || e.by; return e})
@@ -80,6 +81,14 @@
     )
   })
 
+  fetch_player_badges.then((json) => {
+    var badges = json.sort((a, b) => {return a.name.localeCompare(b.name)})
+    riot.mount(
+      'player-badges',
+      {'badges': badges}
+    )
+  })
+
 </script>
 
 {% endblock %}
@@ -90,6 +99,9 @@
   </div>
   <div style="grid-column: auto / span 6">
     <player-weapons></player-weapons>
+  </div>
+  <div style="grid-column: auto / span 6">
+    <player-badges></player-badges>
   </div>
   <div style="grid-column: auto / span 6">
     <player-kdr></player-kdr>

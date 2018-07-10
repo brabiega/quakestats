@@ -18,6 +18,26 @@
 
 </player-weapons>
 
+<player-badges>
+  <h4>Badges</h4>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr)">
+    <div each={opts.badges}>
+        <img if={context.resources.badges.getInfo(name).img} src="{context.resources.badges.getInfo(name).img}" class="weapon-img"></img>
+        <span if={!context.resources.badges.getInfo(name).img}>{name}</span>
+        <span style="font-family: 'Wallpoet'; font-size: 46px"> x {count}</span>
+
+    </div>
+  </div>
+
+  <style>
+    .weapon-img {
+      height: 56px;
+      padding: 1px;
+    }
+  </style>
+
+</player-badges>
+
 <player-info>
   <h4>Player info</h4>
   <span class="fancyfont">Nickname: {opts.info.name}</span>

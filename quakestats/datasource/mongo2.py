@@ -346,3 +346,23 @@ class DataStoreMongo():
     def get_player_deaths(self, player_id):
         res = self.db.kill.find({'victim_id': player_id})
         return self.strip_id(res or [])
+
+    def get_player_badges(self, player_id):
+        res = (
+            self.db.badge.aggregate([
+                {
+                    '$match': {
+                        'player_id': player_id,
+                    }
+                },
+                {
+                    '$group': {
+                        '_id': {'name': '$name', 'player_id': '$player_id'},
+                        'count': {'$sum': '$count'},
+                    }
+                }
+            ])
+        )
+        return [{
+            'name': entry['_id']['name'],
+            'count': entry['count']} for entry in res]
