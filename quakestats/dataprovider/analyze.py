@@ -257,6 +257,9 @@ class SpecialScores():
         if (ts - state['last_death']) > state['max']:
             state['max'] = ts - state['last_death']
 
+        if 0 < (ts - state['last_death']) <= 5:
+            self.add_score('MOSQUITO', report, swap_kv=True)
+
         state['last_death'] = ts
 
     @on_event('REPORT')
@@ -697,6 +700,12 @@ class Badger():
         scores = self.from_special_score('VENGEANCE', 'sum', 3, False)
         for count, (index, ts, value) in enumerate(scores, start=1):
             self.add_badge('VENGEANCE', index, count)
+
+    @badge()
+    def mosquito(self):
+        scores = self.from_special_score('MOSQUITO', 'sum', 1, False)
+        for count, (index, ts, value) in enumerate(scores, start=1):
+            self.add_badge('MOSQUITO', index, count)
 
 
 class Analyzer():

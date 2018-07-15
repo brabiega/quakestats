@@ -341,17 +341,28 @@ class TestSpecialScores():
             skip_world=True)
 
     def test_lifespan(self, pss):
-        pss.process_lifespan({'TIME': 1, 'VICTIM': {'STEAM_ID': 'A'}})
+        pss.process_lifespan({
+            'TIME': 1,
+            'VICTIM': {'STEAM_ID': 'A'},
+            'KILLER': {'STEAM_ID': 'B'}})
         assert pss.player_state['A']['lifespan']['max'] == 0
         assert pss.player_state['A']['lifespan']['last_death'] == 1
 
-        pss.process_lifespan({'TIME': 15, 'VICTIM': {'STEAM_ID': 'A'}})
+        pss.process_lifespan({
+            'TIME': 15,
+            'VICTIM': {'STEAM_ID': 'A'},
+            'KILLER': {'STEAM_ID': 'B'}})
         assert pss.player_state['A']['lifespan']['max'] == 14
         assert pss.player_state['A']['lifespan']['last_death'] == 15
+        assert 'MOSQUITO' not in pss.scores
 
-        pss.process_lifespan({'TIME': 17, 'VICTIM': {'STEAM_ID': 'A'}})
+        pss.process_lifespan({
+            'TIME': 17,
+            'VICTIM': {'STEAM_ID': 'A'},
+            'KILLER': {'STEAM_ID': 'B'}})
         assert pss.player_state['A']['lifespan']['max'] == 14
         assert pss.player_state['A']['lifespan']['last_death'] == 17
+        assert pss.scores['MOSQUITO'] == [(17, 'A', 'B', 1)]
 
     def test_lifespan_postprocess(self, pss):
         pss.player_scores = mock.Mock(name='player_scores')
@@ -615,4 +626,19 @@ class TestBadger():
 
         assert badger.badges == [
             ('DREADNOUGHT', 'B', 1)
+        ]
+
+    def test_mosquito(self, badger):
+        badger.special_scores.scores = {
+            'MOSQUITO': [
+                (10, 'A', 'B', 1),
+                (11, 'A', 'B', 1),
+                (10, 'B', 'C', 1),
+                (12, 'B', 'C', 1),
+                (10, 'C', 'D', 1),
+            ]
+        }
+        badger.mosquito()
+        assert badger.badges == [
+            ('MOSQUITO', 'B', 1),
         ]

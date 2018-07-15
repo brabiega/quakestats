@@ -69,6 +69,10 @@ var resources = {
       img: '/static/img/badges/vengeance.png',
       name: 'Vengeance',
       desc: 'You killed your latest killer'},
+    'MOSQUITO': {
+      img: '/static/img/badges/mosquito.svg',
+      name: 'Mosquito',
+      desc: 'You died within 5 seconds after your previous death'},
   }
   },
 
