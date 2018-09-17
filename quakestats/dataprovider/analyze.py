@@ -151,23 +151,35 @@ class SpecialScores():
         killer_id = player_kill['KILLER']['STEAM_ID']
         victim_id = player_kill['VICTIM']['STEAM_ID']
         mod = player_kill['MOD']
+        should_calculate = True
 
         if killer_id == victim_id:
-            return
+            should_calculate = False
 
         if mod != 'GAUNTLET':
-            return
+            should_calculate = False
 
-        sorted_players = self.player_scores.players_sorted_by_score(
-            skip_world=True)
+        sorted_players = self.player_state[None].get(
+            'previous_players_by_score', [])
 
         if len(sorted_players) < 2:
-            return
+            should_calculate = False
 
-        if victim_id == sorted_players[0]:
-            self.add_score('HEADHUNTER', player_kill)
-        elif victim_id == sorted_players[-1]:
-            self.add_score('DUCKHUNTER', player_kill)
+        # two extra cases to consider
+        # scores are assigned before special scores are calculated so:
+        # A is first B second score 1:1, B kills A, B should get headhunter
+        # A is second B first score 0:1, A kills B, A should get headhunter
+        # so we need to take a look into history
+
+        if should_calculate:
+            if victim_id == sorted_players[0]:
+                self.add_score('HEADHUNTER', player_kill)
+            elif victim_id == sorted_players[-1]:
+                self.add_score('DUCKHUNTER', player_kill)
+
+        # global state
+        self.player_state[None]['previous_players_by_score'] = \
+            self.player_scores.players_sorted_by_score(skip_world=True)
 
     @on_event('PLAYER_KILL')
     def score_death(self, player_kill):
