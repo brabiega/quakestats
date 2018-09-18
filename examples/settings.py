@@ -8,9 +8,8 @@ ADMIN_TOKEN = 'mysecret'
 # secret key used to encrypt cookies (see flask session docs)
 SECRET_KEY = 'somesecret'
 
-# name of database
-# TODO add more DB config settings
-MONGO_DBNAME = 'quakestats'
+# mongo DB uri
+MONGO_URI = 'mongodb://localhost:27017/quakestats'
 
 # server domain - kind of server group identification, required
 # server domain has to be set, used to calculate name hashes, and match ids
