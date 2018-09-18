@@ -694,7 +694,7 @@ class TestAnalyzer(object):
                     'STEAM_ID': 'A',
                     'NAME': 'AN',
                 },
-                'MOD': 'MACHINEGUN',
+                'MOD': 'GAUNTLET',
             }
         })
         an.analyze_event({
@@ -713,4 +713,7 @@ class TestAnalyzer(object):
             }
         })
 
-        assert an.special_scores.scores['HEADHUNTER'] == [(3, 'A', 'B', 1)]
+        assert an.special_scores.scores['HEADHUNTER'] == [
+            (2, 'B', 'A', 1),
+            (3, 'A', 'B', 1),
+        ]

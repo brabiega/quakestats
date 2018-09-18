@@ -369,6 +369,11 @@ class PlayerScores():
                 pid for pid in sorted_players if pid != 'q3-world']
         return sorted_players
 
+    def from_match_started(self, report):
+        for entry in report['PLAYERS']:
+            # use defaultdict to set init values
+            self.player_score[entry['STEAM_ID']]
+
     def from_player_kill(self, player_kill):
         game_time = player_kill['TIME']
         killer_id = player_kill['KILLER']['STEAM_ID']
@@ -798,6 +803,7 @@ class Analyzer():
         self.match_metadata.from_match_started(event['DATA'])
         if 'PLAYERS' in event['DATA']:
             self.team_lifecycle.from_match_started(event['DATA'])
+            self.player_scores.from_match_started(event['DATA'])
 
             for player in event['DATA']['PLAYERS']:
                 self.add_player_if_needed(
