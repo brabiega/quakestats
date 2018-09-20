@@ -337,6 +337,7 @@ class TestSpecialScores():
             'VICTIM': {'STEAM_ID': 'A'},
         })
         assert pss.scores['HEADHUNTER'] == [(1, 'B', 'A', 1)]
+        assert pss.scores['HEADLESS_KNIGHT'] == [(1, 'A', 'B', 1)]
         assert pss.scores['DUCKHUNTER'] == [(1, 'A', 'B', 1)]
         pss.player_scores.players_sorted_by_score.assert_called_with(
             skip_world=True)

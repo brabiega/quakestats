@@ -174,6 +174,7 @@ class SpecialScores():
         if should_calculate:
             if victim_id == sorted_players[0]:
                 self.add_score('HEADHUNTER', player_kill)
+                self.add_score('HEADLESS_KNIGHT', player_kill, swap_kv=True)
             elif victim_id == sorted_players[-1]:
                 self.add_score('DUCKHUNTER', player_kill)
 
@@ -723,6 +724,12 @@ class Badger():
         scores = self.from_special_score('MOSQUITO', 'sum', 1, False)
         for count, (index, ts, value) in enumerate(scores, start=1):
             self.add_badge('MOSQUITO', index, count)
+
+    @badge()
+    def headless_knight(self):
+        scores = self.from_special_score('HEADLESS_KNIGHT', 'sum', 1, False)
+        for count, (index, ts, value) in enumerate(scores, start=1):
+            self.add_badge('HEADLESS_KNIGHT', index, count)
 
 
 class Analyzer():

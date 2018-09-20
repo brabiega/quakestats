@@ -73,6 +73,10 @@ var resources = {
       img: '/static/img/badges/mosquito.svg',
       name: 'Mosquito',
       desc: 'You died within 5 seconds after your previous death'},
+    'HEADLESS_KNIGHT': {
+      img: '/static/img/badges/headless_knight.svg',
+      name: 'Headless Knight',
+      desc: 'Someone earned Headhunter on you'},
   }
   },
 
