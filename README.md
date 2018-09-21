@@ -1,4 +1,5 @@
 # Quake Stats
+[![Build Status](https://travis-ci.org/brabiega/quakestats.svg?branch=master)](https://travis-ci.org/brabiega/quakestats)
 Quake 3 logs / Quake Live events processing project.
 
 Allows to retrieve, process, analyze, store and present Quake matches.
