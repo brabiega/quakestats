@@ -42,7 +42,7 @@ The stats are presented with fancy charts, custom medals, etc. See the examples 
 
 ### Requirements
 - Decent version of Python 2 or 3
-- Local instance of Mongo DB (remote backend not implemented, easy to add)
+- Instance of Mongo DB (pointed by ```settings.py```)
 - Modern web browser (requires css grid-layout)
 
 ## How to setup
