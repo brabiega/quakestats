@@ -153,16 +153,18 @@
       .key((e) => {return e.killer_id})
       .object(match_kills.filter((s) => {return s.killer_id != s.victim_id}))
     var final_scores = series.map(function(d) {
+      var last_score = d.values.splice(-1)[0]
       return {
         player_id: d.key,
-        score: d.values[d.values.length-1].score,
+        score: last_score.score,
+        ts: last_score.game_time,
         fav_weapon: (d.key in enemy_kills_by_id) ? d3.nest()
           .key((d) => {return d.by_weapon})
           .rollup((v) => {return v.length})
           .entries(enemy_kills_by_id[d.key])
           .sort((a, b) => {return b.value - a.value})[0].key : null
       }
-    }).sort(function(a, b) {return b.score - a.score})
+    }).sort((a, b) => {return (b.score - a.score) || (b.ts - a.ts)})
 
     riot.mount('score-summary', {'scores': final_scores, 'players': context.players})
     riot.mount('match-score-chart', {'series': score_series})
