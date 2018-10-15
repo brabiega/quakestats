@@ -190,6 +190,63 @@ def api2_upload():
     })
 
 
+@app.route('/api/v2/admin/match/import', methods=['POST'])
+def api2_admin_match_import():
+    """
+    Import q3 match log previously stored in RAW_DATA_DIR
+    The log file should contain single match events, excluding
+    match delimiter (-----)
+    """
+    if not auth(flask.request.form['token']):
+        return 'Bye'
+
+    # TODO this code should be rewritten
+    if 'file' not in flask.request.files:
+        raise Exception("No Files")
+
+    req_file = flask.request.files['file']
+    data = req_file.read().decode("utf-8")
+    match = {
+        'EVENTS': data.splitlines()
+    }
+
+    server_domain = app.config['SERVER_DOMAIN']
+    source_type = 'Q3'
+    transformer = quake3.Q3toQL(match['EVENTS'])
+    transformer.server_domain = server_domain
+
+    try:
+        transformer.process()
+
+    except Exception as e:
+        # TODO save for investigation if error
+        logger.exception(e)
+        return 'Failed'
+
+    results = transformer.result
+
+    # PREPROCESS
+    preprocessor = dataprovider.MatchPreprocessor()
+    preprocessor.process_events(results['events'])
+
+    if not preprocessor.finished:
+        return 'Match not finished'
+
+    fmi = dataprovider.FullMatchInfo(
+        events=preprocessor.events,
+        match_guid=preprocessor.match_guid,
+        duration=preprocessor.duration,
+        start_date=results['start_date'],
+        finish_date=results['finish_date'],
+        server_domain=server_domain,
+        source=source_type)
+
+    analyzer = analyze.Analyzer()
+    report = analyzer.analyze(fmi)
+    data_store().store_analysis_report(report)
+    return 'OK'
+
+
 @app.route('/api/v2/admin/players/merge', methods=['POST'])
 def api2_admin_players_merge():
     # TODO PROPER AUTH

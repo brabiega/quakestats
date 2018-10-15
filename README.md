@@ -98,6 +98,13 @@ curl -X POST host:port/api/v2/admin/players/merge --form token=admintoken --form
 ```
 It will merge all results from player with id ```297f6272f79d4918c4efe098``` into player with id ```df55e5cd4582d6f14cd20746```. To find out how player ID is build see the development section.
 
+### Importing preprocessed match log
+Preprocessed match logs stored in ```RAW_DATA_DIR``` can be imported using admin match import API.
+This can be particularly useful when e.g. debugging some bugs on dev infra.
+```bash
+curl -X POST --form file=@bugmatch.log --form token=admintoken host:port/api/v2/admin/match/import
+```
+
 ## Development
 
 ### Tech stack
