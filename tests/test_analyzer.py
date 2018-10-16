@@ -432,6 +432,16 @@ class TestBadger():
 
         return analyze.Badger(scores, special_scores)
 
+    @pytest.mark.parametrize('player_score, expected', [
+        ({'A': 1, 'B': 3, 'C': 4}, 1),
+        ({'A': 1, 'B': 3, 'C': 4, 'D': 5}, 2),
+        ({'A': 1, 'B': 3}, 1),
+        ({'A': 1, 'B': 3, 'C': 4, 'D': 5, 'E': 6}, 3),
+    ])
+    def test_get_multi_badge_count(self, badger, player_score, expected):
+        badger.scores.player_score = player_score
+        assert badger.get_multi_badge_count() == expected
+
     def test_add_badge(self, badger):
         badger.add_badge('test', 'dummy', 5)
         assert badger.badges == [('test', 'dummy', 5)]
@@ -473,7 +483,10 @@ class TestBadger():
                 (10, 'C', 'D', 1),
             ]
         }
-        badger.deaths()
+        with mock.patch.object(analyze.Badger, 'get_multi_badge_count') as bc:
+            bc.return_value = 3
+            badger.deaths()
+
         assert badger.badges == [
             ('DEATH', 'C', 1),
             ('DEATH', 'A', 2),
@@ -507,7 +520,9 @@ class TestBadger():
                 (10, 'C', 'D', 3),
             ]
         }
-        badger.excellent()
+        with mock.patch.object(analyze.Badger, 'get_multi_badge_count') as bc:
+            bc.return_value = 3
+            badger.excellent()
         assert badger.badges == [
             ('KILLING_SPREE', 'C', 1),
             ('KILLING_SPREE', 'A', 2),
@@ -614,7 +629,9 @@ class TestBadger():
                 (10, 'C', 'D', 1),
             ]
         }
-        badger.vengeance()
+        with mock.patch.object(analyze.Badger, 'get_multi_badge_count') as bc:
+            bc.return_value = 3
+            badger.vengeance()
         assert badger.badges == [
             ('VENGEANCE', 'C', 1),
             ('VENGEANCE', 'A', 2),

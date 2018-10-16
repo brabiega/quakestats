@@ -344,12 +344,17 @@ class KDR():
 
 class PlayerScores():
     def __init__(self):
+        # store events history
+        # the format is (ts, killer_id, victim_id, mod)
         self.kills = []
         self.deaths = []
+
+        # store score events
+        # the format is (ts, killer_id, score, mod)
         self.scores = []
 
         self.kdr = defaultdict(lambda: KDR())
-        # store score, timestamp
+        # store (score, timestamp) per player
         self.player_score = defaultdict(lambda: [0, 0])
 
     def get_final_kdr(self):
@@ -608,6 +613,8 @@ class Badger():
         Group special score (:name) by player_id, :aggregate, sort
         Take :count head or tail
         """
+        if count == 0:
+            return
         try:
             scores = self.special_scores.scores[name]
         except KeyError:
@@ -627,8 +634,20 @@ class Badger():
         return [
             (index, row.ts, row.value) for index, row in res.iterrows()]
 
+    def get_multi_badge_count(self):
+        total_players = len(self.scores.player_score)
+        if total_players < 2:
+            return 0
+        elif total_players < 4:
+            return 1
+        elif total_players < 5:
+            return 2
+        else:
+            return 3
+
     @badge()
     def winners(self):
+        # TODO Fix #30
         players = self.scores.players_sorted_by_score()
         try:
             self.add_badge('WIN_GOLD', players[0], 1)
@@ -651,7 +670,8 @@ class Badger():
 
     @badge()
     def deaths(self):
-        scores = self.from_special_score('DEATH', 'sum', 3, False)
+        badge_count = self.get_multi_badge_count()
+        scores = self.from_special_score('DEATH', 'sum', badge_count, False)
         for count, (index, ts, value) in enumerate(scores, start=1):
             self.add_badge('DEATH', index, count)
 
@@ -663,7 +683,10 @@ class Badger():
 
     @badge()
     def excellent(self):
-        scores = self.from_special_score('KILLING_SPREE', 'count', 3, False)
+        badge_count = self.get_multi_badge_count()
+        scores = self.from_special_score(
+            'KILLING_SPREE', 'count', badge_count, False
+        )
         for count, (index, ts, value) in enumerate(scores, start=1):
             self.add_badge('KILLING_SPREE', index, count)
 
@@ -715,7 +738,9 @@ class Badger():
 
     @badge()
     def vengeance(self):
-        scores = self.from_special_score('VENGEANCE', 'sum', 3, False)
+        badge_count = self.get_multi_badge_count()
+        scores = self.from_special_score(
+            'VENGEANCE', 'sum', badge_count, False)
         for count, (index, ts, value) in enumerate(scores, start=1):
             self.add_badge('VENGEANCE', index, count)
 
