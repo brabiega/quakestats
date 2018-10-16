@@ -1,6 +1,12 @@
 from quakestats.web import app, data_store
+from quakestats import VERSION
 import flask
 from passlib.hash import pbkdf2_sha256
+
+
+@app.context_processor
+def inject_version_info():
+    return dict(app_version=VERSION)
 
 
 @app.template_global()
