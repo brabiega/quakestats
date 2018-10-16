@@ -4,6 +4,7 @@ bdist:
 clean:
 	rm -rf dist
 	rm -rf build
+	rm -rf quakestats.egg-info
 
 test:
 	cd tests && py.test
