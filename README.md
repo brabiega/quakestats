@@ -148,8 +148,8 @@ Stats webapp ----| -> Web API -> StorageApi -> StorageBackend
 ```
 ### Extending
 #### How to add new medal
-- see [SpecialScores class](quakestats/dataprovider/analyze.py#L67) - for special scores
-- see [Badger class](quakestats/dataprovider/analyze.py#L484) - for badges calculation
+- see [SpecialScores class](quakestats/dataprovider/analyzer/specials.py) - for special scores
+- see [Badger class](quakestats/dataprovider/analyzer/badges.py) - for badges calculation
 - see [JS resources](quakestats/static/js/resources.js) - to add new medal image
 
 #### Running tests
