@@ -63,7 +63,6 @@ class Badger():
 
     @badge()
     def winners(self):
-        # TODO Fix #30
         players = self.scores.players_sorted_by_score()
         try:
             self.add_badge('WIN_GOLD', players[0], 1)
@@ -71,6 +70,10 @@ class Badger():
             self.add_badge('WIN_BRONZE', players[2], 1)
             self.add_badge('WIN_ALMOST', players[3], 1)
         except IndexError:
+            # Don't worry, this code will add proper amount of badges
+            # even if less than 4 players are participating.
+            # It works because badges are assigned in specific ORDER
+            # So IndexError is raise when there is nothing more to assign
             pass
 
     @badge()

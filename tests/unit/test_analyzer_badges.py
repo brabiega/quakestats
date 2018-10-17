@@ -33,16 +33,28 @@ class TestBadger():
             ('test', 'dummy', 5),
             ('test2', 'dummy2', 6)]
 
-    def test_win(self, badger):
-        badger.scores.players_sorted_by_score.return_value = [
-            '1st', '2nd', '3rd', '4th']
+    @pytest.mark.parametrize('players_sorted, expected', [
+        (
+            ['A', 'B', 'C', 'D', 'E', 'F'],
+            [
+                ('WIN_GOLD', 'A', 1),
+                ('WIN_SILVER', 'B', 1),
+                ('WIN_BRONZE', 'C', 1),
+                ('WIN_ALMOST', 'D', 1),
+            ],
+        ),
+        (
+            ['A', 'B'],
+            [
+                ('WIN_GOLD', 'A', 1),
+                ('WIN_SILVER', 'B', 1),
+            ],
+        ),
+    ])
+    def test_win(self, badger, players_sorted, expected):
+        badger.scores.players_sorted_by_score.return_value = players_sorted
         badger.winners()
-        assert badger.badges == [
-            ('WIN_GOLD', '1st', 1),
-            ('WIN_SILVER', '2nd', 1),
-            ('WIN_BRONZE', '3rd', 1),
-            ('WIN_ALMOST', '4th', 1),
-        ]
+        assert badger.badges == expected
 
     def test_kdr_stars(self, badger):
         badger.scores.get_final_kdr.return_value = [
