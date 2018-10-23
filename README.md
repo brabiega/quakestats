@@ -55,6 +55,7 @@ See example [settings.py](examples/settings.py)
 ### Launching the application
 #### Run in twistd
 You can launch Quake Stats web application using ```twistd``` webserver. Just make sure to install twisted framework first.
+Also make sure to use some recent version on twisted (tested with 18.7.0 installed by pip).
 ```bash
 FLASK_APP="quakestats.web"; QUAKESTATS_SETTINGS=`pwd`/settings.py; twistd web --wsgi quakestats.web.app
 ```
