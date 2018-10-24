@@ -531,3 +531,54 @@
     }
   </style>
 </weapon-kills>
+
+<match-player-kill-death>
+  <h4>Player kills/deaths details</h4>
+  <div class="kill-death-details-container">
+    <div class="detail-container" each={Object.entries(opts.kds)}>
+      <table>
+        <thead>
+          <tr class="head">
+            <th>{opts.players[this[0]].name}</th>
+            <th style="width:20%">K</th>
+            <th style="width:20%">D</th>
+          </tr>
+        <thead>
+        <tr each={Object.entries(this[1])}>
+          <td>{opts.players[this[0]].name}</td>
+          <td class={better: this[1].kills > this[1].deaths}>{this[1].kills}</td>
+          <td class={worse: this[1].deaths > this[1].kills}>{this[1].deaths}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <style>
+    .kill-death-details-container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+    td {
+      text-align: center;
+    }
+    .head {
+      background-color: #2b9198;
+      color: white;
+    }
+    .detail-container {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #2b9198;
+    }
+    .better {
+      color: #2dc12d;
+      font-weight: bold;
+    }
+    .worse {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</match-player-kill-death>

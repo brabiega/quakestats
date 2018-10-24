@@ -212,6 +212,57 @@
     })
   })
 
+  Promise.all([fetch_players, fetch_match_kills])
+  .then(values => {
+    var match_scores = values[2]
+    var match_kills = values[1]
+
+    var player_kills = d3.nest()
+      .key((d) => {return d.killer_id})
+      .key((d) => {return d.victim_id})
+      .rollup((v) => {return v.length})
+      .entries(match_kills)
+      .map((e) => {
+        return {player_id: e.key, kills: e.values}
+      })
+    var player_deaths = d3.nest()
+      .key((d) => {return d.victim_id})
+      .key((d) => {return d.killer_id})
+      .rollup((v) => {return v.length})
+      .entries(match_kills)
+      .map((e) => {
+        return {player_id: e.key, deaths: e.values}
+      })
+
+    var kds = {}
+		for (entry of player_kills) {
+		  var player_info = {}
+		  kds[entry.player_id] = player_info
+		  for (entry of entry.kills) {
+		    player_info[entry.key] = {kills: entry.value, deaths: 0}
+		  }
+		}
+		for (entry of player_deaths) {
+      var player_info = kds[entry.player_id]
+      if (!player_info) {
+        player_info = {}
+        kds[entry.player_id] = player_info
+      }
+
+      for (entry of entry.deaths) {
+        var death_info = player_info[entry.key]
+        if (!death_info) {
+          player_info[entry.key] = {kills: 0, deaths: entry.value}
+        } else {
+          death_info.deaths = entry.value
+        }
+      }
+    }
+
+
+    riot.mount('match-player-kill-death', {'kds': kds, 'players': context.players})
+  })
+
 </script>
 
 {% endblock %}
@@ -241,8 +292,8 @@
   <div style="grid-column: 1 / -1">
     <match-score-chart></match-score-chart>
   </div>
-  <div style="grid-column: 1 / -1">
-    <special-scores></special-scores>
+  <div style="grid-column: auto / span 6">
+    <match-player-kill-death></match-player-kill-death>
   </div>
   <div style="grid-column: 1 / -1">
     <match-kdr-chart></match-kdr-chart>
@@ -252,6 +303,9 @@
   </div>
   <div style="grid-column: auto / span 3">
     <match-deaths-chart></match-deaths-chart>
+  </div>
+  <div style="grid-column: 1 / -1">
+    <special-scores></special-scores>
   </div>
 
 {% endblock %}
