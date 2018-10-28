@@ -6,4 +6,3 @@ passlib==1.7.1
 pymongo==3.6.1
 pyzmq==17.0.0
 Werkzeug==0.14.1
-Twisted==18.9.0
