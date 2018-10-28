@@ -32,10 +32,11 @@
     riot.mount('team-switches', {'switches': json})
   })
 
-  Promise.all([fetch_players, fetch_match_kills, fetch_match_scores])
+  Promise.all([fetch_players, fetch_match_kills, fetch_match_scores, fetch_match_specials])
   .then(values => {
     var match_scores = values[2]
     var match_kills = values[1]
+    var match_specials = values[3]
     match_kills = match_kills.map((e) => {e.by_weapon = weapon_map[e.by] || e.by; return e})
 
     var enemy_kills = match_kills.filter(function(e)
@@ -166,8 +167,10 @@
       }
     }).sort((a, b) => {return (b.score - a.score) || (b.ts - a.ts)})
 
+    var specials_by_type = d3.nest().key((d) => {return d.score_type}).object(match_specials)
+
     riot.mount('score-summary', {'scores': final_scores, 'players': context.players})
-    riot.mount('match-score-chart', {'series': score_series})
+    riot.mount('match-score-chart', {'series': score_series, specials_by_type: specials_by_type, scores: match_scores})
   })
 
   Promise.all([fetch_players, fetch_match_specials])
@@ -258,7 +261,6 @@
         }
       }
     }
-
 
     riot.mount('match-player-kill-death', {'kds': kds, 'players': context.players})
   })

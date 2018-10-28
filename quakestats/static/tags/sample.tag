@@ -81,10 +81,54 @@
   <h4>Player scores</h4>
   <div id='score-chart'></div>
   
+  this.series = opts.series
+  this.specials_by_type = opts.specials_by_type
+  this.scores = opts.scores
+
+  var special_series = []
+  var head_hunter = (this.specials_by_type['HEADHUNTER'] || []).map(
+    (special) => {
+      var score = this.scores.filter((e) => {
+        return (
+          e.game_time == special.game_time &&
+          e.player_id == special.killer_id
+        )
+      })[0]
+      return {
+        x: score.game_time,
+        y: score.score,
+        victim_id: special.victim_id,
+        killer_id: special.killer_id,
+      }
+
+    }
+  ).reduce(
+    (prev, cur) => {
+      prev.x.push(cur.x)
+      prev.y.push(cur.y)
+      prev.hovertext.push(
+        `${context.players[cur.killer_id].name} killed ${context.players[cur.victim_id].name}`
+      )
+      return prev
+    },
+    {
+      x: [],
+      y: [],
+      hovertext: [],
+      type: 'scatter',
+      mode: 'markers',
+      marker: {
+        symbol: "star", size:16, color: "gold",
+      },
+      name: 'Headhunter',
+    }
+  )
+  this.series.push(head_hunter)
+
   this.on('mount', function() {
     Plotly.newPlot(
       'score-chart',
-      opts.series,
+      this.series,
       {
         'height': 600,
         paper_bgcolor: '#FFFFFF',
