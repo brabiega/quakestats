@@ -53,6 +53,19 @@ The application is configured by setting ```QUAKESTATS_SETTINGS``` environment v
 See example [settings.py](examples/settings.py)
 
 ### Launching the application
+Don't forget install pip requirements (in virtualenv if you are using it).
+```bash
+pip install -r requirements.txt
+```
+Is also needed install ```quakestats``` package (in virtualenv if you are using it). To do that you could install it directly
+```bash
+python setup.py install
+```
+or build a wheel and install it as a pip package
+```bash
+python setup.py sdist bdist_wheel
+pip install dist/quakestats*.whl
+```
 #### Run in twistd
 You can launch Quake Stats web application using ```twistd``` webserver. Just make sure to install twisted framework first.
 Also make sure to use some recent version of twisted (tested with 18.7.0 installed by pip).
