@@ -11,6 +11,7 @@ logger = logging.getLogger('quakestats.webapp')
 
 class QJsonEncoder(flask.json.JSONEncoder):
     def default(self, o):
+        # TODO too tightly coupled with internal data structures
         if isinstance(o, quake3.PlayerId):
             return str(o.steam_id)
         return flask.json.JSONEncoder.default(self, o)
