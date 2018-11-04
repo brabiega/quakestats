@@ -1,5 +1,9 @@
 from datetime import datetime
 from quakestats.dataprovider.preprocessor import MatchPreprocessor
+from quakestats.dataprovider.feeder import (
+    FeedFull,
+    MatchFeeder,
+)
 
 
 __all__ = [
@@ -11,41 +15,6 @@ __all__ = [
 
 
 DATE_FORMAT = "%Y-%m-%dT%H:%M:%S"
-
-
-class FeedFull(Exception):
-    pass
-
-
-class MatchFeeder():
-    """
-    Helper class to split stream of events/log entries
-    into matches
-    """
-    def __init__(self):
-        self.events = []
-        self.full = False
-
-    def feed(self, event):
-        """Raises FeedFull when ready to consume
-        In QL the only way to determine change is to compare
-        Previous and current match_guid, so whether feed is full
-        or not, it's only known when next event is being processed
-        """
-        if self.full:
-            raise FeedFull("Feed is full, please consume")
-        self.inspect_event(event)
-
-    def inspect_event(self, event):
-        raise NotImplementedError("Abstract method")
-
-    def consume(self):
-        result = {
-            "EVENTS": self.events,
-        }
-        self.events = []
-        self.full = False
-        return result
 
 
 class FullMatchInfo():
