@@ -15,10 +15,10 @@ class TestBadger():
         return Badger(scores, special_scores)
 
     @pytest.mark.parametrize('player_score, expected', [
-        ({'A': 1, 'B': 3, 'C': 4}, 1),
-        ({'A': 1, 'B': 3, 'C': 4, 'D': 5}, 2),
-        ({'A': 1, 'B': 3}, 1),
-        ({'A': 1, 'B': 3, 'C': 4, 'D': 5, 'E': 6}, 3),
+        ({'A': 1, 'B': 3, 'C': 4, 'wrld': 0}, 2),
+        ({'A': 1, 'B': 3, 'C': 4, 'D': 5, 'wrld': 0}, 3),
+        ({'A': 1, 'B': 3, 'wrld': 0}, 1),
+        ({'A': 1, 'B': 3, 'C': 4, 'D': 5, 'E': 6, 'wrld': 0}, 3),
     ])
     def test_get_multi_badge_count(self, badger, player_score, expected):
         badger.scores.player_score = player_score

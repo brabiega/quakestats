@@ -51,12 +51,13 @@ class Badger():
             (index, row.ts, row.value) for index, row in res.iterrows()]
 
     def get_multi_badge_count(self):
+        # world is also a player
         total_players = len(self.scores.player_score)
-        if total_players < 2:
+        if total_players <= 2:
             return 0
-        elif total_players < 4:
+        elif total_players <= 3:
             return 1
-        elif total_players < 5:
+        elif total_players <= 4:
             return 2
         else:
             return 3
