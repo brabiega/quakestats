@@ -80,36 +80,6 @@ class TestQuake3():
     server_time = (
         """0.0 ServerTime: 20170621112912  11:29:12 (21 Jun 2017)""")
 
-    def test_q3_match_feeder_full(self):
-        feeder = Q3MatchFeeder()
-        lines = self.data.splitlines()
-        assert feeder.full is False
-        assert not feeder.events
-        feeder.feed(lines[0])
-
-        assert feeder.full is False
-        assert feeder.events
-
-        with pytest.raises(FeedFull):
-            feeder.feed(lines[1])
-            assert feeder.full is True
-
-        with pytest.raises(quake3.FeedFull):
-            feeder.feed(lines[1])
-
-        feed = feeder.consume()
-        assert feeder.full is False
-        assert not feeder.events
-        assert feed
-
-    def test_q3_match_feeder_empty(self):
-        feeder = Q3MatchFeeder()
-        lines = self.data.splitlines()
-        feeder.feed(lines[1])
-        feeder.feed(lines[1])
-        assert not feeder.events
-        assert not feeder.full
-
     def test_q3_to_ql(self, q3_full_match):
         feeder = Q3MatchFeeder()
         matches = []
