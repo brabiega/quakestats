@@ -40,10 +40,10 @@ class PlayerScores():
             self.player_score[entry['STEAM_ID']]
 
     def from_player_kill(self, player_kill):
-        game_time = player_kill['TIME']
-        killer_id = player_kill['KILLER']['STEAM_ID']
-        victim_id = player_kill['VICTIM']['STEAM_ID']
-        mod = player_kill['MOD']
+        game_time = player_kill.time
+        killer_id = player_kill.killer_id
+        victim_id = player_kill.victim_id
+        mod = player_kill.mod
 
         self.kills.append((
             game_time,

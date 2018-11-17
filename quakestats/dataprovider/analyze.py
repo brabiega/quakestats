@@ -16,6 +16,7 @@ Produces Match info:
 from quakestats.dataprovider.analyzer.specials import SpecialScores
 from quakestats.dataprovider.analyzer.badges import Badger
 from quakestats.dataprovider.analyzer.teams import TeamLifecycle
+from quakestats.dataprovider.analyzer.events import Event
 from quakestats.dataprovider.analyzer.scores import PlayerScores
 
 
@@ -25,7 +26,6 @@ class AnalysisResult():
     """
     def __init__(self):
         self.server_info = None
-
         self.players = None
         self.scores = None
         self.final_scores = None
@@ -125,8 +125,8 @@ class Analyzer():
         self.match_metadata.from_full_match_info(full_match_info)
         self.server_info.from_full_match_info(full_match_info)
 
-        for event in full_match_info.events:
-            self.analyze_event(event)
+        for raw_event in full_match_info.events:
+            self.analyze_event(raw_event)
 
         self.badger.assign()
         # report generation
@@ -145,7 +145,8 @@ class Analyzer():
         report.badges = self.badger.badges
         return report
 
-    def analyze_event(self, event):
+    def analyze_event(self, raw_event):
+        event = Event.from_dict(raw_event)
         dispatcher = {
             'MATCH_REPORT': self.on_match_report,
             'MATCH_STARTED': self.on_match_start,
@@ -156,7 +157,7 @@ class Analyzer():
         }
 
         try:
-            handler = dispatcher[event['TYPE']]
+            handler = dispatcher[event.type]
         except KeyError:
             return
 
@@ -206,10 +207,9 @@ class Analyzer():
     def on_player_kill(self, event):
         # in q3 player can change his nickname. the generated id is
         # properly preserved between events but the name is not
-        player_id = event['DATA']['KILLER']['STEAM_ID']
-        player_name = event['DATA']['KILLER']['NAME']
-        self.players[player_id].name = player_name
-        self.player_scores.from_player_kill(event['DATA'])
+        player_id = event.killer_id
+        self.players[player_id].name = event.killer_name
+        self.player_scores.from_player_kill(event)
         self.special_scores.from_player_kill(event['DATA'])
 
     def on_player_death(self, event):
