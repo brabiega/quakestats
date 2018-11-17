@@ -82,8 +82,8 @@ class PlayerScores():
                 self.player_score[victim_id][0], mod))
 
     def from_player_switchteam(self, player_switchteam):
-        game_time = player_switchteam['TIME']
-        player_id = player_switchteam['KILLER']['STEAM_ID']
+        game_time = player_switchteam.time
+        player_id = player_switchteam.player_id
         # well to be 100% accurate the score should be deleted
         # when switch is done TO team FREE (Spectator)
         # otherwise it would be better to set it to [0, 0]

@@ -62,11 +62,11 @@ class TeamLifecycle():
                 (0, player_id, None, self.team_id_to_name[team_id]))
 
     def from_player_switchteam(self, switch_team):
-        player_id = switch_team['KILLER']['STEAM_ID']
-        old_team = switch_team['KILLER']['OLD_TEAM']
-        new_team = switch_team['KILLER']['TEAM']
+        player_id = switch_team.player_id
+        old_team = switch_team.old_team
+        new_team = switch_team.new_team
         self.switches.append((
-            switch_team['TIME'],
+            switch_team.time,
             player_id, old_team, new_team))
 
         try:

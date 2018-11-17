@@ -2,6 +2,20 @@ from quakestats.dataprovider.analyzer.events import Event
 from quakestats.dataprovider.analyzer.scores import PlayerScores
 
 
+def gen_switch_team(time, player_id, old_team, new_team):
+    return Event.from_dict({
+        'TYPE': 'PLAYER_SWITCHTEAM',
+        'DATA': {
+            'TIME': time,
+            'KILLER': {
+                'STEAM_ID': player_id,
+                'OLD_TEAM': old_team,
+                'TEAM': new_team,
+            }
+        }
+    })
+
+
 class TestPlayerScores():
     def gen_kill(self, time, killer_id, victim_id, mod):
         return Event.from_dict({
@@ -73,9 +87,7 @@ class TestPlayerScores():
     def test_from_player_swtichteam(self):
         ps = PlayerScores()
         ps.player_score['A'] = [10, 0]
-        ps.from_player_switchteam({
-            "TIME": 3,
-            "KILLER": {"STEAM_ID": 'A'}})
+        ps.from_player_switchteam(gen_switch_team(3, 'A', 'Free', 'Spect'))
 
         assert ps.scores[0] == (3, 'A', 0, 'SWITCHTEAM')
         ps.player_score['A'] == [0, 0]
@@ -138,7 +150,5 @@ class TestPlayerScores():
         ps.from_player_disconnect({"TIME": 10, "STEAM_ID": 'A'})
         assert ps.players_sorted_by_score() == ['B']
 
-        ps.from_player_switchteam({
-            "TIME": 10,
-            "KILLER": {"STEAM_ID": 'B'}})
+        ps.from_player_switchteam(gen_switch_team(10, 'B', 'Free', 'Spect'))
         assert ps.players_sorted_by_score() == []

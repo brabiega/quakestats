@@ -6,12 +6,8 @@ class Event(dict):
     """
     @classmethod
     def from_dict(cls, data):
-        classes = {
-            'PLAYER_KILL': EventPlayerKill,
-            'PLAYER_DEATH': EventPlayerKill,
-        }
         try:
-            cls = classes[data['TYPE']]
+            cls = EVENT_CLASSES[data['TYPE']]
         except KeyError:
             pass
         obj = cls(data)
@@ -51,3 +47,28 @@ class EventPlayerKill(Event):
     @property
     def mod(self):
         return self.data['MOD']
+
+
+class EventPlayerSwitchTeam(Event):
+    @property
+    def player_id(self):
+        return self.data['KILLER']['STEAM_ID']
+
+    @property
+    def player_name(self):
+        return self.data['KILLER']['NAME']
+
+    @property
+    def old_team(self):
+        return self.data['KILLER']['OLD_TEAM']
+
+    @property
+    def new_team(self):
+        return self.data['KILLER']['TEAM']
+
+
+EVENT_CLASSES = {
+    'PLAYER_KILL': EventPlayerKill,
+    'PLAYER_DEATH': EventPlayerKill,
+    'PLAYER_SWITCHTEAM': EventPlayerSwitchTeam,
+}

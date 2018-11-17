@@ -194,11 +194,11 @@ class Analyzer():
                 self.players, self.team_lifecycle)
 
     def on_player_switchteam(self, event):
-        self.team_lifecycle.from_player_switchteam(event['DATA'])
-        player_id = event['DATA']['KILLER']['STEAM_ID']
-        player_name = event['DATA']['KILLER']['NAME']
+        self.team_lifecycle.from_player_switchteam(event)
+        player_id = event.player_id
+        player_name = event.player_name
         self.add_player_if_needed(player_id, player_name)
-        self.player_scores.from_player_switchteam(event['DATA'])
+        self.player_scores.from_player_switchteam(event)
 
     def on_player_disconnect(self, event):
         self.player_scores.from_player_disconnect(event['DATA'])
