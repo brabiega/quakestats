@@ -7,7 +7,8 @@ class Event(dict):
     @classmethod
     def from_dict(cls, data):
         classes = {
-            'PLAYER_KILL': EventPlayerKill
+            'PLAYER_KILL': EventPlayerKill,
+            'PLAYER_DEATH': EventPlayerKill,
         }
         try:
             cls = classes[data['TYPE']]

@@ -64,10 +64,10 @@ class PlayerScores():
         # TODO add friendlyfire for teamplay
 
     def from_player_death(self, player_death):
-        game_time = player_death['TIME']
-        killer_id = player_death['KILLER']['STEAM_ID']
-        victim_id = player_death['VICTIM']['STEAM_ID']
-        mod = player_death['MOD']
+        game_time = player_death.time
+        killer_id = player_death.killer_id
+        victim_id = player_death.victim_id
+        mod = player_death.mod
 
         self.deaths.append((
             game_time,

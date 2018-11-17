@@ -1,4 +1,4 @@
-from quakestats.dataprovider.analyze import Event
+from quakestats.dataprovider.analyzer.events import Event
 from quakestats.dataprovider.analyzer.scores import PlayerScores
 
 
@@ -6,6 +6,21 @@ class TestPlayerScores():
     def gen_kill(self, time, killer_id, victim_id, mod):
         return Event.from_dict({
             'TYPE': 'PLAYER_KILL',
+            'DATA': {
+                'TIME': time,
+                'VICTIM': {
+                    'STEAM_ID': victim_id,
+                },
+                'KILLER': {
+                    'STEAM_ID': killer_id,
+                },
+                'MOD': mod,
+            },
+        })
+
+    def gen_death(self, time, killer_id, victim_id, mod):
+        return Event.from_dict({
+            'TYPE': 'PLAYER_DEATH',
             'DATA': {
                 'TIME': time,
                 'VICTIM': {
@@ -84,11 +99,7 @@ class TestPlayerScores():
 
     def test_from_player_death_world(self):
         ps = PlayerScores()
-        ps.from_player_death({
-            'TIME': 3,
-            'KILLER': {'STEAM_ID': 'q3-world'},
-            'VICTIM': {'STEAM_ID': 'B'},
-            'MOD': 'FALLING'})
+        ps.from_player_death(self.gen_death(3, 'q3-world', 'B', 'FALLING'))
 
         assert ps.scores[0] == (3, 'B', -1, 'FALLING')
         assert ps.player_score['B'] == [-1, 0]
@@ -96,11 +107,7 @@ class TestPlayerScores():
 
     def test_from_player_death_selfkill(self):
         ps = PlayerScores()
-        ps.from_player_death({
-            'TIME': 3,
-            'KILLER': {'STEAM_ID': 'B'},
-            'VICTIM': {'STEAM_ID': 'B'},
-            'MOD': 'FALLING'})
+        ps.from_player_death(self.gen_death(3, 'B', 'B', 'FALLING'))
 
         assert ps.scores[0] == (3, 'B', -1, 'FALLING')
         assert ps.player_score['B'] == [-1, 0]
@@ -108,11 +115,7 @@ class TestPlayerScores():
 
     def test_from_player_death(self):
         ps = PlayerScores()
-        ps.from_player_death({
-            'TIME': 3,
-            'KILLER': {'STEAM_ID': 'A'},
-            'VICTIM': {'STEAM_ID': 'B'},
-            'MOD': 'MOD_ROCKET'})
+        ps.from_player_death(self.gen_death(3, 'A', 'B', 'MOD_ROCKET'))
 
         assert ps.scores == []
         assert ps.player_score['B'] == [0, 0]

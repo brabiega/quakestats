@@ -35,9 +35,9 @@ class SpecialScores():
         self.dispatch('REPORT', report)
 
     def add_score(self, name, event, swap_kv=False, weight=1):
-        killer_id = event['KILLER']['STEAM_ID']
-        victim_id = event['VICTIM']['STEAM_ID']
-        game_time = event['TIME']
+        killer_id = event.killer_id
+        victim_id = event.victim_id
+        game_time = event.time
         if not swap_kv:
             self.scores[name].append(
                 (game_time, killer_id, victim_id, weight))
@@ -47,7 +47,7 @@ class SpecialScores():
 
     @on_event('PLAYER_KILL')
     def score_gauntlet(self, player_kill):
-        mod = player_kill['MOD']
+        mod = player_kill.mod
         if mod == 'GAUNTLET':
             self.add_score('GAUNTLET_KILL', player_kill)
             self.add_score('GAUNTLET_DEATH', player_kill, swap_kv=True)
@@ -58,9 +58,9 @@ class SpecialScores():
         At least 2 players in 2 seconds
         """
         # TODO So it's not spree, its EXCELLENT
-        game_time = player_kill['TIME']
-        killer_id = player_kill['KILLER']['STEAM_ID']
-        victim_id = player_kill['VICTIM']['STEAM_ID']
+        game_time = player_kill.time
+        killer_id = player_kill.killer_id
+        victim_id = player_kill.victim_id
         if killer_id == victim_id:
             return
 
@@ -88,9 +88,9 @@ class SpecialScores():
 
     @on_event('PLAYER_KILL')
     def score_headduckhunter(self, player_kill):
-        killer_id = player_kill['KILLER']['STEAM_ID']
-        victim_id = player_kill['VICTIM']['STEAM_ID']
-        mod = player_kill['MOD']
+        killer_id = player_kill.killer_id
+        victim_id = player_kill.victim_id
+        mod = player_kill.mod
         should_calculate = True
 
         if killer_id == victim_id:
@@ -127,8 +127,8 @@ class SpecialScores():
         self.add_score('DEATH', player_kill, swap_kv=True)
 
     def _is_selfkill(self, player_kill):
-        killer_id = player_kill['KILLER']['STEAM_ID']
-        victim_id = player_kill['VICTIM']['STEAM_ID']
+        killer_id = player_kill.killer_id
+        victim_id = player_kill.victim_id
         if killer_id == victim_id or killer_id == 'q3-world':
             return True
         else:
@@ -141,8 +141,8 @@ class SpecialScores():
 
     @on_event('PLAYER_KILL')
     def score_killing_spree(self, player_kill):
-        killer_id = player_kill['KILLER']['STEAM_ID']
-        victim_id = player_kill['VICTIM']['STEAM_ID']
+        killer_id = player_kill.killer_id
+        victim_id = player_kill.victim_id
 
         killer_state = self.player_state[killer_id]
         victim_state = self.player_state[victim_id]
@@ -170,8 +170,8 @@ class SpecialScores():
 
     @on_event('PLAYER_KILL')
     def score_dying_spree(self, player_kill):
-        killer_id = player_kill['KILLER']['STEAM_ID']
-        victim_id = player_kill['VICTIM']['STEAM_ID']
+        killer_id = player_kill.killer_id
+        victim_id = player_kill.victim_id
 
         killer_state = self.player_state[killer_id]
         victim_state = self.player_state[victim_id]
@@ -201,8 +201,8 @@ class SpecialScores():
     def process_lifespan(self, report):
         # Currently no info when player joined so let's
         # count lifespan from first death
-        victim_id = report['VICTIM']['STEAM_ID']
-        ts = report['TIME']
+        victim_id = report.victim_id
+        ts = report.time
 
         state = self.player_state[victim_id].setdefault(
             'lifespan', {'last_death': ts, 'max': 0})
@@ -226,21 +226,19 @@ class SpecialScores():
             except KeyError:
                 continue
             self.lifespan[player_id] = lifespan['max']
-            self.add_score(
-                'DREADNOUGHT', {
-                    'KILLER': {'STEAM_ID': player_id},
-                    'VICTIM': {'STEAM_ID': player_id},
-                    'TIME': 0}, weight=lifespan['max'])
+            self.scores['DREADNOUGHT'].append(
+                (0, player_id, player_id, lifespan['max'])
+            )
 
     @on_event('PLAYER_KILL')
     def score_lavasaurus(self, player_kill):
-        if player_kill['MOD'] == 'LAVA':
+        if player_kill.mod == 'LAVA':
             self.add_score('LAVASAURUS', player_kill, swap_kv=True)
 
     @on_event('PLAYER_DEATH')
     def vengeance_start(self, player_kill):
-        killer_id = player_kill['KILLER']['STEAM_ID']
-        victim_id = player_kill['VICTIM']['STEAM_ID']
+        killer_id = player_kill.killer_id
+        victim_id = player_kill.victim_id
         if self._is_selfkill(player_kill):
             self.player_state[victim_id]['vengeance_target'] = None
         else:
@@ -248,8 +246,8 @@ class SpecialScores():
 
     @on_event('PLAYER_KILL')
     def score_vengeance(self, player_death):
-        killer_id = player_death['KILLER']['STEAM_ID']
-        victim_id = player_death['VICTIM']['STEAM_ID']
+        killer_id = player_death.killer_id
+        victim_id = player_death.victim_id
 
         try:
             vengeance_target = self.player_state[killer_id]['vengeance_target']

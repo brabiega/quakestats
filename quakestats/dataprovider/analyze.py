@@ -210,13 +210,13 @@ class Analyzer():
         player_id = event.killer_id
         self.players[player_id].name = event.killer_name
         self.player_scores.from_player_kill(event)
-        self.special_scores.from_player_kill(event['DATA'])
+        self.special_scores.from_player_kill(event)
 
     def on_player_death(self, event):
         # nice to have it here
-        self.player_scores.from_player_death(event['DATA'])
+        self.player_scores.from_player_death(event)
         self.specific_analyzer.on_player_death(event)
-        self.special_scores.from_player_death(event['DATA'])
+        self.special_scores.from_player_death(event)
 
 
 # This could probably be done with some fancy subclassing
