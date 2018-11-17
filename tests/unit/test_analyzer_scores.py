@@ -16,42 +16,44 @@ def gen_switch_team(time, player_id, old_team, new_team):
     })
 
 
+def gen_kill(time, killer_id, victim_id, mod):
+    return Event.from_dict({
+        'TYPE': 'PLAYER_KILL',
+        'DATA': {
+            'TIME': time,
+            'VICTIM': {
+                'STEAM_ID': victim_id,
+            },
+            'KILLER': {
+                'STEAM_ID': killer_id,
+            },
+            'MOD': mod,
+        },
+    })
+
+
+def gen_death(time, killer_id, victim_id, mod):
+    return Event.from_dict({
+        'TYPE': 'PLAYER_DEATH',
+        'DATA': {
+            'TIME': time,
+            'VICTIM': {
+                'STEAM_ID': victim_id,
+            },
+            'KILLER': {
+                'STEAM_ID': killer_id,
+            },
+            'MOD': mod,
+        },
+    })
+
+
 class TestPlayerScores():
-    def gen_kill(self, time, killer_id, victim_id, mod):
-        return Event.from_dict({
-            'TYPE': 'PLAYER_KILL',
-            'DATA': {
-                'TIME': time,
-                'VICTIM': {
-                    'STEAM_ID': victim_id,
-                },
-                'KILLER': {
-                    'STEAM_ID': killer_id,
-                },
-                'MOD': mod,
-            },
-        })
-
-    def gen_death(self, time, killer_id, victim_id, mod):
-        return Event.from_dict({
-            'TYPE': 'PLAYER_DEATH',
-            'DATA': {
-                'TIME': time,
-                'VICTIM': {
-                    'STEAM_ID': victim_id,
-                },
-                'KILLER': {
-                    'STEAM_ID': killer_id,
-                },
-                'MOD': mod,
-            },
-        })
-
     def test_from_player_kill(self):
         ps = PlayerScores()
         assert ps.kdr['A'].r == 0
 
-        ps.from_player_kill(self.gen_kill(1, 'A', 'B', 'SHOTGUN'))
+        ps.from_player_kill(gen_kill(1, 'A', 'B', 'SHOTGUN'))
 
         assert len(ps.scores) == 1
         assert ps.player_score['A'] == [1, 1]
@@ -60,7 +62,7 @@ class TestPlayerScores():
         assert ps.kills[0] == (1, 'A', 'B', 'SHOTGUN')
         assert ps.kdr['A'].r == 1
 
-        ps.from_player_kill(self.gen_kill(2, 'A', 'C', 'MOD3'))
+        ps.from_player_kill(gen_kill(2, 'A', 'C', 'MOD3'))
         assert len(ps.scores) == 2
         assert ps.player_score['A'] == [2, 2]
         assert ps.scores[1] == (2, 'A', 2, 'MOD3')
@@ -68,7 +70,7 @@ class TestPlayerScores():
         assert ps.kills[1] == (2, 'A', 'C', 'MOD3')
         assert ps.kdr['A'].r == 2
 
-        ps.from_player_kill(self.gen_kill(2, 'B', 'A', 'MOD3'))
+        ps.from_player_kill(gen_kill(2, 'B', 'A', 'MOD3'))
 
         assert len(ps.scores) == 3
         assert ps.player_score['B'] == [1, 2]
@@ -78,7 +80,7 @@ class TestPlayerScores():
 
     def test_from_player_kill_selfkill(self):
         ps = PlayerScores()
-        ps.from_player_kill(self.gen_kill(2, 'A', 'A', 'SHOTGUN'))
+        ps.from_player_kill(gen_kill(2, 'A', 'A', 'SHOTGUN'))
 
         assert ps.player_score['A'] == [0, 0]
         assert ps.kills == [(2, 'A', 'A', 'SHOTGUN')]
@@ -111,7 +113,7 @@ class TestPlayerScores():
 
     def test_from_player_death_world(self):
         ps = PlayerScores()
-        ps.from_player_death(self.gen_death(3, 'q3-world', 'B', 'FALLING'))
+        ps.from_player_death(gen_death(3, 'q3-world', 'B', 'FALLING'))
 
         assert ps.scores[0] == (3, 'B', -1, 'FALLING')
         assert ps.player_score['B'] == [-1, 0]
@@ -119,7 +121,7 @@ class TestPlayerScores():
 
     def test_from_player_death_selfkill(self):
         ps = PlayerScores()
-        ps.from_player_death(self.gen_death(3, 'B', 'B', 'FALLING'))
+        ps.from_player_death(gen_death(3, 'B', 'B', 'FALLING'))
 
         assert ps.scores[0] == (3, 'B', -1, 'FALLING')
         assert ps.player_score['B'] == [-1, 0]
@@ -127,7 +129,7 @@ class TestPlayerScores():
 
     def test_from_player_death(self):
         ps = PlayerScores()
-        ps.from_player_death(self.gen_death(3, 'A', 'B', 'MOD_ROCKET'))
+        ps.from_player_death(gen_death(3, 'A', 'B', 'MOD_ROCKET'))
 
         assert ps.scores == []
         assert ps.player_score['B'] == [0, 0]
@@ -136,15 +138,15 @@ class TestPlayerScores():
     def test_players_sorted_by_score(self):
         ps = PlayerScores()
         ps.match_duration = 900
-        ps.from_player_kill(self.gen_kill(1, 'A', 'B', 'SHOTGUN'))
-        ps.from_player_kill(self.gen_kill(2, 'A', 'B', 'SHOTGUN'))
-        ps.from_player_kill(self.gen_kill(1, 'B', 'C', 'SHOTGUN'))
+        ps.from_player_kill(gen_kill(1, 'A', 'B', 'SHOTGUN'))
+        ps.from_player_kill(gen_kill(2, 'A', 'B', 'SHOTGUN'))
+        ps.from_player_kill(gen_kill(1, 'B', 'C', 'SHOTGUN'))
         assert ps.players_sorted_by_score() == ['A', 'B']
 
-        ps.from_player_kill(self.gen_kill(3, 'B', 'C', 'SHOTGUN'))
+        ps.from_player_kill(gen_kill(3, 'B', 'C', 'SHOTGUN'))
         assert ps.players_sorted_by_score() == ['B', 'A']
 
-        ps.from_player_kill(self.gen_kill(4, 'A', 'B', 'SHOTGUN'))
+        ps.from_player_kill(gen_kill(4, 'A', 'B', 'SHOTGUN'))
         assert ps.players_sorted_by_score() == ['A', 'B']
 
         ps.from_player_disconnect({"TIME": 10, "STEAM_ID": 'A'})
