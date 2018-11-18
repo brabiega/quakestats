@@ -48,6 +48,13 @@ def gen_death(time, killer_id, victim_id, mod):
     })
 
 
+def gen_disconnect(time, player_id):
+    return Event.from_dict({
+        'TYPE': 'PLAYER_DISCONNECT',
+        'DATA': {'TIME': time, 'STEAM_ID': player_id},
+    })
+
+
 class TestPlayerScores():
     def test_from_player_kill(self):
         ps = PlayerScores()
@@ -98,17 +105,13 @@ class TestPlayerScores():
         ps = PlayerScores()
         ps.match_duration = 100
         ps.player_score['A'] = [10, 0]
-        ps.from_player_disconnect({
-            "TIME": 3,
-            "STEAM_ID": 'A'})
+        ps.from_player_disconnect(gen_disconnect(3, 'A'))
 
         assert ps.scores[0] == (3, 'A', 0, 'DISCONNECTED')
         assert ps.player_score['A'] == [0, 0]
 
         ps.player_score['A'] = [10, 1]
-        ps.from_player_disconnect({
-            "TIME": 300,
-            "STEAM_ID": 'A'})
+        ps.from_player_disconnect(gen_disconnect(300, 'A'))
         assert ps.player_score['A'] == [10, 1]
 
     def test_from_player_death_world(self):
@@ -149,7 +152,7 @@ class TestPlayerScores():
         ps.from_player_kill(gen_kill(4, 'A', 'B', 'SHOTGUN'))
         assert ps.players_sorted_by_score() == ['A', 'B']
 
-        ps.from_player_disconnect({"TIME": 10, "STEAM_ID": 'A'})
+        ps.from_player_disconnect(gen_disconnect(10, 'A'))
         assert ps.players_sorted_by_score() == ['B']
 
         ps.from_player_switchteam(gen_switch_team(10, 'B', 'Free', 'Spect'))

@@ -49,7 +49,7 @@ class ServerInfo():
         self.server_type = fmi.source
 
     def from_match_report(self, report):
-        self.server_name = report['SERVER_TITLE']
+        self.server_name = report.data['SERVER_TITLE']
 
 
 class PlayerInfo():
@@ -87,10 +87,11 @@ class MatchMetadata():
         self.duration = fmi.duration
         self.server_domain = fmi.server_domain
 
-    def from_match_started(self, match_started):
-        self.game_type = match_started['GAME_TYPE']
+    def from_match_started(self, event):
+        self.game_type = event.data['GAME_TYPE']
 
-    def from_match_report(self, report):
+    def from_match_report(self, event):
+        report = event.data
         self.map_name = report['MAP']
         self.server_name = report['SERVER_TITLE']
         self.exit_message = report['EXIT_MSG']
@@ -171,20 +172,18 @@ class Analyzer():
             self.players[player_id] = player_info
 
     def on_match_report(self, event):
-        self.match_metadata.from_match_report(event['DATA'])
-        self.server_info.from_match_report(event['DATA'])
-        self.player_scores.from_match_report(event['DATA'])
-        self.special_scores.from_match_report(event['DATA'])
+        self.match_metadata.from_match_report(event)
+        self.server_info.from_match_report(event)
+        self.player_scores.from_match_report(event)
+        self.special_scores.from_match_report(event)
 
     def on_match_start(self, event):
-        self.match_metadata.from_match_started(event['DATA'])
-        if 'PLAYERS' in event['DATA']:
-            self.team_lifecycle.from_match_started(event['DATA'])
-            self.player_scores.from_match_started(event['DATA'])
+        self.match_metadata.from_match_started(event)
+        for player in event.iter_players():
+            self.add_player_if_needed(player.id, player.name)
 
-            for player in event['DATA']['PLAYERS']:
-                self.add_player_if_needed(
-                    player['STEAM_ID'], player['NAME'])
+        self.team_lifecycle.from_match_started(event)
+        self.player_scores.from_match_started(event)
 
         if self.match_metadata.game_type == 'CA':
             self.specific_analyzer = CA_Analyzer(
@@ -201,8 +200,8 @@ class Analyzer():
         self.player_scores.from_player_switchteam(event)
 
     def on_player_disconnect(self, event):
-        self.player_scores.from_player_disconnect(event['DATA'])
-        self.team_lifecycle.from_player_disconnect(event['DATA'])
+        self.player_scores.from_player_disconnect(event)
+        self.team_lifecycle.from_player_disconnect(event)
 
     def on_player_kill(self, event):
         # in q3 player can change his nickname. the generated id is
@@ -252,8 +251,8 @@ class CA_Analyzer(SpecializedAnalyzer):
             self.player_state[player_id] = PlayerState()
 
     def on_player_death(self, event):
-        game_time = int(event['DATA']['TIME'])
-        player_id = event['DATA']['VICTIM']['STEAM_ID']
+        game_time = int(event.time)
+        player_id = event.victim_id
         dead_team_id = int(event['DATA']['VICTIM']['TEAM'])
         self.player_state[player_id].alive = False
         team = self.team_lifecycle.get_team_by_id(dead_team_id)

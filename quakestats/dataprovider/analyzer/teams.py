@@ -41,10 +41,10 @@ class TeamLifecycle():
     def from_full_match_info(self, fmi):
         self.match_guid = fmi.match_guid
 
-    def from_match_started(self, match_started):
-        for player in match_started['PLAYERS']:
-            team_id = int(player['TEAM'])
-            player_id = player['STEAM_ID']
+    def from_match_started(self, event):
+        for player in event.iter_players():
+            team_id = int(player.team)
+            player_id = player.id
 
             if team_id == 0:
                 self.free.add(player_id)
@@ -76,9 +76,9 @@ class TeamLifecycle():
 
         self.team_map[new_team].add(player_id)
 
-    def from_player_disconnect(self, player_disconnect):
-        player_id = player_disconnect['STEAM_ID']
-        game_time = player_disconnect['TIME']
+    def from_player_disconnect(self, event):
+        player_id = event.player_id
+        game_time = event.time
         if int(game_time) >= int(self.match_duration):
             # ignore events after match end
             return
@@ -86,9 +86,9 @@ class TeamLifecycle():
         self.blue.discard(player_id)
         self.free.discard(player_id)
         self.spectator.discard(player_id)
-        self.switches.append((
-            player_disconnect['TIME'],
-            player_id, None, 'DISCONNECTED'))
+        self.switches.append(
+            (game_time, player_id, None, 'DISCONNECTED'),
+        )
 
     def get_team_by_id(self, team_id):
         return self.team_id_map[team_id]

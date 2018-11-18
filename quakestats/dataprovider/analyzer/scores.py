@@ -34,10 +34,10 @@ class PlayerScores():
                 pid for pid in sorted_players if pid != 'q3-world']
         return sorted_players
 
-    def from_match_started(self, report):
-        for entry in report['PLAYERS']:
+    def from_match_started(self, event):
+        for player in event.iter_players():
             # use defaultdict to set init values
-            self.player_score[entry['STEAM_ID']]
+            self.player_score[player.id]
 
     def from_player_kill(self, player_kill):
         game_time = player_kill.time
@@ -91,24 +91,27 @@ class PlayerScores():
             del self.player_score[player_id]
         except KeyError:
             pass
-        self.scores.append((
-            game_time, player_id, 0, 'SWITCHTEAM'))
+        self.scores.append(
+            (game_time, player_id, 0, 'SWITCHTEAM'),
+        )
 
-    def from_player_disconnect(self, player_disconnect):
-        game_time = player_disconnect['TIME']
+    def from_player_disconnect(self, event):
+        game_time = event.time
         if int(game_time) >= int(self.match_duration):
             # ignore events after match end
             return
-        player_id = player_disconnect['STEAM_ID']
+        player_id = event.player_id
         try:
             del self.player_score[player_id]
         except KeyError:
             pass
-        self.scores.append((
-            game_time, player_id, 0, 'DISCONNECTED'))
+        self.scores.append(
+            (game_time, player_id, 0, 'DISCONNECTED'),
+        )
 
-    def from_match_report(self, match_report):
-        # any disconnections after match end are not counted
+    def from_match_report(self, event):
+        # any disconnections after match end are ignored
+        match_report = event.data
         game_length = match_report['GAME_LENGTH']
         self.scores = [
             s for s in self.scores

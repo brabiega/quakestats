@@ -1,3 +1,5 @@
+from collections import namedtuple
+
 class Event(dict):
     """
     Helper class wrapping raw QL events.
@@ -67,8 +69,35 @@ class EventPlayerSwitchTeam(Event):
         return self.data['KILLER']['TEAM']
 
 
+class EventPlayerDisconnected(Event):
+    @property
+    def player_id(self):
+        return self.data['STEAM_ID']
+
+
+class EventMatchStart(Event):
+    player_info = namedtuple(
+        'player_info',
+        'id name team'
+    )
+    def iter_players(self):
+        try:
+            players = self.data['PLAYERS']
+        except KeyError:
+            players = []
+
+        for player in players:
+            yield self.player_info(
+                player['STEAM_ID'],
+                player['NAME'],
+                player['TEAM'],
+            )
+
+
 EVENT_CLASSES = {
     'PLAYER_KILL': EventPlayerKill,
     'PLAYER_DEATH': EventPlayerKill,
     'PLAYER_SWITCHTEAM': EventPlayerSwitchTeam,
+    'PLAYER_DISCONNECT': EventPlayerDisconnected,
+    'MATCH_STARTED': EventMatchStart,
 }

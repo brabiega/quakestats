@@ -31,8 +31,8 @@ class SpecialScores():
     def from_player_kill(self, player_kill):
         self.dispatch('PLAYER_KILL', player_kill)
 
-    def from_match_report(self, report):
-        self.dispatch('REPORT', report)
+    def from_match_report(self, event):
+        self.dispatch('REPORT', event.data)
 
     def add_score(self, name, event, swap_kv=False, weight=1):
         killer_id = event.killer_id
