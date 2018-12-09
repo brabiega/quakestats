@@ -77,6 +77,10 @@ var resources = {
       img: '/static/img/badges/headless_knight.svg',
       name: 'Headless Knight',
       desc: 'Someone earned Headhunter on you'},
+    'KAMIKAZE': {
+      img: '/static/img/badges/kamikaze.svg',
+      name: 'Kamikaze',
+      desc: 'You killed someone and yourself at the same time'},
   }
   },
 

@@ -215,3 +215,12 @@ class TestSpecialScores():
         pss.player_state['A']['vengeance_target'] = 'B'
         pss.score_vengeance(event)
         assert pss.scores['VENGEANCE'] == [(10, 'A', 'B', 1)]
+
+    def test_score_kamikaze(self, pss):
+        kill = gen_kill(10, 'A', 'B', 'dummy')
+        death = gen_kill(10, 'A', 'A', 'splash')
+
+        pss.score_kamikaze(kill)
+        pss.score_kamikaze(death)
+
+        assert pss.scores['KAMIKAZE'] == [(10, 'A', 'B', 1)]

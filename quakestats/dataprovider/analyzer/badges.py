@@ -175,3 +175,9 @@ class Badger():
         scores = self.from_special_score('HEADLESS_KNIGHT', 'sum', 1, False)
         for count, (index, ts, value) in enumerate(scores, start=1):
             self.add_badge('HEADLESS_KNIGHT', index, count)
+
+    @badge()
+    def kamikaze(self):
+        scores = self.from_special_score('KAMIKAZE', 'sum', 1, False)
+        for count, (index, ts, value) in enumerate(scores, start=1):
+            self.add_badge('KAMIKAZE', index, count)

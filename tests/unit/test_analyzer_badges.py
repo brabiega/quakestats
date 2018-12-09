@@ -255,3 +255,18 @@ class TestBadger():
         assert badger.badges == [
             ('MOSQUITO', 'B', 1),
         ]
+
+    def test_kamikaze(self, badger):
+        badger.special_scores.scores = {
+            'KAMIKAZE': [
+                (10, 'A', 'B', 1),
+                (11, 'A', 'B', 1),
+                (10, 'B', 'C', 1),
+                (12, 'B', 'C', 1),
+                (10, 'C', 'D', 1),
+            ]
+        }
+        badger.kamikaze()
+        assert badger.badges == [
+            ('KAMIKAZE', 'B', 1),
+        ]

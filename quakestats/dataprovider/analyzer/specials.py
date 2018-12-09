@@ -256,3 +256,20 @@ class SpecialScores():
 
         if victim_id == vengeance_target:
             self.add_score('VENGEANCE', player_death)
+
+    @on_event('PLAYER_KILL')
+    def score_kamikaze(self, kill):
+        if kill.killer_id == kill.victim_id:
+            try:
+                previous_kill = (
+                    self.player_state[kill.killer_id]['kamikaze_last_kill']
+                )
+
+            except KeyError:
+                pass
+
+            else:
+                if previous_kill.time == kill.time:
+                    self.add_score('KAMIKAZE', previous_kill)
+
+        self.player_state[kill.killer_id]['kamikaze_last_kill'] = kill
