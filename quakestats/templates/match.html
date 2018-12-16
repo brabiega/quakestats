@@ -21,6 +21,20 @@
 
     setPlayers(players) {
       this.players = players
+
+      var colorHash = new ColorHash({
+        saturation: 0.9,
+        lightness: [0.5, 0.6, 0.65],
+      })
+
+      for (let player of Object.values(this.players)) {
+        player.color = colorHash.hsl(player.id)
+      }
+    }
+
+    getPlayerColor(playerId) {
+      var color = this.getPlayer(playerId).color
+      return `hsl(${color[0]}, ${color[1]}, ${color[2]})`
     }
 
     getPlayer(playerId) {
@@ -91,7 +105,8 @@
       y: d.values.map(function(d) {return d.kills}),
       type: 'scatter',
       mode: 'lines+markers',
-      name: `${context.players[d.key].name} (${d.values[d.values.length-1].kills})`
+      name: `${context.players[d.key].name} (${d.values[d.values.length-1].kills})`,
+      line: {color: playersState.getPlayerColor(d.key)},
     }}).sort(function(a, b) {
       return b.y[b.y.length-1] - a.y[a.y.length-1]
     })
@@ -101,7 +116,8 @@
       y: d.values.map(function(d) {return d.deaths}),
       type: 'scatter',
       mode: 'lines+markers',
-      name: `${context.players[d.key].name} (${d.values[d.values.length-1].deaths})`
+      name: `${context.players[d.key].name} (${d.values[d.values.length-1].deaths})`,
+      line: {color: playersState.getPlayerColor(d.key)},
     }}).sort(function(a, b) {
       return b.y[b.y.length-1] - a.y[a.y.length-1]
     })
@@ -109,8 +125,8 @@
     riot.mount('match-kills-chart', {'series': kill_entries})
     riot.mount('match-deaths-chart', {'series': death_entries})
     riot.mount('worst-enemy', {'kills': match_kills, 'players': playersState})
-    riot.mount('kdr-chart', {'kills': match_kills, 'players': context.players})
-    riot.mount('match-kdr-chart', {'kills': match_kills, 'players': context.players})
+    riot.mount('kdr-chart', {'kills': match_kills, 'players': playersState})
+    riot.mount('match-kdr-chart', {'kills': match_kills, 'players': playersState})
 
     // weapon stats
     var weapon_kills = d3.nest()
@@ -163,7 +179,8 @@
       y: d.values.map(function(d) {return d.score}),
       type: 'scatter',
       mode: 'lines+markers',
-      name: `${context.players[d.key].name} (${d.values[d.values.length-1].score})`
+      name: `${context.players[d.key].name} (${d.values[d.values.length-1].score})`,
+      line: {color: playersState.getPlayerColor(d.key)},
     }}).sort(function(a, b) {
       return b.y[b.y.length-1] - a.y[a.y.length-1]
     })

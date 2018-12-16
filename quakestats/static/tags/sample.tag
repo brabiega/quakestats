@@ -350,19 +350,23 @@
   <h4>Kill/Death ratio</h4>
   <div id='kdr-chart'></div>
 
+  this.players = opts.players
+
   this.on('before-mount', () => {
-    var kdr = kdrOverTime(opts.kills, opts.players)
+    var kdr = kdrOverTime(opts.kills, this.players.players)
     var kdr_state = kdr[0]
     var kdr_chart = {
       x: [],
       y: [],
-      type: 'bar'
+      type: 'bar',
+      marker: {color:[]},
     }
 
     for(state of Object.entries(kdr_state).sort((a, b) => {return b[1].r - a[1].r})) {
       if (state[0] == 'q3-world') {continue}
-      kdr_chart.x.push(context.players[state[0]].name),
+      kdr_chart.x.push(this.players.getPlayer(state[0]).name)
       kdr_chart.y.push(state[1].r)
+      kdr_chart.marker.color.push(this.players.getPlayerColor(state[0]))
     }
     this.kdr_chart = kdr_chart
   })
@@ -384,13 +388,15 @@
 <match-kdr-chart>
   <h4>Kill/Death ratio over time</h4>
   <div id='kdr-over-time-chart'></div>
+  this.players = opts.players
 
   this.on('before-mount', () => {
-    var kdr = kdrOverTime(opts.kills, opts.players)
+    var kdr = kdrOverTime(opts.kills, this.players.players)
     var kdr_traces = kdr[1]
-    for (trace of kdr_traces.values()) {
+    for ([player_id, trace] of kdr_traces.entries()) {
       trace.type = 'scatter'
       trace.mode = 'lines+markers'
+      trace.line = {color: this.players.getPlayerColor(player_id)}
     }
     this.kdr_traces = kdr_traces
   })
