@@ -188,13 +188,17 @@
       <th>Fav weapon</th>
     </tr>
     <tr each={opts.scores}>
-      <td>{opts.players[player_id].name}</td>
+      <td>
+        <smart-player-name id={player_id} players={players}></smart-player-name>
+      </td>
       <td>{score}</td>
       <td style="text-align:center">
         <img if={context.resources.weapons[fav_weapon]} src="{context.resources.weapons[fav_weapon].img}" class="fav-weapon"></img>
         <span if={!context.resources.weapons[fav_weapon]}>{fav_weapon}</span></td>
     </tr>
   </table>
+
+  this.players = opts.players
 </score-summary>
 
 <team-switches>
@@ -202,10 +206,12 @@
   <table>
     <tr each={opts.switches}>
       <td>{this.game_time}</td>
-      <td>{ context.players[this.player_id].name }</td>
+      <td>
+        <smart-player-name id={player_id} players={players}></smart-player-name>
       <td>{this.to}</td>
     </tr>
   </table>
+  this.players = opts.players
 </team-switches>
 
 <special-scores>
@@ -218,7 +224,8 @@
           <th><img class="badge-img" src={context.resources.badges.getInfo(this.key).img}></img></th>
         </tr>
         <tr medal-class={this.parent.key} onclick={detail} each={sorted(this.values)} style="cursor: pointer">
-          <td>{context.players[this.key].name}</td>
+          <td>
+            <smart-player-name id={this.key} players={players}></smart-player-name>
           <td>
             <span>{this.value.total}</span>
           </td>
@@ -226,7 +233,7 @@
       </table>
     </div>
   </div>
-
+  this.players = opts.players
   sorted(scores) {
     return scores.sort(
       function(a, b) {
@@ -237,9 +244,26 @@
 
   detail(e) {
     // TODO rename medal to badge
+    
+    
+    // TODO this is workaround-ish
+    // need to traverse
+    function findMedal(node) {
+      if (!node) {
+        return null
+      }
+      var medal = node.getAttribute('medal-class')
+      if (medal) {
+        return medal
+      } else {
+        return findMedal(node.parentNode)
+      }
+    }
+    var medal = findMedal(e.target.parentElement)
+    if (!medal) {return}
+
     var popup = create_popup()
     e.target.parentElement.insertAdjacentElement('afterend', popup)
-    var medal = e.target.parentNode.getAttribute('medal-class')
     var details = this.opts.details.find(function (d) {return d.key==medal})
       .values.find(function(d) {return d.key==e.item.key})
 
@@ -285,15 +309,19 @@
       <th>% of total</th>
     </tr>
     <tr each={this.worst_enemies}>
-      <td>{this.me}</td>
-      <td>{this.enemy}</td>
+      <td>
+        <smart-player-name id={me} players={players}></smart-player-name>
+      </td>
+      <td>
+        <smart-player-name id={enemy} players={players}></smart-player-name>
+      </td>
       <td>{this.kills}</td>
       <td>{Math.round(this.total_pct)}%</td>
     </tr>
   </table>
-
+  
+  this.players = opts.players
   this.on('before-mount', () => {
-    var players = this.opts.players
     var worst_enemy = d3.nest().key(function(d) {return d.victim_id})
     .key(function(d) {return d.killer_id})
     .rollup(function(e) {return e.length})
@@ -301,7 +329,7 @@
 
     worst_enemy = worst_enemy.map(
         (e) => {return {
-          key: players[e.key].name,
+          key: e.key,
           total: d3.sum(e.values, (e) => {return e.value}),
           values: e.values[d3.scan(e.values, (a, b) => {return b.value - a.value})]
         }})
@@ -309,7 +337,7 @@
     worst_enemy = worst_enemy.map(
       (e) => {return {
         me: e.key,
-        enemy: players[e.values.key].name,
+        enemy: e.values.key,
         total: e.total,
         total_pct: (e.values.value / e.total) * 100,
         kills: e.values.value}})
@@ -391,7 +419,9 @@
         <div class="badge-board-img-container">
           <img each={range(count)} class="badge-board-img" src={context.resources.badges.getInfo(key).img} title={context.resources.badges.getInfo(key).desc}></img>
         </div>
-        <span class="badge-board-player-container">{opts.players[player_id].name}</span>
+        <span class="badge-board-player-container">
+          <smart-player-name id={player_id} players={players}></smart-player-name>
+        </span>
       </div>
     </div>
   </div>
@@ -401,11 +431,14 @@
         <div class="badge-board-img-container">
           <img each={range(count)} class="badge-board-img" src={context.resources.badges.getInfo(key).img} title={context.resources.badges.getInfo(key).desc}></img>
         </div>
-        <span class="badge-board-player-container">{opts.players[player_id].name}</span>
+        <span class="badge-board-player-container">
+          <smart-player-name id={player_id} players={players}></smart-player-name>
+        </span>
       </div>
     </div>
   </div>
   </div>
+  this.players = opts.players
 </match-badges>
 
 <board-badges>
@@ -557,7 +590,9 @@
       </th>
     </tr>
     <tr each={player_id in Object.keys(opts.player_weapon_kills)}>
-      <td style="text-align: left">{opts.players[player_id].name}</td>
+      <td style="text-align: left">
+        <smart-player-name id={player_id} players={players}></smart-player-name>
+      </td>
       <td each={weapon in opts.weapons}>
         <span style='color: green'>
           {opts.player_weapon_kills[player_id][weapon] && opts.player_weapon_kills[player_id][weapon]['kills'] || 0}
@@ -570,10 +605,10 @@
   </table>
 
   <style>
-    td {
-      text-align: center;
-    }
+    td {text-align: center;}
   </style>
+
+  this.players = this.opts.players
 </weapon-kills>
 
 <match-player-kill-death>
@@ -583,13 +618,15 @@
       <table>
         <thead>
           <tr class="head">
-            <th>{opts.players[this[0]].name}</th>
+            <th>{players.getPlayer(this[0]).name}</th>
             <th style="width:20%">K</th>
             <th style="width:20%">D</th>
           </tr>
         <thead>
         <tr each={Object.entries(this[1])}>
-          <td>{opts.players[this[0]].name}</td>
+          <td>
+            <smart-player-name id={this[0]} players={players}></smart-player-name>
+          </td>
           <td class={better: this[1].kills > this[1].deaths}>{this[1].kills}</td>
           <td class={worse: this[1].deaths > this[1].kills}>{this[1].deaths}</td>
         </tr>
@@ -625,4 +662,5 @@
       font-weight: bold;
     }
   </style>
+  this.players = opts.players
 </match-player-kill-death>

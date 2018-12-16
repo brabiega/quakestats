@@ -12,13 +12,31 @@
   var fetch_match_specials = qapi.getMatchSpecial(context.match_guid)
   var fetch_match_badges = qapi.getMatchBadges(context.match_guid)
 
+  class PlayersState {
+    constructor() {
+      riot.observable(this)
+      this.players = {}
+      this.focused = null
+    }
+
+    setPlayers(players) {
+      this.players = players
+    }
+
+    getPlayer(playerId) {
+      return this.players[playerId]
+    }
+
+    setFocus(playerId) {
+      this.focused = playerId
+      this.trigger('player_focused', playerId)
+    }
+  }
+  var playersState = new PlayersState()
 
   fetch_players.then(json => {
-    var data = []
-    context.players = {}
-    for (entry of json) {
-      context.players[entry.id] = entry
-    }
+    context.players = json.reduce((val, entry) => {val[entry.id] = entry; return val}, {})
+    playersState.setPlayers(context.players)
   })
 
   fetch_match.then(json => {
@@ -29,7 +47,7 @@
   .then(values => {
     //ignore fetch players result
     var json = values[1]
-    riot.mount('team-switches', {'switches': json})
+    riot.mount('team-switches', {'switches': json, 'players': playersState})
   })
 
   Promise.all([fetch_players, fetch_match_kills, fetch_match_scores, fetch_match_specials])
@@ -90,7 +108,7 @@
 
     riot.mount('match-kills-chart', {'series': kill_entries})
     riot.mount('match-deaths-chart', {'series': death_entries})
-    riot.mount('worst-enemy', {'kills': match_kills, 'players': context.players})
+    riot.mount('worst-enemy', {'kills': match_kills, 'players': playersState})
     riot.mount('kdr-chart', {'kills': match_kills, 'players': context.players})
     riot.mount('match-kdr-chart', {'kills': match_kills, 'players': context.players})
 
@@ -135,7 +153,7 @@
 
     riot.mount('weapon-kills', {
         'player_weapon_kills': weapon_kd,
-        'players': context.players,
+        'players': playersState,
         'weapons': [...weapons].sort()
     })
 
@@ -169,7 +187,7 @@
 
     var specials_by_type = d3.nest().key((d) => {return d.score_type}).object(match_specials)
 
-    riot.mount('score-summary', {'scores': final_scores, 'players': context.players})
+    riot.mount('score-summary', {'scores': final_scores, 'players': playersState})
     riot.mount('match-score-chart', {'series': score_series, specials_by_type: specials_by_type, scores: match_scores})
   })
 
@@ -196,7 +214,7 @@
     .rollup(function(v) {return v.length})
     .entries(json)
 
-    riot.mount('special-scores', {'specials': specials_summary, 'details': specials_details})
+    riot.mount('special-scores', {'specials': specials_summary, 'details': specials_details, 'players': playersState})
   })
 
   Promise.all([fetch_players, fetch_match_badges])
@@ -210,7 +228,7 @@
     var multibadges = badges.filter((e) => {return e.values.length > 1})
     var singlebadges = badges.filter((e) => {return e.values.length == 1})
     riot.mount('match-badges', {
-      'multibadges': multibadges, 'players': context.players,
+      'multibadges': multibadges, 'players': playersState,
       'singlebadges': singlebadges
     })
   })
@@ -262,7 +280,7 @@
       }
     }
 
-    riot.mount('match-player-kill-death', {'kds': kds, 'players': context.players})
+    riot.mount('match-player-kill-death', {'kds': kds, 'players': playersState})
   })
 
 </script>
