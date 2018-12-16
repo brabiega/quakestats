@@ -2,9 +2,17 @@
     <span class={focused: this.focused, clickable: true} click={handleClick}>{getPlayerName()}</span>
 
     <style>
+        @keyframes pulse {
+            0%      { color: black }
+            80%     { color: black }
+            90%     { color: #ff9898 }
+            100%    { color: black }
+        }
         .focused {
-            color: #2c9198;
-            text-shadow: 1px 1px #b7f2ef;
+            text-shadow: 0px 1px 1px red;
+            animation-name: pulse;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
         }
 
         .clickable {
