@@ -84,6 +84,8 @@
   this.series = opts.series
   this.specials_by_type = opts.specials_by_type
   this.scores = opts.scores
+  this.match_info = opts.match_info
+  this.max_score = opts.max_score
 
   var special_series = []
   var head_hunter = (this.specials_by_type['HEADHUNTER'] || []).map(
@@ -134,8 +136,20 @@
         paper_bgcolor: '#FFFFFF',
         plot_bgcolor: '#FFFFFF',
         margin: {b: 25, t: 25},
-        hovermode: 'closest'
-      })
+        hovermode: 'closest',
+        shapes: [
+          {
+            type: 'line',
+            x0: this.match_info.duration, y0: 0,
+            x1: this.match_info.duration, y1: this.max_score,
+            line: {
+              color: '#ffc8c8',
+              width: 1,
+            }
+          }
+        ]
+      }
+    )
   })
   
 </match-score-chart>

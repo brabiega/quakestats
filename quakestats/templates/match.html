@@ -64,17 +64,17 @@
     riot.mount('team-switches', {'switches': json, 'players': playersState})
   })
 
-  Promise.all([fetch_players, fetch_match_kills, fetch_match_scores, fetch_match_specials])
+  Promise.all([fetch_players, fetch_match_kills, fetch_match_scores, fetch_match_specials, fetch_match])
   .then(values => {
     var match_scores = values[2]
     var match_kills = values[1]
     var match_specials = values[3]
+    var match_info = values[4]
     match_kills = match_kills.map((e) => {e.by_weapon = weapon_map[e.by] || e.by; return e})
 
     var enemy_kills = match_kills.filter(function(e)
       {return !isSelfKill(e)}
     )
-
     var kill_series = d3.nest()
       .key(function(d) {return d.killer_id})
       .entries(enemy_kills)
@@ -203,9 +203,10 @@
     }).sort((a, b) => {return (b.score - a.score) || (b.ts - a.ts)})
 
     var specials_by_type = d3.nest().key((d) => {return d.score_type}).object(match_specials)
+    var max_score = final_scores[0].score
 
     riot.mount('score-summary', {'scores': final_scores, 'players': playersState})
-    riot.mount('match-score-chart', {'series': score_series, specials_by_type: specials_by_type, scores: match_scores})
+    riot.mount('match-score-chart', {'series': score_series, specials_by_type: specials_by_type, scores: match_scores, 'match_info': match_info, 'max_score': max_score})
   })
 
   Promise.all([fetch_players, fetch_match_specials])
