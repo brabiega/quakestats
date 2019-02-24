@@ -273,3 +273,23 @@ class SpecialScores():
                     self.add_score('KAMIKAZE', previous_kill)
 
         self.player_state[kill.killer_id]['kamikaze_last_kill'] = kill
+
+    @on_event('PLAYER_DEATH')
+    def save_ghost_kill(self, death):
+        self.player_state[death.victim_id]['ghost_kill'] = death.time
+
+    @on_event('PLAYER_KILL')
+    def score_ghost_kill(self, kill):
+        # self kills shouldn't be possible and aren't counted
+        if self._is_selfkill(kill):
+            return
+
+        try:
+            death_ts = self.player_state[kill.killer_id]['ghost_kill']
+        except KeyError:
+            return
+
+        # player killed killer right after death
+        # (e.g. player died but launched rocket and killed someone)
+        if 0 < kill.time - death_ts <= 3:
+            self.add_score('GHOST_KILL', kill)

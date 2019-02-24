@@ -224,3 +224,21 @@ class TestSpecialScores():
         pss.score_kamikaze(death)
 
         assert pss.scores['KAMIKAZE'] == [(10, 'A', 'B', 1)]
+
+    def test_score_ghost_kill(self, pss):
+        death = gen_death(10, 'A', 'B', 'dummy')
+        kill1 = gen_kill(11, 'B', 'A', 'rocket')
+        kill2 = gen_kill(12, 'B', 'B', 'rocket')
+        kill3 = gen_kill(13, 'B', 'C', 'rocket')
+        kill4 = gen_kill(13.1, 'B', 'C', 'rocket')
+
+        pss.save_ghost_kill(death)
+        pss.score_ghost_kill(kill1)
+        pss.score_ghost_kill(kill2)
+        pss.score_ghost_kill(kill3)
+        pss.score_ghost_kill(kill4)
+
+        assert pss.scores['GHOST_KILL'] == [
+            (11, 'B', 'A', 1),
+            (13, 'B', 'C', 1),
+        ]

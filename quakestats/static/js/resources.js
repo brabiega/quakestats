@@ -81,6 +81,10 @@ var resources = {
       img: '/static/img/badges/kamikaze.svg',
       name: 'Kamikaze',
       desc: 'You killed someone and yourself at the same time'},
+    'GHOST_KILL': {
+      img: '/static/img/badges/ghost_kill.svg',
+      name: 'Ghost Kill',
+      desc: 'You killed someone while being dead.'},
   }
   },
 
