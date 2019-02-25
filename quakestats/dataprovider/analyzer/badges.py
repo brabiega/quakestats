@@ -187,3 +187,9 @@ class Badger():
         scores = self.from_special_score('GHOST_KILL', 'sum', 1, False)
         for count, (index, ts, value) in enumerate(scores, start=1):
             self.add_badge('GHOST_KILL', index, count)
+
+    @badge()
+    def lumberjack(self):
+        scores = self.from_special_score('LUMBERJACK', 'sum', 1, False)
+        for count, (index, ts, value) in enumerate(scores, start=1):
+            self.add_badge('LUMBERJACK', index, count)

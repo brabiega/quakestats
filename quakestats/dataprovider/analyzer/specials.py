@@ -10,6 +10,7 @@ class SpecialScores():
         self.scores = defaultdict(lambda: [])
         self.player_state = defaultdict(lambda: {})
         self.lifespan = {}
+        self.states = {}
 
         # we need player scores at given time
         # to score HEADHUNTER and DUCKHUNTER
@@ -19,6 +20,19 @@ class SpecialScores():
         def wrapper(func):
             special_handlers[event_name].append(func)
             return func
+        return wrapper
+
+    def on_stateful_event(event_name, state_id, default=None):
+        def wrapper(func):
+            def enchanced(self, *args, **kwargs):
+                defval = default if default is not None else {}
+                state = self.states.setdefault(
+                    state_id, defaultdict(lambda: defval)
+                )
+                return func(self, state, *args, **kwargs)
+
+            special_handlers[event_name].append(enchanced)
+            return enchanced
         return wrapper
 
     def dispatch(self, event_name, event):
@@ -293,3 +307,17 @@ class SpecialScores():
         # (e.g. player died but launched rocket and killed someone)
         if 0 < kill.time - death_ts <= 3:
             self.add_score('GHOST_KILL', kill)
+
+    @on_stateful_event('PLAYER_KILL', 'LUMBERJACK', 0)
+    def score_gauntlet_serial_killer(self, state, kill):
+        if kill.mod == 'GAUNTLET':
+            state[kill.killer_id] += 1
+        else:
+            state[kill.killer_id] = 0
+
+        if state[kill.killer_id] > 1:
+            self.add_score('LUMBERJACK', kill)
+
+    @on_stateful_event('PLAYER_DEATH', 'LUMBERJACK', 0)
+    def score_gauntlet_serial_killer_reset(self, state, event):
+        state[event.victim_id] = 0

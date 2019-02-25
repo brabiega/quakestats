@@ -242,3 +242,24 @@ class TestSpecialScores():
             (11, 'B', 'A', 1),
             (13, 'B', 'C', 1),
         ]
+
+    def test_score_gauntlet_serial_killer(self, pss):
+        kill1 = gen_kill(11, 'B', 'A', 'GAUNTLET')
+        kill2 = gen_kill(12, 'B', 'C', 'GAUNTLET')
+
+        pss.score_gauntlet_serial_killer(kill1)
+
+        assert pss.scores['LUMBERJACK'] == []
+
+        pss.score_gauntlet_serial_killer(kill2)
+        assert pss.scores['LUMBERJACK'] == [
+            (12, 'B', 'C', 1),
+        ]
+
+        death = gen_death(10, 'A', 'B', 'dummy')
+        pss.score_gauntlet_serial_killer_reset(death)
+        kill3 = gen_kill(12, 'B', 'C', 'GAUNTLET')
+        pss.score_gauntlet_serial_killer(kill3)
+        assert pss.scores['LUMBERJACK'] == [
+            (12, 'B', 'C', 1),
+        ]

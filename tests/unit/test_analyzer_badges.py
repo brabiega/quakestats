@@ -285,3 +285,18 @@ class TestBadger():
         assert badger.badges == [
             ('GHOST_KILL', 'B', 1),
         ]
+
+    def test_lumberjack(self, badger):
+        badger.special_scores.scores = {
+            'LUMBERJACK': [
+                (10, 'A', 'B', 1),
+                (11, 'A', 'B', 1),
+                (10, 'B', 'C', 1),
+                (12, 'B', 'C', 1),
+                (10, 'C', 'D', 1),
+            ]
+        }
+        badger.lumberjack()
+        assert badger.badges == [
+            ('LUMBERJACK', 'B', 1),
+        ]

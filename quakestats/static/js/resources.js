@@ -85,6 +85,10 @@ var resources = {
       img: '/static/img/badges/ghost_kill.svg',
       name: 'Ghost Kill',
       desc: 'You killed someone while being dead.'},
+    'LUMBERJACK': {
+      img: '/static/img/badges/placeholder.png',
+      name: 'Lumberjack',
+      desc: 'Most consecutive gauntlet kills'},
   }
   },
 
