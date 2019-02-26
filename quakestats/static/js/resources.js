@@ -86,7 +86,7 @@ var resources = {
       name: 'Ghost Kill',
       desc: 'You killed someone while being dead.'},
     'LUMBERJACK': {
-      img: '/static/img/badges/placeholder.png',
+      img: '/static/img/badges/lumberjack.svg',
       name: 'Lumberjack',
       desc: 'Most consecutive gauntlet kills'},
   }
