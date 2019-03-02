@@ -87,6 +87,7 @@ class Q3toQL():
             "Kill": self.on_kill,
             "Exit": self.on_exit,
             "ClientDisconnect": self.on_client_disconnect,
+            "Weapon_Stats": self.on_weapon_stats,
         }
 
     def extract(self, data):
@@ -120,7 +121,7 @@ class Q3toQL():
         - probably more
         Function extracts unique player ID from PlayerId object and static id for all events
         Should be executed at the end of a match.
-        """
+        """  # noqa
         for ev in self.result['events']:
             try:
                 if isinstance(ev['DATA']['STEAM_ID'], PlayerId):
@@ -129,12 +130,12 @@ class Q3toQL():
                 pass
             try:
                 if isinstance(ev['DATA']['KILLER']['STEAM_ID'], PlayerId):
-                    ev['DATA']['KILLER']['STEAM_ID'] = ev['DATA']['KILLER']['STEAM_ID'].steam_id
+                    ev['DATA']['KILLER']['STEAM_ID'] = ev['DATA']['KILLER']['STEAM_ID'].steam_id  # noqa
             except KeyError:
                 pass
             try:
                 if isinstance(ev['DATA']['VICTIM']['STEAM_ID'], PlayerId):
-                    ev['DATA']['VICTIM']['STEAM_ID'] = ev['DATA']['VICTIM']['STEAM_ID'].steam_id
+                    ev['DATA']['VICTIM']['STEAM_ID'] = ev['DATA']['VICTIM']['STEAM_ID'].steam_id  # noqa
             except KeyError:
                 pass
 
@@ -154,11 +155,14 @@ class Q3toQL():
         assert result >= 0
         return result
 
-    def get_player(self, client_id):
+    def get_player(self, client_id, allow_disconnected=False):
         if client_id == '1022':
             return self.player_world
         player_id = self.client_player_map[client_id]
-        return self.players[player_id]
+        player = self.players[player_id]
+        if not allow_disconnected and player['is_disconnected']:
+            raise KeyError("Player disconnected")
+        return player
 
     def set_player_team(self, client_id, team_id):
         """Returns True if changed, False if no change"""
@@ -196,7 +200,7 @@ class Q3toQL():
         for key, value in zip(game_info[0::2], game_info[1::2]):
             game_info_dict[key] = value
 
-        game_info_dict["gametype"] = self.GAMETYPE_MAP[game_info_dict["g_gametype"]]
+        game_info_dict["gametype"] = self.GAMETYPE_MAP[game_info_dict["g_gametype"]]  # noqa
         logger.debug("Game type '{}' map '{}'".format(
             game_info_dict['gametype'], game_info_dict["mapname"]))
 
@@ -244,7 +248,7 @@ class Q3toQL():
         self.result["warmup"] = True
 
     def create_steam_id(self, name):
-        raw_name = re.sub("\^\d", "", name).capitalize()
+        raw_name = re.sub(r"\^\d", "", name).capitalize()
         raw_name = "q3-{}-{}".format(self.server_domain, raw_name)
         h = hashlib.sha256()
         h.update(raw_name.encode('utf-8'))
@@ -255,10 +259,10 @@ class Q3toQL():
         """
         Finally some client identification, looks like:
         '4 n\n0npax\t\0\model\sarge\hmodel\sarge\c1\1\c2\5\hc\100\w\0\l\0\rt\0\st\0'
-        """
+        """  # noqa
         time = self.ts2match_time(ts)
         data = args
-        match = re.search("(\d+) (.*)", data)
+        match = re.search(r"(\d+) (.*)", data)
         client_id, user_info = match.groups()
         user_data = user_info.split("\\")
         user_info = {}
@@ -324,6 +328,7 @@ class Q3toQL():
             self.client_player_map[client_id] = player_id
             user_info['player_id'] = player_id
             player = user_info
+            player['is_disconnected'] = False
 
         if new_connection:
             ev_connected = {
@@ -361,7 +366,7 @@ class Q3toQL():
 
     def on_kill(self, ts, name, args):
         time = self.ts2match_time(ts)
-        match = re.search("(\d+) (\d+) (\d+): .* by (\w+)", args)
+        match = re.search(r"(\d+) (\d+) (\d+): .* by (\w+)", args)
         killer_id, victim_id, weapon_id, weapon_name = match.groups()
         killer = self.get_player(killer_id)
         victim = self.get_player(victim_id)
@@ -456,7 +461,7 @@ class Q3toQL():
                 "SERVER_TITLE": self.result['server_info']['sv_hostname'],
                 "GAME_LENGTH": time,
                 "TIME_LIMIT": int(self.result['server_info']['timelimit']),
-                "CAPTURE_LIMIT": int(self.result['server_info']['capturelimit']),
+                "CAPTURE_LIMIT": int(self.result['server_info']['capturelimit']),  # noqa
                 "LAST_SCORER": self.NOT_IMPLEMENTED,
                 "RESTARTED": self.NOT_IMPLEMENTED,
                 "TSCORE1": self.NOT_IMPLEMENTED,
@@ -475,13 +480,16 @@ class Q3toQL():
         }
         # Can't produce the event here, need to preserve the order and
         # this should be the last event
-        # in q3 after this message there were additional logs with client weapon stats
+        # in q3 after this message there were additional logs with client
+        # weapon stats
 
     def on_client_disconnect(self, ts, name, args):
         time = self.ts2match_time(ts)
         client_id = args
         player = self.get_player(client_id)
-        del self.client_player_map[client_id]
+        player['is_disconnected'] = True
+        # Can't remove client here since there are additional log entries
+        # indicating client stats
 
         event = {
             'TYPE': 'PLAYER_DISCONNECT',
@@ -494,3 +502,82 @@ class Q3toQL():
             }
         }
         return event
+
+    stat_weapon_map = {
+        "Gauntlet": "GAUNTLET",
+        "MachineGun": "MACHINEGUN",
+        "Shotgun": "SHOTGUN",
+        "G.Launcher": "GRENADE",
+        "R.Launcher": "ROCKET",
+        "LightningGun": "LIGHTNING",
+        "Plasmagun": "PLASMA",
+        "Railgun": "RAILGUN",
+    }
+
+    def on_weapon_stats(self, ts, name, args):
+        """
+        Example:
+            963.5 Weapon_Stats: 2 MachineGun:1367:267:0:0 Shotgun:473:107:23:8 G.Launcher:8:1:8:3 R.Launcher:30:11:9:5 LightningGun:403:68:15:10 Plasmagun:326:45:13:8 Given:5252 Recvd:7836 Armor:620 Health:545
+        """  # noqa
+
+        items = args.split(' ')
+        client_id = items[0]
+        player = self.get_player(client_id, allow_disconnected=True)
+
+        stats = {}
+        weapon_stats = {
+        }
+
+        for item in items[1:]:
+            subitems = item.split(':')
+            stats[subitems[0]] = subitems[1:]
+
+        damage_stats = {
+            "DEALT": int(stats.get("Given", [0])[0]),
+            "TAKEN": int(stats.get("Recvd", [0])[0]),
+        }
+        pickups = {
+            "TOTAL_ARMOR": int(stats.get("Armor", [0])[0]),
+            "TOTAL_HEALTH": int(stats.get("Health", [0])[0]),
+        }
+
+        for key, value in stats.items():
+            try:
+                weapon_name = self.stat_weapon_map[key]
+            except KeyError:
+                continue
+
+            weapon_stats[weapon_name] = {
+                # shoot
+                "S": int(value[0]),
+                # hit
+                "H": int(value[1]),
+                # kill
+                "K": 0,
+                # death
+                "D": 0,
+            }
+
+        # TODO
+        # following event is not fully compatible with quake live as quake 3
+        # stats from OSP have much less details
+        # e.g. there is no damage given per weapon
+        # R.Launcher:30:11:9:5 - seems to be SHOOT:HIT:KILL:DEATH?
+        # dunno, ignore for now.
+        ev = {
+            "DATA": {
+                "ABORTED": False,
+                'STEAM_ID': player['player_id'],
+                'NAME': player['name'],
+                'MATCH_GUID': self.match_guid,
+                'DAMAGE': damage_stats,
+                'WARMUP': self.result['warmup'],
+                # pickups have additional fields (TOTAL_HEALTH, TOTAL_ARMOR)
+                'PICKUPS': pickups,
+                "WEAPONS": self.NOT_IMPLEMENTED,
+
+            },
+            "TYPE": "PLAYER_STATS",
+        }
+
+        return ev

@@ -278,3 +278,23 @@ class TestQuake3():
         assert ev['DATA']['TIME'] == 712.8
         assert ev['DATA']['WARMUP'] is False
         assert ev['DATA']['MATCH_GUID'] == 'dummy'
+
+    def test_q3_to_ql_weapon_stats(self):
+        data0 = (
+            r"0.2 ClientUserinfoChanged: 0 "
+            r"n\Bartoszer\t\3\model\xaero/default\hmodel\xaero/default"
+            r"\c1\4\c2\5\hc\100\w\0\l\0\rt\0\st\0")
+        data1 = r"917.8 Weapon_Stats: 0 Gauntlet:0:10:0:0 MachineGun:1221:207:0:0 Shotgun:418:59:10:6 G.Launcher:14:2:6:2 R.Launcher:71:26:20:12 LightningGun:474:110:11:6 Given:5161 Recvd:8688 Armor:630 Health:505"  # noqa
+        transformer = Q3toQL([])
+        transformer.time_offset = 0.1
+        transformer.server_domain = "mydomain"
+        transformer.match_guid = 'dummy'
+
+        transformer.process_raw_event(data0)
+        ev = transformer.process_raw_event(data1)
+        assert ev['TYPE'] == 'PLAYER_STATS'
+        assert ev['DATA']['NAME'] == "Bartoszer"
+        assert ev['DATA']['DAMAGE']['DEALT'] == 5161
+        assert ev['DATA']['DAMAGE']['TAKEN'] == 8688
+        assert ev['DATA']['PICKUPS']['TOTAL_ARMOR'] == 630
+        assert ev['DATA']['PICKUPS']['TOTAL_HEALTH'] == 505
