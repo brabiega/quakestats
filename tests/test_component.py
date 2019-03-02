@@ -138,18 +138,18 @@ def test_quake3_analyze(q3_dump):
         assert result.final_scores['q3-world'][0] == 16
 
         assert len(result.team_switches) == 10
-        assert result.team_switches[-1] == (697.3, '291b0ba5fdf78b268369a9d7', None, 'DISCONNECTED')
+        assert result.team_switches[-1] == (697.3, '291b0ba5fdf78b268369a9d7', None, 'DISCONNECTED')  # noqa
 
-        assert result.players['291b0ba5fdf78b268369a9d7'].name == 'Turbo Wpierdol'
+        assert result.players['291b0ba5fdf78b268369a9d7'].name == 'Turbo Wpierdol' # noqa
         assert result.players['6a018beb6405ef59ce1471b0'].name == 'MACIEK'
         assert result.players['7ee3d47a164c6544ea50fee6'].name == 'n0npax'
         assert result.players['88fdc96e8804eaa084d740f8'].name == 'darkside'
         assert result.players['9ac5682eefa9134bbfe3c481'].name == 'BOLEK'
-        assert result.players['a126a35a25eab0623f504183'].name == 'killer clown'
+        assert result.players['a126a35a25eab0623f504183'].name == 'killer clown'  # noqa
         assert result.players['d37928942982cc79e7e0fe12'].name == 'Bartoszer'
         assert result.players['e0fbefd04b9203526e6f22b8'].name == 'Stefan'
 
-        assert result.kills[-1] == (897.1, 'd37928942982cc79e7e0fe12', 'd37928942982cc79e7e0fe12', 'ROCKET_SPLASH')
+        assert result.kills[-1] == (897.1, 'd37928942982cc79e7e0fe12', 'd37928942982cc79e7e0fe12', 'ROCKET_SPLASH')  # noqa
 
         assert result.server_info.server_name == 'MY Q3'
         assert result.server_info.server_domain == 'serv-domain'
@@ -162,3 +162,17 @@ def test_quake3_analyze(q3_dump):
         assert result.special_scores['KILLING_SPREE'][2] == (
             64.9, 'd37928942982cc79e7e0fe12',
             '9ac5682eefa9134bbfe3c481', 1)
+
+        for res in result.player_stats:
+            print(res)
+
+        assert result.player_stats == [
+            {'player_id': '291b0ba5fdf78b268369a9d7', 'total_armor_pickup': 170, 'total_health_pickup': 330, 'damage_dealt': 3609, 'damage_taken': 4677},  # noqa
+            {'player_id': '6a018beb6405ef59ce1471b0', 'total_armor_pickup': 630, 'total_health_pickup': 505, 'damage_dealt': 5161, 'damage_taken': 8688},  # noqa
+            {'player_id': 'd37928942982cc79e7e0fe12', 'total_armor_pickup': 680, 'total_health_pickup': 1695, 'damage_dealt': 13193, 'damage_taken': 5924},  # noqa
+            {'player_id': 'a126a35a25eab0623f504183', 'total_armor_pickup': 485, 'total_health_pickup': 1300, 'damage_dealt': 7173, 'damage_taken': 9244},  # noqa
+            {'player_id': 'e0fbefd04b9203526e6f22b8', 'total_armor_pickup': 430, 'total_health_pickup': 520, 'damage_dealt': 8465, 'damage_taken': 6385},  # noqa
+            {'player_id': '7ee3d47a164c6544ea50fee6', 'total_armor_pickup': 395, 'total_health_pickup': 420, 'damage_dealt': 7055, 'damage_taken': 7866},  # noqa
+            {'player_id': '9ac5682eefa9134bbfe3c481', 'total_armor_pickup': 405, 'total_health_pickup': 270, 'damage_dealt': 8569, 'damage_taken': 7386},  # noqa
+            {'player_id': '88fdc96e8804eaa084d740f8', 'total_armor_pickup': 725, 'total_health_pickup': 575, 'damage_dealt': 6562, 'damage_taken': 9617},  # noqa
+        ]

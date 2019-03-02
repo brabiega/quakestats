@@ -74,3 +74,26 @@ class TestAnalyzer(object):
             (2, 'B', 'A', 1),
             (3, 'A', 'B', 1),
         ]
+
+    def test_process_player_stats(self, an):
+        an.analyze_event({
+            'TYPE': 'PLAYER_STATS',
+            'DATA': {
+                'STEAM_ID': 'DEADBEAF',
+                'DAMAGE': {
+                    'DEALT': 55,
+                    'TAKEN': 155,
+                },
+                'PICKUPS': {
+                    'TOTAL_ARMOR': 20,
+                    'TOTAL_HEALTH': 44,
+                }
+            },
+        })
+
+        stats = an.player_stats['DEADBEAF']
+        assert stats['player_id'] == 'DEADBEAF'
+        assert stats['total_armor_pickup'] == 20
+        assert stats['total_health_pickup'] == 44
+        assert stats['damage_dealt'] == 55
+        assert stats['damage_taken'] == 155

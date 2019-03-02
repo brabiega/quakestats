@@ -36,6 +36,7 @@ class AnalysisResult():
         self.match_metadata = None
         self.kills = None
         self.badges = None
+        self.player_stats = None
 
 
 class ServerInfo():
@@ -111,6 +112,7 @@ class Analyzer():
         self.players = {}
         self.special_scores = SpecialScores(self.player_scores)
         self.badger = Badger(self.player_scores, self.special_scores)
+        self.player_stats = {}
         self.specific_analyzer = None
 
     def analyze(self, full_match_info):
@@ -144,6 +146,7 @@ class Analyzer():
         report.match_metadata = self.match_metadata
         report.kills = self.player_scores.kills
         report.badges = self.badger.badges
+        report.player_stats = list(self.player_stats.values())
         return report
 
     def analyze_event(self, raw_event):
@@ -155,6 +158,7 @@ class Analyzer():
             'PLAYER_DISCONNECT': self.on_player_disconnect,
             'PLAYER_KILL': self.on_player_kill,
             'PLAYER_SWITCHTEAM': self.on_player_switchteam,
+            'PLAYER_STATS': self.on_player_stats,
         }
 
         try:
@@ -216,6 +220,18 @@ class Analyzer():
         self.player_scores.from_player_death(event)
         self.specific_analyzer.on_player_death(event)
         self.special_scores.from_player_death(event)
+
+    def on_player_stats(self, event):
+        # if player has multiple stats events just use the last one
+        # TODO consider merging stats (e.g. player reconnects/rejoins match)
+        # ordinary stats sum grouped by player_id would be sufficient
+        self.player_stats[event.player_id] = {
+            'player_id': event.player_id,
+            'total_armor_pickup': event.total_armor,
+            'total_health_pickup': event.total_health,
+            'damage_dealt': event.damage_dealt,
+            'damage_taken': event.damage_taken,
+        }
 
 
 # This could probably be done with some fancy subclassing

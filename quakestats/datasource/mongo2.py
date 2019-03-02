@@ -2,6 +2,7 @@
 TODO add documentation
 """
 import pymongo
+from copy import deepcopy
 
 
 class DataStoreMongo():
@@ -21,6 +22,7 @@ class DataStoreMongo():
         self.store_kills(analysis_report)
         self.store_special_scores(analysis_report)
         self.store_badges(analysis_report)
+        self.store_player_stats(analysis_report)
         return True, match_guid
 
     def merge_players(self, src_player_id, target_player_id):
@@ -168,6 +170,19 @@ class DataStoreMongo():
             })
         self.db.badge.insert_many(results)
 
+    def store_player_stats(self, analysis_report):
+        if not analysis_report.player_stats:
+            return
+
+        match_guid = analysis_report.match_metadata.match_guid
+        results = []
+        for entry in analysis_report.player_stats:
+            res = deepcopy(entry)
+            res['match_guid'] = match_guid
+            results.append(res)
+
+        self.db.player_stats.insert_many(results)
+
     def attr2dict(self, obj, attributes):
         result = {}
         for attr in attributes:
@@ -227,6 +242,10 @@ class DataStoreMongo():
 
     def get_match_badges(self, match_guid):
         res = self.db.badge.find({'match_guid': match_guid})
+        return self.strip_id(res)
+
+    def get_match_player_stats(self, match_guid):
+        res = self.db.player_stats.find({'match_guid': match_guid})
         return self.strip_id(res)
 
     def get_players(self):

@@ -66,6 +66,11 @@ def api2_match_badge(match_guid):
     return flask.jsonify(data_store().get_match_badges(match_guid))
 
 
+@app.route('/api/v2/match/<match_guid>/player_stats')
+def api2_match_player_stats(match_guid):
+    return flask.jsonify(data_store().get_match_player_stats(match_guid))
+
+
 @app.route('/api/v2/board/badges')
 def api2_board_badges():
     return flask.jsonify(data_store().get_badge_sum())
