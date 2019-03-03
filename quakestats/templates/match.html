@@ -11,6 +11,7 @@
   var fetch_match_teams = qapi.getMatchTeams(context.match_guid)
   var fetch_match_specials = qapi.getMatchSpecial(context.match_guid)
   var fetch_match_badges = qapi.getMatchBadges(context.match_guid)
+  var fetch_match_player_stats = qapi.getMatchPlayerStats(context.match_guid)
 
   class PlayersState {
     constructor() {
@@ -301,6 +302,40 @@
     riot.mount('match-player-kill-death', {'kds': kds, 'players': playersState})
   })
 
+  Promise.all([fetch_match_player_stats, fetch_players])
+  .then(values => {
+    var stats = values[0]
+
+    riot.mount('player-damage-summary', {
+      "players": playersState,
+      "damageDealt":
+        stats.reduce((acc, cur) => {
+          acc.push([cur.player_id, cur.damage_dealt]); return acc
+        }, [])
+        .sort((a, b) => {return b[1] - a[1]}),
+      "damageTaken":
+        stats.reduce((acc, cur) => {
+          acc.push([cur.player_id, cur.damage_taken]); return acc
+        }, [])
+        .sort((a, b) => {return a[1] - b[1]}),
+    })
+
+
+    riot.mount('player-pickup-summary', {
+      "players": playersState,
+      "totalHealth":
+        stats.reduce((acc, cur) => {
+          acc.push([cur.player_id, cur.total_health_pickup]); return acc
+        }, [])
+        .sort((a, b) => {return b[1] - a[1]}),
+      "totalArmor":
+        stats.reduce((acc, cur) => {
+          acc.push([cur.player_id, cur.total_armor_pickup]); return acc
+        }, [])
+        .sort((a, b) => {return b[1] - a[1]}),
+    })
+  })
+
 </script>
 
 {% endblock %}
@@ -329,6 +364,12 @@
   </div>
   <div style="grid-column: 1 / -1">
     <match-score-chart></match-score-chart>
+  </div>
+  <div style="grid-column: auto / span 3">
+    <player-damage-summary></player-damage-summary>
+  </div>
+  <div style="grid-column: auto / span 3">
+    <player-pickup-summary></player-pickup-summary>
   </div>
   <div style="grid-column: auto / span 6">
     <match-player-kill-death></match-player-kill-death>
