@@ -44,6 +44,10 @@ class QuakeStatsApi {
     return this.get(`match/${matchId}/badge`)
   }
 
+  getMatchPlayerStats(matchId) {
+    return this.get(`match/${matchId}/player_stats`)
+  }
+
   getBoardBadges() {
     return this.get(`board/badges`)
   }

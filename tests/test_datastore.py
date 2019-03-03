@@ -46,21 +46,25 @@ class TestDataStoreMongo():
             (31.8, '87bf60cac665cf641d87ba4f', 3, 'SHOTGUN'),
         ]
         report.kills = [
-            (890.4, '88fdc96e8804eaa084d740f8', '7ee3d47a164c6544ea50fee6', 'LIGHTNING'),
-            (891.3, 'e0fbefd04b9203526e6f22b8', 'a126a35a25eab0623f504183', 'SHOTGUN'),
-            (891.8, '88fdc96e8804eaa084d740f8', '9ac5682eefa9134bbfe3c481', 'LIGHTNING'),
+            (890.4, '88fdc96e8804eaa084d740f8', '7ee3d47a164c6544ea50fee6', 'LIGHTNING'),  # noqa
+            (891.3, 'e0fbefd04b9203526e6f22b8', 'a126a35a25eab0623f504183', 'SHOTGUN'),  # noqa
+            (891.8, '88fdc96e8804eaa084d740f8', '9ac5682eefa9134bbfe3c481', 'LIGHTNING'),  # noqa
         ]
         report.special_scores = {
-            'HEADHUNTER': [(664.4, '87bf60cac665cf641d87ba4f', '073430507f5ef4dddf99bf8b', 1)],
+            'HEADHUNTER': [(664.4, '87bf60cac665cf641d87ba4f', '073430507f5ef4dddf99bf8b', 1)],  # noqa
         }
+        report.player_stats = [
+            {'player_id': 'p1', 'damage_dealt': 123},
+            {'player_id': 'p2', 'damage_dealt': 125},
+        ]
         return report
 
     @pytest.fixture
     def stored_switches(self):
         return [
-            {'match_guid': 'match_guid', 'game_time': 4, 'player_id': 'p1', 'from': 't1', 'to': 't2'},
-            {'match_guid': 'match_guid', 'game_time': 5, 'player_id': 'p1', 'from': 't2', 'to': 't1'},
-            {'match_guid': 'match_guid', 'game_time': 6, 'player_id': 'p2', 'from': 't2', 'to': 't1'},
+            {'match_guid': 'match_guid', 'game_time': 4, 'player_id': 'p1', 'from': 't1', 'to': 't2'},  # noqa
+            {'match_guid': 'match_guid', 'game_time': 5, 'player_id': 'p1', 'from': 't2', 'to': 't1'},  # noqa
+            {'match_guid': 'match_guid', 'game_time': 6, 'player_id': 'p2', 'from': 't2', 'to': 't1'},  # noqa
         ]
 
     def test_store_players(self, ds, report):
@@ -138,6 +142,13 @@ class TestDataStoreMongo():
             }
         ])
 
+    def test_store_player_stats(self, ds, report):
+        ds.store_player_stats(report)
+        ds.db.player_stats.insert_many.assert_called_with([
+            {'player_id': 'p1', 'damage_dealt': 123, "match_guid": 'match_guid'},  # noqa
+            {'player_id': 'p2', 'damage_dealt': 125, "match_guid": 'match_guid'},  # noqa
+        ])
+
     def test_get_matches(self, ds):
         ds.db.match.find.return_value = [
             {'match_guid': 1, '_id': 1},
@@ -165,3 +176,15 @@ class TestDataStoreMongo():
         res = ds.get_match_special_scores('dummy')
         ds.db.special_score.find.assert_called_with({'match_guid': 'dummy'})
         assert res == [{'test': 5}]
+
+    def test_get_match_player_stats(self, ds):
+        ds.db.player_stats.find.return_value = [
+            {'player_id': '1', 's1': 5, '_id': 1},
+            {'player_id': '2', 's1': 15, '_id': 1},
+        ]
+        res = ds.get_match_player_stats('dummy')
+        ds.db.player_stats.find.assert_called_with({'match_guid': 'dummy'})
+        assert res == [
+            {'player_id': '1', 's1': 5},
+            {'player_id': '2', 's1': 15},
+        ]

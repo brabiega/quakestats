@@ -393,7 +393,7 @@
         height: 250,
         paper_bgcolor: '#FFFFFF',
         plot_bgcolor: '#FFFFFF',
-        margin: {b: 25, t: 25},
+        margin: {b: 25, t: 25, l: 25, r: 25},
       }
     )
   })
@@ -684,3 +684,95 @@
   </style>
   this.players = opts.players
 </match-player-kill-death>
+
+<player-damage-summary>
+  <h4>Damage stats</h4>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr)">
+    <div ref="chartDealt"></div>
+    <div ref="chartTaken"></div>
+  </div>
+
+  this.on('mount', () => {
+    var dataDealt = [{
+      values: this.damageDealt.map(e => {return e[1]}),
+      labels: this.damageDealt.map(e => {return this.players.getPlayer(e[0]).name}),
+      type: 'pie',
+      textinfo: 'value',
+      title: 'Damage dealt',
+    }];
+    Plotly.newPlot(
+      this.refs.chartDealt,
+      dataDealt,
+      {
+        height: 300,
+        margin: {b: 25, t: 25, l: 25, r: 25},
+      }
+    )
+    var dataTaken = [{
+      values: this.damageTaken.map(e => {return e[1]}),
+      labels: this.damageTaken.map(e => {return this.players.getPlayer(e[0]).name}),
+      type: 'pie',
+      textinfo: 'value',
+      title: 'Damage taken',
+    }];
+    Plotly.newPlot(
+      this.refs.chartTaken,
+      dataTaken,
+      {
+        height: 300,
+        margin: {b: 25, t: 25, l: 25, r: 25},
+      }
+    )
+  })
+
+  this.players = opts.players
+  this.damageDealt = opts.damageDealt
+  this.damageTaken = opts.damageTaken
+
+</player-damage-summary>
+
+<player-pickup-summary>
+  <h4>Health and armor stats</h4>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr)">
+    <div ref="chartHealth"></div>
+    <div ref="chartArmor"></div>
+  </div>
+
+  this.on('mount', () => {
+    var dataHealth = [{
+      values: this.totalHealth.map(e => {return e[1]}),
+      labels: this.totalHealth.map(e => {return this.players.getPlayer(e[0]).name}),
+      type: 'pie',
+      textinfo: 'value',
+      title: 'Health picked up',
+    }];
+    Plotly.newPlot(
+      this.refs.chartHealth,
+      dataHealth,
+      {
+        height: 300,
+        margin: {b: 25, t: 25, l: 25, r: 25},
+      }
+    )
+    var dataArmor = [{
+      values: this.totalArmor.map(e => {return e[1]}),
+      labels: this.totalArmor.map(e => {return this.players.getPlayer(e[0]).name}),
+      type: 'pie',
+      textinfo: 'value',
+      title: 'Armor picked up',
+    }];
+    Plotly.newPlot(
+      this.refs.chartArmor,
+      dataArmor,
+      {
+        height: 300,
+        margin: {b: 25, t: 25, l: 25, r: 25},
+      }
+    )
+  })
+
+  this.players = opts.players
+  this.totalHealth = opts.totalHealth
+  this.totalArmor = opts.totalArmor
+
+</player-pickup-summary>

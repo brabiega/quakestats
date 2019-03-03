@@ -1,5 +1,6 @@
 from collections import namedtuple
 
+
 class Event(dict):
     """
     Helper class wrapping raw QL events.
@@ -80,6 +81,7 @@ class EventMatchStart(Event):
         'player_info',
         'id name team'
     )
+
     def iter_players(self):
         try:
             players = self.data['PLAYERS']
@@ -94,10 +96,39 @@ class EventMatchStart(Event):
             )
 
 
+class EventPlayerStats(Event):
+    @property
+    def player_id(self):
+        return self.data['STEAM_ID']
+
+    @property
+    def total_health(self):
+        try:
+            return int(self.data['PICKUPS']['TOTAL_HEALTH'])
+        except KeyError:
+            return 0
+
+    @property
+    def total_armor(self):
+        try:
+            return int(self.data['PICKUPS']['TOTAL_ARMOR'])
+        except KeyError:
+            return 0
+
+    @property
+    def damage_dealt(self):
+        return int(self.data['DAMAGE']['DEALT'])
+
+    @property
+    def damage_taken(self):
+        return int(self.data['DAMAGE']['TAKEN'])
+
+
 EVENT_CLASSES = {
     'PLAYER_KILL': EventPlayerKill,
     'PLAYER_DEATH': EventPlayerKill,
     'PLAYER_SWITCHTEAM': EventPlayerSwitchTeam,
     'PLAYER_DISCONNECT': EventPlayerDisconnected,
     'MATCH_STARTED': EventMatchStart,
+    'PLAYER_STATS': EventPlayerStats,
 }
