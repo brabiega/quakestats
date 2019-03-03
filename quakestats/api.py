@@ -315,7 +315,13 @@ def api2_admin_rebuild():
 
                 analyzer = analyze.Analyzer()
                 report = analyzer.analyze(fmi)
-                data_store().store_analysis_report(report)
+                try:
+                    data_store().store_analysis_report(report)
+                except Exception:
+                    logger.error(
+                        "Failed to process match with guid %s", fmi.match_guid
+                    )
+                    raise
 
         data_store().post_rebuild()
         return 'OK'

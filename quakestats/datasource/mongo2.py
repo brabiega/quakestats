@@ -171,6 +171,8 @@ class DataStoreMongo():
         self.db.badge.insert_many(results)
 
     def store_player_stats(self, analysis_report):
+        # its possible that weapon stats is empty
+        # not sure when it happens but I've seen such match
         if not analysis_report.player_stats:
             return
 
