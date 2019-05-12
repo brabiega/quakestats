@@ -37,8 +37,14 @@ def match(match_guid):
 
 @app.route('/player/<id>')
 def player(id):
+    printable = flask.request.args.get('printable')
     return flask.render_template(
-        'player.html', js_context={'view': 'PLAYER', 'player_id': id})
+        'player.html',
+        js_context={
+            'view': 'PLAYER', 'player_id': id,
+            'printable': bool(printable),
+        }
+    )
 
 
 @app.route('/maps')

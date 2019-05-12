@@ -2,7 +2,11 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8">
-      <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+      {% if js_context.printable %}
+        <link rel="stylesheet" type="text/css" href="/static/css/main-printable.css">
+      {% else %}
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+      {% endif %}
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Wallpoet" rel="stylesheet">
       <title>Quake Stats</title>
