@@ -176,3 +176,8 @@ Some of the assets are missing it would be nice to find some free ones or draw t
 
 ### TODO
 - [ ] Add support for listening to Quake Live event publisher, minor work needed
+
+### How to release new version
+```bash
+bumpversion  --current-version <VERSION> <major|minor|patch> quakestats/__init__.py --commit --tag
+```
