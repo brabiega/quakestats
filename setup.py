@@ -34,6 +34,11 @@ setup(
     packages=find_packages(
         include=['quakestats*'],
     ),
+    entry_points={
+        'console_scripts': [
+            'quakestats = quakestats.__main__:main',
+        ]
+    },
     include_package_data=True,
     zip_safe=False,
     install_requires=[
