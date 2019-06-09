@@ -7,6 +7,7 @@ Allows to retrieve, process, analyze, store and present Quake matches.
 
 The project doesn't aim to give global stats like [qlstats](http://qlstats.net) it's rather meant to store statistics from some server group (server domain). The origins of Quake Stats come from a group of players who occasionally play together and want to keep track of their matches... and to have fun from some custom made medals (badges) :)
 
+## Overview
 ### Supported features:
 * processing Quake 3 logs (log parsing, at the moment OSP mod only)
 * processing Quake Live event streams (zmq listen, needs some work)
@@ -48,11 +49,11 @@ The stats are presented with fancy charts, custom medals, etc. See the examples 
 ## How to setup
 In order to setup the application you need to have python 2 or 3 (virtualenv recommended) and local instance of mongo DB.
 
-### Configuration
+### Configuration file
 The application is configured by setting ```QUAKESTATS_SETTINGS``` environment variable to path to configuration file.
 See example [settings.py](examples/settings.py)
 
-### Launching the application
+### Installation
 Don't forget install pip requirements (in virtualenv if you are using it).
 ```bash
 pip install -r requirements.txt
@@ -66,30 +67,43 @@ or build a wheel and install it as a pip package
 python setup.py sdist bdist_wheel
 pip install dist/quakestats*.whl
 ```
-#### Run in twistd
+
+### Verify if everything is properly set up
+Quake Stats provide a simple CLI with a command to verify an environment
+```bash
+quakestats status
+```
+
+Example output:
+```
+(venv) [user@pc quakestats]$ quakestats status
+app -> version: 0.9.61
+settings -> env var: /opt/quakestats/settings.py
+settings -> RAW_DATA_DIR: /opt/quakestats/data
+db -> ping: {'ok': 1.0}
+webapp -> loadable: Quakestats webapp is loadable
+```
+
+### Run Quake Stats web app
+You can setup Quake Stats web app with any websever you want (as long as it supports python, e.g. mod wsgi, uwsgi).
+This documentation covers only running in *twisted* webserver
+
+#### Run in twistd (example)
 You can launch Quake Stats web application using ```twistd``` webserver. Just make sure to install twisted framework first.
 Also make sure to use some recent version of twisted (tested with 18.7.0 installed by pip).
 ```bash
 FLASK_APP="quakestats.web"; QUAKESTATS_SETTINGS=`pwd`/settings.py; twistd web --wsgi quakestats.web.app
 ```
 
+## User/Admin guide
 ### Setup admin user
 Admin user is used by web application to access some additional administrative operations. For now it's only setting map sizes. Just to have a list of recently used maps and their sizes. Nothing more at the moment.
-You need to run python snippet to generate password.
-```python
-# import the hash algorithm
-from passlib.hash import pbkdf2_sha256
-
-# generate new salt, and hash a password
-hash = pbkdf2_sha256.hash("yourpasswordgoeshere")
-'$pbkdf2-sha256$29000$N2YMIWQsBWBMae09x1jrPQ$1t8iyB2A.WF/Z5JZv.lfCIhXXN33N23OSgQYThBYRfk'
-```
-Then use mongo DB shell to inject user info
-```
-db.user.insert({'username': 'admin', 'password': '$pbkdf2-sha256$29000$N2YMIWQsBWBMae09x1jrPQ$1t8iyB2A.WF/Z5JZv.lfCIhXXN33N23OSgQYThBYRfk'})
+```bash
+# you need to run the command in proper python environment
+# use "quakestats status" to check your environment
+quakestats set-admin-pwd <yourpassword>
 ```
 
-## How to use
 ### Uploading Quake 3 log file
 In order to process some data you need to send your match log file to web api endpoint ```/api/v2/upload```.
 You need an ```ADMIN_TOKEN``` set in configuration.
@@ -99,9 +113,14 @@ curl -X POST --form file=@/path/to/your/games.log --form token=adminsecrettoken 
 All log files with extracted matches are stored in directory determined by ```RAW_DATA_DIR``` config entry
 
 ### Rebuilding database
-You can rebuild your database using files stored in ```RAW_DATA_DIR``` with simple web api call.
+You can rebuild your database using files stored in ```RAW_DATA_DIR``` with simple web api call or CLI.
 ```bash
 curl -X POST host:port/api/v2/admin/rebuild --form token=adminsecrettoken
+```
+```bash
+# you need to run the command in proper python environment
+# use "quakestats status" to check your environment
+quakestats rebuild-db
 ```
 If you implement some new Medals or any other backend related feature this API call will clear previous data stored in DB and process all matches from data directory once again.
 
@@ -120,7 +139,6 @@ curl -X POST --form file=@bugmatch.log --form token=admintoken host:port/api/v2/
 ```
 
 ## Development
-
 ### Tech stack
 Python, Flask, MongoDB, d3.js, riot.js, zmq
 
