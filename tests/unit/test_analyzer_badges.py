@@ -1,5 +1,5 @@
 import pytest
-import mock
+from unittest import mock
 
 from quakestats.dataprovider.analyzer.badges import Badger
 

@@ -5,13 +5,16 @@ from quakestats import dataprovider
 from quakestats.dataprovider import quake3
 import json
 import pytest
-import mock
+import os
+from unittest import mock
 from contextlib import ExitStack
 
 
-# TODO use some better approach for test data
-TEST_DATA_PATH = './sampledata/quakelive/ca-full.json'
-Q3_MATCH = './sampledata/match.log'
+FIXTURE_DATA_DIR = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)), 'sampledata',
+)
+TEST_DATA_PATH = os.path.join(FIXTURE_DATA_DIR, 'quakelive/ca-full.json')
+Q3_MATCH = os.path.join(FIXTURE_DATA_DIR, 'match.log')
 
 
 class MatchHelper():
