@@ -1,8 +1,7 @@
-import mock
 import pytest
 import pymongo
 from quakestats.datasource import mongo2
-
+from unittest import mock
 
 class TestDataStoreMongo():
 

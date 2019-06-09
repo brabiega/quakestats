@@ -1,13 +1,18 @@
 import pytest
 import json
-import mock
+import os
+from unittest import mock
 from contextlib import ExitStack
 from quakestats import dataprovider
 from quakestats.dataprovider import quakelive, quake3, analyze
 from quakestats.dataprovider.quakelive import collector
 
-QL_DUMP_PATH = 'sampledata/quakelive/qldump.txt'
-Q3_DUMP_PATH = 'sampledata/match.log'
+
+FIXTURE_DATA_DIR = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)), 'sampledata',
+)
+QL_DUMP_PATH = os.path.join(FIXTURE_DATA_DIR, 'quakelive/qldump.txt')
+Q3_DUMP_PATH = os.path.join(FIXTURE_DATA_DIR, 'match.log')
 
 
 @pytest.fixture(scope='session')
