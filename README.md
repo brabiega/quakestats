@@ -47,26 +47,31 @@ The stats are presented with fancy charts, custom medals, etc. See the examples 
 - Modern web browser (requires css grid-layout)
 
 ## How to setup
-In order to setup the application you need to have python 2 or 3 (virtualenv recommended) and local instance of mongo DB.
-
-### Configuration file
-The application is configured by setting ```QUAKESTATS_SETTINGS``` environment variable to path to configuration file.
-See example [settings.py](examples/settings.py)
+In order to setup the application you need to have python 2 or 3 (virtualenv recommended) and an instance of mongo DB.
 
 ### Installation
+#### Install requirements
 Don't forget install pip requirements (in virtualenv if you are using it).
 ```bash
 pip install -r requirements.txt
 ```
+
+#### Install from source code
 Is also needed install ```quakestats``` package (in virtualenv if you are using it). To do that you could install it directly
 ```bash
 python setup.py install
 ```
-or build a wheel and install it as a pip package
+
+#### Install from wheel package (alternatively)
+Build a wheel and install it as a pip package (TODO: in the future quakestats wheel package will be available on pip)
 ```bash
 python setup.py sdist bdist_wheel
 pip install dist/quakestats*.whl
 ```
+
+### Configuration file
+The application is configured by setting ```QUAKESTATS_SETTINGS``` environment variable to path to configuration file.
+See example [settings.py](examples/settings.py)
 
 ### Verify if everything is properly set up
 Quake Stats provide a simple CLI with a command to verify an environment
