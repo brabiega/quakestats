@@ -89,7 +89,11 @@ var resources = {
       img: '/static/img/badges/lumberjack.svg',
       name: 'Lumberjack',
       desc: 'Most consecutive gauntlet kills'},
-  }
+    'MARAUDER': {
+      img: '/static/img/badges/marauder.svg',
+      name: 'Marauder',
+      desc: 'Most kills of players which are before the killer'},
+    }
   },
 
   weapons: {
