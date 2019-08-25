@@ -168,6 +168,10 @@ def test_quake3_analyze(q3_dump):
             64.9, 'd37928942982cc79e7e0fe12',
             '9ac5682eefa9134bbfe3c481', 1)
 
+        assert result.special_scores['MARAUDER'][-1] == (
+            895.5, '88fdc96e8804eaa084d740f8',
+            'a126a35a25eab0623f504183', 1)
+
         for res in result.player_stats:
             print(res)
 
