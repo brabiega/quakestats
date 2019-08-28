@@ -40,11 +40,11 @@ var resources = {
     'HEADHUNTER': {
       img: '/static/img/badges/crowned-skull.svg',
       name: 'Headhunter',
-      desc: 'You killed highest score player with Gauntlet'},
+      desc: 'You killed a player with the highest score with Gauntlet'},
     'DUCKHUNTER': {
       img: '/static/img/badges/surprised-skull.svg',
       name: 'Duckhunter',
-      desc: 'You killed lowest score player with Gauntlet'},
+      desc: 'You killed a player with the lowest score with Gauntlet'},
     'SELFKILL': {
       img: '/static/img/badges/emo.svg',
       name: 'Black matters',
@@ -52,11 +52,11 @@ var resources = {
     'KILLING_SPREE_R': {
       img: '/static/img/badges/placeholder.png',
       name: 'Killing Spree',
-      desc: 'You killed that many without dying'},
+      desc: 'You killed the highest number of enemies without dying'},
     'DYING_SPREE': {
       img: '/static/img/badges/crapcake.svg',
       name: 'Dying Spree',
-      desc: 'You got top number of deaths without a kill'},
+      desc: 'You got the highest number of deaths without a kill'},
     'LAVASAURUS': {
       img: '/static/img/badges/badge-lavasaurus.png',
       name: 'Lavasaurus',
@@ -88,11 +88,11 @@ var resources = {
     'LUMBERJACK': {
       img: '/static/img/badges/lumberjack.svg',
       name: 'Lumberjack',
-      desc: 'Most consecutive gauntlet kills'},
+      desc: 'You had most consecutive gauntlet kills'},
     'MARAUDER': {
       img: '/static/img/badges/marauder.svg',
       name: 'Marauder',
-      desc: 'Most kills of players which are before the killer'},
+      desc: 'You killed the most players who had higher score than you'},
     }
   },
 
