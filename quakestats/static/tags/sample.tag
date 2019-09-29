@@ -461,25 +461,73 @@
   this.players = opts.players
 </match-badges>
 
+<badge-img>
+  <img
+    class="badge-img"
+    src={badgeCatalog.getInfo(this.name).img}
+    title={badgeCatalog.getInfo(this.name).desc}>
+  </img>
+
+  <style>
+    .badge-img {
+      height: 48px;
+    }
+  </style>
+
+  this.name = opts.name
+
+  // reference to global object :/
+  this.badgeCatalog = resources.badges
+</badge-img>
+
 <board-badges>
-  <h4>Badge stats</h4>
+  <h4>Badge stats (Top 20, <a href="#" onclick={toggleShowAll}>Click</a> to show all)</h4>
   <table class='board-badges-table' style='text-align: center; border-collapse: collapse;'>
+    <colgroup>
+      <col style="width:10%">
+    </colgroup>
     <tr>
       <td>Player</td>
-      <td each={opts.badgeres.getMedalNames()}>
-        <img class="badge-board-img" src={opts.badgeres.getInfo(name).img} title={opts.badgeres.getInfo(name).desc}></img>
+      <td each={badgeName in firstBadges}>
+        <badge-img name={badgeName}/>
       </td>
     </tr>
-    <tr each={opts.badges}>
+    <tr each={playerInfo in sortPlayers(firstBadges)}>
       <td nowrap>
-        <a href="/player/{this.player_id}">{opts.players[this.player_id].name}</a>
+        <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
       </td>
-      <td each={opts.badgeres.getMedalNames()} style={getStyle(name, this.badges[name])}>
-        {this.badges[name]}
+      <td each={badgeName in firstBadges}>
+        {
+          this.badgesByPlayerByName[playerInfo.playerId][badgeName] &&
+          this.badgesByPlayerByName[playerInfo.playerId][badgeName].count
+        }
       </td>
-
     </tr>
   </table>
+  <hr>
+  <table class='board-badges-table' style='text-align: center; border-collapse: collapse;'>
+    <colgroup>
+      <col style="width:10%">
+    </colgroup>
+    <tr>
+      <td>Player</td>
+      <td each={badgeName in secondBadges}>
+        <badge-img name={badgeName}/>
+      </td>
+    </tr>
+    <tr each={playerInfo in sortPlayers(secondBadges)}>
+      <td nowrap>
+        <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
+      </td>
+      <td each={badgeName in secondBadges}>
+        {
+          this.badgesByPlayerByName[playerInfo.playerId][badgeName] &&
+          this.badgesByPlayerByName[playerInfo.playerId][badgeName].count
+        }
+      </td>
+    </tr>
+  </table>
+
 
   <style>
     .board-badges-table tr:hover {
@@ -487,8 +535,62 @@
       border-bottom: 1px solid red;
     }
   </style>
+  /* required opts are:
+    badges:
+      [{player_id, name, count}, ...]
+    players:
+      [{id, name}]
+
+    Will display two tables consisting of two groups of badges
+  */
+
+  // global data
+  this.badgeCatalog = resources.badges
+  this.firstBadges = [
+    'WIN_GOLD', 'WIN_SILVER', 'WIN_BRONZE', 'WIN_ALMOST', 'GAUNTLET_KILL', 'DEATH', 'KILLING_SPREE',
+    'VENGEANCE'
+  ]
+  this.secondBadges = Object.keys(this.badgeCatalog.data).filter((e) => {return !this.firstBadges.includes(e)})
+  this.showAll = false
+
+  prepareData(badges) {
+    this.badgesByPlayerByName = d3.nest()
+      .key((d) => {return d.player_id})
+      .key((d) => {return d.name})
+      .rollup((v) => {return {'count': v[0].count}})
+      .object(badges)
+
+    this.badgesByNameByPlayer = d3.nest()
+      .key((d) => {return d.player_id})
+      .key((d) => {return d.name})
+      .rollup((v) => {return {'count': v[0].count}})
+      .object(badges)
+  }
+
+  sortPlayers(byBadges) {
+    let result = []
+    for (let playerId in this.badgesByPlayerByName) {
+      let playerBadges = this.badgesByPlayerByName[playerId]
+      let selectedBadges = d3.entries(playerBadges)
+        .map((d) => {return {badgeName: d.key, count: d.value.count}})
+        .filter((e) => {return byBadges.includes(e.badgeName)})
+      let sum = d3.sum(selectedBadges, (e) => {return e.count})
+      result.push({'playerId': playerId, 'sum': sum})
+    }
+    let res = result.sort((a, b) => {return b.sum - a.sum})
+    if (!this.showAll) {
+      return res.slice(0, 20)
+    } else {
+      return res
+    }
+  }
+
+  this.on('before-mount', () => {
+    this.prepareData(opts.badges)
+  })
 
   getStyle(name, count) {
+    return ""
     var color = 'hsl(183, 45%, 50%)'
     var max = this.opts.max_badges[name]
     if (count && max) {
@@ -502,6 +604,11 @@
       style = `${style}; color: white; font-weight:bold`
     }
     return style
+  }
+
+  toggleShowAll(e) {
+    this.showAll = true
+    this.update()
   }
 </board-badges>
 

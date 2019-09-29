@@ -19,39 +19,9 @@
 
   fetch_players.then(() => {
     qapi.getBoardBadges().then((json) => {
-      // such trickery :D
-      var badges_per_player = d3.nest()
-        .key((d) => {return d.player_id})
-        .key((d) => {return d.name})
-        .rollup((v) => {return v[0].count})
-        .entries(json)
-  
-      // even more trickery
-      var groupped = badges_per_player.map(
-        (e) => {
-          return {
-            player_id: e.key,
-            badges: e.values.reduce(
-              (prev, current) => {prev[current.key] = current.value; return prev}, {})
-          }
-        })
-
-      // also need max medals
-      var max_badge_list = d3.nest()
-        .key((d) => {return d.name})
-        .rollup((v) => {
-          return Math.max.apply(Math, v.map((e) => {return e.count}))
-        })
-        .entries(json)
-      var max_badges = max_badge_list.reduce(
-        (prev, current) => {prev[current.key] = current.value; return prev}, {})
-  
-      // sort by total medal count
-      groupped = groupped.sort((a, b) => {return d3.sum(Object.values(b.badges)) - d3.sum(Object.values(a.badges))})
+      let badges = json
       riot.mount('board-badges', {
-        'badges': groupped,
-        'max_badges': max_badges,
-        'badgeres': resources.badges,
+        'badges': badges,
         'players': context.players})
     })
   })
