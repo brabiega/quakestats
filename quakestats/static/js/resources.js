@@ -111,6 +111,11 @@ var resources = {
         name: 'Lumberjack',
         desc: 'You scored 2+ gauntlet kills in a row'
       },
+      'MARAUDER': {
+        img: '/static/img/badges/marauder.svg',
+        name: 'Marauder',
+        desc: 'You killed the most players who had higher score than you'
+      },
       'CONSECUTIVE_RAIL_KILL': {
         img: '/static/img/badges/consec-rail.svg',
         name: 'Railman',

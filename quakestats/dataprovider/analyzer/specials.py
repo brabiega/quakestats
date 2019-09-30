@@ -322,6 +322,42 @@ class SpecialScores():
     def score_gauntlet_serial_killer_reset(self, state, event):
         state[event.victim_id] = 0
 
+    @on_event('PLAYER_KILL')
+    def score_marauder(self, player_kill):
+        killer_id = player_kill.killer_id
+        victim_id = player_kill.victim_id
+        mod = player_kill.mod
+        should_calculate = True
+
+        if killer_id == victim_id:
+            should_calculate = False
+
+        sorted_players = self.player_state[None].get(
+            'previous_players_by_score', [])
+
+        if len(sorted_players) < 2:
+            should_calculate = False
+
+        # two extra cases to consider
+        # scores are assigned before special scores are calculated so:
+        # A is first B second score 1:1, B kills A, B should get marauder
+        # so we need to take a look into history again
+
+        if should_calculate:
+            try:
+                killer_idx = sorted_players.index(killer_id)
+                victim_idx = sorted_players.index(victim_id)
+            except ValueError:
+                pass
+            else:
+                # player is behind victim
+                if killer_idx > victim_idx:
+                    self.add_score('MARAUDER', player_kill)
+
+        # global state
+        self.player_state[None]['previous_players_by_score'] = \
+            self.player_scores.players_sorted_by_score(skip_world=True)
+
     @on_stateful_event('PLAYER_KILL', 'CONSECUTIVE_RAIL_KILL', 0)
     def score_consecutive_rail_kill(self, state, kill):
         if kill.mod == 'RAILGUN':

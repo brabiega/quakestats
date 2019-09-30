@@ -437,7 +437,7 @@
     <div each={opts.singlebadges}>
       <div each={values} style="display: grid; grid-template-columns: repeat(4, 1fr)">
         <div class="badge-board-img-container">
-          <img each={range(count)} class="badge-board-img" src={context.resources.badges.getInfo(key).img} title={context.resources.badges.getInfo(key).desc}></img>
+          <img each={range(count)} class="badge-board-img" src={context.resources.badges.getInfo(key).img} title={context.resources.badges.getInfo(key).name + ': '+ context.resources.badges.getInfo(key).desc}></img>
         </div>
         <span class="badge-board-player-container">
           <smart-player-name id={player_id} players={players}></smart-player-name>
