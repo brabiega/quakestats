@@ -18,7 +18,7 @@ class Badger():
         for h in badger_handlers:
             h(self)
 
-    def badge():
+    def badge():  # noqa, used as decorator
         def wrapper(func):
             badger_handlers.append(func)
             return func
@@ -193,3 +193,9 @@ class Badger():
         scores = self.from_special_score('LUMBERJACK', 'sum', 1, False)
         for count, (index, ts, value) in enumerate(scores, start=1):
             self.add_badge('LUMBERJACK', index, count)
+
+    @badge()
+    def railman(self):
+        scores = self.from_special_score('CONSECUTIVE_RAIL_KILL', 'sum', 1, False)
+        for count, (index, ts, value) in enumerate(scores, start=1):
+            self.add_badge('CONSECUTIVE_RAIL_KILL', index, count)

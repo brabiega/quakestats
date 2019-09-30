@@ -321,3 +321,17 @@ class SpecialScores():
     @on_stateful_event('PLAYER_DEATH', 'LUMBERJACK', 0)
     def score_gauntlet_serial_killer_reset(self, state, event):
         state[event.victim_id] = 0
+
+    @on_stateful_event('PLAYER_KILL', 'CONSECUTIVE_RAIL_KILL', 0)
+    def score_consecutive_rail_kill(self, state, kill):
+        if kill.mod == 'RAILGUN':
+            state[kill.killer_id] += 1
+            if state[kill.killer_id] > 1:
+                self.add_score('CONSECUTIVE_RAIL_KILL', kill)
+
+        else:
+            state[kill.killer_id] = 0
+
+    @on_stateful_event('PLAYER_DEATH', 'CONSECUTIVE_RAIL_KILL', 0)
+    def score_consecutive_rail_kill_reset(self, state, event):
+        state[event.victim_id] = 0
