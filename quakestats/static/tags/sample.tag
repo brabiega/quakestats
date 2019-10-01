@@ -496,7 +496,7 @@
       <td nowrap>
         <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
       </td>
-      <td each={badgeName in firstBadges}>
+      <td each={badgeName in firstBadges} class={getClass(badgeName, playerInfo.playerId)}>
         {
           this.badgesByPlayerByName[playerInfo.playerId][badgeName] &&
           this.badgesByPlayerByName[playerInfo.playerId][badgeName].count
@@ -519,7 +519,7 @@
       <td nowrap>
         <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
       </td>
-      <td each={badgeName in secondBadges}>
+      <td each={badgeName in secondBadges} class={getClass(badgeName, playerInfo.playerId)}>
         {
           this.badgesByPlayerByName[playerInfo.playerId][badgeName] &&
           this.badgesByPlayerByName[playerInfo.playerId][badgeName].count
@@ -533,6 +533,30 @@
     .board-badges-table tr:hover {
       border-top: 1px solid red;
       border-bottom: 1px solid red;
+    }
+
+    .gold {
+      color: gold;
+      font-weight: bold;
+      text-shadow: 0px 1px 1px black;
+    }
+
+    .silver {
+      color: silver;
+      font-weight: bold;
+      text-shadow: 0px 1px 1px black;
+    }
+
+    .bronze {
+      color: #9d2b2b;
+      font-weight: bold;
+      text-shadow: 1px 1px 1px #777;
+    }
+
+    .almost {
+      color: #ff8989;
+      font-weight: bold;
+      text-shadow: 1px 1px 1px black;
     }
   </style>
   /* required opts are:
@@ -561,10 +585,18 @@
       .object(badges)
 
     this.badgesByNameByPlayer = d3.nest()
-      .key((d) => {return d.player_id})
       .key((d) => {return d.name})
+      .key((d) => {return d.player_id})
       .rollup((v) => {return {'count': v[0].count}})
       .object(badges)
+
+    this.topBadgeCount = {}
+    for (let badgeName in this.badgesByNameByPlayer) {
+      let badgesByPlayer = this.badgesByNameByPlayer[badgeName]
+      this.topBadgeCount[badgeName] = Array.from(new Set(Object.values(badgesByPlayer)
+        .sort((a, b) => {return b.count - a.count})
+        .map((e) => {return e.count})))
+    }
   }
 
   sortPlayers(byBadges) {
@@ -589,8 +621,26 @@
     this.prepareData(opts.badges)
   })
 
+  getClass(badgeName, playerId) {
+    if (
+      (!this.badgesByPlayerByName[playerId]) ||
+      (!this.badgesByPlayerByName[playerId][badgeName])
+    ) {
+      return {}
+    }
+
+    let badge = this.badgesByPlayerByName[playerId][badgeName]
+    let topCount = this.topBadgeCount[badgeName]
+    return {
+      'gold': topCount[0] && topCount[0] == badge.count,
+      'silver': topCount[1] && topCount[1] == badge.count,
+      'bronze': topCount[2] && topCount[2] == badge.count,
+      'almost': topCount[3] && topCount[3] == badge.count,
+    }
+  }
+
   getStyle(name, count) {
-    return ""
+    // unused for now
     var color = 'hsl(183, 45%, 50%)'
     var max = this.opts.max_badges[name]
     if (count && max) {
