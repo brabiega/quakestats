@@ -326,7 +326,6 @@ class SpecialScores():
     def score_marauder(self, player_kill):
         killer_id = player_kill.killer_id
         victim_id = player_kill.victim_id
-        mod = player_kill.mod
         should_calculate = True
 
         if killer_id == victim_id:
@@ -371,3 +370,28 @@ class SpecialScores():
     @on_stateful_event('PLAYER_DEATH', 'CONSECUTIVE_RAIL_KILL', 0)
     def score_consecutive_rail_kill_reset(self, state, event):
         state[event.victim_id] = 0
+
+    @on_stateful_event('PLAYER_KILL', 'SUICIDE_BOMBER', (0, 0, 0, None))
+    def score_suicide_bomber(self, state, event):
+        last_ts, score, has_selfkill, history = state[event.killer_id]
+        history = history if history is not None else []
+
+        if event.time == last_ts:
+            history.append(event)
+            state[event.killer_id] = (
+                event.time,
+                score + 1,
+                has_selfkill or self._is_selfkill(event),
+                history,
+            )
+
+        else:
+            # the badge isn't 100% accurate as player has to kill
+            # someone or himself to actually earn the scores
+            # E.g. won't be assigned when match ends, although its good enough
+            if has_selfkill and score > 2:
+                for event in history:
+                    if not self._is_selfkill(event):
+                        self.add_score('SUICIDE_BOMBER', event)
+
+            state[event.killer_id] = (event.time, 1, self._is_selfkill(event), [event])

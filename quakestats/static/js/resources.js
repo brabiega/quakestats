@@ -34,7 +34,7 @@ var resources = {
       'DEATH': {
         img: '/static/img/badges/topdeaths.svg',
         name: 'Crap like me',
-        desc: 'You got killed'
+        desc: 'You got killed way too many times'
       },
       'KILLING_SPREE': {
         img: '/static/img/badges/icicles-aura.svg',
@@ -120,6 +120,11 @@ var resources = {
         img: '/static/img/badges/consec-rail.svg',
         name: 'Railman',
         desc: 'You scored 2+ railgun kills in a row'
+      },
+      'SUICIDE_BOMBER': {
+        img: '/static/img/badges/suicide-bomber.svg',
+        name: 'Suicide bomber',
+        desc: 'You killed yourself and 2+ other players'
       }
     }
   },

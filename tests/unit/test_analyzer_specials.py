@@ -263,3 +263,24 @@ class TestSpecialScores():
         assert pss.scores['LUMBERJACK'] == [
             (12, 'B', 'C', 1),
         ]
+
+    def test_score_suicide_bomber(self, pss):
+        kill1 = gen_kill(11, 'B', 'A', 'dummy')
+        kill2 = gen_kill(11, 'B', 'C', 'dummy')
+        kill3 = gen_kill(11, 'B', 'B', 'dummy')
+        kill4 = gen_kill(12, 'B', 'B', 'dummy')
+
+        pss.score_suicide_bomber(kill1)
+        assert pss.scores['SUICIDE_BOMBER'] == []
+
+        pss.score_suicide_bomber(kill2)
+        assert pss.scores['SUICIDE_BOMBER'] == []
+
+        pss.score_suicide_bomber(kill3)
+        assert pss.scores['SUICIDE_BOMBER'] == []
+
+        pss.score_suicide_bomber(kill4)
+        assert pss.scores['SUICIDE_BOMBER'] == [
+            (11, 'B', 'A', 1),
+            (11, 'B', 'C', 1),
+        ]

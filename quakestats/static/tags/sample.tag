@@ -465,7 +465,7 @@
   <img
     class="badge-img"
     src={badgeCatalog.getInfo(this.name).img}
-    title={badgeCatalog.getInfo(this.name).desc}>
+    title="{badgeCatalog.getInfo(this.name).name}: {badgeCatalog.getInfo(this.name).desc}">
   </img>
 
   <style>
