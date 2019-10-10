@@ -93,9 +93,17 @@ class PlayerScores():
             del self.player_score[player_id]
         except KeyError:
             pass
-        self.scores.append(
-            (game_time, player_id, 0, 'SWITCHTEAM'),
-        )
+
+        # player scored nothing and switched to spect
+        # so he has no score changes, no score entries at all
+        # and score entry 0 shouldn't be added in such case
+        if not (
+            player_switchteam.new_team == "SPECTATOR" or
+            [score for score in self.scores if score[1] == player_id]
+        ):
+            self.scores.append(
+                (game_time, player_id, 0, 'SWITCHTEAM'),
+            )
 
     def from_player_disconnect(self, event):
         game_time = event.time
