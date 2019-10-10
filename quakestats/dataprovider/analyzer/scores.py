@@ -18,7 +18,9 @@ class PlayerScores():
 
     def get_final_kdr(self):
         return [
-            (player_id, kdr.r) for player_id, kdr in self.kdr.items()]
+            (player_id, kdr.r) for player_id, kdr in self.kdr.items()
+            if kdr.d != 0 and kdr.k != 0 and player_id != 'q3-world'
+        ]
 
     def players_sorted_by_score(self, reverse=True, skip_world=False):
         """
