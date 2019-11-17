@@ -1,5 +1,7 @@
 # Quake Stats
 [![Build Status](https://travis-ci.org/brabiega/quakestats.svg?branch=master)](https://travis-ci.org/brabiega/quakestats)
+[![PyPI](https://img.shields.io/pypi/v/quakestats)](https://pypi.org/project/quakestats/)
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/quakestats)](https://pypi.org/project/quakestats/#files)
 
 Quake 3 logs / Quake Live events processing project.
 
