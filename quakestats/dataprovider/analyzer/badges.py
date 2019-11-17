@@ -30,7 +30,7 @@ class Badger():
         Take :count head or tail
         """
         if count == 0:
-            return
+            return []
         try:
             scores = self.special_scores.scores[name]
         except KeyError:
