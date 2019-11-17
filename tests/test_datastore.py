@@ -164,8 +164,8 @@ class TestDataStoreMongo():
     def test_get_match_players(self, ds, stored_switches):
         ds.db.team_switch.find.return_value = stored_switches
         ds.db.player.find.return_value = []
-        res = ds.get_match_players('dummy')
-        ds.db.team_switch.find.assert_called_with({'match_guid': 'dummy'})
+        res = ds.get_match_players('match_guid')
+        ds.db.team_switch.find.assert_called_with({'match_guid': {'$in': ['match_guid']}})
         call_args = ds.db.player.find.call_args[0][0]
         assert set(call_args['id']['$in']) == set(['p1', 'p2'])
         assert res == []
