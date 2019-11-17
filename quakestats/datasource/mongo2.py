@@ -210,13 +210,20 @@ class DataStoreMongo():
             result = self.db.match.find()
         return self.strip_id(result)
 
+    def get_match_participants(self, match_guids):
+        switches = self.db.team_switch.find({'match_guid': {"$in": match_guids}})
+        result = {}
+        for guid in match_guids:
+            result[guid] = set()
+
+        for switch in switches:
+            result[switch['match_guid']].add(switch['player_id'])
+
+        return result
+
     def get_match_players(self, match_guid):
-        switches = self.db.team_switch.find({'match_guid': match_guid})
-        player_ids = {
-            switch['player_id'] for switch in switches
-        }
-        return self.strip_id(
-            self.db.player.find({'id': {'$in': [pid for pid in player_ids]}}))
+        player_ids = self.get_match_participants([match_guid])[match_guid]
+        return self.get_players(ids=list(player_ids))
 
     def get_match_metadata(self, match_guid):
         res = self.db.match.find_one({'match_guid': match_guid})
@@ -250,8 +257,15 @@ class DataStoreMongo():
         res = self.db.player_stats.find({'match_guid': match_guid})
         return self.strip_id(res)
 
-    def get_players(self):
-        return self.strip_id(self.db.player.find())
+    def get_players(self, ids=None):
+        if ids:
+            return self.strip_id(
+                self.db.player.find(
+                    {"id": {"$in": ids}}
+                )
+            )
+        else:
+            return self.strip_id(self.db.player.find())
 
     def get_badge_sum(self):
         res = self.db.badge.aggregate([{

@@ -1,3 +1,4 @@
+from collections import defaultdict
 from quakestats.web import app, data_store
 from quakestats import dataprovider, manage
 from quakestats.dataprovider import quake3, analyze
@@ -10,7 +11,7 @@ logger = logging.getLogger('quakestats.webapp')
 
 
 class QJsonEncoder(flask.json.JSONEncoder):
-    def default(self, o):
+    def default(self, o):  # noqa
         # TODO too tightly coupled with internal data structures
         if isinstance(o, quake3.PlayerId):
             return str(o.steam_id)
@@ -290,3 +291,29 @@ def api2_admin_delete():
     data_store().drop_match_info(
         flask.request.form['match_guid'])
     return 'OK'
+
+
+@app.route('/api/v2/presence/<count>')
+def api2_presence(count):
+    try:
+        count = int(count)
+    except ValueError:
+        flask.abort(400)
+
+    ds = data_store()
+    last_matches = ds.get_matches(count)
+
+    player_ids_per_match = ds.get_match_participants(
+        [m['match_guid'] for m in last_matches]
+    )
+
+    presence = defaultdict(lambda: 0)
+    for match_players in player_ids_per_match.values():
+        for player_id in match_players:
+            presence[player_id] += 1
+
+    players = ds.get_players(ids=[player_id for player_id in presence.keys()])
+    return flask.jsonify({
+        'presence': presence,
+        'players': players,
+    })

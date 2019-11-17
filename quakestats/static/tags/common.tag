@@ -45,3 +45,31 @@
     }
 
 </smart-player-name>
+
+<presence-list>
+    <h4>Presence list based on latest 90 matches</h4>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Games</th>
+        </tr>
+        <tr each={player in opts.players}>
+            <td>{player.name}</td>
+            <td>{opts.presence[player.id]}</td>
+        </tr>
+    </table>
+
+    <style>
+        table {
+            width: auto;
+        }
+
+        td {
+            padding: 2px 15px;
+        }
+
+        tr:hover {
+            background-color: #e1e8ea;
+        }
+    </style>
+</presence-list>

@@ -26,20 +26,20 @@ def attach_user():
 @app.route('/')
 def index():
     return flask.render_template(
-        'home.html', js_context={'view': 'HOME'})
+        'home.jinja2', js_context={'view': 'HOME'})
 
 
 @app.route('/match/<match_guid>')
 def match(match_guid):
     return flask.render_template(
-        'match.html', js_context={'view': 'MATCH', 'match_guid': match_guid})
+        'match.jinja2', js_context={'view': 'MATCH', 'match_guid': match_guid})
 
 
 @app.route('/player/<id>')
 def player(id):
     printable = flask.request.args.get('printable')
     return flask.render_template(
-        'player.html',
+        'player.jinja2',
         js_context={
             'view': 'PLAYER', 'player_id': id,
             'printable': bool(printable),
@@ -50,7 +50,13 @@ def player(id):
 @app.route('/maps')
 def maps():
     return flask.render_template(
-        'maps.html', js_context={'view': 'MAPS'})
+        'maps.jinja2', js_context={'view': 'MAPS'})
+
+
+@app.route('/presence')
+def presence():
+    return flask.render_template(
+        'presence.jinja2', js_context={'view': 'MAPS'})
 
 
 @app.route('/login', methods=['POST'])
