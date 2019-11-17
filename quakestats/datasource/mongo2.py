@@ -212,9 +212,10 @@ class DataStoreMongo():
 
     def get_match_participants(self, match_guids):
         switches = self.db.team_switch.find({'match_guid': {"$in": match_guids}})
-        result = {}
-        for guid in match_guids:
-            result[guid] = set()
+        result = {
+            guid: set()
+            for guid in match_guids
+        }
 
         for switch in switches:
             result[switch['match_guid']].add(switch['player_id'])
