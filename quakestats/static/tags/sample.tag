@@ -195,7 +195,7 @@
 
 <score-summary>
   <h4>Final scores</h4>
-  <table class='top3'>
+  <table class="top3 table-centered">
     <tr>
       <th>Name</th>
       <th>Final score</th>
@@ -232,7 +232,7 @@
   <h4>Special scores</h4>
   <div class="special-score-container">
     <div each={opts.specials}>
-      <table>
+      <table class="table-centered">
         <tr>
           <th>{context.resources.badges.getInfo(this.key).name} <span class="hint-mark" data={this.key} onclick={info}>[?]</span></th>
           <th><img class="badge-img" src={context.resources.badges.getInfo(this.key).img}></img></th>
@@ -296,7 +296,7 @@
 </special-scores>
 
 <special-score-details>
-  <table>
+  <table class="table-centered">
     <tr each={opts.list}>
       <td>{this.player.name}</td>
       <td>{this.value}</td>
@@ -315,7 +315,7 @@
 
 <worst-enemy>
   <h4>Worst enemy</h5>
-  <table>
+  <table class="table-centered">
     <tr>
       <th>Player</th>
       <th>Enemy</th>
@@ -486,53 +486,60 @@
     <colgroup>
       <col style="width:10%">
     </colgroup>
-    <tr>
-      <td>Player</td>
-      <td each={badgeName in firstBadges}>
-        <badge-img name={badgeName}/>
-      </td>
-    </tr>
-    <tr each={playerInfo in sortPlayers(firstBadges)}>
-      <td nowrap>
-        <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
-      </td>
-      <td each={badgeName in firstBadges} class={getClass(badgeName, playerInfo.playerId)}>
-        {
-          this.badgesByPlayerByName[playerInfo.playerId][badgeName] &&
-          this.badgesByPlayerByName[playerInfo.playerId][badgeName].count
-        }
-      </td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th each={badgeName in firstBadges}>
+          <badge-img name={badgeName}/>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr each={playerInfo in sortPlayers(firstBadges)}>
+        <td nowrap>
+          <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
+        </td>
+        <td each={badgeName in firstBadges} class={getClass(badgeName, playerInfo.playerId)}>
+          {
+            this.badgesByPlayerByName[playerInfo.playerId][badgeName] &&
+            this.badgesByPlayerByName[playerInfo.playerId][badgeName].count
+          }
+        </td>
+      </tr>
+    </tbody>
   </table>
   <hr>
   <table class='board-badges-table' style='text-align: center; border-collapse: collapse;'>
     <colgroup>
       <col style="width:10%">
     </colgroup>
-    <tr>
-      <td>Player</td>
-      <td each={badgeName in secondBadges}>
-        <badge-img name={badgeName}/>
-      </td>
-    </tr>
-    <tr each={playerInfo in sortPlayers(secondBadges)}>
-      <td nowrap>
-        <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
-      </td>
-      <td each={badgeName in secondBadges} class={getClass(badgeName, playerInfo.playerId)}>
-        {
-          this.badgesByPlayerByName[playerInfo.playerId][badgeName] &&
-          this.badgesByPlayerByName[playerInfo.playerId][badgeName].count
-        }
-      </td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th each={badgeName in secondBadges}>
+          <badge-img name={badgeName}/>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr each={playerInfo in sortPlayers(secondBadges)}>
+        <td nowrap>
+          <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
+        </td>
+        <td each={badgeName in secondBadges} class={getClass(badgeName, playerInfo.playerId)}>
+          {
+            this.badgesByPlayerByName[playerInfo.playerId][badgeName] &&
+            this.badgesByPlayerByName[playerInfo.playerId][badgeName].count
+          }
+        </td>
+      </tr>
+    </tbody>
   </table>
 
 
   <style>
-    .board-badges-table tr:hover {
-      border-top: 1px solid red;
-      border-bottom: 1px solid red;
+    .board-badges-table>tbody>tr:hover {
+      background: #b7F2ef;
     }
 
     .gold {
