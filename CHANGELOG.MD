@@ -2,6 +2,14 @@ Changelog
 =========
 
 
+1.1.0 (2019-11-19)
+------------------
+- Improved changelog generation. [BR]
+- Total stats GUI is able to fetch last N matches. [BR]
+- Added changelog, makefile changelog script. [BR]
+- Added api for fetching badges/total stats from last N matches. [BR]
+
+
 v1.0.1 (2019-11-18)
 -------------------
 - Improved minor images, small css fixes. [BR]
