@@ -48,16 +48,24 @@ class QuakeStatsApi {
         return this.get(`match/${matchId}/player_stats`)
     }
 
-    getBoardBadges() {
-        return this.get(`board/badges`)
+    getBoardBadges(lastNMatches) {
+        if (lastNMatches) {
+            return this.get(`board/badges?latest=${lastNMatches}`)
+        } else {
+            return this.get(`board/badges`)
+        }
     }
 
     getAllPlayers() {
         return this.get(`players`)
     }
 
-    getTotalStats() {
-        return this.get(`board/total`)
+    getTotalStats(lastNMatches) {
+        if (lastNMatches) {
+            return this.get(`board/total?latest=${lastNMatches}`)
+        } else {
+            return this.get(`board/total`)
+        }
     }
 
     getMaps() {

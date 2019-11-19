@@ -74,12 +74,16 @@ def api2_match_player_stats(match_guid):
 
 @app.route('/api/v2/board/badges')
 def api2_board_badges():
-    return flask.jsonify(data_store().get_badge_sum())
+    latest = flask.request.args.get('latest', default=None)
+    latest = int(latest) if latest else None
+    return flask.jsonify(data_store().get_badge_sum(latest))
 
 
 @app.route('/api/v2/board/total')
 def api2_board_total():
-    return flask.jsonify(data_store().get_total_stats())
+    latest = flask.request.args.get('latest', default=None)
+    latest = int(latest) if latest else None
+    return flask.jsonify(data_store().get_total_stats(latest))
 
 
 @app.route('/api/v2/players')
