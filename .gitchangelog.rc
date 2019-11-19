@@ -159,7 +159,16 @@ tag_filter_regexp = r'^v[0-9]+\.[0-9]+(\.[0-9]+)?$'
 ##
 ## This label will be used as the changelog Title of the last set of changes
 ## between last valid tag and HEAD if any.
-unreleased_version_label = "(unreleased)"
+def get_unreleased():
+  import quakestats
+  from datetime import date
+
+  return "{} ({})".format(
+    quakestats.VERSION,
+    date.today().strftime("%Y-%m-%d")
+  )
+
+unreleased_version_label = get_unreleased()
 
 
 ## ``output_engine`` is a callable
