@@ -481,7 +481,14 @@
 </badge-img>
 
 <board-badges>
-  <h4>Badge stats (Top 20, <a href="#" onclick={toggleShowAll}>Click</a> to show all)</h4>
+  <h4>
+    Badge stats 
+    | Last <a href="#" class={"selected": this.selected==10} onClick={fetch(10)}>10</a>
+    | <a href="#" class={"selected": this.selected==30} onClick={fetch(30)}>30</a>
+    | <a href="#" class={"selected": this.selected==60} onClick={fetch(60)}>60</a>
+    | <a href="#" class={"selected": this.selected==90} onClick={fetch(90)}>90</a>
+    | <a href="#" class={"selected": this.selected==150} onClick={fetch(150)}>150</a> matches 
+    | <a href="#" class={"selected": this.selected==undefined} onClick={fetch()}>Total</a> (Top 20 / <a href="#" onclick={toggleShowAll}>Show all</a>)</h4>
   <table class='board-badges-table' style='text-align: center; border-collapse: collapse;'>
     <colgroup>
       <col style="width:10%">
@@ -565,6 +572,10 @@
       font-weight: bold;
       text-shadow: 1px 1px 1px black;
     }
+
+    .selected {
+      color: red;
+    }
   </style>
   /* required opts are:
     badges:
@@ -624,9 +635,30 @@
     }
   }
 
-  this.on('before-mount', () => {
-    this.prepareData(opts.badges)
+  this.on('mount', () => {
+    this.fetchData(30)
   })
+
+  fetchData(nLatest) {
+    this.selected = nLatest
+    var self = this
+    opts.selectedNMatches.trigger('set', nLatest)
+    qapi.getBoardBadges(nLatest).then((json) => {
+      self.prepareData(json)
+      if (nLatest) {
+        self.showAll = true
+      } else {
+        self.showAll = false
+      }
+      self.update()
+    })
+  }
+
+  fetch(nLatest) {
+    return () => {
+      this.fetchData(nLatest)
+    }
+  }
 
   getClass(badgeName, playerId) {
     if (
@@ -673,8 +705,8 @@
   <h4>Total {opts.type}</h4>
   <div id='total-{opts.type}-chart'></div>
 
-  build_traces() {
-    var data = this.opts.data.sort((a, b) => {return a.total - b.total})
+  build_traces(rawData) {
+    var data = rawData.sort((a, b) => {return a.total - b.total})
     var traces = data.reduce(
       (previous, current) => {
         previous.y.push(context.players[current.player_id].name);
@@ -684,10 +716,11 @@
     return traces
   }
 
-  this.on('mount', () => {
-    var traces = this.build_traces()
+  opts.stats.on('updated', () => {
+    var traces = this.build_traces(opts.stats[opts.type])
     traces['type'] = 'bar'
     traces['orientation'] = 'h'
+    Plotly.purge(`total-${this.opts.type}-chart`)
     Plotly.newPlot(
       `total-${this.opts.type}-chart`,
       [traces],
@@ -696,6 +729,10 @@
         margin: {b: 25, t: 25, l: 100, r: 25},
       }
     )
+  })
+
+  this.on('mount', () => {
+  
   })
 
 </total-chart>
