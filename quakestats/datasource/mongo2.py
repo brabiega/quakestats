@@ -202,12 +202,16 @@ class DataStoreMongo():
                 result.append(entry)
         return result
 
-    def get_matches(self, latest=None):
+    def get_matches(self, latest=None, raw=False):
         if latest:
             result = self.db.match.find().sort(
                 'start_date', pymongo.DESCENDING).limit(latest)
         else:
             result = self.db.match.find()
+        
+        if raw:
+            return result
+
         return self.strip_id(result)
 
     def get_match_participants(self, match_guids):
@@ -268,40 +272,71 @@ class DataStoreMongo():
         else:
             return self.strip_id(self.db.player.find())
 
-    def get_badge_sum(self):
-        res = self.db.badge.aggregate([{
-            '$group': {
-                '_id': {'name': '$name', 'player_id': '$player_id'},
-                'count': {'$sum': '$count'},
+    def get_badge_sum(self, latest=None):
+        if latest:
+            matches = self.get_matches(latest, True)
+            aggregate = [
+                {
+                    '$match': {'match_guid': {'$in': [m['match_guid'] for m in matches]}}
+                },
+            ]
+        else:
+            aggregate = []
+
+        aggregate.append(
+            {
+                '$group': {
+                    '_id': {'name': '$name', 'player_id': '$player_id'},
+                    'count': {'$sum': '$count'},
+                }
             }
-        }])
+        )
+        
+        res = self.db.badge.aggregate(aggregate)
         return [{
             'name': entry['_id']['name'],
             'player_id': entry['_id']['player_id'],
             'count': entry['count']} for entry in res]
 
-    def get_total_stats(self):
-        kills = self.db.kill.aggregate([{
-            '$group': {
-                '_id': {'killer_id': '$killer_id'},
-                'count': {'$sum': 1}
+    def get_total_stats(self, latest=None):
+        if latest:
+            matches = self.get_matches(latest, True)
+            match = {'match_guid': {'$in': [m['match_guid'] for m in matches]}}
+            min_score = 0
+        else:
+            match = {}
+            min_score = 100
+
+        kills = self.db.kill.aggregate([
+            {
+                '$match': match},
+            {
+                '$group': {
+                    '_id': {'killer_id': '$killer_id'},
+                    'count': {'$sum': 1}
+                }
             }
-        }])
-        deaths = self.db.kill.aggregate([{
-            '$group': {
-                '_id': {'victim_id': '$victim_id'},
-                'count': {'$sum': 1}
+        ])
+        deaths = self.db.kill.aggregate([
+            {
+                '$match': match
+            },
+            {
+                '$group': {
+                    '_id': {'victim_id': '$victim_id'},
+                    'count': {'$sum': 1}
+                }
             }
-        }])
+        ])
         return {
             'kills': [{
                 'player_id': entry['_id']['killer_id'],
                 'total': entry['count']
-            } for entry in kills if entry['count'] > 100],
+            } for entry in kills if entry['count'] > min_score],
             'deaths': [{
                 'player_id': entry['_id']['victim_id'],
                 'total': entry['count']
-            } for entry in deaths if entry['count'] > 100],
+            } for entry in deaths if entry['count'] > min_score],
         }
 
     def get_map_stats(self):

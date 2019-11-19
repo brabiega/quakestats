@@ -2,3 +2,5 @@ pytest==3.5.0
 pytest-sugar==0.9.1
 bump2version==0.5.11
 twine==2.0.0
+gitchangelog==3.0.4
+

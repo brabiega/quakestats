@@ -10,3 +10,6 @@ test:
 	cd tests && py.test
 
 release: test bdist
+
+changelog:
+	gitchangelog > CHANGELOG.MD
