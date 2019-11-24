@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+import click
+import logging
+from quakestats.system.log import configure_logging
+from quakestats.dataprovider.quake3.logwatch import Q3LogWatcher
+
+
+logger = logging.getLogger()
+
+
+@click.command()
+@click.option('--q3logfile', help='Location of quake3 log fike', required=True)
+@click.option('--ignore-history/--no-ignore-history', default=False, help='Ignores old matches')
+@click.option(
+    '--api-endpoint', required=True,
+    help='Quakestats API endpoint to send matches, e.g. "http://localhost:5000"'
+)
+@click.option('--api-token', required=True, help='Quakestats API auth token')
+def main(q3logfile, ignore_history, api_endpoint, api_token):
+    configure_logging()
+    logger.info("Log watcher starting")
+
+    # watcher = Q3LogWatcher('/home/rbn/repos/quakestats/work-empty/test.log')
+    watcher = Q3LogWatcher(
+        q3logfile,
+        api_token=api_token,
+        api_endpoint=api_endpoint,
+    )
+    #watcher = Q3LogWatcher('/home/rbn/repos/quakestats/work-empty/5b012804119533d3ac3ade3c08d4decf-test.log')
+    watcher.watch(ignore_history=ignore_history)
+
+
+if __name__ == '__main__':
+    main()  # pylint: disable=no-value-for-parameter
