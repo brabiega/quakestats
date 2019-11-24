@@ -125,7 +125,7 @@ class PlayerScores():
         game_length = match_report['GAME_LENGTH']
         self.scores = [
             s for s in self.scores
-            if s[0] < game_length]
+            if s[0] <= game_length]
 
 
 class KDR():
