@@ -112,6 +112,17 @@ curl -X POST --form file=@/path/to/your/games.log --form token=adminsecrettoken 
 ```
 All log files with extracted matches are stored in directory determined by ```RAW_DATA_DIR``` config entry
 
+### Using automated scrupt to send logs
+Quakestats includes a script which is able to watch q3 log file and
+automatically send match results when match end is detected.
+You need to install quakestats (use python pip) package on the server where your log file is.
+ Example usage:
+
+```bash
+# q3-log-watch --q3logfile ~/.q3a/osp/games.log --api-endpoint http://<QUAKESTATS URL> --api-token <ADMIN TOKEN>
+q3-log-watch --q3logfile ~/.q3a/osp/games.log --api-endpoint http://localhost:8000 --api-token mytoken123
+```
+
 ### Rebuilding database
 You can rebuild your database using files stored in ```RAW_DATA_DIR``` with simple web api call or CLI.
 ```bash
