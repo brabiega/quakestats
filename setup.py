@@ -34,6 +34,9 @@ setup(
     packages=find_packages(
         include=['quakestats*'],
     ),
+    scripts=[
+        'quakestats/scripts/q3-log-watch'
+    ],
     entry_points={
         'console_scripts': [
             'quakestats = quakestats.__main__:main',
@@ -44,6 +47,7 @@ setup(
     install_requires=[
         'Flask>=1.0',
         'Flask-PyMongo',
+        'click>6.5,<7',
         'pandas',
         'passlib',
         'pymongo',

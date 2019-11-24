@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.1.0 (2019-11-19)
-------------------
+v1.1.0 (2019-11-19)
+-------------------
 - Improved changelog generation. [BR]
 - Total stats GUI is able to fetch last N matches. [BR]
 - Added changelog, makefile changelog script. [BR]

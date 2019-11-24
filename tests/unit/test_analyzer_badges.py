@@ -44,7 +44,7 @@ class TestBadger():
             ],
         ),
         (
-            ['A', 'B'],
+            ['A', 'B', 'C', 'D'],
             [
                 ('WIN_GOLD', 'A', 1),
                 ('WIN_SILVER', 'B', 1),
