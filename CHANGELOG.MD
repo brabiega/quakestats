@@ -2,6 +2,21 @@ Changelog
 =========
 
 
+v1.2.0 (2019-11-24)
+-------------------
+- Dev: Fixed tests. [BR]
+- Docs: Added note about q3 log watch script. [BR]
+- Feature: Added CLI script to watch Q3 log file and send logs
+  automatically. [BR]
+- Dev: added some logging infra code. [BR]
+- Change: Added backend API to accept q3 match logs as json. [BR]
+- Change: 'WIN' badges are now assigned according to number of players.
+  [BR]
+- Bugfix: when fraglimit reached last kill was incorrectly removed from
+  scores. [BR]
+- Fixed style for changelog generation. [BR]
+
+
 v1.1.0 (2019-11-19)
 -------------------
 - Improved changelog generation. [BR]
