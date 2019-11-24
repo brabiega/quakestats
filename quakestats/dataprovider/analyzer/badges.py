@@ -65,6 +65,13 @@ class Badger():
     @badge()
     def winners(self):
         players = self.scores.players_sorted_by_score()
+
+        # limit number of badges when low players
+        # at least world + 2 players
+        if len(players) < 3:
+            return
+
+        players = players[:len(players) - 2]
         try:
             self.add_badge('WIN_GOLD', players[0], 1)
             self.add_badge('WIN_SILVER', players[1], 1)
