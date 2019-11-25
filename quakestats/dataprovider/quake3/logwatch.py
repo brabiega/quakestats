@@ -4,6 +4,7 @@ import io
 import requests
 
 from quakestats.dataprovider.quake3 import Q3MatchFeeder, FeedFull
+from quakestats.dataprovider.quake3.feeder import MalformedLogEntry
 
 
 logger = logging.getLogger(__name__)
@@ -70,8 +71,19 @@ class Q3LogWatcher():
             time.sleep(self.interval)
 
     def consume_change(self, fd):
-        for line in fd:
+        # it may happen that we try to consume the data from log
+        # while log entry is 'half' written
+
+        lines = fd.readlines()
+        if len(lines) <= 1:
+            return
+
+        # consume all lines besides the last one
+        last_line = lines[-1]
+        lines = lines[:-1]
+        for line in lines:
             line = line.strip()
+
             try:
                 self.match_feeder.feed(line)
             except FeedFull:
@@ -87,4 +99,4 @@ class Q3LogWatcher():
 
                 self.match_feeder.feed(line)
 
-        self._cursor_location = fd.tell()
+        self._cursor_location = fd.tell() - len(last_line)
