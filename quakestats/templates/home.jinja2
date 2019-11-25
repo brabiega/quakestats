@@ -4,7 +4,7 @@
 <script>
   qapi.getMatches().then(function(json) {
     for (entry of json) {
-      entry['link'] = "/match/" + entry['match_guid']
+      entry['link'] = `/match/${entry['match_guid']}`
     }
     riot.mount('match-list', {'matches': json, 'datefmt': datefmt})
   })
@@ -62,15 +62,15 @@
 {% endblock %}
 
 {% block body %}
-  <div style="grid-column: 1 / 2; grid-row: 2 / 6">
+  <div style="grid-column: 1 / -1;">
     <match-list></match-list>
   </div>
-  <div style="grid-column: 2 / -1; grid-row-start: 2">
+  <div style="grid-column: 1 / -1;">
     <board-badges></board-badges>
   </div>
   <div
     style="
-      grid-column: 2 / -1; grid-row-start: 3; display: grid;
+      grid-column: 1 / -1; display: grid;
       grid-template-columns: repeat(2, 1fr); grid-column-gap: 10px
     "
   >

@@ -29,6 +29,12 @@ def index():
         'home.jinja2', js_context={'view': 'HOME'})
 
 
+@app.route('/matches/all')
+def view_all_matches():
+    return flask.render_template(
+        'all_matches.jinja2', js_context={'view': 'ALL'})
+
+
 @app.route('/match/<match_guid>')
 def match(match_guid):
     return flask.render_template(

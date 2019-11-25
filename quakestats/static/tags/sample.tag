@@ -42,15 +42,34 @@
 </player-list>
 
 <match-list>
-  <h4>Latest matches</h4>
-  <table>
-    <tr each={opts.matches}>
-      <td>
-        <a href="{this.link}">{ opts.datefmt(new Date(this.start_date)) }</a>
-      </td>
-      <td>{this.map_name}</td>
-    </tr>
-  </table>
+  <h4 style="margin-bottom: 0px">Latest matches</h4>
+  <div style="display: grid; grid-template-columns: repeat(5, 1fr);">
+    <div each={matchesChunk in chunk(opts.matches, 5)} style="text-align: center; padding: 4px;">
+      <a each={matchesChunk} href="{this.link}" class='match-entry'>
+        { opts.datefmt(new Date(this.start_date)) } | {this.map_name} | {this.game_type}
+      </a>
+    </div>
+  </div>
+
+  <style>
+  .match-entry {
+    display: block;
+    padding: 4px;
+  }
+
+  .match-entry:hover {
+    display: block;
+    background: #2c9198;
+    color: white;
+  }
+  </style>
+
+  chunk(arr, chunkSize) {
+    var R = [];
+    for (var i=0,len=arr.length; i<len; i+=chunkSize)
+      R.push(arr.slice(i,i+chunkSize));
+    return R;
+  }
 </match-list>
 
 <match-info>

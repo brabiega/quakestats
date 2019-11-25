@@ -13,6 +13,8 @@
   var fetch_match_badges = qapi.getMatchBadges(context.match_guid)
   var fetch_match_player_stats = qapi.getMatchPlayerStats(context.match_guid)
 
+  var dataProc = new QuakeStatsDataProcessor()
+
   class PlayersState {
     constructor() {
       riot.observable(this)
@@ -50,7 +52,7 @@
   var playersState = new PlayersState()
 
   fetch_players.then(json => {
-    context.players = json.reduce((val, entry) => {val[entry.id] = entry; return val}, {})
+    context.players = dataProc.playersMap(json)
     playersState.setPlayers(context.players)
   })
 

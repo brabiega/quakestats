@@ -207,7 +207,8 @@ class DataStoreMongo():
             result = self.db.match.find().sort(
                 'start_date', pymongo.DESCENDING).limit(latest)
         else:
-            result = self.db.match.find()
+            result = self.db.match.find().sort(
+                'start_date', pymongo.DESCENDING)
         
         if raw:
             return result
