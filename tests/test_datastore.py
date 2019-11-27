@@ -149,7 +149,7 @@ class TestDataStoreMongo():
         ])
 
     def test_get_matches(self, ds):
-        ds.db.match.find.return_value = [
+        ds.db.match.find().sort.return_value = [
             {'match_guid': 1, '_id': 1},
             {'match_guid': 2, '_id': 2}
         ]
