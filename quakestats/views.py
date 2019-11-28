@@ -41,6 +41,12 @@ def match(match_guid):
         'match.jinja2', js_context={'view': 'MATCH', 'match_guid': match_guid})
 
 
+@app.route('/match/<match_guid>/1v1')
+def match_1v1(match_guid):
+    return flask.render_template(
+        'match-1v1.jinja2', js_context={'view': 'MATCH', 'match_guid': match_guid})
+
+
 @app.route('/player/<id>')
 def player(id):
     printable = flask.request.args.get('printable')

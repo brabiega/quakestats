@@ -96,6 +96,23 @@
   ]
 </match-info>
 
+<duel-info>
+  <span style="text-align: center">{this.opts.match.start_date} | {this.opts.match.map_name} | {this.opts.match.exit_message}</span>
+
+  <style>
+  span {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  </style>
+</duel-info>
+
+<accuracy-info>
+  <h4>Accuracy info</h4>
+  <span>Sorry not yet implemented :)</span>
+</accuracy-info>
+
 <match-score-chart>
   <h4>Player scores</h4>
   <div id='score-chart'></div>
@@ -178,17 +195,22 @@
   <div id='kill-chart'></div>
   
   this.on('mount', function() {
-    Plotly.newPlot(
-      'kill-chart',
-      opts.series,
-      {
+    let layout = {
         'height': 600,
-        paper_bgcolor: '#FFFFFF',
-        plot_bgcolor: '#FFFFFF',
         margin: {b: 25, t: 25, l: 20, r: 10},
         legend: {"orientation": "h"},
         hovermode: 'closest'
-      })
+    }
+
+    if (this.opts.chartLayout) {
+      layout = this.opts.chartLayout
+    }
+
+    Plotly.newPlot(
+      'kill-chart',
+      opts.series,
+      layout,
+    )
   })
   
 </match-kills-chart>
@@ -197,17 +219,22 @@
   <div id='death-chart'></div>
   
   this.on('mount', function() {
+    let layout = {
+        'height': 600,
+        margin: {b: 25, t: 25, l: 20, r: 10},
+        legend: {"orientation": "h"},
+        hovermode: 'closest'
+    }
+
+    if (this.opts.chartLayout) {
+      layout = this.opts.chartLayout
+    }
+
     Plotly.newPlot(
       'death-chart',
       opts.series,
-      {
-        'height': 600,
-        paper_bgcolor: '#FFFFFF',
-        plot_bgcolor: '#FFFFFF',
-        margin: {b: 25, t: 25, l: 15, r: 10},
-        legend: {"orientation": "h"},
-        hovermode: 'closest'
-      })
+      layout,
+    )
   })
   
 </match-deaths-chart>
@@ -435,16 +462,21 @@
   })
 
   this.on('mount', () => {
-    Plotly.newPlot(
-      'kdr-over-time-chart',
-      Array.from(this.kdr_traces.values()),
-      {
+    let layout = {
         height: 400,
         paper_bgcolor: '#FFFFFF',
         plot_bgcolor: '#FFFFFF',
         margin: {b: 25, t: 25},
-        hovermode: 'closest'
-      }
+        hovermode: 'closest',
+    }
+    if (this.opts.chartLayout != undefined) {
+      layout = this.opts.chartLayout
+    }
+
+    Plotly.newPlot(
+      'kdr-over-time-chart',
+      Array.from(this.kdr_traces.values()),
+      layout,
     )
   })
 </match-kdr-chart>

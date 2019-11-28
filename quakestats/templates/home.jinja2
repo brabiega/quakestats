@@ -5,6 +5,9 @@
   qapi.getMatches().then(function(json) {
     for (entry of json) {
       entry['link'] = `/match/${entry['match_guid']}`
+      if (entry.game_type == "DUEL") {
+        entry.link = `${entry.link}/1v1`
+      }
     }
     riot.mount('match-list', {'matches': json, 'datefmt': datefmt})
   })
