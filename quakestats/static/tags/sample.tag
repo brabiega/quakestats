@@ -1028,3 +1028,16 @@
   this.totalArmor = opts.totalArmor
 
 </player-pickup-summary>
+
+<duel-title>
+  <div>
+    <div class="duel-player" style="float: left">{this.opts.players[0]}</div>
+    <div style="width: 20%; float: left; text-align: center">
+      <img style="height: 164px" src="/static/img/vs.svg"/>
+    </div>
+    <div class="duel-player" style="float: left;">{this.opts.players[1]}</div>
+    <div style="text-align: center">
+      <duel-info match={this.opts.matchInfo}></duel-info>
+    </div>
+  </div>
+</duel-title>

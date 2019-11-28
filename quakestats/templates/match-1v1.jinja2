@@ -57,7 +57,6 @@
 
   fetch_match.then(json => {
     riot.mount('accuracy-info')
-    riot.mount('duel-info', {'match': json})
   })
 
   Promise.all([fetch_players, fetch_match_kills, fetch_match_scores, fetch_match_specials, fetch_match])
@@ -212,6 +211,15 @@
 
     riot.mount('score-summary', {'scores': final_scores, 'players': playersState})
     riot.mount('match-score-chart', {'series': score_series, specials_by_type: specials_by_type, scores: match_scores, 'match_info': match_info, 'max_score': max_score})
+
+    var duelPlayerNames = final_scores
+      .filter((e) => {return e.player_id != 'q3-world'})
+      .map((e) => {return context.players[e.player_id].name})
+
+    if (duelPlayerNames.length != 2) {
+      console.warn("Duel players != 2")
+    }
+    riot.mount('duel-title', {'matchInfo': match_info, 'players': duelPlayerNames})
   })
 
   Promise.all([fetch_players, fetch_match_specials])
@@ -330,14 +338,7 @@
 
 {% block body %}
   <div style="grid-column: 1 / -1; margin-top:25px; background: none;">
-    <div class="duel-player" style="float: left">Marek</div>
-    <div style="width: 20%; float: left; text-align: center">
-      <img style="height: 164px" src="/static/img/vs.svg"/>
-    </div>
-    <div class="duel-player" style="float: left;">Darek</div>
-    <div style="text-align: center">
-      <duel-info></duel-info>
-    </div>
+    <duel-title></duel-title>
   </div>
   <div style="grid-column: auto / span 2">
     <accuracy-info></accuracy-info>
