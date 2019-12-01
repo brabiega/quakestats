@@ -2,6 +2,16 @@
 
 {% block body_top %}
 <script>
+  var fetch_players = qapi.getAllPlayers()
+
+  fetch_players.then(function(json) {
+      var data = []
+      context.players = {}
+      for (entry of json) {
+        context.players[entry.id] = entry
+      }
+    })
+
   qapi.getMatches().then(function(json) {
     for (entry of json) {
       entry['link'] = `/match/${entry['match_guid']}`
@@ -9,17 +19,11 @@
         entry.link = `${entry.link}/1v1`
       }
     }
-    riot.mount('match-list', {'matches': json, 'datefmt': datefmt})
-  })
-
-  var fetch_players = qapi.getAllPlayers()
-    .then(function(json) {
-      var data = []
-      context.players = {}
-      for (entry of json) {
-        context.players[entry.id] = entry
-      }
+    fetch_players.then(playersResponse => {
+      playersById = playersResponse.reduce((acu, cur) => {acu[cur.id] = cur; return acu}, {})
+      riot.mount('match-list', {'matches': json, 'datefmt': datefmt, 'players': playersById})
     })
+  })
 
   var selectedNMatches = {}
   riot.observable(selectedNMatches)

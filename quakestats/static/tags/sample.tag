@@ -47,6 +47,7 @@
     <div each={matchesChunk in chunk(opts.matches, 5)} style="text-align: center; padding: 4px;">
       <a each={matchesChunk} href="{this.link}" class='match-entry'>
         { opts.datefmt(new Date(this.start_date)) } | {this.map_name} | {this.game_type}
+        <div>{this.describe(this.description)}</div>
       </a>
     </div>
   </div>
@@ -63,6 +64,18 @@
     color: white;
   }
   </style>
+
+  describe(match) {
+    if (!match) {
+      return ""
+    }
+    if (match.type == "DUEL") {
+      let p1 = opts.players[match.result[0].player_id].name
+      let p2 = opts.players[match.result[1].player_id].name
+      return `${match.result[0].score} : ${match.result[1].score} | ${p1} : ${p2}`
+    }
+    return ""
+  }
 
   chunk(arr, chunkSize) {
     var R = [];
@@ -1033,7 +1046,7 @@
   <div>
     <div class="duel-player" style="float: left">{this.opts.players[0]}</div>
     <div style="width: 20%; float: left; text-align: center">
-      <img style="height: 164px" src="/static/img/vs.svg"/>
+      <img style="height: 164px" src="/static/img/vs.png"/>
     </div>
     <div class="duel-player" style="float: left;">{this.opts.players[1]}</div>
     <div style="text-align: center">
