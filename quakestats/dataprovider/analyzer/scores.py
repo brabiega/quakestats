@@ -114,7 +114,10 @@ class PlayerScores():
         try:
             del self.player_score[player_id]
         except KeyError:
-            pass
+            # player had no score at all
+            # so there is no need to log the score change in self.scores
+            return
+
         self.scores.append(
             (game_time, player_id, 0, 'DISCONNECTED'),
         )
