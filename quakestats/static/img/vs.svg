@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="32"
-   height="32"
-   viewBox="0 0 8.4666665 8.4666669"
+   width="364.69083"
+   height="188.85388"
+   viewBox="0 0 36.469082 18.885388"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"
@@ -52,7 +52,7 @@
        x2="7.8478999"
        y2="290.90457"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-0.13363476,-0.01670434)" />
+       gradientTransform="matrix(4.1053033,0,0,4.1053033,3.1424341,-902.89675)" />
     <linearGradient
        gradientTransform="translate(0.00974833,0.13371067)"
        inkscape:collect="always"
@@ -72,6 +72,16 @@
        x2="7.8478999"
        y2="290.90457"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5617"
+       id="linearGradient4540-1"
+       x1="0.88805479"
+       y1="295.34583"
+       x2="7.8478999"
+       y2="290.90457"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.95335973,0,0,0.95335973,4.437823,13.506973)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -80,18 +90,24 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.2"
-     inkscape:cx="28.074307"
-     inkscape:cy="6.6258334"
+     inkscape:zoom="1.4"
+     inkscape:cx="149.09493"
+     inkscape:cy="84.666916"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     inkscape:window-width="1609"
-     inkscape:window-height="855"
-     inkscape:window-x="2133"
-     inkscape:window-y="90"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1920"
+     inkscape:window-height="1037"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     scale-x="0.1"
+     viewbox-width="400" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -100,7 +116,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -108,28 +124,28 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-288.53332)">
+     transform="translate(-0.02938192,-290.64381)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.86557913px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19663945"
-       x="-0.54624021"
-       y="295.24844"
-       id="text4520-5"><tspan
+       style="font-style:normal;font-weight:normal;font-size:32.29058838px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#002223;fill-opacity:1;stroke:none;stroke-width:0.80726469"
+       x="1.9314653"
+       y="309.19031"
+       id="text4520-9"><tspan
          sodipodi:role="line"
-         id="tspan4518-3"
-         x="-0.54624021"
-         y="295.24844"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Z003;-inkscape-font-specification:Z003;fill:#000000;fill-opacity:1;stroke-width:0.19663945">VS</tspan></text>
+         id="tspan4518-6"
+         x="1.9314653"
+         y="309.19031"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.06867599px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#002223;fill-opacity:1;stroke-width:0.80726469">VS</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.86557913px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient4540);fill-opacity:1;stroke:none;stroke-width:0.19663946"
-       x="-0.70143503"
-       y="295.12161"
+       style="font-style:normal;font-weight:normal;font-size:32.29058838px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient4540);fill-opacity:1;stroke:none;stroke-width:0.80726469"
+       x="0.8114422"
+       y="308.73547"
        id="text4520"><tspan
          sodipodi:role="line"
          id="tspan4518"
-         x="-0.70143503"
-         y="295.12161"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Z003;-inkscape-font-specification:Z003;fill:url(#linearGradient4540);fill-opacity:1;stroke-width:0.19663946">VS</tspan></text>
+         x="0.8114422"
+         y="308.73547"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.06867599px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient4540);fill-opacity:1;stroke-width:0.80726469">VS</tspan></text>
   </g>
 </svg>
