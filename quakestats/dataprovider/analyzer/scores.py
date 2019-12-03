@@ -84,6 +84,12 @@ class PlayerScores():
                 self.player_score[victim_id][0], mod))
 
     def from_player_switchteam(self, player_switchteam):
+        # In OSP 1v1 user is forced to spect right after match end
+        # before match parsing is completely done
+        # let's ignore such events
+        if player_switchteam.get("AFTER_END", None):
+            return
+
         game_time = player_switchteam.time
         player_id = player_switchteam.player_id
         # well to be 100% accurate the score should be deleted
