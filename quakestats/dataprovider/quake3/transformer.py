@@ -101,11 +101,15 @@ class Q3toQL():
         assert not self.result['events']
         for raw_event in self.raw_events:
             events = self.process_raw_event(raw_event)
-            self.debug_events.append(
-                (raw_event, events))
             if type(events) is list:
+                if self.match_report_event:
+                    for ev in events:
+                        ev['AFTER_END'] = True
+
                 self.result['events'].extend(events)
             elif events:
+                if self.match_report_event:
+                    events['AFTER_END'] = True
                 self.result['events'].append(events)
         if self.match_report_event:
             self.result['events'].append(self.match_report_event)
