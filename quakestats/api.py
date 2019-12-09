@@ -22,10 +22,13 @@ def auth(token):
     return token == app.config['ADMIN_TOKEN']
 
 
-@app.route('/api/v2/match')
+@app.route('/api/v2/matches')
 def api2_matches():
-    return flask.jsonify(data_store().get_matches(132))
+    return flask.jsonify(data_store().get_matches(25))
 
+@app.route('/api/v2/matches/all')
+def api2_matches_all():
+    return flask.jsonify(data_store().get_matches())
 
 @app.route('/api/v2/match/<match_guid>/metadata')
 def api2_match_metadata(match_guid):

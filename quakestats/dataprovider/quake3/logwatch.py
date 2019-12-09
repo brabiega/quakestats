@@ -4,6 +4,7 @@ import io
 import requests
 
 from quakestats.dataprovider.quake3 import Q3MatchFeeder, FeedFull
+from quakestats.dataprovider.quake3.feeder import MalformedLogEntry
 
 
 logger = logging.getLogger(__name__)
@@ -61,16 +62,41 @@ class Q3LogWatcher():
 
                         self.match_feeder = Q3MatchFeeder()
 
-                    fd.seek(self._cursor_location)
-                    self.consume_change(fd)
-
+                    changes = self.read_changes(fd)
+                    self.process_changes(changes)
                 else:
                     pass
 
             time.sleep(self.interval)
 
-    def consume_change(self, fd):
-        for line in fd:
+    def read_changes(self, fd):
+        fd.seek(self._cursor_location)
+
+        data = fd.read()
+
+        if fd.tell() == self._cursor_location:
+            # no changes
+            return []
+
+        raw_lines = data.split('\n')
+        last_line = raw_lines[-2]
+        # At 1st read skip last line
+        # if last line hasn't changed after 2nd read then return it
+        # for further processing. This way we hope to avoid processing 
+        # 'half' written log entries.
+        new_cursor_location = fd.tell() - (len(last_line) + 1)  # +\n
+        if (new_cursor_location == self._cursor_location and self._cursor_location != 0):
+            self._cursor_location = fd.tell()
+            # ["last line", ""]
+            return raw_lines[:-1]
+
+        else:
+            self._cursor_location = new_cursor_location
+            # ["first line", "last li", ""]
+            return raw_lines[:-2]
+
+    def process_changes(self, log_lines):
+        for line in log_lines:
             line = line.strip()
             try:
                 self.match_feeder.feed(line)
@@ -86,5 +112,3 @@ class Q3LogWatcher():
                 logger.info("Match sent to endpoint %s, response %s", self.api_endpoint, response)
 
                 self.match_feeder.feed(line)
-
-        self._cursor_location = fd.tell()

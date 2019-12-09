@@ -86,6 +86,8 @@ class DataStoreMongo():
                  'server_name',
                  'start_date',
                  'time_limit'])
+        
+        match_info['summary'] = analysis_report.summary
 
         self.db.match.insert_one(match_info)
 
@@ -207,7 +209,8 @@ class DataStoreMongo():
             result = self.db.match.find().sort(
                 'start_date', pymongo.DESCENDING).limit(latest)
         else:
-            result = self.db.match.find()
+            result = self.db.match.find().sort(
+                'start_date', pymongo.DESCENDING)
         
         if raw:
             return result

@@ -10,7 +10,6 @@
   var fetch_match_scores = qapi.getMatchScores(context.match_guid)
   var fetch_match_teams = qapi.getMatchTeams(context.match_guid)
   var fetch_match_specials = qapi.getMatchSpecial(context.match_guid)
-  var fetch_match_badges = qapi.getMatchBadges(context.match_guid)
   var fetch_match_player_stats = qapi.getMatchPlayerStats(context.match_guid)
 
   var dataProc = new QuakeStatsDataProcessor()
@@ -57,14 +56,7 @@
   })
 
   fetch_match.then(json => {
-    riot.mount('match-info', {'match': json})
-  })
-
-  Promise.all([fetch_players, fetch_match_teams])
-  .then(values => {
-    //ignore fetch players result
-    var json = values[1]
-    riot.mount('team-switches', {'switches': json, 'players': playersState})
+    riot.mount('accuracy-info')
   })
 
   Promise.all([fetch_players, fetch_match_kills, fetch_match_scores, fetch_match_specials, fetch_match])
@@ -125,11 +117,20 @@
       return b.y[b.y.length-1] - a.y[a.y.length-1]
     })
 
-    riot.mount('match-kills-chart', {'series': kill_entries})
-    riot.mount('match-deaths-chart', {'series': death_entries})
-    riot.mount('worst-enemy', {'kills': match_kills, 'players': playersState})
-    riot.mount('kdr-chart', {'kills': match_kills, 'players': playersState})
-    riot.mount('match-kdr-chart', {'kills': match_kills, 'players': playersState})
+
+    let chartLayout = {
+      height: 400,
+      margin: {b: 25, t: 25, l: 20, r: 10},
+      hovermode: 'closest',
+      legend: {"orientation": "h"},
+    }
+    riot.mount('match-kills-chart', {'series': kill_entries, 'chartLayout': chartLayout,})
+    riot.mount('match-deaths-chart', {'series': death_entries, 'chartLayout': chartLayout,})
+    riot.mount('match-kdr-chart', {
+      'kills': match_kills, 'players': playersState,
+      'chartLayout': chartLayout,
+      }
+    )
 
     // weapon stats
     var weapon_kills = d3.nest()
@@ -210,6 +211,15 @@
 
     riot.mount('score-summary', {'scores': final_scores, 'players': playersState})
     riot.mount('match-score-chart', {'series': score_series, specials_by_type: specials_by_type, scores: match_scores, 'match_info': match_info, 'max_score': max_score})
+
+    var duelPlayerNames = final_scores
+      .filter((e) => {return e.player_id != 'q3-world'})
+      .map((e) => {return context.players[e.player_id].name})
+
+    if (duelPlayerNames.length != 2) {
+      console.warn("Duel players != 2")
+    }
+    riot.mount('duel-title', {'matchInfo': match_info, 'players': duelPlayerNames})
   })
 
   Promise.all([fetch_players, fetch_match_specials])
@@ -236,22 +246,6 @@
     .entries(json)
 
     riot.mount('special-scores', {'specials': specials_summary, 'details': specials_details, 'players': playersState})
-  })
-
-  Promise.all([fetch_players, fetch_match_badges])
-  .then(values => {
-    var json = values[1]
-    var badges = d3.nest()
-    .key((d) => {return d.name})
-    .sortValues((a, b) => {return b.count - a.count})
-    .entries(json)
-
-    var multibadges = badges.filter((e) => {return e.values.length > 1})
-    var singlebadges = badges.filter((e) => {return e.values.length == 1})
-    riot.mount('match-badges', {
-      'multibadges': multibadges, 'players': playersState,
-      'singlebadges': singlebadges
-    })
   })
 
   Promise.all([fetch_players, fetch_match_kills])
@@ -343,26 +337,17 @@
 {% endblock %}
 
 {% block body %}
-  <div style="grid-column: 1 / -1">
-    <match-badges>Loading</match-badges>
+  <div style="grid-column: 1 / -1; margin-top:25px; background: none;">
+    <duel-title></duel-title>
   </div>
   <div style="grid-column: auto / span 2">
-    <match-info></match-info>
+    <accuracy-info></accuracy-info>
   </div>
   <div style="grid-column: auto / span 2">
     <score-summary></score-summary>
   </div>
   <div style="grid-column: auto / span 2">
-    <team-switches></team-switches>
-  </div>
-  <div style="grid-column: auto / span 3">
     <weapon-kills></weapon-kills>
-  </div>
-  <div style="grid-column: auto / span 3">
-    <worst-enemy></worst-enemy>
-  </div>
-  <div style="grid-column: auto / span 6">
-    <kdr-chart></kdr-chart>
   </div>
   <div style="grid-column: 1 / -1">
     <match-score-chart></match-score-chart>
@@ -373,20 +358,29 @@
   <div style="grid-column: auto / span 3">
     <player-pickup-summary></player-pickup-summary>
   </div>
-  <div style="grid-column: auto / span 6">
-    <match-player-kill-death></match-player-kill-death>
-  </div>
-  <div style="grid-column: 1 / -1">
-    <match-kdr-chart></match-kdr-chart>
-  </div>
-  <div style="grid-column: auto / span 3">
+  <div style="grid-column: auto / span 2">
     <match-kills-chart></match-kills-chart>
   </div>
-  <div style="grid-column: auto / span 3">
+  <div style="grid-column: auto / span 2">
+    <match-kdr-chart></match-kdr-chart>
+  </div>
+  <div style="grid-column: auto / span 2">
     <match-deaths-chart></match-deaths-chart>
   </div>
   <div style="grid-column: 1 / -1">
     <special-scores></special-scores>
   </div>
+
+  <style>
+    .duel-player {
+      padding-top: 70px;
+      height: 164px;
+      width: 40%;
+      text-align: center;
+      text-shadow: 5px 1px 0px #0A9D91, -4px 1px 0px #93FFF6, 0px 5px 0px #0FDBCA, 0px -5px 0px #0FDBCA, 0px -5px 0px #008277;
+      font-size: 52px;
+      font-weight: bold;
+    }
+  </style>
 
 {% endblock %}

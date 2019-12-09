@@ -42,15 +42,48 @@
 </player-list>
 
 <match-list>
-  <h4>Latest matches</h4>
-  <table>
-    <tr each={opts.matches}>
-      <td>
-        <a href="{this.link}">{ opts.datefmt(new Date(this.start_date)) }</a>
-      </td>
-      <td>{this.map_name}</td>
-    </tr>
-  </table>
+  <h4 style="margin-bottom: 0px">Latest matches</h4>
+  <div style="display: grid; grid-template-columns: repeat(5, 1fr);">
+    <div each={matchesChunk in chunk(opts.matches, 5)} style="text-align: center; padding: 4px;">
+      <a each={match in matchesChunk} href="{match.link}" class='match-entry'>
+        { opts.datefmt(new Date(match.start_date)) } | {match.map_name} | {match.game_type}
+        <div>{this.describe(match)}</div>
+      </a>
+    </div>
+  </div>
+
+  <style>
+  .match-entry {
+    display: block;
+    padding: 4px;
+  }
+
+  .match-entry:hover {
+    display: block;
+    background: #2c9198;
+    color: white;
+  }
+  </style>
+
+  describe(match) {
+    if (!match.summary) {
+      return ""
+    }
+    if (match.game_type == "DUEL") {
+      let summary = match.summary
+      let p1 = opts.players[summary.scores[0].player_id].name
+      let p2 = opts.players[summary.scores[1].player_id].name
+      return `${summary.scores[0].score} : ${summary.scores[1].score} | ${p1} : ${p2}`
+    }
+    return ""
+  }
+
+  chunk(arr, chunkSize) {
+    var R = [];
+    for (var i=0,len=arr.length; i<len; i+=chunkSize)
+      R.push(arr.slice(i,i+chunkSize));
+    return R;
+  }
 </match-list>
 
 <match-info>
@@ -76,6 +109,23 @@
     {prop: 'capture_limit', name: 'Capture limit'},
   ]
 </match-info>
+
+<duel-info>
+  <span style="text-align: center">{this.opts.match.start_date} | {this.opts.match.map_name} | {this.opts.match.exit_message}</span>
+
+  <style>
+  span {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  </style>
+</duel-info>
+
+<accuracy-info>
+  <h4>Accuracy info</h4>
+  <span>Sorry not yet implemented :)</span>
+</accuracy-info>
 
 <match-score-chart>
   <h4>Player scores</h4>
@@ -159,17 +209,22 @@
   <div id='kill-chart'></div>
   
   this.on('mount', function() {
-    Plotly.newPlot(
-      'kill-chart',
-      opts.series,
-      {
+    let layout = {
         'height': 600,
-        paper_bgcolor: '#FFFFFF',
-        plot_bgcolor: '#FFFFFF',
         margin: {b: 25, t: 25, l: 20, r: 10},
         legend: {"orientation": "h"},
         hovermode: 'closest'
-      })
+    }
+
+    if (this.opts.chartLayout) {
+      layout = this.opts.chartLayout
+    }
+
+    Plotly.newPlot(
+      'kill-chart',
+      opts.series,
+      layout,
+    )
   })
   
 </match-kills-chart>
@@ -178,17 +233,22 @@
   <div id='death-chart'></div>
   
   this.on('mount', function() {
+    let layout = {
+        'height': 600,
+        margin: {b: 25, t: 25, l: 20, r: 10},
+        legend: {"orientation": "h"},
+        hovermode: 'closest'
+    }
+
+    if (this.opts.chartLayout) {
+      layout = this.opts.chartLayout
+    }
+
     Plotly.newPlot(
       'death-chart',
       opts.series,
-      {
-        'height': 600,
-        paper_bgcolor: '#FFFFFF',
-        plot_bgcolor: '#FFFFFF',
-        margin: {b: 25, t: 25, l: 15, r: 10},
-        legend: {"orientation": "h"},
-        hovermode: 'closest'
-      })
+      layout,
+    )
   })
   
 </match-deaths-chart>
@@ -416,16 +476,21 @@
   })
 
   this.on('mount', () => {
-    Plotly.newPlot(
-      'kdr-over-time-chart',
-      Array.from(this.kdr_traces.values()),
-      {
+    let layout = {
         height: 400,
         paper_bgcolor: '#FFFFFF',
         plot_bgcolor: '#FFFFFF',
         margin: {b: 25, t: 25},
-        hovermode: 'closest'
-      }
+        hovermode: 'closest',
+    }
+    if (this.opts.chartLayout != undefined) {
+      layout = this.opts.chartLayout
+    }
+
+    Plotly.newPlot(
+      'kdr-over-time-chart',
+      Array.from(this.kdr_traces.values()),
+      layout,
     )
   })
 </match-kdr-chart>
@@ -977,3 +1042,16 @@
   this.totalArmor = opts.totalArmor
 
 </player-pickup-summary>
+
+<duel-title>
+  <div>
+    <div class="duel-player" style="float: left">{this.opts.players[0]}</div>
+    <div style="width: 20%; float: left; text-align: center">
+      <img style="height: 164px" src="/static/img/vs.png"/>
+    </div>
+    <div class="duel-player" style="float: left;">{this.opts.players[1]}</div>
+    <div style="text-align: center">
+      <duel-info match={this.opts.matchInfo}></duel-info>
+    </div>
+  </div>
+</duel-title>

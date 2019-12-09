@@ -2,21 +2,28 @@
 
 {% block body_top %}
 <script>
-  qapi.getMatches().then(function(json) {
-    for (entry of json) {
-      entry['link'] = "/match/" + entry['match_guid']
-    }
-    riot.mount('match-list', {'matches': json, 'datefmt': datefmt})
-  })
-
   var fetch_players = qapi.getAllPlayers()
-    .then(function(json) {
+
+  fetch_players.then(function(json) {
       var data = []
       context.players = {}
       for (entry of json) {
         context.players[entry.id] = entry
       }
     })
+
+  qapi.getMatches().then(function(json) {
+    for (entry of json) {
+      entry['link'] = `/match/${entry['match_guid']}`
+      if (entry.game_type == "DUEL") {
+        entry.link = `${entry.link}/1v1`
+      }
+    }
+    fetch_players.then(playersResponse => {
+      playersById = playersResponse.reduce((acu, cur) => {acu[cur.id] = cur; return acu}, {})
+      riot.mount('match-list', {'matches': json, 'datefmt': datefmt, 'players': playersById})
+    })
+  })
 
   var selectedNMatches = {}
   riot.observable(selectedNMatches)
@@ -62,15 +69,15 @@
 {% endblock %}
 
 {% block body %}
-  <div style="grid-column: 1 / 2; grid-row: 2 / 6">
+  <div style="grid-column: 1 / -1;">
     <match-list></match-list>
   </div>
-  <div style="grid-column: 2 / -1; grid-row-start: 2">
+  <div style="grid-column: 1 / -1;">
     <board-badges></board-badges>
   </div>
   <div
     style="
-      grid-column: 2 / -1; grid-row-start: 3; display: grid;
+      grid-column: 1 / -1; display: grid;
       grid-template-columns: repeat(2, 1fr); grid-column-gap: 10px
     "
   >

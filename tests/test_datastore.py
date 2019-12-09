@@ -56,6 +56,7 @@ class TestDataStoreMongo():
             {'player_id': 'p1', 'damage_dealt': 123},
             {'player_id': 'p2', 'damage_dealt': 125},
         ]
+        report.summary = 'dummy_summary'
         return report
 
     @pytest.fixture
@@ -94,6 +95,7 @@ class TestDataStoreMongo():
             'start_date': 1,
             'time_limit': 100,
             'score_limit': 1000,
+            'summary': 'dummy_summary',
         })
 
     def test_store_team_lifecycle(self, ds, report, stored_switches):
@@ -149,7 +151,7 @@ class TestDataStoreMongo():
         ])
 
     def test_get_matches(self, ds):
-        ds.db.match.find.return_value = [
+        ds.db.match.find().sort.return_value = [
             {'match_guid': 1, '_id': 1},
             {'match_guid': 2, '_id': 2}
         ]

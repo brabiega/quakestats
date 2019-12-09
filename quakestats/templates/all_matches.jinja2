@@ -1,0 +1,19 @@
+{% extends "base2.jinja2" %}
+
+{% block body_top %}
+<script>
+  qapi.getAllMatches().then(function(json) {
+    for (entry of json) {
+      entry['link'] = `/match/${entry['match_guid']}`
+    }
+    riot.mount('match-list', {'matches': json, 'datefmt': datefmt})
+  })
+</script>
+{% endblock %}
+
+{% block body %}
+  <div style="grid-column: 1 / -1;">
+    <match-list></match-list>
+  </div>
+
+{% endblock %}

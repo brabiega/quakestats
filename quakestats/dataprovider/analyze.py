@@ -37,6 +37,20 @@ class AnalysisResult():
         self.kills = None
         self.badges = None
         self.player_stats = None
+        self.summary = None
+
+    def generate_summary(self):
+        # TODO for now summary is generated only for duel
+        if self.match_metadata.game_type == "DUEL":
+            self.summary = {
+                'scores': [
+                    {
+                        'player_id': player_id,
+                        'score': score[0]
+                    } for player_id, score in self.final_scores.items()
+                    if player_id != 'q3-world'
+                ]
+            }
 
 
 class ServerInfo():
@@ -147,6 +161,8 @@ class Analyzer():
         report.kills = self.player_scores.kills
         report.badges = self.badger.badges
         report.player_stats = list(self.player_stats.values())
+        report.generate_summary()
+
         return report
 
     def analyze_event(self, raw_event):

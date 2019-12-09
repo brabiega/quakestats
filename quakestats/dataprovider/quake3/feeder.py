@@ -2,6 +2,10 @@ import re
 from quakestats.dataprovider.feeder import MatchFeeder, FeedFull
 
 
+class MalformedLogEntry(Exception):
+    pass
+
+
 class Q3MatchFeeder(MatchFeeder):
     base_format = r"(\d+\.\d+) (.+?):(.*)"
     separator_format = r"(\d+\.\d+) ---*$"
@@ -44,4 +48,4 @@ class Q3MatchFeeder(MatchFeeder):
                 raise FeedFull("Feed is full, please consume")
             return
 
-        raise Exception("Malformed line {}".format(data))
+        raise MalformedLogEntry("Malformed line '{}'".format(data))

@@ -13,7 +13,11 @@ class QuakeStatsApi {
     }
 
     getMatches() {
-        return this.get('match')
+        return this.get('matches')
+    }
+
+    getAllMatches() {
+        return this.get('matches/all')
     }
 
     getMatch(matchId) {
@@ -109,5 +113,14 @@ class QuakeStatsApi {
 
     getPresenceList(matchCount) {
         return this.get(`presence/${matchCount}`)
+    }
+}
+
+class QuakeStatsDataProcessor {
+    constructor() {}
+
+    playersMap(apiResponse) {
+        // converts [{id: 123, name: 'test'}] to {123: {id: 123, name: 'test'}}
+        return apiResponse.reduce((val, entry) => { val[entry.id] = entry; return val }, {})
     }
 }
