@@ -52,6 +52,7 @@ setup(
         'passlib',
         'pymongo',
         'pyzmq',
+        'requests',
     ],
     project_urls={
         'Bug Reports': 'https://github.com/brabiega/quakestats/issues',
