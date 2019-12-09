@@ -87,7 +87,7 @@ class DataStoreMongo():
                  'start_date',
                  'time_limit'])
         
-        match_info['description'] = analysis_report.description
+        match_info['summary'] = analysis_report.summary
 
         self.db.match.insert_one(match_info)
 

@@ -45,9 +45,9 @@
   <h4 style="margin-bottom: 0px">Latest matches</h4>
   <div style="display: grid; grid-template-columns: repeat(5, 1fr);">
     <div each={matchesChunk in chunk(opts.matches, 5)} style="text-align: center; padding: 4px;">
-      <a each={matchesChunk} href="{this.link}" class='match-entry'>
-        { opts.datefmt(new Date(this.start_date)) } | {this.map_name} | {this.game_type}
-        <div>{this.describe(this.description)}</div>
+      <a each={match in matchesChunk} href="{match.link}" class='match-entry'>
+        { opts.datefmt(new Date(match.start_date)) } | {match.map_name} | {match.game_type}
+        <div>{this.describe(match)}</div>
       </a>
     </div>
   </div>
@@ -66,13 +66,14 @@
   </style>
 
   describe(match) {
-    if (!match) {
+    if (!match.summary) {
       return ""
     }
-    if (match.type == "DUEL") {
-      let p1 = opts.players[match.result[0].player_id].name
-      let p2 = opts.players[match.result[1].player_id].name
-      return `${match.result[0].score} : ${match.result[1].score} | ${p1} : ${p2}`
+    if (match.game_type == "DUEL") {
+      let summary = match.summary
+      let p1 = opts.players[summary.scores[0].player_id].name
+      let p2 = opts.players[summary.scores[1].player_id].name
+      return `${summary.scores[0].score} : ${summary.scores[1].score} | ${p1} : ${p2}`
     }
     return ""
   }
