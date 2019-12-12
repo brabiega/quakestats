@@ -55,10 +55,6 @@
     playersState.setPlayers(context.players)
   })
 
-  fetch_match.then(json => {
-    riot.mount('accuracy-info')
-  })
-
   Promise.all([fetch_players, fetch_match_kills, fetch_match_scores, fetch_match_specials, fetch_match])
   .then(values => {
     var match_scores = values[2]
@@ -301,6 +297,8 @@
   Promise.all([fetch_match_player_stats, fetch_players])
   .then(values => {
     var stats = values[0]
+
+    riot.mount('accuracy-info', {stats: stats})
 
     riot.mount('player-damage-summary', {
       "players": playersState,

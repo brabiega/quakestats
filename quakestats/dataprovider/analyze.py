@@ -247,6 +247,7 @@ class Analyzer():
             'total_health_pickup': event.total_health,
             'damage_dealt': event.damage_dealt,
             'damage_taken': event.damage_taken,
+            'weapons': event.weapon_stats,
         }
 
 
