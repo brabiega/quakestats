@@ -3,10 +3,14 @@
 {% block body_top %}
 <script>
   var fetch_players = qapi.getPresenceList(90)
-  .then(function(json) {
+  .fetchError(() => {
+    console.log("Failed")
+  })
+  .json(json => {
     players = json.players.sort((a, b) => {return a.name > b.name})
     riot.mount('presence-list', {'players': players, 'presence': json.presence})
   })
+
 </script>
 
 {% endblock body_top %}
@@ -15,4 +19,3 @@
 <presence-list style="grid-column: 1 / -1; margin-top:15px;">
 </presence-list>
 {% endblock %}
-
