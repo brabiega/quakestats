@@ -137,7 +137,6 @@
         {calcAcc(stat.weapons[weapon])}
       </td>
     </tr>
-    </tr>
   <table>
 
   <style>
