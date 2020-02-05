@@ -87,6 +87,12 @@ class TestAnalyzer(object):
                 'PICKUPS': {
                     'TOTAL_ARMOR': 20,
                     'TOTAL_HEALTH': 44,
+                },
+                'WEAPONS': {
+                    'S': 100,
+                    'H': 15,
+                    'K': None,
+                    'D': None,
                 }
             },
         })
@@ -97,3 +103,4 @@ class TestAnalyzer(object):
         assert stats['total_health_pickup'] == 44
         assert stats['damage_dealt'] == 55
         assert stats['damage_taken'] == 155
+        assert stats['weapons'] == {'S': 100, 'H': 15, 'K': None, 'D': None}
