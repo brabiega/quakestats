@@ -147,6 +147,9 @@
   </style>
 
   calcAcc(weaponStats) {
+    if (!weaponStats) {
+      return "-"
+    }
     let hits = weaponStats.H
     let shots = weaponStats.S
 
