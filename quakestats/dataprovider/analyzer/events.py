@@ -123,6 +123,10 @@ class EventPlayerStats(Event):
     def damage_taken(self):
         return int(self.data['DAMAGE']['TAKEN'])
 
+    @property
+    def weapon_stats(self):
+        return self.data['WEAPONS']
+
 
 EVENT_CLASSES = {
     'PLAYER_KILL': EventPlayerKill,

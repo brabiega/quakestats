@@ -307,7 +307,7 @@
   Promise.all([fetch_match_player_stats, fetch_players])
   .then(values => {
     var stats = values[0]
-
+    riot.mount('accuracy-info', {stats: stats})
     riot.mount('player-damage-summary', {
       "players": playersState,
       "damageDealt":
@@ -355,26 +355,26 @@
   <div style="grid-column: auto / span 2">
     <team-switches></team-switches>
   </div>
-  <div style="grid-column: auto / span 3">
-    <weapon-kills></weapon-kills>
-  </div>
-  <div style="grid-column: auto / span 3">
-    <worst-enemy></worst-enemy>
-  </div>
   <div style="grid-column: auto / span 6">
+    <match-score-chart></match-score-chart>
+  </div>
+  <div style="grid-column: auto / span 4">
     <kdr-chart></kdr-chart>
   </div>
-  <div style="grid-column: 1 / -1">
-    <match-score-chart></match-score-chart>
+  <div style="grid-column: auto / span 2">
+    <worst-enemy></worst-enemy>
+  </div>
+  <div style="grid-column: auto / span 4">
+    <weapon-kills></weapon-kills>
+  </div>
+  <div style="grid-column: auto / span 2">
+    <accuracy-info></accuracy-info>
   </div>
   <div style="grid-column: auto / span 3">
     <player-damage-summary></player-damage-summary>
   </div>
   <div style="grid-column: auto / span 3">
     <player-pickup-summary></player-pickup-summary>
-  </div>
-  <div style="grid-column: auto / span 6">
-    <match-player-kill-death></match-player-kill-death>
   </div>
   <div style="grid-column: 1 / -1">
     <match-kdr-chart></match-kdr-chart>
@@ -388,5 +388,7 @@
   <div style="grid-column: 1 / -1">
     <special-scores></special-scores>
   </div>
-
+  <div style="grid-column: auto / span 6">
+    <match-player-kill-death></match-player-kill-death>
+  </div>
 {% endblock %}

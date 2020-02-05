@@ -1,6 +1,12 @@
+/*
+    requires wretch
+
+    TODO all the api calls should be made using wretch
+*/
 class QuakeStatsApi {
     constructor() {
         this.endpoint = '/api/v2'
+        this.api = wretch('/api/v2')
     }
 
     get(path) {
@@ -112,7 +118,7 @@ class QuakeStatsApi {
     }
 
     getPresenceList(matchCount) {
-        return this.get(`presence/${matchCount}`)
+        return this.api.url(`/presence/${matchCount}`).get()
     }
 }
 

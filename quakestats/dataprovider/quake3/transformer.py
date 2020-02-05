@@ -557,16 +557,16 @@ class Q3toQL():
                 # hit
                 "H": int(value[1]),
                 # kill
-                "K": 0,
+                "K": None,
                 # death
-                "D": 0,
+                "D": None,
             }
 
         # TODO
         # following event is not fully compatible with quake live as quake 3
         # stats from OSP have much less details
         # e.g. there is no damage given per weapon
-        # R.Launcher:30:11:9:5 - seems to be SHOOT:HIT:KILL:DEATH?
+        # R.Launcher:30:11:9:5 - seems to be SHOOT:HIT:PICKUP:DROP?
         # dunno, ignore for now.
         ev = {
             "DATA": {
@@ -578,7 +578,7 @@ class Q3toQL():
                 'WARMUP': self.result['warmup'],
                 # pickups have additional fields (TOTAL_HEALTH, TOTAL_ARMOR)
                 'PICKUPS': pickups,
-                "WEAPONS": self.NOT_IMPLEMENTED,
+                "WEAPONS": weapon_stats,
 
             },
             "TYPE": "PLAYER_STATS",

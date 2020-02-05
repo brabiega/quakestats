@@ -124,7 +124,43 @@
 
 <accuracy-info>
   <h4>Accuracy info</h4>
-  <span>Sorry not yet implemented :)</span>
+  <table>
+    <tr>
+      <td>Player</td>
+      <td each={weapon in this.getWeapons(opts.stats)} style="text-align: center">
+        <img if={context.resources.weapons[weapon]} src="{context.resources.weapons[weapon].img}" class="fav-weapon"></img>
+      </td>
+    </tr>
+    <tr each={stat in opts.stats}>
+      <td>{context.players[stat.player_id].name}</td>
+      <td each={weapon in this.getWeapons(opts.stats)} class="acc-text">
+        {calcAcc(stat.weapons[weapon])}
+      </td>
+    </tr>
+  <table>
+
+  <style>
+    .acc-text {
+      text-align: center;
+      font-size: 10px;
+    }
+  </style>
+
+  calcAcc(weaponStats) {
+    let hits = weaponStats.H
+    let shots = weaponStats.S
+
+    if (hits && shots) {
+      return (100 * hits/shots).toFixed(2)
+    } else {
+      return "-"
+    }
+  }
+
+  getWeapons(stats) {
+    return _.uniq(_.flatten(stats.map(e => _.keys(e.weapons))))
+  }
+
 </accuracy-info>
 
 <match-score-chart>
