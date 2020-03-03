@@ -21,9 +21,10 @@ The project doesn't aim to give global stats like [qlstats](http://qlstats.net) 
 ### Supported mods and game modes
 Unfortunately only OSP FFA from Quake 3 is well tested as it was the main use case
 #### mods
-- [x] - OSP
+- [x] - OSP (http://www.orangesmoothie.org/tourneyQ3A/index.html)
 - [x] - Quake Live - most of event processing is implemented
 - [ ] - vanilla Q3 not supported due to missing ServerTime info
+- [ ] - CPMA not supported due to missing ServerTime info
 
 #### modes
 - [x] - FFA
