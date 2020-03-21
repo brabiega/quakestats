@@ -1,11 +1,7 @@
 import flask
-from passlib.hash import (
-    pbkdf2_sha256,
-)
+from passlib.hash import pbkdf2_sha256
 
-from quakestats import (
-    VERSION,
-)
+from quakestats import VERSION
 from quakestats.web import (
     app,
     data_store,
@@ -26,77 +22,81 @@ def user():
 def attach_user():
     # completely rely on flask cookie signing capabilites
     try:
-        flask.g.user = flask.session['username']
+        flask.g.user = flask.session["username"]
     except KeyError:
         flask.g.user = None
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    return flask.render_template(
-        'home.jinja2', js_context={'view': 'HOME'})
+    return flask.render_template("home.jinja2", js_context={"view": "HOME"})
 
 
-@app.route('/matches/all')
+@app.route("/matches/all")
 def view_all_matches():
     return flask.render_template(
-        'all_matches.jinja2', js_context={'view': 'ALL'})
-
-
-@app.route('/match/<match_guid>')
-def match(match_guid):
-    return flask.render_template(
-        'match.jinja2', js_context={'view': 'MATCH', 'match_guid': match_guid})
-
-
-@app.route('/match/<match_guid>/1v1')
-def match_1v1(match_guid):
-    return flask.render_template(
-        'match-1v1.jinja2', js_context={'view': 'MATCH', 'match_guid': match_guid})
-
-
-@app.route('/player/<id>')
-def player(id):
-    printable = flask.request.args.get('printable')
-    return flask.render_template(
-        'player.jinja2',
-        js_context={
-            'view': 'PLAYER', 'player_id': id,
-            'printable': bool(printable),
-        }
+        "all_matches.jinja2", js_context={"view": "ALL"}
     )
 
 
-@app.route('/maps')
-def maps():
+@app.route("/match/<match_guid>")
+def match(match_guid):
     return flask.render_template(
-        'maps.jinja2', js_context={'view': 'MAPS'})
+        "match.jinja2", js_context={"view": "MATCH", "match_guid": match_guid}
+    )
 
 
-@app.route('/presence')
+@app.route("/match/<match_guid>/1v1")
+def match_1v1(match_guid):
+    return flask.render_template(
+        "match-1v1.jinja2",
+        js_context={"view": "MATCH", "match_guid": match_guid},
+    )
+
+
+@app.route("/player/<id>")
+def player(id):
+    printable = flask.request.args.get("printable")
+    return flask.render_template(
+        "player.jinja2",
+        js_context={
+            "view": "PLAYER",
+            "player_id": id,
+            "printable": bool(printable),
+        },
+    )
+
+
+@app.route("/maps")
+def maps():
+    return flask.render_template("maps.jinja2", js_context={"view": "MAPS"})
+
+
+@app.route("/presence")
 def presence():
     return flask.render_template(
-        'presence.jinja2', js_context={'view': 'MAPS'})
+        "presence.jinja2", js_context={"view": "MAPS"}
+    )
 
 
-@app.route('/login', methods=['POST'])
+@app.route("/login", methods=["POST"])
 def login():
     try:
-        username = flask.request.form['username']
-        password = flask.request.form['password']
+        username = flask.request.form["username"]
+        password = flask.request.form["password"]
     except KeyError:
         pass
     else:
         if username and password:
             user = data_store().get_user(username)
-            if user and pbkdf2_sha256.verify(password, user['password']):
-                flask.session['username'] = username
+            if user and pbkdf2_sha256.verify(password, user["password"]):
+                flask.session["username"] = username
 
-    return flask.redirect('/')
+    return flask.redirect("/")
 
 
-@app.route('/logout')
+@app.route("/logout")
 def logout():
-    if 'username' in flask.session:
-        del flask.session['username']
-    return flask.redirect('/')
+    if "username" in flask.session:
+        del flask.session["username"]
+    return flask.redirect("/")

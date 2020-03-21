@@ -2,7 +2,7 @@ class FeedFull(Exception):
     pass
 
 
-class MatchFeeder():
+class MatchFeeder:
     """
     Base class used to implement match detection (from start till end)
     from continuous stream of events/log entries.
@@ -12,6 +12,7 @@ class MatchFeeder():
         - quake3 - log entries processing
         - quake live - events processing
     """
+
     def __init__(self):
         self.events = []
         self.full = False

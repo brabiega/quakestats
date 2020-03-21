@@ -4,13 +4,9 @@ from os import (
     path,
 )
 
-from passlib.hash import (
-    pbkdf2_sha256,
-)
+from passlib.hash import pbkdf2_sha256
 
-from quakestats import (
-    dataprovider,
-)
+from quakestats import dataprovider
 from quakestats.dataprovider import (
     analyze,
     quake3,
@@ -24,9 +20,9 @@ def set_admin_password(db, password):
     assert len(password) > 3
     hashpass = pbkdf2_sha256.hash(password)
     result = db.user.update_one(
-        {'username': 'admin'},
-        {'$set': {'username': 'admin', 'password': hashpass}},
-        upsert=True
+        {"username": "admin"},
+        {"$set": {"username": "admin", "password": hashpass}},
+        upsert=True,
     )
     return result
 
@@ -40,12 +36,10 @@ def rebuild_db(data_dir, server_domain, data_store):
     for f in listdir(data_dir):
         with open(path.join(data_dir, f)) as fh:
             data = fh.read()
-            match = {
-                'EVENTS': data.splitlines()
-            }
+            match = {"EVENTS": data.splitlines()}
 
-            source_type = 'Q3'
-            transformer = quake3.Q3toQL(match['EVENTS'])
+            source_type = "Q3"
+            transformer = quake3.Q3toQL(match["EVENTS"])
             transformer.server_domain = server_domain
 
             try:
@@ -60,7 +54,7 @@ def rebuild_db(data_dir, server_domain, data_store):
 
             # PREPROCESS
             preprocessor = dataprovider.MatchPreprocessor()
-            preprocessor.process_events(results['events'])
+            preprocessor.process_events(results["events"])
 
             if not preprocessor.finished:
                 continue
@@ -69,10 +63,11 @@ def rebuild_db(data_dir, server_domain, data_store):
                 events=preprocessor.events,
                 match_guid=preprocessor.match_guid,
                 duration=preprocessor.duration,
-                start_date=results['start_date'],
-                finish_date=results['finish_date'],
+                start_date=results["start_date"],
+                finish_date=results["finish_date"],
                 server_domain=server_domain,
-                source=source_type)
+                source=source_type,
+            )
 
             analyzer = analyze.Analyzer()
             report = analyzer.analyze(fmi)

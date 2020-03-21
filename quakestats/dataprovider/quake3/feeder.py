@@ -39,9 +39,9 @@ class Q3MatchFeeder(MatchFeeder):
         if match:
             # Special case if log is broken
             # (previous game wasnt finished properly)
-            if self.events and match.group(2).startswith('InitGame'):
+            if self.events and match.group(2).startswith("InitGame"):
                 self.full = True
-                raise FeedFull('Broken log detected')
+                raise FeedFull("Broken log detected")
 
             self.events.append(data)
             return

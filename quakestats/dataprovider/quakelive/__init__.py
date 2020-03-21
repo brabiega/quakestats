@@ -1,5 +1,3 @@
-from quakestats.dataprovider.quakelive.feeder import (
-    QLMatchFeeder,
-)
+from quakestats.dataprovider.quakelive.feeder import QLMatchFeeder
 
-__all__ = ['QLMatchFeeder']
+__all__ = ["QLMatchFeeder"]

@@ -13,27 +13,18 @@ Produces Match info:
     [x] kill / death info
 """
 
-from quakestats.dataprovider.analyzer.badges import (
-    Badger,
-)
-from quakestats.dataprovider.analyzer.events import (
-    Event,
-)
-from quakestats.dataprovider.analyzer.scores import (
-    PlayerScores,
-)
-from quakestats.dataprovider.analyzer.specials import (
-    SpecialScores,
-)
-from quakestats.dataprovider.analyzer.teams import (
-    TeamLifecycle,
-)
+from quakestats.dataprovider.analyzer.badges import Badger
+from quakestats.dataprovider.analyzer.events import Event
+from quakestats.dataprovider.analyzer.scores import PlayerScores
+from quakestats.dataprovider.analyzer.specials import SpecialScores
+from quakestats.dataprovider.analyzer.teams import TeamLifecycle
 
 
-class AnalysisResult():
+class AnalysisResult:
     """
     Match analysis object
     """
+
     def __init__(self):
         self.server_info = None
         self.players = None
@@ -53,17 +44,15 @@ class AnalysisResult():
         # TODO for now summary is generated only for duel
         if self.match_metadata.game_type == "DUEL":
             self.summary = {
-                'scores': [
-                    {
-                        'player_id': player_id,
-                        'score': score[0]
-                    } for player_id, score in self.final_scores.items()
-                    if player_id != 'q3-world'
+                "scores": [
+                    {"player_id": player_id, "score": score[0]}
+                    for player_id, score in self.final_scores.items()
+                    if player_id != "q3-world"
                 ]
             }
 
 
-class ServerInfo():
+class ServerInfo:
     def __init__(self):
         self.server_name = None  # [MATCH_REPORT]
         self.server_domain = None  # [fmi]
@@ -74,10 +63,10 @@ class ServerInfo():
         self.server_type = fmi.source
 
     def from_match_report(self, report):
-        self.server_name = report.data['SERVER_TITLE']
+        self.server_name = report.data["SERVER_TITLE"]
 
 
-class PlayerInfo():
+class PlayerInfo:
     def __init__(self):
         self.steam_id = None
         self.name = None
@@ -85,10 +74,11 @@ class PlayerInfo():
 
     def __repr__(self):
         return "PlayerInfo({}, {}, {})".format(
-            self.steam_id, self.name, self.model)
+            self.steam_id, self.name, self.model
+        )
 
 
-class MatchMetadata():
+class MatchMetadata:
     def __init__(self):
         self.match_guid = None  # [fmi]
         self.game_type = None  # [MATCH_STARTED]
@@ -113,21 +103,21 @@ class MatchMetadata():
         self.server_domain = fmi.server_domain
 
     def from_match_started(self, event):
-        self.game_type = event.data['GAME_TYPE']
+        self.game_type = event.data["GAME_TYPE"]
 
     def from_match_report(self, event):
         report = event.data
-        self.map_name = report['MAP']
-        self.server_name = report['SERVER_TITLE']
-        self.exit_message = report['EXIT_MSG']
+        self.map_name = report["MAP"]
+        self.server_name = report["SERVER_TITLE"]
+        self.exit_message = report["EXIT_MSG"]
 
-        self.time_limit = report['TIME_LIMIT']
-        self.frag_limit = report['FRAG_LIMIT']
-        self.score_limit = report['SCORE_LIMIT']
-        self.capture_limit = report['CAPTURE_LIMIT']
+        self.time_limit = report["TIME_LIMIT"]
+        self.frag_limit = report["FRAG_LIMIT"]
+        self.score_limit = report["SCORE_LIMIT"]
+        self.capture_limit = report["CAPTURE_LIMIT"]
 
 
-class Analyzer():
+class Analyzer:
     def __init__(self):
         self.match_metadata = MatchMetadata()
         self.server_info = ServerInfo()
@@ -178,13 +168,13 @@ class Analyzer():
     def analyze_event(self, raw_event):
         event = Event.from_dict(raw_event)
         dispatcher = {
-            'MATCH_REPORT': self.on_match_report,
-            'MATCH_STARTED': self.on_match_start,
-            'PLAYER_DEATH': self.on_player_death,
-            'PLAYER_DISCONNECT': self.on_player_disconnect,
-            'PLAYER_KILL': self.on_player_kill,
-            'PLAYER_SWITCHTEAM': self.on_player_switchteam,
-            'PLAYER_STATS': self.on_player_stats,
+            "MATCH_REPORT": self.on_match_report,
+            "MATCH_STARTED": self.on_match_start,
+            "PLAYER_DEATH": self.on_player_death,
+            "PLAYER_DISCONNECT": self.on_player_disconnect,
+            "PLAYER_KILL": self.on_player_kill,
+            "PLAYER_SWITCHTEAM": self.on_player_switchteam,
+            "PLAYER_STATS": self.on_player_stats,
         }
 
         try:
@@ -215,12 +205,14 @@ class Analyzer():
         self.team_lifecycle.from_match_started(event)
         self.player_scores.from_match_started(event)
 
-        if self.match_metadata.game_type == 'CA':
+        if self.match_metadata.game_type == "CA":
             self.specific_analyzer = CA_Analyzer(
-                 self.players, self.team_lifecycle)
+                self.players, self.team_lifecycle
+            )
         else:
             self.specific_analyzer = SpecializedAnalyzer(
-                self.players, self.team_lifecycle)
+                self.players, self.team_lifecycle
+            )
 
     def on_player_switchteam(self, event):
         self.team_lifecycle.from_player_switchteam(event)
@@ -252,19 +244,20 @@ class Analyzer():
         # TODO consider merging stats (e.g. player reconnects/rejoins match)
         # ordinary stats sum grouped by player_id would be sufficient
         self.player_stats[event.player_id] = {
-            'player_id': event.player_id,
-            'total_armor_pickup': event.total_armor,
-            'total_health_pickup': event.total_health,
-            'damage_dealt': event.damage_dealt,
-            'damage_taken': event.damage_taken,
-            'weapons': event.weapon_stats,
+            "player_id": event.player_id,
+            "total_armor_pickup": event.total_armor,
+            "total_health_pickup": event.total_health,
+            "damage_dealt": event.damage_dealt,
+            "damage_taken": event.damage_taken,
+            "weapons": event.weapon_stats,
         }
 
 
 # This could probably be done with some fancy subclassing
 # or mixins but this way 'seems' easier
 
-class SpecializedAnalyzer():
+
+class SpecializedAnalyzer:
     def __init__(self, players, team_lifecycle):
         self.players = players
         self.team_lifecycle = team_lifecycle
@@ -286,7 +279,7 @@ class CA_Analyzer(SpecializedAnalyzer):
         self.blue_score = 0
         self.pre_round_time = 0
 
-        class PlayerState():
+        class PlayerState:
             def __init__(self):
                 self.alive = True
 
@@ -296,7 +289,7 @@ class CA_Analyzer(SpecializedAnalyzer):
     def on_player_death(self, event):
         game_time = int(event.time)
         player_id = event.victim_id
-        dead_team_id = int(event['DATA']['VICTIM']['TEAM'])
+        dead_team_id = int(event["DATA"]["VICTIM"]["TEAM"])
         self.player_state[player_id].alive = False
         team = self.team_lifecycle.get_team_by_id(dead_team_id)
 
@@ -329,7 +322,6 @@ class CA_Analyzer(SpecializedAnalyzer):
             player_state.alive = True
 
     def add_score(self, game_time, team_id, score):
-        self.team_scores.append((
-            game_time,
-            self.team_lifecycle.team_id_to_name[team_id],
-            score))
+        self.team_scores.append(
+            (game_time, self.team_lifecycle.team_id_to_name[team_id], score)
+        )

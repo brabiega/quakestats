@@ -8,14 +8,12 @@ from quakestats.dataprovider.quake3 import (
     FeedFull,
     Q3MatchFeeder,
 )
-from quakestats.dataprovider.quake3.feeder import (
-    MalformedLogEntry,
-)
+from quakestats.dataprovider.quake3.feeder import MalformedLogEntry
 
 logger = logging.getLogger(__name__)
 
 
-class Q3LogWatcher():
+class Q3LogWatcher:
     def __init__(self, log_file_path, api_token, api_endpoint):
         self.log_file_path = log_file_path
         self.interval = 5  # pool for changes every 5s
@@ -50,7 +48,7 @@ class Q3LogWatcher():
                 fd.seek(0, io.SEEK_END)
                 self._cursor_location = fd.tell()
 
-        while True:       
+        while True:
             with open(self.log_file_path) as fd:
                 changed, forward = self.has_changed(fd)
 
@@ -58,7 +56,9 @@ class Q3LogWatcher():
                     new_loc = fd.tell()
                     logger.debug(
                         "File change detected (%s -> %s, forward %s)",
-                        self._cursor_location, new_loc, forward
+                        self._cursor_location,
+                        new_loc,
+                        forward,
                     )
 
                     if not forward:
@@ -83,14 +83,17 @@ class Q3LogWatcher():
             # no changes
             return []
 
-        raw_lines = data.split('\n')
+        raw_lines = data.split("\n")
         last_line = raw_lines[-2]
         # At 1st read skip last line
         # if last line hasn't changed after 2nd read then return it
-        # for further processing. This way we hope to avoid processing 
+        # for further processing. This way we hope to avoid processing
         # 'half' written log entries.
         new_cursor_location = fd.tell() - (len(last_line) + 1)  # +\n
-        if (new_cursor_location == self._cursor_location and self._cursor_location != 0):
+        if (
+            new_cursor_location == self._cursor_location
+            and self._cursor_location != 0
+        ):
             self._cursor_location = fd.tell()
             # ["last line", ""]
             return raw_lines[:-1]
@@ -107,13 +110,19 @@ class Q3LogWatcher():
                 self.match_feeder.feed(line)
             except FeedFull:
                 match = self.match_feeder.consume()
-                match['TOKEN'] = self.api_token
+                match["TOKEN"] = self.api_token
 
-                logger.info("Consumed match with %s events", len(match['EVENTS']))
-                response = requests.post(
-                    '{}/api/v2/upload/json'.format(self.api_endpoint),
-                    json=match
+                logger.info(
+                    "Consumed match with %s events", len(match["EVENTS"])
                 )
-                logger.info("Match sent to endpoint %s, response %s", self.api_endpoint, response)
+                response = requests.post(
+                    "{}/api/v2/upload/json".format(self.api_endpoint),
+                    json=match,
+                )
+                logger.info(
+                    "Match sent to endpoint %s, response %s",
+                    self.api_endpoint,
+                    response,
+                )
 
                 self.match_feeder.feed(line)

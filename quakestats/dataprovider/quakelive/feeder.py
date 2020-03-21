@@ -10,17 +10,18 @@ class QLMatchFeeder(MatchFeeder):
         MATCH_GUID passed in events. If current event has different
         MATCH_GUID than previous one, raise an Exception
     """
+
     def __init__(self):
         super().__init__()
         self.current_match_guid = None
 
     def inspect_event(self, event):
         if self.current_match_guid:
-            if self.current_match_guid != event['DATA']['MATCH_GUID']:
+            if self.current_match_guid != event["DATA"]["MATCH_GUID"]:
                 self.full = True
-                raise FeedFull('Feed is full, please consume')
+                raise FeedFull("Feed is full, please consume")
         else:
-            self.current_match_guid = event['DATA']['MATCH_GUID']
+            self.current_match_guid = event["DATA"]["MATCH_GUID"]
 
         self.events.append(event)
 
