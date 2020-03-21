@@ -13,3 +13,9 @@ release: test bdist
 
 changelog:
 	gitchangelog > CHANGELOG.MD
+
+git_hooks:
+	@if ! [[ -L .git/hooks/pre-commit ]]; then \
+		echo "Installing git pre-commit hook"; \
+		ln -fs ../../git/pre-commit .git/hooks/pre-commit; \
+	fi

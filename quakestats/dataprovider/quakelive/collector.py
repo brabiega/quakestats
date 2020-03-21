@@ -3,8 +3,8 @@
 import json
 import logging
 import os
-import struct
 import uuid
+from datetime import datetime, timedelta
 
 from quakestats.dataprovider import (
     FeedFull,

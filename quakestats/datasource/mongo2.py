@@ -484,7 +484,7 @@ class DataStoreMongo:
     def get_player_badges(self, player_id):
         res = self.db.badge.aggregate(
             [
-                {"$match": {"player_id": player_id,}},
+                {"$match": {"player_id": player_id}},
                 {
                     "$group": {
                         "_id": {"name": "$name", "player_id": "$player_id"},

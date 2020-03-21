@@ -52,6 +52,7 @@ def status():
 
 
 def main(args=None):
+    log.configure_logging()
     cli()
 
 

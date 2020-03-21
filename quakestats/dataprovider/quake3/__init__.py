@@ -33,4 +33,4 @@ from quakestats.dataprovider.quake3.transformer import (
     Q3toQL,
 )
 
-__all__ = ["*"]
+__all__ = ["FeedFull", "Q3MatchFeeder", "PlayerId", "Q3toQL"]

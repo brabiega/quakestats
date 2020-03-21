@@ -4,3 +4,4 @@ bump2version==0.5.11
 twine==2.0.0
 gitchangelog==3.0.4
 black==19.10b0
+flake8==3.7.9

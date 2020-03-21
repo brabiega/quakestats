@@ -8,7 +8,6 @@ from quakestats.dataprovider.quake3 import (
     FeedFull,
     Q3MatchFeeder,
 )
-from quakestats.dataprovider.quake3.feeder import MalformedLogEntry
 
 logger = logging.getLogger(__name__)
 

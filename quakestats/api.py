@@ -354,4 +354,4 @@ def api2_presence(count):
             presence[player_id] += 1
 
     players = ds.get_players(ids=[player_id for player_id in presence.keys()])
-    return flask.jsonify({"presence": presence, "players": players,})
+    return flask.jsonify({"presence": presence, "players": players})
