@@ -12,7 +12,7 @@ from quakestats.dataprovider import (
     analyze,
     quake3,
 )
-from quakestats.web import (
+from quakestats.web.app import (
     app,
     data_store,
 )

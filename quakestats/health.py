@@ -29,23 +29,23 @@ class HealthInfo:
             return self.OK, settings_file
 
     def check_settings_data_dir(self):
-        from quakestats import web
+        from quakestats.web import app
 
-        data_dir = web.app.config["RAW_DATA_DIR"]
+        data_dir = app.config["RAW_DATA_DIR"]
         if data_dir:
             return self.OK, data_dir
         else:
             return self.WARN, "Data dir is not configured"
 
     def check_webapp_loadable(self):
-        from quakestats import web  # noqa
+        from quakestats.web import app  # noqa
 
         return self.OK, "Quakestats webapp is loadable"
 
     def check_db_access(self):
-        from quakestats import web
+        from quakestats.web import mongo_db
 
-        result = web.mongo_db.db.command("ping")
+        result = mongo_db.db.command("ping")
         if result["ok"]:
             return self.OK, str(result)
         else:
