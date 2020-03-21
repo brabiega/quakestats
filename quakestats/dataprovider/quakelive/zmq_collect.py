@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 
-from quakestats.dataprovider.quakelive.collector import MatchCollector
-import click
-import struct
-import os
 import logging
+import os
+import struct
+
+import click
 import zmq
+
+from quakestats.dataprovider.quakelive.collector import (
+    MatchCollector,
+)
 
 logging.basicConfig(level=logging.DEBUG)
 

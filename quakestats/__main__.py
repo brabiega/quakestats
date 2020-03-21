@@ -1,8 +1,16 @@
 #!/usr/bin/env python
 
 import click
-from quakestats.health import HealthInfo
-from quakestats import manage
+
+from quakestats import (
+    manage,
+)
+from quakestats.health import (
+    HealthInfo,
+)
+from quakestats.system import (
+    log,
+)
 
 
 # TODO consider moving to separate CLI module

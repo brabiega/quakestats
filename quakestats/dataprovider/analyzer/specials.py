@@ -1,5 +1,6 @@
-from collections import defaultdict
-
+from collections import (
+    defaultdict,
+)
 
 special_handlers = defaultdict(lambda: [])
 

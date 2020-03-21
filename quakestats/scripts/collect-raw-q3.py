@@ -8,8 +8,13 @@ Will write proper matches to specific path
 import json
 import os
 import sys
-from quakestats.dataprovider import quake3
-from quakestats import dataprovider
+
+from quakestats import (
+    dataprovider,
+)
+from quakestats.dataprovider import (
+    quake3,
+)
 
 
 class QJsonEncoder(json.JSONEncoder):

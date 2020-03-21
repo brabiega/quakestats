@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 
-import click
 import logging
-from quakestats.system.log import configure_logging
-from quakestats.dataprovider.quake3.logwatch import Q3LogWatcher
 
+import click
+
+from quakestats.dataprovider.quake3.logwatch import (
+    Q3LogWatcher,
+)
+from quakestats.system.log import (
+    configure_logging,
+)
 
 logger = logging.getLogger()
 

@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 badger_handlers = []
 
 

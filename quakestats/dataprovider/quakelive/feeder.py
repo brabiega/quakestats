@@ -1,4 +1,7 @@
-from quakestats.dataprovider import MatchFeeder, FeedFull
+from quakestats.dataprovider import (
+    FeedFull,
+    MatchFeeder,
+)
 
 
 class QLMatchFeeder(MatchFeeder):

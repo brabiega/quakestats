@@ -1,8 +1,11 @@
 """
 TODO add documentation
 """
+from copy import (
+    deepcopy,
+)
+
 import pymongo
-from copy import deepcopy
 
 
 class DataStoreMongo():

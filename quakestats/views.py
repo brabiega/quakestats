@@ -1,7 +1,15 @@
-from quakestats.web import app, data_store
-from quakestats import VERSION
 import flask
-from passlib.hash import pbkdf2_sha256
+from passlib.hash import (
+    pbkdf2_sha256,
+)
+
+from quakestats import (
+    VERSION,
+)
+from quakestats.web import (
+    app,
+    data_store,
+)
 
 
 @app.context_processor

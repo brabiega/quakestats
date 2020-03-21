@@ -1,11 +1,25 @@
-from collections import defaultdict
-from quakestats.web import app, data_store
-from quakestats import dataprovider, manage
-from quakestats.dataprovider import quake3, analyze
-from os import path
-import flask
 import logging
+from collections import (
+    defaultdict,
+)
+from os import (
+    path,
+)
 
+import flask
+
+from quakestats import (
+    dataprovider,
+    manage,
+)
+from quakestats.dataprovider import (
+    analyze,
+    quake3,
+)
+from quakestats.web import (
+    app,
+    data_store,
+)
 
 logger = logging.getLogger('quakestats.webapp')
 

@@ -1,5 +1,6 @@
-import quakestats
 import os
+
+import quakestats
 
 
 class HealthInfo():

@@ -1,10 +1,20 @@
-from passlib.hash import pbkdf2_sha256
-from os import path, listdir
-from quakestats import dataprovider
-from quakestats.dataprovider import quake3, analyze
-
 import logging
+from os import (
+    listdir,
+    path,
+)
 
+from passlib.hash import (
+    pbkdf2_sha256,
+)
+
+from quakestats import (
+    dataprovider,
+)
+from quakestats.dataprovider import (
+    analyze,
+    quake3,
+)
 
 logger = logging.getLogger(__name__)
 

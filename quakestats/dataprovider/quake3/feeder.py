@@ -1,5 +1,9 @@
 import re
-from quakestats.dataprovider.feeder import MatchFeeder, FeedFull
+
+from quakestats.dataprovider.feeder import (
+    FeedFull,
+    MatchFeeder,
+)
 
 
 class MalformedLogEntry(Exception):

@@ -3,10 +3,12 @@
 Example usage
 cat quakesamples/qldata/match-f2296f81-ed20-436c-a235-175fc33771e6.json | ./collect-raw-ql.py
 """
-import sys
 import json
-from quakestats.dataprovider.quakelive import collector
+import sys
 
+from quakestats.dataprovider.quakelive import (
+    collector,
+)
 
 mc = collector.MatchCollector('/tmp/qltest2')
 

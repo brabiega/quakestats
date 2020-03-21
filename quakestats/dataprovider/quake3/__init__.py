@@ -24,8 +24,13 @@
 
 # TODO following import is not needed here, it is only referenced by other
 # modules and tests while it shouldn't be
-from quakestats.dataprovider.quake3.feeder import Q3MatchFeeder, FeedFull
-from quakestats.dataprovider.quake3.transformer import Q3toQL, PlayerId
-
+from quakestats.dataprovider.quake3.feeder import (
+    FeedFull,
+    Q3MatchFeeder,
+)
+from quakestats.dataprovider.quake3.transformer import (
+    PlayerId,
+    Q3toQL,
+)
 
 __all__ = ['*']

@@ -1,11 +1,16 @@
+import io
 import logging
 import time
-import io
+
 import requests
 
-from quakestats.dataprovider.quake3 import Q3MatchFeeder, FeedFull
-from quakestats.dataprovider.quake3.feeder import MalformedLogEntry
-
+from quakestats.dataprovider.quake3 import (
+    FeedFull,
+    Q3MatchFeeder,
+)
+from quakestats.dataprovider.quake3.feeder import (
+    MalformedLogEntry,
+)
 
 logger = logging.getLogger(__name__)
 

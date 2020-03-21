@@ -1,13 +1,19 @@
 #!/usr/bin/env python
 
-from quakestats.dataprovider import FeedFull, MatchPreprocessor, FullMatchInfo
-from quakestats.dataprovider.quakelive import QLMatchFeeder
+import json
 import logging
 import os
-import json
+import struct
 import uuid
-from datetime import datetime, timedelta
 
+from quakestats.dataprovider import (
+    FeedFull,
+    FullMatchInfo,
+    MatchPreprocessor,
+)
+from quakestats.dataprovider.quakelive import (
+    QLMatchFeeder,
+)
 
 logger = logging.getLogger('quakestats.dataprovider.quakelive')
 
