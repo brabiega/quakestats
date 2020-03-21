@@ -27,8 +27,9 @@ Unfortunately only OSP FFA from Quake 3 is well tested as it was the main use ca
 - [ ] - CPMA not supported due to missing ServerTime info
 
 #### modes
+- [x] - DUEL
 - [x] - FFA
-- [x] - CA (partially tested)
+- [ ] - CA
 - [ ] - TDM
 - [ ] - CTF
 
