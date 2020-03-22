@@ -1,0 +1,215 @@
+19.6 ------------------------------------------------------------
+19.6 InitGame: \dmflags\0\fraglimit\20\g_gametype\0\mapname\ASYLUM\protocol\68\sv_allowDownload\1\sv_dlRate\100\sv_floodProtect\1\sv_hostname\noname\sv_maxRate\0\sv_maxclients\8\sv_minRate\0\sv_privateClients\0\timelimit\0\version\Q3 1.32e linux-x86_64 Mar 19 2020\Players_Active\1 2 3 \capturelimit\0\g_needpass\0\gamename\osp\gameversion\OSP v1.03a\server_freezetag\0\server_ospauth\0\server_promode\0
+19.6 ServerTime:	20200319205438	20:54:38 (19 Mar 2020)
+19.6 Game_Start:
+19.9 ClientConnect: 0
+19.9 ClientUserinfoChanged: 0 n\Bartoszer\t\0\model\xaero/default\hmodel\xaero/default\c1\2\c2\5\hc\100\w\0\l\0\rt\0\st\0
+19.9 ClientBegin: 0
+19.9 ClientConnect: 1
+19.9 ClientUserinfoChanged: 1 n\Daemia\t\0\model\major/daemia\hmodel\major/daemia\c1\\c2\\hc\70\w\0\l\0\skill\ 2.00\rt\0
+19.9 ClientBegin: 1
+19.9 ClientConnect: 2
+19.9 ClientUserinfoChanged: 2 n\Doom\t\0\model\doom\hmodel\doom\c1\\c2\\hc\70\w\0\l\0\skill\ 2.00\rt\0
+19.9 ClientBegin: 2
+20.1 ClientUserinfoChanged: 0 n\Bartoszer\t\0\model\xaero/default\hmodel\xaero/default\c1\2\c2\5\hc\100\w\0\l\0\rt\0\st\0
+20.8 Item: 1 weapon_shotgun
+21.3 Item: 0 item_armor_body
+24.3 Item: 2 ammo_bullets
+27.6 Item: 2 item_health_small
+28.3 Item: 2 weapon_lightning
+29.0 Item: 0 weapon_rocketlauncher
+32.6 Item: 2 item_armor_shard
+33.1 Item: 2 item_armor_shard
+33.5 Item: 2 item_armor_shard
+34.7 Item: 2 item_armor_shard
+35.3 Kill: 0 1 7: Bartoszer killed Daemia by MOD_ROCKET_SPLASH 3
+35.6 Item: 0 weapon_rocketlauncher
+36.8 say: Doom: So, bartoszer. How many Gauntlets do you need anyways?
+37.2 Item: 2 item_armor_shard
+44.0 Item: 0 weapon_rocketlauncher
+44.1 Item: 1 weapon_shotgun
+46.3 Item: 1 weapon_plasmagun
+47.5 Kill: 0 1 7: Bartoszer killed Daemia by MOD_ROCKET_SPLASH 8
+49.0 Item: 0 weapon_plasmagun
+49.6 say: Daemia: A fluke. Had to be. Won't happen again.
+50.6 Item: 1 item_health_small
+51.3 Item: 1 weapon_lightning
+52.8 Item: 0 item_armor_combat
+58.4 Item: 2 weapon_plasmagun
+61.2 Kill: 0 2 7: Bartoszer killed Doom by MOD_ROCKET_SPLASH 6
+61.4 Item: 1 weapon_rocketlauncher
+63.3 say: Doom: I'm THE DESTROYER!!
+64.5 Item: 2 ammo_bullets
+67.5 Item: 1 weapon_lightning
+68.0 Item: 2 weapon_rocketlauncher
+68.3 Item: 1 item_health_small
+69.2 Item: 1 item_health_small
+69.8 Item: 0 item_armor_combat
+73.5 Kill: 0 2 8: Bartoszer killed Doom by MOD_PLASMA 5
+73.9 Item: 0 weapon_rocketlauncher
+75.2 Kill: 0 1 6: Bartoszer killed Daemia by MOD_ROCKET 6
+77.6 Item: 0 weapon_plasmagun
+78.6 Item: 2 weapon_rocketlauncher
+78.8 Item: 1 item_armor_combat
+79.4 Item: 1 weapon_lightning
+79.9 Kill: 0 1 8: Bartoszer killed Daemia by MOD_PLASMA 6
+82.0 say: Daemia: I'm taking off the kid gloves now, bartoszer!
+83.0 Item: 0 weapon_lightning
+84.8 Item: 0 weapon_rocketlauncher
+84.9 Item: 1 weapon_rocketlauncher
+89.3 Item: 0 item_quad
+90.8 Item: 2 weapon_lightning
+91.9 Kill: 0 1 11: Bartoszer killed Daemia by MOD_LIGHTNING 5
+92.6 Item: 0 weapon_rocketlauncher
+93.7 Item: 2 weapon_plasmagun
+93.7 Kill: 0 2 11: Bartoszer killed Doom by MOD_LIGHTNING 6
+95.6 Item: 1 ammo_bullets
+95.8 say: Doom: You and your Lightning Gun win this round, fiend face. Enjoy it while it lasts.
+97.0 Kill: 0 2 11: Bartoszer killed Doom by MOD_LIGHTNING 2
+99.8 Item: 2 item_armor_body
+101.9 Item: 1 item_armor_combat
+102.6 Item: 0 weapon_shotgun
+103.5 Item: 1 weapon_rocketlauncher
+106.2 Item: 2 weapon_plasmagun
+108.2 Kill: 0 1 11: Bartoszer killed Daemia by MOD_LIGHTNING 5
+108.6 Item: 0 weapon_lightning
+108.9 Item: 0 weapon_rocketlauncher
+109.1 Kill: 0 2 11: Bartoszer killed Doom by MOD_LIGHTNING 8
+109.7 Item: 0 weapon_plasmagun
+110.3 say: Daemia: I got one just like that for you, bartoszer.
+110.6 Item: 0 item_armor_combat
+112.2 Item: 0 weapon_rocketlauncher
+116.8 Item: 2 item_health_small
+117.4 Item: 2 item_health_small
+118.0 Item: 2 weapon_lightning
+121.3 Item: 0 ammo_bullets
+121.9 Item: 1 weapon_shotgun
+124.5 Item: 0 weapon_rocketlauncher
+127.2 Kill: 0 2 7: Bartoszer killed Doom by MOD_ROCKET_SPLASH 6
+129.3 say: Doom: I'm THE DESTROYER!!
+129.8 Item: 1 weapon_lightning
+130.3 Item: 0 weapon_plasmagun
+132.2 Item: 2 weapon_rocketlauncher
+132.5 Kill: 1 0 1: Daemia killed Bartoszer by MOD_SHOTGUN 5
+133.1 Item: 1 weapon_rocketlauncher
+134.5 Kill: 2 1 6: Doom killed Daemia by MOD_ROCKET 6
+136.3 Item: 2 weapon_lightning
+139.2 Item: 1 weapon_rocketlauncher
+141.8 Kill: 1 2 6: Daemia killed Doom by MOD_ROCKET 6
+143.0 Item: 1 item_health
+143.0 Item: 0 weapon_lightning
+144.7 Item: 2 item_armor_body
+147.4 Item: 0 item_armor_combat
+149.1 Item: 0 weapon_rocketlauncher
+150.4 Kill: 0 2 11: Bartoszer killed Doom by MOD_LIGHTNING 2
+151.0 Item: 1 weapon_shotgun
+155.0 Kill: 0 2 7: Bartoszer killed Doom by MOD_ROCKET_SPLASH 2
+157.1 say: Doom: Take a moment to reflect on your accomplishment, bartoszer.
+158.0 Kill: 0 1 6: Bartoszer killed Daemia by MOD_ROCKET 3
+161.8 Item: 2 weapon_shotgun
+163.4 Item: 0 item_health
+163.9 Item: 0 weapon_shotgun
+167.4 Kill: 0 1 11: Bartoszer killed Daemia by MOD_LIGHTNING 2
+170.5 Item: 2 ammo_bullets
+171.0 Kill: 2 0 1: Doom killed Bartoszer by MOD_SHOTGUN 6
+174.3 Item: 0 item_armor_combat
+174.9 Item: 1 weapon_lightning
+178.0 Item: 1 item_armor_body
+180.4 Item: 1 weapon_shotgun
+189.5 Kill: 0 2 2: Bartoszer killed Doom by MOD_GAUNTLET 2
+189.5 Item: 1 weapon_rocketlauncher
+191.6 say: Doom: The implications of what you have just done are staggering, bartoszer.
+193.0 Item: 2 ammo_bullets
+198.1 Item: 0 item_health_large
+199.7 Kill: 1 0 1: Daemia killed Bartoszer by MOD_SHOTGUN 1
+204.4 Item: 1 weapon_rocketlauncher
+207.6 Item: 1 item_health_small
+208.5 Item: 1 item_health_small
+209.4 Item: 1 weapon_lightning
+210.1 Kill: 0 2 2: Bartoszer killed Doom by MOD_GAUNTLET 2
+213.0 Item: 2 item_armor_combat
+214.9 Item: 0 item_quad
+217.8 Item: 1 item_armor_shard
+218.4 Item: 1 item_armor_shard
+218.7 Item: 1 item_armor_shard
+219.1 Item: 2 ammo_bullets
+219.7 Item: 1 item_armor_shard
+220.5 Item: 1 item_armor_shard
+221.7 Kill: 1 0 1: Daemia killed Bartoszer by MOD_SHOTGUN 1
+222.7 Item: 2 item_armor_body
+225.7 Item: 1 item_health_small
+227.8 Item: 0 item_quad
+228.0 Item: 2 weapon_lightning
+228.8 Kill: 2 1 11: Doom killed Daemia by MOD_LIGHTNING 6
+231.0 say: Daemia: I got one just like that for ya, doom.
+231.8 Item: 1 weapon_shotgun
+240.4 Kill: 2 0 11: Doom killed Bartoszer by MOD_LIGHTNING 1
+242.0 Item: 2 item_health_large
+243.2 Item: 0 item_armor_combat
+245.4 Item: 2 item_quad
+246.5 Item: 0 weapon_plasmagun
+248.8 Item: 2 item_armor_shard
+249.6 Kill: 0 2 2: Bartoszer killed Doom by MOD_GAUNTLET 6
+249.6 Item: 0 item_quad
+249.6 Item: 0 weapon_lightning
+252.7 Item: 2 ammo_bullets
+255.8 Item: 2 weapon_rocketlauncher
+262.1 Item: 2 item_armor_shard
+262.5 Item: 2 item_armor_shard
+262.9 Item: 2 item_armor_shard
+264.3 Item: 2 item_armor_shard
+264.6 Item: 0 weapon_plasmagun
+265.9 Kill: 2 1 6: Doom killed Daemia by MOD_ROCKET 2
+266.7 Item: 0 item_armor_combat
+268.0 say: Daemia: Three strikes and you are out of here, slime surfer.
+271.0 Item: 1 weapon_rocketlauncher
+275.9 Item: 2 ammo_bullets
+279.1 Item: 2 item_armor_body
+279.6 Kill: 0 0 9: Bartoszer killed Bartoszer by MOD_PLASMA_SPLASH 8
+281.4 Item: 2 weapon_shotgun
+281.8 Item: 2 item_health
+283.4 Item: 1 item_health_small
+283.5 Item: 0 item_armor_combat
+283.9 Item: 1 weapon_plasmagun
+285.1 Item: 1 weapon_lightning
+288.0 Item: 1 item_health_small
+288.6 Item: 1 item_health_small
+294.9 Item: 2 item_health_large
+300.5 Item: 0 weapon_rocketlauncher
+301.6 Item: 2 item_armor_shard
+302.3 Item: 2 item_armor_shard
+302.9 Item: 0 item_armor_combat
+303.9 Item: 2 item_armor_shard
+304.3 Item: 2 item_armor_shard
+304.8 Item: 2 item_armor_shard
+306.6 Item: 1 item_armor_body
+309.0 Item: 1 weapon_shotgun
+311.6 Item: 0 weapon_lightning
+317.4 Item: 2 weapon_shotgun
+317.8 Item: 2 item_health
+317.8 Item: 1 ammo_bullets
+319.6 Item: 1 item_health_small
+320.0 Kill: 0 1 11: Bartoszer killed Daemia by MOD_LIGHTNING 6
+320.3 Item: 0 weapon_lightning
+322.1 say: Daemia: U got me because I aimed for your brain, doom. Impossible shot.
+323.2 Item: 0 ammo_bullets
+325.6 Item: 0 weapon_rocketlauncher
+325.7 Item: 2 weapon_lightning
+326.2 Item: 0 item_health
+327.2 Item: 1 weapon_lightning
+327.8 Item: 2 item_health_small
+328.5 Item: 1 item_health_small
+332.6 Kill: 0 1 6: Bartoszer killed Daemia by MOD_ROCKET 6
+332.6 Game_End: Fraglimit
+332.6 Exit: Fraglimit hit.
+332.6 score: 20  ping: 2  client: 0 Bartoszer
+332.6 score: 5  ping: 0  client: 2 Doom
+332.6 score: 4  ping: 0  client: 1 Daemia
+333.6 say: Doom: This isn't the end. I'll be back to finish what I started.
+334.8 Weapon_Stats: 0 Gauntlet:0:8:0:0 MachineGun:152:23:0:0 Shotgun:0:0:2:0 R.Launcher:44:18:12:1 LightningGun:209:78:6:1 Plasmagun:126:19:6:1 Given:3185 Recvd:1081 Armor:550 Health:100
+334.8 Weapon_Stats: 1 MachineGun:136:31:0:0 Shotgun:330:48:7:2 R.Launcher:22:9:8:2 LightningGun:497:67:8:5 Plasmagun:10:1:2:1 Given:1185 Recvd:1938 Armor:325 Health:80
+334.8 Weapon_Stats: 2 MachineGun:228:30:0:0 Shotgun:275:30:3:0 R.Launcher:24:11:4:1 LightningGun:156:26:6:5 Plasmagun:6:2:3:1 Given:871 Recvd:2222 Armor:525 Health:170
+337.0 say: Daemia: What conclusion are you looking for?
+337.0 say: Daemia: Caramba! When did hell freeze over?
+339.0 ShutdownGame:
+339.0 ------------------------------------------------------------
