@@ -1,0 +1,24 @@
+0.0 ------------------------------------------------------------
+0.0 InitGame: \dmflags\0\fraglimit\200\timelimit\15\sv_hostname\MY Q3\sv_maxclients\32\sv_minRate\0\sv_maxRate\0\sv_dlRate\100\sv_minPing\0\sv_maxPing\0\sv_floodProtect\0\sv_allowDownload\1\sv_dlURL\http://10.40.3.11:8000/\capturelimit\8\version\ioq3 1.36+u20160616+dfsg1-1/Ubuntu linux-x86_64 Jun 27 2016\com_gamename\Quake3Arena\com_protocol\71\g_gametype\0\mapname\ospdm1\sv_privateClients\0\server_ospauth\0\gamename\osp\gameversion\OSP v1.03a\server_promode\0\g_needpass\0\server_freezetag\0
+0.0 ServerTime:	20170621112856	11:28:56 (21 Jun 2017)
+0.0 Warmup:
+2.5 ShutdownGame:
+2.5 ------------------------------------------------------------
+2.5 ------------------------------------------------------------
+2.5 InitGame: \dmflags\0\fraglimit\30\timelimit\20\sv_hostname\MY Q3\sv_maxclients\32\sv_minRate\0\sv_maxRate\0\sv_dlRate\100\sv_minPing\0\sv_maxPing\0\sv_floodProtect\0\sv_allowDownload\1\sv_dlURL\http://10.40.3.11:8000/\capturelimit\8\version\ioq3 1.36+u20160616+dfsg1-1/Ubuntu linux-x86_64 Jun 27 2016\com_gamename\Quake3Arena\com_protocol\71\g_gametype\0\mapname\ospdm1\sv_privateClients\0\server_ospauth\0\gamename\osp\gameversion\OSP v1.03a\server_promode\0\g_needpass\0\server_freezetag\0
+2.5 ServerTime:	20170621112858	11:28:58 (21 Jun 2017)
+2.5 Warmup:
+16.5 ShutdownGame:
+16.5 ------------------------------------------------------------
+0.0 ------------------------------------------------------------
+0.0 InitGame: \dmflags\0\fraglimit\200\timelimit\15\sv_hostname\MY Q3\sv_maxclients\32\sv_minRate\0\sv_maxRate\0\sv_dlRate\100\sv_minPing\0\sv_maxPing\0\sv_floodProtect\0\sv_allowDownload\1\sv_dlURL\http://10.40.3.11:8000/\capturelimit\8\version\ioq3 1.36+u20160616+dfsg1-1/Ubuntu linux-x86_64 Jun 27 2016\com_gamename\Quake3Arena\com_protocol\71\g_gametype\0\mapname\bgmp7\sv_privateClients\0\server_ospauth\0\gamename\osp\gameversion\OSP v1.03a\server_promode\0\g_needpass\0\server_freezetag\0
+0.0 ServerTime:	20170621112912	11:29:12 (21 Jun 2017)
+0.0 Warmup:
+2.8 ClientConnect: 0
+2.8 ClientUserinfoChanged: 0 n\Bartoszer\t\0\model\xaero/default\hmodel\xaero/default\c1\4\c2\5\hc\100\w\0\l\0\rt\0\st\0
+5.2 ClientUserinfoChanged: 0 n\Bartoszer\t\0\model\xaero/default\hmodel\xaero/default\c1\4\c2\5\hc\100\w\0\l\0\rt\0\st\0
+5.2 ClientBegin: 0
+11.5 ClientConnect: 1
+11.5 ClientUserinfoChanged: 1 n\BOLEK\t\0\model\crash/default\hmodel\crash/default\c1\3\c2\5\hc\100\w\0\l\0\rt\0\st\0
+13.0 ShutdownGame:
+13.0 ------------------------------------------------------------

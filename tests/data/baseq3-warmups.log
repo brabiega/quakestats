@@ -1,0 +1,22 @@
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \dmflags\0\fraglimit\20\g_gametype\0\mapname\campgrounds\protocol\68\sv_allowDownload\1\sv_dlRate\100\sv_floodProtect\1\sv_hostname\noname\sv_maxRate\0\sv_maxclients\8\sv_minRate\0\sv_privateClients\0\timelimit\0\version\Q3 1.32e linux-x86_64 Jan 30 2020\capturelimit\8\g_maxGameClients\0\g_needpass\0\gamename\baseq3
+  0:46 ShutdownGame:
+  0:46 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \dmflags\0\fraglimit\20\g_gametype\0\mapname\campgrounds\protocol\68\sv_allowDownload\1\sv_dlRate\100\sv_floodProtect\1\sv_hostname\noname\sv_maxRate\0\sv_maxclients\8\sv_minRate\0\sv_privateClients\0\timelimit\0\version\Q3 1.32e linux-x86_64 Jan 30 2020\capturelimit\8\g_maxGameClients\0\g_needpass\0\gamename\baseq3
+  1:12 ShutdownGame:
+  1:12 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \sv_hostname\noname\sv_minRate\0\sv_maxRate\0\sv_dlRate\100\sv_minPing\0\sv_maxPing\0\sv_floodProtect\1\g_redTeam\Stroggs\g_blueTeam\Pagans\version\ioq3 1.36_GIT_37943ebf-2014-04-05 linux-x86_64 Jan 31 2020\com_gamename\Quake3Arena\com_protocol\71\dmflags\0\fraglimit\20\timelimit\0\g_gametype\0\mapname\campgrounds\sv_privateClients\0\sv_maxclients\8\sv_allowDownload\0\gamename\baseq3\g_maxGameClients\0\capturelimit\8\g_needpass\0
+  0:00 ClientConnect: 0
+  0:00 ClientUserinfoChanged: 0 n\UnnamedPlayer\t\0\model\sarge\hmodel\sarge\g_redteam\\g_blueteam\\c1\4\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientUserinfoChanged: 0 n\UnnamedPlayer\t\0\model\sarge\hmodel\sarge\g_redteam\\g_blueteam\\c1\4\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientUserinfoChanged: 0 n\UnnamedPlayer\t\0\model\sarge\hmodel\sarge\g_redteam\\g_blueteam\\c1\4\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientBegin: 0
+  0:01 Item: 0 item_armor_shard
+  0:01 Item: 0 item_armor_shard
+  0:06 Item: 0 weapon_rocketlauncher
+  0:12 Item: 0 weapon_rocketlauncher
+  0:25 ShutdownGame:
+  0:25 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
