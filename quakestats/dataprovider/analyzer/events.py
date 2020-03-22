@@ -1,4 +1,6 @@
-from collections import namedtuple
+from collections import (
+    namedtuple,
+)
 
 
 class Event(dict):
@@ -7,10 +9,11 @@ class Event(dict):
     Provides shortcuts to access interesting fields.
     Improves code readability and keeps dict inspection in single place
     """
+
     @classmethod
     def from_dict(cls, data):
         try:
-            cls = EVENT_CLASSES[data['TYPE']]
+            cls = EVENT_CLASSES[data["TYPE"]]
         except KeyError:
             pass
         obj = cls(data)
@@ -19,120 +22,115 @@ class Event(dict):
     # common properties, should be available in all events
     @property
     def type(self):
-        return self['TYPE']
+        return self["TYPE"]
 
     @property
     def data(self):
-        return self['DATA']
+        return self["DATA"]
 
     @property
     def time(self):
-        return self.data['TIME']
+        return self.data["TIME"]
 
 
 class EventPlayerKill(Event):
     @property
     def victim_id(self):
-        return self.data['VICTIM']['STEAM_ID']
+        return self.data["VICTIM"]["STEAM_ID"]
 
     @property
     def victim_name(self):
-        return self.data['VICTIM']['NAME']
+        return self.data["VICTIM"]["NAME"]
 
     @property
     def killer_id(self):
-        return self.data['KILLER']['STEAM_ID']
+        return self.data["KILLER"]["STEAM_ID"]
 
     @property
     def killer_name(self):
-        return self.data['KILLER']['NAME']
+        return self.data["KILLER"]["NAME"]
 
     @property
     def mod(self):
-        return self.data['MOD']
+        return self.data["MOD"]
 
 
 class EventPlayerSwitchTeam(Event):
     @property
     def player_id(self):
-        return self.data['KILLER']['STEAM_ID']
+        return self.data["KILLER"]["STEAM_ID"]
 
     @property
     def player_name(self):
-        return self.data['KILLER']['NAME']
+        return self.data["KILLER"]["NAME"]
 
     @property
     def old_team(self):
-        return self.data['KILLER']['OLD_TEAM']
+        return self.data["KILLER"]["OLD_TEAM"]
 
     @property
     def new_team(self):
-        return self.data['KILLER']['TEAM']
+        return self.data["KILLER"]["TEAM"]
 
 
 class EventPlayerDisconnected(Event):
     @property
     def player_id(self):
-        return self.data['STEAM_ID']
+        return self.data["STEAM_ID"]
 
 
 class EventMatchStart(Event):
-    player_info = namedtuple(
-        'player_info',
-        'id name team'
-    )
+    player_info = namedtuple("player_info", "id name team")
 
     def iter_players(self):
         try:
-            players = self.data['PLAYERS']
+            players = self.data["PLAYERS"]
         except KeyError:
             players = []
 
         for player in players:
             yield self.player_info(
-                player['STEAM_ID'],
-                player['NAME'],
-                player['TEAM'],
+                player["STEAM_ID"], player["NAME"], player["TEAM"],
             )
 
 
 class EventPlayerStats(Event):
     @property
     def player_id(self):
-        return self.data['STEAM_ID']
+        return self.data["STEAM_ID"]
 
     @property
     def total_health(self):
         try:
-            return int(self.data['PICKUPS']['TOTAL_HEALTH'])
+            return int(self.data["PICKUPS"]["TOTAL_HEALTH"])
         except KeyError:
             return 0
 
     @property
     def total_armor(self):
         try:
-            return int(self.data['PICKUPS']['TOTAL_ARMOR'])
+            return int(self.data["PICKUPS"]["TOTAL_ARMOR"])
         except KeyError:
             return 0
 
     @property
     def damage_dealt(self):
-        return int(self.data['DAMAGE']['DEALT'])
+        return int(self.data["DAMAGE"]["DEALT"])
 
     @property
     def damage_taken(self):
-        return int(self.data['DAMAGE']['TAKEN'])
+        return int(self.data["DAMAGE"]["TAKEN"])
 
     @property
     def weapon_stats(self):
-        return self.data['WEAPONS']
+        return self.data["WEAPONS"]
 
 
 EVENT_CLASSES = {
-    'PLAYER_KILL': EventPlayerKill,
-    'PLAYER_DEATH': EventPlayerKill,
-    'PLAYER_SWITCHTEAM': EventPlayerSwitchTeam,
-    'PLAYER_DISCONNECT': EventPlayerDisconnected,
-    'MATCH_STARTED': EventMatchStart,
-    'PLAYER_STATS': EventPlayerStats,
+    "PLAYER_KILL": EventPlayerKill,
+    "PLAYER_DEATH": EventPlayerKill,
+    "PLAYER_SWITCHTEAM": EventPlayerSwitchTeam,
+    "PLAYER_DISCONNECT": EventPlayerDisconnected,
+    "MATCH_STARTED": EventMatchStart,
+    "PLAYER_STATS": EventPlayerStats,
 }

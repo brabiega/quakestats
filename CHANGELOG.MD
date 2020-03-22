@@ -2,6 +2,50 @@ Changelog
 =========
 
 
+v1.3.1 (2020-03-21)
+-------------------
+- Update README.md. [BR]
+
+  Minor improvements for readme file.
+- Update README.md. [BR]
+
+  Added quake3 mod support info.
+
+
+v1.3.1 (2020-02-05)
+-------------------
+- Fixed silent UI bug when weapon accuracy stat is missing. [BR]
+
+
+v1.3.0 (2020-02-05)
+-------------------
+
+Fix
+~~~
+- 'VS' is now png. [BR]
+
+Other
+~~~~~
+- Slightly adjusted layout, added accuracy info. [BR]
+- Fixed tests. [BR]
+- Removed broken tr. [BR]
+- Use wretch.js for presence list. [BR]
+- Added accuracy info for duels. [BR]
+- Dev: Added 'requests' module requirement. [BR]
+- Dev: Fixed tests. [BR]
+- Dev: Renamed analysis report description to summary. [BR]
+- Ignore 'late' events when calculating scores. [BR]
+- Add new q3toql event attribute to distinguish 'late' events. [BR]
+- Added description to duel matches. [BR]
+- Bugfix: inactive player is no longer added to the score log. [BR]
+- Add proper duel player names. [BR]
+- Added view for showing 1v1 matches. [BR]
+- Log watcher will consume last line during 2nd read. [BR]
+- Dev: Fixed tests. [BR]
+- Modified main page layout, added all matches list. [BR]
+- Bugfix: q3 log watcher can consume half-written log entry. [BR]
+
+
 v1.2.0 (2019-11-24)
 -------------------
 - Dev: Fixed tests. [BR]

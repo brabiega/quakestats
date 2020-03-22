@@ -1,7 +1,9 @@
-from collections import defaultdict
+from collections import (
+    defaultdict,
+)
 
 
-class PlayerScores():
+class PlayerScores:
     def __init__(self):
         # store events history
         # the format is (ts, killer_id, victim_id, mod)
@@ -18,8 +20,9 @@ class PlayerScores():
 
     def get_final_kdr(self):
         return [
-            (player_id, kdr.r) for player_id, kdr in self.kdr.items()
-            if kdr.d != 0 and kdr.k != 0 and player_id != 'q3-world'
+            (player_id, kdr.r)
+            for player_id, kdr in self.kdr.items()
+            if kdr.d != 0 and kdr.k != 0 and player_id != "q3-world"
         ]
 
     def players_sorted_by_score(self, reverse=True, skip_world=False):
@@ -29,11 +32,13 @@ class PlayerScores():
         sorted_players = sorted(
             self.player_score.keys(),
             reverse=reverse,
-            key=lambda k: (self.player_score[k]))
+            key=lambda k: (self.player_score[k]),
+        )
 
         if skip_world:
             sorted_players = [
-                pid for pid in sorted_players if pid != 'q3-world']
+                pid for pid in sorted_players if pid != "q3-world"
+            ]
         return sorted_players
 
     def from_match_started(self, event):
@@ -47,20 +52,15 @@ class PlayerScores():
         victim_id = player_kill.victim_id
         mod = player_kill.mod
 
-        self.kills.append((
-            game_time,
-            killer_id, victim_id,
-            mod))
+        self.kills.append((game_time, killer_id, victim_id, mod))
 
         # not self kill
         if killer_id != victim_id:
             self.player_score[killer_id][0] += 1
             self.player_score[killer_id][1] = game_time
-            self.scores.append((
-                game_time,
-                killer_id,
-                self.player_score[killer_id][0],
-                mod))
+            self.scores.append(
+                (game_time, killer_id, self.player_score[killer_id][0], mod)
+            )
             self.kdr[killer_id].add_kill()
 
         # TODO add friendlyfire for teamplay
@@ -71,17 +71,14 @@ class PlayerScores():
         victim_id = player_death.victim_id
         mod = player_death.mod
 
-        self.deaths.append((
-            game_time,
-            killer_id, victim_id,
-            mod))
+        self.deaths.append((game_time, killer_id, victim_id, mod))
 
         self.kdr[victim_id].add_death()
-        if killer_id == victim_id or killer_id == 'q3-world':
+        if killer_id == victim_id or killer_id == "q3-world":
             self.player_score[victim_id][0] -= 1
-            self.scores.append((
-                game_time, victim_id,
-                self.player_score[victim_id][0], mod))
+            self.scores.append(
+                (game_time, victim_id, self.player_score[victim_id][0], mod)
+            )
 
     def from_player_switchteam(self, player_switchteam):
         # In OSP 1v1 user is forced to spect right after match end
@@ -104,12 +101,10 @@ class PlayerScores():
         # so he has no score changes, no score entries at all
         # and score entry 0 shouldn't be added in such case
         if not (
-            player_switchteam.new_team == "SPECTATOR" or
-            [score for score in self.scores if score[1] == player_id]
+            player_switchteam.new_team == "SPECTATOR"
+            or [score for score in self.scores if score[1] == player_id]
         ):
-            self.scores.append(
-                (game_time, player_id, 0, 'SWITCHTEAM'),
-            )
+            self.scores.append((game_time, player_id, 0, "SWITCHTEAM"),)
 
     def from_player_disconnect(self, event):
         game_time = event.time
@@ -124,23 +119,20 @@ class PlayerScores():
             # so there is no need to log the score change in self.scores
             return
 
-        self.scores.append(
-            (game_time, player_id, 0, 'DISCONNECTED'),
-        )
+        self.scores.append((game_time, player_id, 0, "DISCONNECTED"),)
 
     def from_match_report(self, event):
         # any disconnections after match end are ignored
         match_report = event.data
-        game_length = match_report['GAME_LENGTH']
-        self.scores = [
-            s for s in self.scores
-            if s[0] <= game_length]
+        game_length = match_report["GAME_LENGTH"]
+        self.scores = [s for s in self.scores if s[0] <= game_length]
 
 
-class KDR():
+class KDR:
     """
     Helper class for easy handling of kill/death ratio
     """
+
     def __init__(self):
         self.k = 1
         self.d = 1

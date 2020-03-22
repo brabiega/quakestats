@@ -1,0 +1,5 @@
+#!/bin/bash
+REPO_PATH=$(git rev-parse --show-toplevel)
+echo "Running code style checks, to skip run 'git commit --no-verify'"
+python $REPO_PATH/git/hook_flake8.py
+python $REPO_PATH/git/hook_isort.py
