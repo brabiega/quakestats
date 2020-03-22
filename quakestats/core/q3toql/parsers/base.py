@@ -46,7 +46,7 @@ class Q3LogParserModOsp(Q3LogParser):
     def read_events(self) -> Iterator[Q3MatchLogEvent]:
         for line in self.read_lines():
             yield self.line_to_event(line)
-            
+
     def line_to_event(self, line: str) -> Q3MatchLogEvent:
         match = re.search(self.event_format, line)
         if match:

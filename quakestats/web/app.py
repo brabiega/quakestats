@@ -14,9 +14,10 @@ def data_store():
     return mongo2.DataStoreMongo(mongo_db.db)
 
 
-from quakestats.web import (
-    views,
-    api,
-)
+# load web app handlers for views and api
+from quakestats.web import (  # noqa
+    views,  # noqa
+    api,  # noqa
+)  # noqa
 
 app.json_encoder = api.QJsonEncoder

@@ -5,12 +5,12 @@ from typing import Optional, List
 class Q3MatchLogEvent():
     def __init__(
         self, time: int, name: str,
-        payload: Optional[str]=None
+        payload: Optional[str] = None
     ):
         """
         time: game time in miliseconds
         """
-        assert time >=0
+        assert time >= 0
         self.time = time
         self.name = name
         self.payload = payload
