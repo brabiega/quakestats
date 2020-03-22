@@ -15,7 +15,6 @@ for QL
 """
 
 from typing import Optional
-from quakestats.core.q3toql.parsers.result
 
 def games(raw_data: str, mod_hint: str):
     """
@@ -23,5 +22,3 @@ def games(raw_data: str, mod_hint: str):
     mod_name: name of game mod [baseq3, osp, cpma]
     """
     assert mod_hint in ['baseq3', 'osd', 'cpma']
-
-
