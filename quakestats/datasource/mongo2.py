@@ -1,7 +1,9 @@
 """
 TODO add documentation
 """
-from copy import deepcopy
+from copy import (
+    deepcopy,
+)
 
 import pymongo
 

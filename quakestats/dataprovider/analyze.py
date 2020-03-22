@@ -13,11 +13,21 @@ Produces Match info:
     [x] kill / death info
 """
 
-from quakestats.dataprovider.analyzer.badges import Badger
-from quakestats.dataprovider.analyzer.events import Event
-from quakestats.dataprovider.analyzer.scores import PlayerScores
-from quakestats.dataprovider.analyzer.specials import SpecialScores
-from quakestats.dataprovider.analyzer.teams import TeamLifecycle
+from quakestats.dataprovider.analyzer.badges import (
+    Badger,
+)
+from quakestats.dataprovider.analyzer.events import (
+    Event,
+)
+from quakestats.dataprovider.analyzer.scores import (
+    PlayerScores,
+)
+from quakestats.dataprovider.analyzer.specials import (
+    SpecialScores,
+)
+from quakestats.dataprovider.analyzer.teams import (
+    TeamLifecycle,
+)
 
 
 class AnalysisResult:

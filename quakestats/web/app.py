@@ -1,8 +1,17 @@
-from flask import Flask
-from flask_pymongo import PyMongo
+from flask import (
+    Flask,
+)
+from flask_pymongo import (
+    PyMongo,
+)
 
-
-from quakestats.datasource import mongo2
+from quakestats.datasource import (
+    mongo2,
+)
+# load web app handlers for views and api
+from quakestats.web import (
+    utils,
+)
 
 app = Flask(__name__)
 app.config.from_envvar("QUAKESTATS_SETTINGS")
@@ -14,10 +23,10 @@ def data_store():
     return mongo2.DataStoreMongo(mongo_db.db)
 
 
-# load web app handlers for views and api
-from quakestats.web import (  # noqa
-    views,  # noqa
-    api,  # noqa
-)  # noqa
+def load_stuff():
+    from quakestats.web import api  # noqa
+    from quakestats.web import views  # noqa
 
-app.json_encoder = api.QJsonEncoder
+
+app.json_encoder = utils.QJsonEncoder
+load_stuff()

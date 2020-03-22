@@ -1,7 +1,11 @@
 import flask
-from passlib.hash import pbkdf2_sha256
+from passlib.hash import (
+    pbkdf2_sha256,
+)
 
-from quakestats import VERSION
+from quakestats import (
+    VERSION,
+)
 from quakestats.web.app import (
     app,
     data_store,

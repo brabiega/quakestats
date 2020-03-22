@@ -2,9 +2,15 @@
 
 import click
 
-from quakestats import manage
-from quakestats.health import HealthInfo
-from quakestats.system import log
+from quakestats import (
+    manage,
+)
+from quakestats.health import (
+    HealthInfo,
+)
+from quakestats.system import (
+    log,
+)
 
 
 # TODO consider moving to separate CLI module

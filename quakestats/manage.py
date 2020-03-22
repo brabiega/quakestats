@@ -4,9 +4,13 @@ from os import (
     path,
 )
 
-from passlib.hash import pbkdf2_sha256
+from passlib.hash import (
+    pbkdf2_sha256,
+)
 
-from quakestats import dataprovider
+from quakestats import (
+    dataprovider,
+)
 from quakestats.dataprovider import (
     analyze,
     quake3,

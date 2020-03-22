@@ -7,7 +7,9 @@ import struct
 import click
 import zmq
 
-from quakestats.dataprovider.quakelive.collector import MatchCollector
+from quakestats.dataprovider.quakelive.collector import (
+    MatchCollector,
+)
 
 logging.basicConfig(level=logging.DEBUG)
 

@@ -4,14 +4,19 @@ import json
 import logging
 import os
 import uuid
-from datetime import datetime, timedelta
+from datetime import (
+    datetime,
+    timedelta,
+)
 
 from quakestats.dataprovider import (
     FeedFull,
     FullMatchInfo,
     MatchPreprocessor,
 )
-from quakestats.dataprovider.quakelive import QLMatchFeeder
+from quakestats.dataprovider.quakelive import (
+    QLMatchFeeder,
+)
 
 logger = logging.getLogger("quakestats.dataprovider.quakelive")
 

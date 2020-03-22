@@ -1,6 +1,10 @@
 import logging
-from collections import defaultdict
-from os import path
+from collections import (
+    defaultdict,
+)
+from os import (
+    path,
+)
 
 import flask
 
@@ -18,14 +22,6 @@ from quakestats.web.app import (
 )
 
 logger = logging.getLogger("quakestats.webapp")
-
-
-class QJsonEncoder(flask.json.JSONEncoder):
-    def default(self, o):  # pylint: disable=method-hidden
-        # TODO too tightly coupled with internal data structures
-        if isinstance(o, quake3.PlayerId):
-            return str(o.steam_id)
-        return flask.json.JSONEncoder.default(self, o)
 
 
 def auth(token):

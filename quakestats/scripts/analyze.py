@@ -9,9 +9,15 @@ import sys
 
 import pymongo
 
-from quakestats import dataprovider
-from quakestats.dataprovider import analyze
-from quakestats.datasource import mongo2
+from quakestats import (
+    dataprovider,
+)
+from quakestats.dataprovider import (
+    analyze,
+)
+from quakestats.datasource import (
+    mongo2,
+)
 
 data = sys.stdin.read()
 

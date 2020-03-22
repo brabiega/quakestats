@@ -1,10 +1,13 @@
-import re
 import logging
+import re
+from typing import (
+    Iterator,
+)
 
-from typing import Iterator
-
-from quakestats.core.q3toql.parsers.result import Q3GameLog, Q3MatchLogEvent
-
+from quakestats.core.q3toql.parsers.result import (
+    Q3GameLog,
+    Q3MatchLogEvent,
+)
 
 logger = logging.getLogger(__name__)
 
