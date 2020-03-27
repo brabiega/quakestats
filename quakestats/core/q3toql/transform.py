@@ -5,135 +5,145 @@ from typing import (
     List,
 )
 
+from quakestats.core.q3toql import (
+    qlevents,
+)
+from quakestats.core.q3toql.parsers import events as q3_events
 from quakestats.core.q3toql.parsers.result import (
     Q3GameLog,
-    Q3MatchLogEvent,
 )
 
 logger = logging.getLogger(__name__)
 UNKNOWN = -255
 
 
-class ClientIdentity():
-    def __init__(self):
-        self.id = None
-
-    def update(self, id: str):
+class Client():
+    def __init__(self, id: int, name: str, team: str):
         self.id = id
+        self.name = name
+        self.team = team
+        self.is_connected = True
 
+    def disconnect(self) -> bool:
+        self.is_connected = False
 
-class QuakeGame():
-    """
-    This should be a claas which represents
-    single quake match (compatible with Quake Live)
-    """
-    def __init__(self):
-        self.ql_events: List[dict] = []
-        self.start_time: int = 0
-        self.game_guid = None
-        self.warmup = False
+    def update(self, name: str, team: str):
+        self.name = name
+        self.team = team
 
-        # keeps track of current clients
-        self.clients = {}
-        self.identities = {}
+    @property
+    def lazy_identity(self):
+        return self
 
-    def add_event(self, time: int, ev_type: str, data: dict):
-        game_time = time - self.start_time
-        ev = {
-            'TYPE': ev_type,
-            'DATA': {
-                'MATCH_GUID': self.game_guid,
-                'TIME': game_time,
-                'WARMUP': self.warmup,
-            }
-        }
-        ev['DATA'].update(data)
-        self.ql_events.append(ev)
-        return ev
-
-    def add_match_started(
-        self, time: int, game_guid: str, game_info: dict
-    ):
-        self.start_time = time
-        self.game_guid = game_guid
-        self.add_event(time, "MATCH_STARTED", {
-            "INSTAGIB": 0,
-            "FACTORY": "quake3",
-            "FACTORY_TITLE": "quake3",
-            "INFECTED": 0,
-            "TIME_LIMIT": game_info["timelimit"],
-            "TRAINING": 0,
-            "FRAG_LIMIT": game_info["fraglimit"],
-            "CAPTURE_LIMIT": game_info["capturelimit"],
-            "SERVER_TITLE": game_info["sv_hostname"],
-            "GAME_TYPE": game_info["gametype"],
-            "QUADHOG": 0,
-            "ROUND_LIMIT": 0,
-            "MERCY_LIMIT": 0,
-            "SCORE_LIMIT": 0,
-            "MAP": game_info['mapname'],
-            "PLAYERS": {}  # I think we can live without it
-        })
-
-    def user_info_changed(
-        self, time: int, client_id: int, user_info: dict
-    ):
-        if client_id not in self.clients:
-            # create new client identity
-            identity = ClientIdentity()
-            self.identities[client_id] = identity
-            # even if client_id is reused old events will keep
-            # references to old client identity
-
-            self.add_event(time, "PLAYER_CONNECT", {
-                "NAME": user_info["name"],
-                "STEAM_ID": identity,
-            })
-
-        old_user_info = self.clients.get(client_id, None)
-        identity = self.identities[client_id]
-        if (
-            old_user_info is None
-            or old_user_info['team'] != user_info['team']
-        ):
-            self.add_event(
-                time, 'PLAYER_SWITCHTEAM', {
-                    "KILLER": {
-                        "STEAM_ID": identity,
-                        "OLD_TEAM": (
-                            old_user_info['team'] if old_user_info
-                            else 'SPECTATOR'
-                        ),
-                        "TEAM": user_info['team'],
-                        "NAME": user_info['name'],
-                    },
-                }
-            )
-
-        self.clients[client_id] = user_info
-        # update identity in case of name change during game
-        self.identities[client_id].update(
-            self.create_steam_id(user_info['name'])
-        )
-
-    def create_steam_id(self, name):
+    def resolve(self) -> str:
+        """
+        resolve identity
+        """
         server_domain = "Q3"
-        raw_name = re.sub(r"\^\d", "", name).capitalize()
+        raw_name = re.sub(r"\^\d", "", self.name).capitalize()
         raw_name = "q3-{}-{}".format(server_domain, raw_name)
         h = hashlib.sha256()
         h.update(raw_name.encode("utf-8"))
         steam_id = h.hexdigest()[:24]
         return steam_id
 
+
+class QuakeGame():
+    """
+    This should be a claas which represents
+    single quake match (compatible with Quake Live)
+
+    QL event support:
+    [x] - MATCH_STARTED
+    [x] - PLAYER_CONNECT
+    [x] - PLAYER_SWITCHTEAM - FREE/RED/BLUE/SPECTATOR
+    [*] - PLAYER_STATS team is 0,1,2, partial implementation
+    [ ] - PLAYER_KILL
+    [ ] - PLAYER_DEATH
+    [ ] - PLAYER_DISCONNECT
+    [ ] - PLAYER_MEDAL
+    [ ] - MATCH_REPORT
+    [ ] - ROUND_OVER
+    """
+    def __init__(self):
+        self.ql_events: List[qlevents.QLEvent] = []
+        self.start_time: int = 0
+        self.game_guid = None
+        self.warmup = False
+
+        # keeps track of current clients
+        self.clients = {}
+
+    def add_match_started(
+        self, game_guid: str, ev: q3_events.Q3EVInitGame
+    ):
+        self.start_time = ev.time
+        self.game_guid = game_guid
+        event = qlevents.MatchStarted(ev.time, self.game_guid, self.warmup)
+        event.set_game_info(ev.hostname, ev.mapname, ev.gametype)
+        event.set_limits(ev.fraglimit, ev.timelimit, ev.capturelimit)
+        self.ql_events.append(event)
+
+    def _game_time(self, ev: q3_events.Q3GameEvent):
+        return ev.time - self.start_time
+
+    def user_info_changed(
+        self, ev: q3_events.Q3EVUpdateClient
+    ):
+        client = self.clients.get(ev.client_id, None)
+        just_connected = False
+        if not client or not client.is_connected:
+            # create new client identity
+            client = Client(ev.client_id, ev.name, ev.team)
+            self.clients[ev.client_id] = client
+            just_connected = True
+
+        if just_connected:
+            ql_ev = qlevents.PlayerConnect(
+                self._game_time(ev), self.game_guid, self.warmup
+            )
+            ql_ev.set_data(client.name, client.lazy_identity)
+            self.ql_events.append(ql_ev)
+
+        if (
+            just_connected or
+            client.team != ev.team
+        ):
+            ql_ev = qlevents.PlayerSwitchteam(
+                self._game_time(ev), self.game_guid, self.warmup
+            )
+            ql_ev.set_data(
+                client.lazy_identity, ev.name, ev.team,
+                'SPECTATOR' if just_connected else client.team
+            )
+            self.ql_events.append(ql_ev)
+
+        client.update(ev.name, ev.team)
+
+    def get_client(self, client_id: int) -> Client:
+        return self.clients[client_id]
+
     def get_events(self):
         for ev in self.ql_events:
-            if ev['TYPE'] == 'PLAYER_SWITCHTEAM':
-                ev['DATA']['KILLER']['STEAM_ID'] = (
-                    ev['DATA']['KILLER']['STEAM_ID'].id
+            if ev.type == 'PLAYER_SWITCHTEAM':
+                ev.data['KILLER']['STEAM_ID'] = (
+                    ev.data['KILLER']['STEAM_ID'].resolve()
                 )
-            elif ev['TYPE'] == 'PLAYER_CONNECT':
-                ev['DATA']['STEAM_ID'] = ev['DATA']['STEAM_ID'].id
+            elif ev.type in ['PLAYER_CONNECT', 'PLAYER_STATS']:
+                ev.data['STEAM_ID'] = ev.data['STEAM_ID'].resolve()
             yield ev
+
+    def weapon_stats(self, ev: q3_events.Q3EVPlayerStats):
+        ql_ev = qlevents.PlayerStats(
+            self._game_time(ev), self.game_guid, self.warmup
+        )
+        client = self.get_client(ev.client_id)
+        for name, stats in ev.weapons.items():
+            stats: q3_events.Q3EVPlayerStats.WeaponStat = stats
+            ql_ev.add_weapon(name, stats.shots, stats.hits)
+
+        ql_ev.set_data(client.name, client.lazy_identity)
+        self.ql_events.append(ql_ev)
 
 
 class Q3toQL():
@@ -141,13 +151,6 @@ class Q3toQL():
     Process Quake3 game log events,
     Produces QuakeLive compatible events
     """
-    GAMETYPE_MAP = {
-        "0": "FFA",
-        "1": "DUEL",
-        "3": "TDM",
-        "4": "CTF",
-    }
-    TEAM_MAP = {"0": "FREE", "1": "RED", "2": "BLUE", "3": "SPECTATOR"}
 
     def __init__(self):
         self.game = None
@@ -157,73 +160,18 @@ class Q3toQL():
         self.game = QuakeGame()
         self.gamelog = gamelog
 
-        time, game_info = self.build_match_start()
+        init_game = [
+            e for e in self.gamelog.events
+            if isinstance(e, q3_events.Q3EVInitGame)
+        ][0]
         self.game.add_match_started(
-            time, self.gamelog.checksum.hexdigest(), game_info
+            self.gamelog.checksum.hexdigest(), init_game
         )
 
         for event in self.gamelog.events:
-            if event.name == 'ClientUserinfoChanged':
-                client_id, user_info = self.parse_user_info_changed(
-                    event.payload
-                )
-                self.game.user_info_changed(event.time, client_id, user_info)
+            if isinstance(event, q3_events.Q3EVUpdateClient):
+                self.game.user_info_changed(event)
+            elif isinstance(event, q3_events.Q3EVPlayerStats):
+                self.game.weapon_stats(event)
 
         return self.game
-
-    def find_event(self, name: str) -> Q3MatchLogEvent:
-        ev = [e for e in self.gamelog.events if e.name == name]
-        if not ev:
-            raise Exception("No such event")
-
-        assert len(ev) == 1
-        return ev[0]
-
-    def build_match_start(self):
-        ev = self.find_event('InitGame')
-        info = self.parse_init_game(ev.payload)
-        return ev.time, info
-
-    def parse_init_game(self, payload):
-        """
-        The data coming here usually looks like:
-        '\sv_allowDownload\1\sv_maxclients\32\timelimit\15\fraglimit\200
-        \dmflags\0\sv_maxPing\0\sv_minPing\0\sv_hostname\Host Q3\sv_maxRate\0
-        \sv_floodProtect\0\capturelimit\8\sv_punkbuster\0
-        \version\Q3 1.32b linux-i386 Nov 14 2002\g_gametype\0
-        \protocol\68\mapname\ospdm1\sv_privateClients\0\server_ospauth\0
-        \gamename\osp\gameversion\OSP v1.03a\server_promode\0
-        \g_needpass\0\server_freezetag\0'
-        (no new line chars)
-        Some parsing of this info is done here
-        """  # noqa
-        game_info = payload.split("\\")[1:]
-        game_info_dict = {}
-        for key, value in zip(game_info[0::2], game_info[1::2]):
-            game_info_dict[key] = value
-
-        game_info_dict["gametype"] = self.GAMETYPE_MAP[
-            game_info_dict["g_gametype"]
-        ]  # noqa
-
-        return game_info_dict
-
-    def parse_user_info_changed(self, payload):
-        """
-        4 n\n0npax\t\0\model\sarge\hmodel\sarge
-        \c1\1\c2\5\hc\100\w\0\l\0\rt\0\st\0
-        """  # noqa
-        match = re.match(r'^(\d+) (.*)$', payload)
-        client_id, user_info = match.groups()
-        client_id = int(client_id)
-        user_data = user_info.split("\\")
-        user_info = {}
-        for key, value in zip(user_data[0::2], user_data[1::2]):
-            user_info[key] = value
-
-        result = {
-            'name': user_info['n'],
-            'team': self.TEAM_MAP[user_info['t']],
-            'model': user_info['model']
-        }
-        return client_id, result

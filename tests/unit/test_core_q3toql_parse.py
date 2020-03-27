@@ -1,7 +1,13 @@
 import pytest
+
 from quakestats.core.q3toql.parsers.base import (
-    Q3LogParser, Q3LogParserModOsp
+    DefaultParserMixin,
+    OspParserMixin,
+    Q3LogParser,
+    Q3LogParserModOsp,
+    RawEvent,
 )
+from quakestats.system.qa import _regen_asserts  # noqa
 
 
 class TestQ3LogParser():
@@ -60,21 +66,21 @@ class TestQ3LogParserModOsp():
     @pytest.mark.parametrize('line, expected', [
         (
             '13.0 ------------------------------------------------------------',  # noqa
-            (13000, '__separator__')
+            (13000, '___SEPARATOR___')
         ),
         (
             '0.0 ------------------------------------------------------------',  # noqa
-            (0, '__separator__')
+            (0, '___SEPARATOR___')
         ),
     ])
     def test_line_to_event_separator(self, line, expected):
         parser = Q3LogParserModOsp('')
 
         ex_time, ex_name = expected
-        result = parser.line_to_event(line)
+        result = parser.line_to_raw_event(line)
         assert result.time == ex_time
         assert result.payload is None
-        assert result.name == '__separator__'
+        assert result.name == ex_name
 
     @pytest.mark.parametrize('line, expected', [
         (
@@ -85,12 +91,58 @@ class TestQ3LogParserModOsp():
             '5.2 ClientUserinfoChanged: 0 n\Bartoszer\t\0\model\xaero/default\hmodel\xaero/default\c1\4\c2\5\hc\100\w\0\l\0\rt\0\st\0',  # noqa
             (5200, 'ClientUserinfoChanged', '0 n\Bartoszer\t\0\model\xaero/default\hmodel\xaero/default\c1\4\c2\5\hc\100\w\0\l\0\rt\0\st\0'),  # noqa
         ),
-        
     ])
     def test_line_to_event(self, line, expected):
         parser = Q3LogParserModOsp('')
         ex_time, ex_name, ex_payload = expected
-        result = parser.line_to_event(line)
+        result = parser.line_to_raw_event(line)
         assert result.time == ex_time
         assert result.payload == ex_payload
         assert result.name == ex_name
+
+
+class TestDefaultParser():
+    def test_parse_user_info_changed(self):
+        parser = DefaultParserMixin()
+        raw_data = r'4 n\n0npax\t\0\model\sarge\hmodel\sarge\c1\1\c2\5\hc\100\w\0\l\0\rt\0\st\0'  # noqa
+        raw_event = RawEvent(0, '', raw_data)
+        event = parser.parse_user_info(raw_event)
+
+        assert event.time == 0
+        assert event.client_id == 4
+        assert event.name == 'n0npax'
+        assert event.team == 'FREE'
+
+
+class TestOspParser():
+    def test_parse_weapon_stats(self):
+        parser = OspParserMixin()
+        raw_data = r'2 MachineGun:1367:267:0:0 Shotgun:473:107:23:8 G.Launcher:8:1:8:3 R.Launcher:30:11:9:5 LightningGun:403:68:15:10 Plasmagun:326:45:13:8 Given:5252 Recvd:7836 Armor:620 Health:545'  # noqa
+        raw_event = RawEvent(0, '', raw_data)
+        event = parser.parse_weapon_stat(raw_event)
+
+        assert event.client_id == 2
+        # _regen_asserts(event.pickups)
+        e = event.pickups
+        assert e.health == 545  # noqa
+        assert e.armor == 620  # noqa
+
+        # _regen_asserts(event.damage)
+        e = event.damage
+        assert e.given == 5252  # noqa
+        assert e.received == 7836  # noqa
+
+        # _regen_asserts(event.weapons)
+        e = event.weapons
+        assert e['MACHINEGUN'].shots == 1367  # noqa
+        assert e['MACHINEGUN'].hits == 267  # noqa
+        assert e['SHOTGUN'].shots == 473  # noqa
+        assert e['SHOTGUN'].hits == 107  # noqa
+        assert e['GRENADE'].shots == 8  # noqa
+        assert e['GRENADE'].hits == 1  # noqa
+        assert e['ROCKET'].shots == 30  # noqa
+        assert e['ROCKET'].hits == 11  # noqa
+        assert e['LIGHTNING'].shots == 403  # noqa
+        assert e['LIGHTNING'].hits == 68  # noqa
+        assert e['PLASMA'].shots == 326  # noqa
+        assert e['PLASMA'].hits == 45  # noqa
