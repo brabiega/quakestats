@@ -74,18 +74,22 @@ class QuakeGame():
         # keeps track of current clients
         self.clients = {}
 
+    def add_event(self, time: int, ev_cls) -> qlevents.QLEvent:
+        game_time = time - self.start_time
+        ev = ev_cls(game_time, self.game_guid, self.warmup)
+        self.ql_events.append(ev)
+        return ev
+
     def add_match_started(
         self, game_guid: str, ev: q3_events.Q3EVInitGame
     ):
         self.start_time = ev.time
         self.game_guid = game_guid
-        event = qlevents.MatchStarted(ev.time, self.game_guid, self.warmup)
+        event: qlevents.MatchStarted = self.add_event(
+            ev.time, qlevents.MatchStarted
+        )
         event.set_game_info(ev.hostname, ev.mapname, ev.gametype)
         event.set_limits(ev.fraglimit, ev.timelimit, ev.capturelimit)
-        self.ql_events.append(event)
-
-    def _game_time(self, ev: q3_events.Q3GameEvent):
-        return ev.time - self.start_time
 
     def user_info_changed(
         self, ev: q3_events.Q3EVUpdateClient
@@ -99,24 +103,22 @@ class QuakeGame():
             just_connected = True
 
         if just_connected:
-            ql_ev = qlevents.PlayerConnect(
-                self._game_time(ev), self.game_guid, self.warmup
+            ql_ev: qlevents.PlayerConnect = self.add_event(
+                ev.time, qlevents.PlayerConnect
             )
             ql_ev.set_data(client.name, client.lazy_identity)
-            self.ql_events.append(ql_ev)
 
         if (
             just_connected or
             client.team != ev.team
         ):
-            ql_ev = qlevents.PlayerSwitchteam(
-                self._game_time(ev), self.game_guid, self.warmup
+            ql_ev: qlevents.PlayerSwitchteam = self.add_event(
+                ev.time, qlevents.PlayerSwitchteam
             )
             ql_ev.set_data(
                 client.lazy_identity, ev.name, ev.team,
                 'SPECTATOR' if just_connected else client.team
             )
-            self.ql_events.append(ql_ev)
 
         client.update(ev.name, ev.team)
 
@@ -134,8 +136,8 @@ class QuakeGame():
             yield ev
 
     def weapon_stats(self, ev: q3_events.Q3EVPlayerStats):
-        ql_ev = qlevents.PlayerStats(
-            self._game_time(ev), self.game_guid, self.warmup
+        ql_ev: qlevents.PlayerStats = self.add_event(
+            ev.time, qlevents.PlayerStats
         )
         client = self.get_client(ev.client_id)
         for name, stats in ev.weapons.items():
@@ -143,7 +145,6 @@ class QuakeGame():
             ql_ev.add_weapon(name, stats.shots, stats.hits)
 
         ql_ev.set_data(client.name, client.lazy_identity)
-        self.ql_events.append(ql_ev)
 
 
 class Q3toQL():

@@ -15,13 +15,14 @@ def _regen_asserts(data, accessor: str = 'e'):
         print(f"assert {accessor} is None  # noqa")
     elif isinstance(data, dict):
         # go deeper
-        for k, v in data.items():
+        for k in sorted(data):
+            v = data[k]
             nested_accessor = f"{accessor}['{k}']"
             _regen_asserts(v, nested_accessor)
     # namedtuple
     elif isinstance(data, tuple) and getattr(data, "_fields", None):
         fields = data._fields
-        for field in fields:
+        for field in sorted(fields):
             nested_accessor = f"{accessor}.{field}"
             _regen_asserts(getattr(data, field), nested_accessor)
     elif isinstance(data, (list, tuple)):
