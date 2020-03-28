@@ -113,6 +113,15 @@ class TestDefaultParser():
         assert event.name == 'n0npax'
         assert event.team == 'FREE'
 
+    def test_parse_kill(self):
+        parser = DefaultParserMixin()
+        raw_data = r'Kill: 2 3 1: Bartoszer killed Turbo W by MOD_SHOTGUN 3'
+        raw_event = RawEvent(0, '', raw_data)
+        event = parser.parse_kill(raw_event)
+        assert event.client_id == 2
+        assert event.victim_id == 3
+        assert event.reason == 'MOD_SHOTGUN'
+
 
 class TestOspParser():
     def test_parse_weapon_stats(self):

@@ -172,3 +172,50 @@ class PlayerStats(QLEvent):
 
         self.data['WEAPONS'][weapon]['H'] = hits
         self.data['WEAPONS'][weapon]['S'] = shots
+
+
+class PlayerKill(QLEvent):
+    name = 'PLAYER_KILL'
+    payload = {
+        "MOD": None,
+        "SUICIDE": None,
+        "TEAMKILL": None,
+        "ROUND": None,
+        "KILLER": {},
+        "VICTIM": {},
+        "TEAM_ALIVE": None,
+        "TEAM_DEAD": None,
+        "OTHER_TEAM_ALIVE": None,
+        "OTHER_TEAM_DEAD": None,
+    }
+
+    def _user_info(self, steam_id) -> dict:
+        return {
+            "POSITION": {"X": None, "Y": None, "Z": None, },
+            "VIEW": {"X": None, "Y": None, "Z": None, },
+            "BOT": None,
+            "BOT_SKILL": None,
+            "WEAPON": None,
+            "AMMO": None,
+            "AIRBORNE": None,
+            "ARMOR": None,
+            "SUBMERGED": None,
+            "STEAM_ID": steam_id,
+            "TEAM": None,
+            "POWERUPS": None,
+            "SPEED": None,
+            "HOLDABLE": None,
+            "HEALTH": None,
+            "NAME": None,
+        }
+
+    def set_data(self, mod: str):
+        if mod not in entities.MODS:
+            raise ValueError(f"Invalid mod, '{mod}'")
+        self.data['MOD'] = mod
+
+    def add_killer(self, steam_id):
+        self.data['KILLER'] = self._user_info(steam_id)
+
+    def add_victim(self, steam_id):
+        self.data['VICTIM'] = self._user_info(steam_id)

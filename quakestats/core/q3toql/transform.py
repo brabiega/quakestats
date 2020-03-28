@@ -14,7 +14,20 @@ from quakestats.core.q3toql.parsers.result import (
 )
 
 logger = logging.getLogger(__name__)
-UNKNOWN = -255
+
+
+class ClientQ3World():
+    def __init__(self):
+        self.id = 1022
+        self.name = '__world__'
+        self.is_connected = True
+
+    @property
+    def lazy_identity(self):
+        return self
+
+    def resolve(self) -> str:
+        return 'q3-world'
 
 
 class Client():
@@ -58,7 +71,7 @@ class QuakeGame():
     [x] - PLAYER_CONNECT
     [x] - PLAYER_SWITCHTEAM - FREE/RED/BLUE/SPECTATOR
     [*] - PLAYER_STATS team is 0,1,2, partial implementation
-    [ ] - PLAYER_KILL
+    [*] - PLAYER_KILL, partial implementation
     [ ] - PLAYER_DEATH
     [ ] - PLAYER_DISCONNECT
     [ ] - PLAYER_MEDAL
@@ -72,7 +85,9 @@ class QuakeGame():
         self.warmup = False
 
         # keeps track of current clients
-        self.clients = {}
+        self.clients = {
+            1022: ClientQ3World()
+        }
 
     def add_event(self, time: int, ev_cls) -> qlevents.QLEvent:
         game_time = time - self.start_time
@@ -133,6 +148,14 @@ class QuakeGame():
                 )
             elif ev.type in ['PLAYER_CONNECT', 'PLAYER_STATS']:
                 ev.data['STEAM_ID'] = ev.data['STEAM_ID'].resolve()
+
+            elif ev.type == 'PLAYER_KILL':
+                ev.data['KILLER']['STEAM_ID'] = (
+                    ev.data['KILLER']['STEAM_ID'].resolve()
+                )
+                ev.data['VICTIM']['STEAM_ID'] = (
+                    ev.data['VICTIM']['STEAM_ID'].resolve()
+                )
             yield ev
 
     def weapon_stats(self, ev: q3_events.Q3EVPlayerStats):
@@ -145,6 +168,18 @@ class QuakeGame():
             ql_ev.add_weapon(name, stats.shots, stats.hits)
 
         ql_ev.set_data(client.name, client.lazy_identity)
+
+    def kill(self, ev: q3_events.Q3EVPlayerKill):
+        ql_ev: qlevents.PlayerKill = self.add_event(
+            ev.time, qlevents.PlayerKill
+        )
+
+        killer = self.get_client(ev.client_id)
+        victim = self.get_client(ev.victim_id)
+        ql_ev.add_killer(killer.lazy_identity)
+        ql_ev.add_victim(victim.lazy_identity)
+        mod = ev.reason.split("MOD_")[1]
+        ql_ev.set_data(mod)
 
 
 class Q3toQL():
@@ -174,5 +209,7 @@ class Q3toQL():
                 self.game.user_info_changed(event)
             elif isinstance(event, q3_events.Q3EVPlayerStats):
                 self.game.weapon_stats(event)
+            elif isinstance(event, q3_events.Q3EVPlayerKill):
+                self.game.kill(event)
 
         return self.game

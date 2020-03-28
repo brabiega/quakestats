@@ -1,0 +1,1410 @@
+13.6 ------------------------------------------------------------
+15.6 InitGame: \dmflags\0\fraglimit\200\timelimit\15\sv_hostname\MY Q3\sv_maxclients\32\sv_minRate\0\sv_maxRate\0\sv_dlRate\100\sv_minPing\0\sv_maxPing\0\sv_floodProtect\0\sv_allowDownload\1\sv_dlURL\http://10.40.3.11:8000/\capturelimit\8\version\ioq3 1.36+u20160616+dfsg1-1/Ubuntu linux-x86_64 Jun 27 2016\com_gamename\Quake3Arena\com_protocol\71\g_gametype\0\mapname\nodm9\sv_privateClients\0\server_ospauth\0\gamename\osp\gameversion\OSP v1.03a\Players_Active\1 2 3 4 5 6 7 8 \server_promode\0\g_needpass\0\server_freezetag\0
+15.6 ServerTime:	20170623124300	12:43:00 (23 Jun 2017)
+15.6 Game_Start:
+15.8 ClientConnect: 0
+15.8 ClientUserinfoChanged: 0 n\MACIEK\t\0\model\klesk/default\hmodel\klesk/default\c1\3\c2\5\hc\95\w\0\l\0\rt\0\st\0
+15.8 ClientBegin: 0
+15.8 ClientConnect: 1
+15.8 ClientUserinfoChanged: 1 n\Turbo Wpierdol\t\0\model\bones/bones\hmodel\bones/bones\c1\1\c2\5\hc\100\w\0\l\0\rt\0\st\0
+15.8 ClientBegin: 1
+15.8 ClientConnect: 2
+15.8 ClientUserinfoChanged: 2 n\Bartoszer\t\0\model\xaero/default\hmodel\xaero/default\c1\4\c2\5\hc\100\w\0\l\0\rt\0\st\0
+15.8 ClientBegin: 2
+15.8 ClientConnect: 3
+15.8 ClientUserinfoChanged: 3 n\killer clown\t\0\model\biker/stroggo\hmodel\biker/stroggo\c1\6\c2\5\hc\100\w\0\l\0\rt\0\st\0
+15.8 ClientBegin: 3
+15.8 ClientConnect: 4
+15.8 ClientUserinfoChanged: 4 n\Stefan\t\0\model\sarge/default\hmodel\sarge/default\c1\1\c2\5\hc\100\w\0\l\0\rt\0\st\0
+15.8 ClientBegin: 4
+15.8 ClientConnect: 5
+15.8 ClientUserinfoChanged: 5 n\n0npax\t\0\model\sarge\hmodel\sarge\c1\1\c2\5\hc\100\w\0\l\0\rt\0\st\0
+15.8 ClientBegin: 5
+15.8 ClientConnect: 6
+15.8 ClientUserinfoChanged: 6 n\BOLEK\t\0\model\crash/default\hmodel\crash/default\c1\3\c2\5\hc\100\w\0\l\0\rt\0\st\0
+15.8 ClientBegin: 6
+15.8 ClientConnect: 7
+15.8 ClientUserinfoChanged: 7 n\darkside\t\0\model\sarge\hmodel\sarge\c1\1\c2\5\hc\100\w\0\l\0\rt\0\st\0
+15.8 ClientBegin: 7
+16.1 Item: 3 ammo_grenades
+16.1 Item: 3 ammo_bullets
+17.6 Item: 3 item_armor_shard
+17.8 Item: 3 item_armor_shard
+18.1 Item: 4 item_armor_shard
+18.1 Item: 4 item_armor_shard
+18.3 Item: 4 item_armor_shard
+19.7 Item: 7 weapon_rocketlauncher
+20.8 Kill: 6 7 3: BOLEK killed darkside by MOD_MACHINEGUN 5
+21.2 Kill: 3 0 3: killer clown killed MACIEK by MOD_MACHINEGUN 2
+21.2 Item: 3 item_health_large
+22.1 Kill: 1022 5 19: <world> killed n0npax by MOD_FALLING 2
+22.3 Item: 2 weapon_rocketlauncher
+22.4 Item: 2 item_health
+22.7 Item: 4 ammo_shells
+22.9 Item: 4 weapon_shotgun
+23.0 Kill: 2 6 2: Bartoszer killed BOLEK by MOD_GAUNTLET 2
+24.1 Kill: 1 3 3: Turbo Wpierdol killed killer clown by MOD_MACHINEGUN 2
+26.1 Item: 2 item_health
+27.8 Item: 1 weapon_rocketlauncher
+27.9 Kill: 5 1 3: n0npax killed Turbo Wpierdol by MOD_MACHINEGUN 2
+28.0 Item: 7 item_armor_combat
+28.5 Item: 3 item_armor_combat
+28.9 Item: 5 weapon_rocketlauncher
+29.7 Item: 7 ammo_shells
+31.3 Item: 3 ammo_rockets
+31.9 Item: 2 weapon_shotgun
+33.7 Kill: 1 6 3: Turbo Wpierdol killed BOLEK by MOD_MACHINEGUN 2
+35.5 Kill: 2 7 6: Bartoszer killed darkside by MOD_ROCKET 2
+38.8 Kill: 3 4 3: killer clown killed Stefan by MOD_MACHINEGUN 3
+41.0 Item: 1 item_health_large
+41.0 Item: 3 weapon_shotgun
+42.6 Item: 6 weapon_rocketlauncher
+44.5 Item: 4 weapon_shotgun
+44.9 Kill: 1022 6 16: <world> killed BOLEK by MOD_LAVA 5
+45.1 Kill: 3 0 1: killer clown killed MACIEK by MOD_SHOTGUN 2
+45.6 Item: 4 item_armor_shard
+45.7 Item: 4 item_armor_shard
+45.9 Item: 4 item_armor_shard
+46.4 Item: 1 item_health_small
+46.4 Item: 1 item_health_small
+46.6 Item: 1 item_health_small
+46.7 Item: 1 item_health_small
+46.9 Item: 7 ammo_grenades
+47.0 Item: 2 item_armor_shard
+48.1 Item: 5 weapon_rocketlauncher
+48.1 Item: 0 item_armor_body
+49.4 Kill: 7 1 3: darkside killed Turbo Wpierdol by MOD_MACHINEGUN 2
+49.8 Kill: 2 3 1: Bartoszer killed killer clown by MOD_SHOTGUN 3
+50.0 Item: 0 weapon_shotgun
+50.9 Item: 2 weapon_shotgun
+51.4 Kill: 2 6 1: Bartoszer killed BOLEK by MOD_SHOTGUN 2
+52.9 Item: 3 weapon_shotgun
+53.4 Kill: 4 5 1: Stefan killed n0npax by MOD_SHOTGUN 5
+54.5 Item: 4 weapon_rocketlauncher
+54.7 Item: 1 ammo_lightning
+55.7 Kill: 2 4 1: Bartoszer killed Stefan by MOD_SHOTGUN 5
+56.0 Item: 2 weapon_rocketlauncher
+56.1 Item: 5 ammo_bullets
+56.3 Item: 7 weapon_grenadelauncher
+58.0 Kill: 3 6 1: killer clown killed BOLEK by MOD_SHOTGUN 2
+58.1 Item: 4 ammo_grenades
+58.3 Item: 2 weapon_rocketlauncher
+58.5 Item: 2 item_health
+59.0 Kill: 0 5 1: MACIEK killed n0npax by MOD_SHOTGUN 2
+61.0 Item: 2 item_quad
+62.1 Item: 6 weapon_lightning
+62.8 Kill: 7 0 4: darkside killed MACIEK by MOD_GRENADE 3
+63.0 Item: 7 weapon_shotgun
+63.1 Item: 2 item_health_large
+63.2 Item: 4 weapon_grenadelauncher
+64.3 Item: 3 weapon_rocketlauncher
+64.7 Item: 1 ammo_rockets
+64.8 Item: 1 ammo_rockets
+65.9 Item: 7 item_health_large
+66.2 Item: 1 ammo_shells
+67.2 Item: 1 weapon_lightning
+67.4 Kill: 6 7 11: BOLEK killed darkside by MOD_LIGHTNING 3
+67.4 Item: 6 weapon_shotgun
+67.5 Kill: 5 0 3: n0npax killed MACIEK by MOD_MACHINEGUN 2
+68.9 Kill: 4 6 5: Stefan killed BOLEK by MOD_GRENADE_SPLASH 3
+69.6 Kill: 5 3 3: n0npax killed killer clown by MOD_MACHINEGUN 5
+69.6 Kill: 3 5 7: killer clown killed n0npax by MOD_ROCKET_SPLASH 2
+70.5 Kill: 2 4 1: Bartoszer killed Stefan by MOD_SHOTGUN 4
+70.9 Item: 2 item_armor_shard
+72.1 Item: 1 weapon_shotgun
+72.6 Kill: 2 1 1: Bartoszer killed Turbo Wpierdol by MOD_SHOTGUN 3
+74.2 Item: 3 weapon_rocketlauncher
+74.8 Kill: 3 0 6: killer clown killed MACIEK by MOD_ROCKET 2
+75.9 Item: 1 item_armor_combat
+78.2 Item: 3 item_health_large
+78.2 Kill: 2 5 1: Bartoszer killed n0npax by MOD_SHOTGUN 2
+78.3 Item: 7 item_health
+78.7 Item: 6 weapon_rocketlauncher
+79.1 Kill: 4 7 2: Stefan killed darkside by MOD_GAUNTLET 2
+79.3 Item: 0 item_armor_shard
+79.7 Item: 0 weapon_grenadelauncher
+80.5 Kill: 2 6 1: Bartoszer killed BOLEK by MOD_SHOTGUN 5
+81.9 Kill: 2 7 1: Bartoszer killed darkside by MOD_SHOTGUN 2
+82.6 Item: 0 weapon_shotgun
+83.3 Item: 2 item_health
+83.3 Kill: 2 1 1: Bartoszer killed Turbo Wpierdol by MOD_SHOTGUN 2
+85.3 Item: 7 item_armor_body
+85.4 Item: 6 weapon_rocketlauncher
+85.6 Kill: 2 3 1: Bartoszer killed killer clown by MOD_SHOTGUN 5
+86.3 Item: 2 weapon_rocketlauncher
+86.5 Item: 2 ammo_rockets
+87.7 Item: 6 weapon_rocketlauncher
+89.5 Kill: 2 0 6: Bartoszer killed MACIEK by MOD_ROCKET 3
+90.5 Kill: 2 5 7: Bartoszer killed n0npax by MOD_ROCKET_SPLASH 2
+91.4 Item: 4 weapon_shotgun
+92.3 Kill: 7 1 3: darkside killed Turbo Wpierdol by MOD_MACHINEGUN 2
+94.4 Kill: 6 4 6: BOLEK killed Stefan by MOD_ROCKET 3
+94.4 Kill: 6 6 7: BOLEK killed BOLEK by MOD_ROCKET_SPLASH 5
+95.9 Item: 2 weapon_lightning
+96.0 Item: 1 item_health_small
+96.0 Item: 3 ammo_lightning
+96.3 Item: 1 item_health_small
+96.5 Item: 1 item_health_small
+96.6 Item: 1 item_health_small
+96.8 Item: 0 weapon_rocketlauncher
+97.6 Item: 1 ammo_grenades
+98.0 Item: 2 item_health
+98.0 Item: 2 item_health
+98.7 Kill: 2 6 11: Bartoszer killed BOLEK by MOD_LIGHTNING 2
+99.1 Item: 1 item_armor_combat
+99.4 Item: 1 ammo_shells
+100.8 Item: 1 item_health_mega
+101.9 Item: 4 item_armor_shard
+103.5 Item: 4 weapon_shotgun
+103.7 Kill: 2 5 11: Bartoszer killed n0npax by MOD_LIGHTNING 2
+104.8 Item: 7 item_health
+105.1 Kill: 1022 3 16: <world> killed killer clown by MOD_LAVA 2
+106.1 Item: 4 weapon_grenadelauncher
+107.0 Item: 3 ammo_shells
+108.7 Item: 5 weapon_rocketlauncher
+109.0 Item: 5 item_health
+109.1 Kill: 6 7 3: BOLEK killed darkside by MOD_MACHINEGUN 2
+110.3 Kill: 1 0 3: Turbo Wpierdol killed MACIEK by MOD_MACHINEGUN 5
+110.5 Item: 3 weapon_lightning
+110.7 Kill: 5 6 7: n0npax killed BOLEK by MOD_ROCKET_SPLASH 2
+111.3 Item: 4 weapon_grenadelauncher
+112.0 Item: 1 weapon_rocketlauncher
+112.7 Item: 2 ammo_rockets
+112.7 Kill: 1 7 6: Turbo Wpierdol killed darkside by MOD_ROCKET 2
+112.8 Item: 0 ammo_grenades
+112.8 Item: 0 ammo_bullets
+113.7 Item: 2 ammo_rockets
+115.5 Item: 6 weapon_lightning
+116.0 Kill: 6 2 11: BOLEK killed Bartoszer by MOD_LIGHTNING 5
+116.3 Item: 4 weapon_grenadelauncher
+117.0 Item: 3 weapon_rocketlauncher
+118.2 Item: 0 item_health_large
+118.4 Item: 6 item_health
+118.7 Item: 7 item_armor_shard
+120.8 Kill: 4 0 4: Stefan killed MACIEK by MOD_GRENADE 1
+121.3 Item: 4 weapon_grenadelauncher
+122.0 Kill: 6 1 11: BOLEK killed Turbo Wpierdol by MOD_LIGHTNING 5
+122.9 Kill: 3 6 7: killer clown killed BOLEK by MOD_ROCKET_SPLASH 6
+123.4 Kill: 4 7 4: Stefan killed darkside by MOD_GRENADE 2
+125.6 Item: 0 weapon_rocketlauncher
+125.7 Item: 0 weapon_lightning
+126.3 Item: 4 weapon_grenadelauncher
+126.7 Kill: 3 0 6: killer clown killed MACIEK by MOD_ROCKET 6
+127.1 Item: 3 weapon_lightning
+127.8 Kill: 1022 5 19: <world> killed n0npax by MOD_FALLING 5
+128.0 Item: 2 weapon_rocketlauncher
+129.7 Kill: 1022 2 19: <world> killed Bartoszer by MOD_FALLING 5
+130.9 Item: 3 weapon_lightning
+131.1 Kill: 1022 7 16: <world> killed darkside by MOD_LAVA 2
+131.3 Item: 4 weapon_grenadelauncher
+133.1 Item: 1 weapon_rocketlauncher
+134.2 Item: 7 item_armor_combat
+134.9 Kill: 3 5 11: killer clown killed n0npax by MOD_LIGHTNING 1
+135.8 Kill: 1022 6 16: <world> killed BOLEK by MOD_LAVA 2
+136.3 Item: 4 weapon_grenadelauncher
+137.9 Kill: 2 3 2: Bartoszer killed killer clown by MOD_GAUNTLET 6
+138.0 Item: 2 weapon_lightning
+138.6 Item: 0 weapon_rocketlauncher
+140.3 Item: 5 weapon_rocketlauncher
+140.9 Kill: 1022 1 16: <world> killed Turbo Wpierdol by MOD_LAVA 5
+140.9 Item: 6 item_armor_shard
+141.0 Item: 2 weapon_lightning
+141.3 Item: 4 weapon_grenadelauncher
+141.8 Item: 6 ammo_rockets
+142.1 Item: 2 item_health
+142.2 Item: 2 item_health
+143.2 Kill: 4 7 5: Stefan killed darkside by MOD_GRENADE_SPLASH 2
+143.7 Item: 0 item_health_large
+145.6 Kill: 2 1 11: Bartoszer killed Turbo Wpierdol by MOD_LIGHTNING 2
+146.3 Item: 6 item_health
+146.6 Kill: 5 2 6: n0npax killed Bartoszer by MOD_ROCKET 6
+147.0 Item: 5 ammo_shells
+147.7 Kill: 4 3 4: Stefan killed killer clown by MOD_GRENADE 2
+147.7 Item: 5 weapon_lightning
+148.6 Item: 0 item_armor_combat
+148.9 Item: 0 ammo_shells
+150.2 Item: 4 weapon_grenadelauncher
+150.5 Item: 2 item_health_mega
+151.4 Item: 1 weapon_rocketlauncher
+153.8 Kill: 5 3 6: n0npax killed killer clown by MOD_ROCKET 2
+156.3 Item: 4 weapon_grenadelauncher
+156.7 Item: 5 item_health_large
+157.9 Item: 6 item_armor_body
+158.0 Kill: 4 3 4: Stefan killed killer clown by MOD_GRENADE 2
+159.1 Kill: 0 2 6: MACIEK killed Bartoszer by MOD_ROCKET 1
+159.1 Kill: 0 7 7: MACIEK killed darkside by MOD_ROCKET_SPLASH 2
+160.9 Kill: 5 0 11: n0npax killed MACIEK by MOD_LIGHTNING 2
+162.3 Item: 4 weapon_grenadelauncher
+163.0 Item: 6 weapon_shotgun
+163.7 Item: 5 ammo_grenades
+164.6 Item: 5 item_health_small
+164.7 Item: 5 item_health_small
+164.9 Item: 5 item_health_small
+165.0 Item: 5 item_health_small
+165.7 Item: 7 weapon_rocketlauncher
+166.0 Kill: 2 4 2: Bartoszer killed Stefan by MOD_GAUNTLET 4
+166.1 Item: 2 weapon_grenadelauncher
+166.3 Item: 6 weapon_rocketlauncher
+166.6 Item: 1 item_armor_shard
+166.8 Item: 1 item_armor_shard
+166.9 Item: 1 item_armor_shard
+171.7 Item: 5 item_armor_combat
+171.7 Item: 3 weapon_rocketlauncher
+173.5 Kill: 4 3 3: Stefan killed killer clown by MOD_MACHINEGUN 5
+174.9 Item: 4 weapon_rocketlauncher
+176.1 Item: 6 item_armor_shard
+176.3 Item: 6 item_armor_shard
+176.3 Kill: 2 4 4: Bartoszer killed Stefan by MOD_GRENADE 5
+176.3 Kill: 2 2 5: Bartoszer killed Bartoszer by MOD_GRENADE_SPLASH 4
+178.2 Kill: 6 1 7: BOLEK killed Turbo Wpierdol by MOD_ROCKET_SPLASH 5
+179.3 Kill: 6 7 7: BOLEK killed darkside by MOD_ROCKET_SPLASH 5
+179.5 Item: 4 item_health
+179.7 Item: 4 item_health
+180.8 Item: 3 weapon_grenadelauncher
+180.8 Item: 3 weapon_rocketlauncher
+182.3 Kill: 0 6 3: MACIEK killed BOLEK by MOD_MACHINEGUN 5
+182.5 Kill: 5 4 11: n0npax killed Stefan by MOD_LIGHTNING 1
+182.7 Item: 7 ammo_shells
+182.8 Item: 5 ammo_rockets
+182.8 Item: 7 weapon_shotgun
+183.0 Item: 5 ammo_rockets
+184.3 Item: 2 weapon_lightning
+184.7 Item: 0 weapon_rocketlauncher
+184.7 Item: 7 item_armor_combat
+186.1 Item: 0 weapon_rocketlauncher
+186.9 Item: 3 item_quad
+187.2 Item: 5 ammo_shells
+187.8 Kill: 1 6 3: Turbo Wpierdol killed BOLEK by MOD_MACHINEGUN 2
+187.8 Item: 4 weapon_shotgun
+187.9 Item: 7 item_health_mega
+188.8 Kill: 2 5 11: Bartoszer killed n0npax by MOD_LIGHTNING 5
+189.7 Item: 2 weapon_rocketlauncher
+189.7 Item: 0 item_health
+190.7 Item: 2 weapon_lightning
+190.9 Item: 3 ammo_shells
+191.6 Kill: 3 7 7: killer clown killed darkside by MOD_ROCKET_SPLASH 3
+192.7 Item: 3 weapon_shotgun
+192.7 Kill: 4 5 1: Stefan killed n0npax by MOD_SHOTGUN 2
+193.2 Item: 2 item_health
+194.6 Kill: 7 1 3: darkside killed Turbo Wpierdol by MOD_MACHINEGUN 2
+194.9 Item: 6 weapon_shotgun
+195.9 Kill: 0 3 7: MACIEK killed killer clown by MOD_ROCKET_SPLASH 3
+196.9 Kill: 2 7 7: Bartoszer killed darkside by MOD_ROCKET_SPLASH 2
+198.0 Item: 0 item_quad
+198.1 Item: 0 weapon_shotgun
+199.5 Kill: 4 0 1: Stefan killed MACIEK by MOD_SHOTGUN 3
+200.2 Item: 2 item_health_large
+200.5 Item: 4 item_quad
+200.5 Item: 4 weapon_shotgun
+200.5 Item: 3 weapon_rocketlauncher
+200.8 Item: 3 weapon_rocketlauncher
+200.8 Kill: 5 4 3: n0npax killed Stefan by MOD_MACHINEGUN 3
+201.1 Item: 6 item_armor_shard
+202.3 Item: 5 weapon_shotgun
+202.4 Item: 5 item_quad
+203.9 Kill: 2 3 7: Bartoszer killed killer clown by MOD_ROCKET_SPLASH 5
+203.9 Kill: 3 5 7: killer clown killed n0npax by MOD_ROCKET_SPLASH 3
+205.9 Kill: 6 7 1: BOLEK killed darkside by MOD_SHOTGUN 2
+206.0 Item: 0 weapon_shotgun
+206.2 Item: 0 weapon_rocketlauncher
+206.2 Item: 0 item_quad
+206.9 Item: 2 item_health_large
+206.9 Item: 1 weapon_rocketlauncher
+206.9 Item: 1 item_health
+207.3 Kill: 0 4 7: MACIEK killed Stefan by MOD_ROCKET_SPLASH 2
+207.8 Item: 6 item_health_large
+209.1 Kill: 5 1 3: n0npax killed Turbo Wpierdol by MOD_MACHINEGUN 5
+211.0 Kill: 6 3 1: BOLEK killed killer clown by MOD_SHOTGUN 2
+211.4 Item: 1 ammo_grenades
+211.6 Item: 1 ammo_bullets
+211.9 Item: 2 ammo_rockets
+212.0 Item: 7 weapon_rocketlauncher
+212.1 Item: 4 weapon_lightning
+212.8 Item: 0 item_armor_combat
+212.9 Item: 7 weapon_rocketlauncher
+214.3 Kill: 1022 5 16: <world> killed n0npax by MOD_LAVA 2
+214.3 Item: 3 weapon_shotgun
+216.3 Kill: 0 7 7: MACIEK killed darkside by MOD_ROCKET_SPLASH 5
+217.1 Item: 4 weapon_lightning
+217.2 Kill: 2 1 11: Bartoszer killed Turbo Wpierdol by MOD_LIGHTNING 2
+217.8 Item: 3 item_health
+217.9 Item: 6 weapon_rocketlauncher
+218.1 Item: 0 weapon_rocketlauncher
+220.6 Kill: 6 7 6: BOLEK killed darkside by MOD_ROCKET 2
+222.5 Kill: 6 2 7: BOLEK killed Bartoszer by MOD_ROCKET_SPLASH 1
+222.9 Kill: 3 5 1: killer clown killed n0npax by MOD_SHOTGUN 2
+223.2 Kill: 6 4 6: BOLEK killed Stefan by MOD_ROCKET 6
+224.3 Kill: 7 0 3: darkside killed MACIEK by MOD_MACHINEGUN 5
+225.2 Item: 7 weapon_rocketlauncher
+225.3 Item: 7 ammo_rockets
+225.6 Item: 5 weapon_lightning
+225.7 Item: 3 weapon_rocketlauncher
+226.3 Item: 2 item_armor_shard
+226.5 Item: 2 item_armor_shard
+226.7 Kill: 1 3 3: Turbo Wpierdol killed killer clown by MOD_MACHINEGUN 5
+227.7 Item: 1 weapon_rocketlauncher
+228.6 Item: 2 weapon_grenadelauncher
+229.8 Item: 3 ammo_shells
+229.8 Item: 3 weapon_shotgun
+230.0 Item: 5 weapon_lightning
+231.3 Kill: 6 5 3: BOLEK killed n0npax by MOD_MACHINEGUN 6
+231.3 Item: 6 weapon_lightning
+232.7 Kill: 2 4 2: Bartoszer killed Stefan by MOD_GAUNTLET 2
+233.9 Kill: 1 6 6: Turbo Wpierdol killed BOLEK by MOD_ROCKET 6
+234.7 Item: 1 weapon_lightning
+234.8 Kill: 2 1 4: Bartoszer killed Turbo Wpierdol by MOD_GRENADE 5
+235.4 Item: 4 item_armor_combat
+235.7 Item: 7 ammo_shells
+236.5 Item: 2 weapon_rocketlauncher
+236.5 Item: 7 weapon_lightning
+236.6 Item: 3 weapon_rocketlauncher
+238.5 Kill: 7 0 11: darkside killed MACIEK by MOD_LIGHTNING 1
+240.5 Kill: 5 2 3: n0npax killed Bartoszer by MOD_MACHINEGUN 5
+240.7 Item: 7 item_health
+240.8 Item: 7 item_health
+241.5 Item: 6 ammo_rockets
+241.7 Kill: 3 1 7: killer clown killed Turbo Wpierdol by MOD_ROCKET_SPLASH 2
+242.0 Item: 4 weapon_grenadelauncher
+242.1 Item: 5 weapon_rocketlauncher
+242.3 Item: 0 weapon_shotgun
+243.3 Kill: 6 7 3: BOLEK killed darkside by MOD_MACHINEGUN 6
+243.3 Item: 6 weapon_lightning
+244.0 Kill: 5 5 7: n0npax killed n0npax by MOD_ROCKET_SPLASH 5
+244.4 Item: 2 weapon_rocketlauncher
+245.5 Item: 6 weapon_lightning
+247.0 Item: 4 weapon_grenadelauncher
+247.9 Kill: 2 5 6: Bartoszer killed n0npax by MOD_ROCKET 2
+248.5 Kill: 0 3 1: MACIEK killed killer clown by MOD_SHOTGUN 3
+249.7 Item: 7 weapon_shotgun
+251.0 Kill: 7 0 1: darkside killed MACIEK by MOD_SHOTGUN 3
+251.0 Kill: 6 1 11: BOLEK killed Turbo Wpierdol by MOD_LIGHTNING 2
+251.9 Item: 2 item_health_large
+252.0 Item: 4 weapon_grenadelauncher
+252.5 Item: 5 item_armor_shard
+252.7 Item: 7 weapon_shotgun
+253.1 Item: 5 item_armor_shard
+253.9 Item: 7 item_health
+254.4 Item: 6 weapon_rocketlauncher
+254.7 Item: 7 weapon_rocketlauncher
+254.9 Item: 1 weapon_lightning
+254.9 Item: 6 item_health
+255.0 Item: 2 ammo_grenades
+255.1 Item: 5 item_health_large
+256.3 Item: 2 item_armor_combat
+256.9 Item: 2 item_health_mega
+257.0 Item: 4 weapon_grenadelauncher
+257.1 Item: 3 item_health_small
+257.2 Item: 3 item_health_small
+258.0 Item: 2 ammo_shells
+258.5 Item: 3 item_health_small
+258.7 Item: 3 item_health_small
+258.8 Kill: 6 5 7: BOLEK killed n0npax by MOD_ROCKET_SPLASH 2
+260.0 Item: 1 weapon_lightning
+261.8 Kill: 1 0 11: Turbo Wpierdol killed MACIEK by MOD_LIGHTNING 2
+262.0 Item: 4 weapon_grenadelauncher
+262.0 Kill: 6 7 7: BOLEK killed darkside by MOD_ROCKET_SPLASH 5
+265.3 Kill: 1 3 11: Turbo Wpierdol killed killer clown by MOD_LIGHTNING 2
+265.6 Kill: 2 6 7: Bartoszer killed BOLEK by MOD_ROCKET_SPLASH 5
+265.6 Item: 2 weapon_rocketlauncher
+266.6 Item: 0 item_health
+266.8 Item: 0 item_armor_combat
+266.9 Item: 2 item_health_large
+267.0 Item: 4 weapon_grenadelauncher
+268.1 Kill: 2 7 7: Bartoszer killed darkside by MOD_ROCKET_SPLASH 2
+268.6 Item: 3 item_armor_shard
+268.9 Item: 5 weapon_rocketlauncher
+269.8 Item: 3 ammo_shells
+269.8 Item: 3 weapon_shotgun
+269.9 Item: 6 weapon_lightning
+270.5 Item: 5 weapon_rocketlauncher
+272.1 Item: 6 ammo_rockets
+273.2 Item: 4 weapon_grenadelauncher
+273.3 Kill: 2 6 7: Bartoszer killed BOLEK by MOD_ROCKET_SPLASH 6
+274.2 Item: 2 weapon_lightning
+275.4 Kill: 4 0 4: Stefan killed MACIEK by MOD_GRENADE 2
+275.9 Item: 2 weapon_lightning
+276.9 Kill: 2 1 11: Bartoszer killed Turbo Wpierdol by MOD_LIGHTNING 2
+278.2 Item: 4 weapon_grenadelauncher
+278.4 Item: 7 item_health
+279.1 Item: 1 ammo_grenades
+279.3 Item: 1 ammo_bullets
+279.3 Item: 6 weapon_rocketlauncher
+280.7 Kill: 7 0 3: darkside killed MACIEK by MOD_MACHINEGUN 2
+283.2 Item: 4 weapon_grenadelauncher
+283.2 Kill: 2 1 11: Bartoszer killed Turbo Wpierdol by MOD_LIGHTNING 2
+283.5 Kill: 5 3 7: n0npax killed killer clown by MOD_ROCKET_SPLASH 3
+284.4 Kill: 6 2 6: BOLEK killed Bartoszer by MOD_ROCKET 6
+284.7 Item: 7 weapon_shotgun
+285.3 Kill: 7 5 1: darkside killed n0npax by MOD_SHOTGUN 5
+285.5 Item: 6 weapon_lightning
+286.3 Item: 1 weapon_shotgun
+286.4 Item: 7 weapon_rocketlauncher
+287.8 Kill: 4 6 5: Stefan killed BOLEK by MOD_GRENADE_SPLASH 6
+288.2 Item: 4 weapon_grenadelauncher
+288.2 Item: 1 item_armor_combat
+288.3 Kill: 4 3 4: Stefan killed killer clown by MOD_GRENADE 2
+289.0 Kill: 7 7 7: darkside killed darkside by MOD_ROCKET_SPLASH 5
+289.2 Item: 0 item_armor_shard
+290.3 Item: 2 weapon_rocketlauncher
+290.9 Item: 5 weapon_rocketlauncher
+291.2 Item: 0 item_health_large
+291.9 Item: 2 ammo_rockets
+292.3 Kill: 4 0 4: Stefan killed MACIEK by MOD_GRENADE 2
+292.5 Item: 2 item_health
+292.7 Item: 2 item_health
+293.2 Item: 4 weapon_grenadelauncher
+293.2 Item: 2 ammo_shells
+293.3 Item: 5 item_health
+294.1 Item: 2 weapon_lightning
+296.1 Item: 6 weapon_rocketlauncher
+296.2 Kill: 7 0 3: darkside killed MACIEK by MOD_MACHINEGUN 2
+296.9 Kill: 6 3 7: BOLEK killed killer clown by MOD_ROCKET_SPLASH 2
+298.2 Item: 4 weapon_grenadelauncher
+299.0 Kill: 6 7 6: BOLEK killed darkside by MOD_ROCKET 2
+300.2 Item: 0 weapon_lightning
+301.6 Kill: 1 2 1: Turbo Wpierdol killed Bartoszer by MOD_SHOTGUN 6
+303.1 Kill: 7 5 3: darkside killed n0npax by MOD_MACHINEGUN 5
+303.5 Item: 3 ammo_rockets
+303.5 Item: 4 weapon_grenadelauncher
+303.7 Item: 1 weapon_rocketlauncher
+304.5 Item: 7 weapon_rocketlauncher
+304.8 Kill: 3 4 3: killer clown killed Stefan by MOD_MACHINEGUN 4
+305.5 Item: 3 weapon_lightning
+305.8 Item: 5 item_armor_combat
+306.0 Kill: 1 6 7: Turbo Wpierdol killed BOLEK by MOD_ROCKET_SPLASH 5
+306.1 Kill: 7 7 7: darkside killed darkside by MOD_ROCKET_SPLASH 5
+306.9 Item: 2 weapon_rocketlauncher
+308.1 Kill: 1022 1 16: <world> killed Turbo Wpierdol by MOD_LAVA 5
+308.4 Item: 2 weapon_lightning
+309.1 Kill: 2 3 6: Bartoszer killed killer clown by MOD_ROCKET 6
+309.1 Kill: 2 2 7: Bartoszer killed Bartoszer by MOD_ROCKET_SPLASH 5
+310.7 Item: 4 weapon_rocketlauncher
+310.9 Item: 6 weapon_rocketlauncher
+312.0 Item: 1 item_armor_shard
+312.4 Item: 6 weapon_lightning
+313.2 Item: 3 ammo_shells
+313.2 Item: 3 weapon_shotgun
+314.8 Item: 2 item_quad
+316.6 Kill: 6 5 11: BOLEK killed n0npax by MOD_LIGHTNING 2
+316.7 Item: 7 weapon_rocketlauncher
+317.0 Item: 4 weapon_lightning
+317.1 Item: 6 weapon_lightning
+317.6 Item: 2 item_armor_combat
+318.2 Item: 3 item_health_mega
+318.9 Kill: 5 0 3: n0npax killed MACIEK by MOD_MACHINEGUN 6
+319.7 Kill: 5 7 3: n0npax killed darkside by MOD_MACHINEGUN 5
+320.1 Item: 5 weapon_rocketlauncher
+320.3 Item: 4 item_health_small
+320.5 Kill: 2 3 2: Bartoszer killed killer clown by MOD_GAUNTLET 3
+320.6 Item: 2 weapon_shotgun
+320.6 Item: 4 item_health_small
+320.7 Item: 5 weapon_lightning
+320.7 Item: 2 ammo_shells
+320.7 Item: 4 item_health_small
+320.9 Item: 4 item_health_small
+321.0 Item: 1 item_health
+322.6 Item: 6 weapon_grenadelauncher
+323.8 Kill: 1 5 3: Turbo Wpierdol killed n0npax by MOD_MACHINEGUN 5
+323.9 Item: 0 item_armor_shard
+323.9 Kill: 7 2 3: darkside killed Bartoszer by MOD_MACHINEGUN 3
+324.3 Item: 1 weapon_rocketlauncher
+324.9 Item: 1 weapon_rocketlauncher
+325.0 Item: 7 item_quad
+325.0 Item: 7 weapon_shotgun
+325.1 Item: 4 ammo_grenades
+325.6 Kill: 7 4 1: darkside killed Stefan by MOD_SHOTGUN 5
+325.6 Item: 7 weapon_rocketlauncher
+326.9 Item: 0 item_armor_shard
+327.3 Kill: 7 5 6: darkside killed n0npax by MOD_ROCKET 2
+328.0 Item: 6 weapon_grenadelauncher
+328.3 Kill: 0 6 3: MACIEK killed BOLEK by MOD_MACHINEGUN 5
+328.7 Item: 0 ammo_bullets
+328.8 Item: 0 ammo_grenades
+328.8 Kill: 7 3 6: darkside killed killer clown by MOD_ROCKET 2
+329.2 Item: 2 weapon_rocketlauncher
+329.9 Kill: 1022 1 19: <world> killed Turbo Wpierdol by MOD_FALLING 5
+330.1 Item: 2 weapon_grenadelauncher
+332.0 Item: 5 weapon_rocketlauncher
+333.0 Item: 3 weapon_rocketlauncher
+333.3 Kill: 7 3 6: darkside killed killer clown by MOD_ROCKET 5
+334.0 Item: 0 weapon_grenadelauncher
+334.4 Item: 7 weapon_rocketlauncher
+335.3 Kill: 1 7 3: Turbo Wpierdol killed darkside by MOD_MACHINEGUN 5
+336.0 Item: 1 item_quad
+336.0 Item: 1 weapon_rocketlauncher
+336.3 Kill: 2 0 7: Bartoszer killed MACIEK by MOD_ROCKET_SPLASH 4
+336.9 Kill: 5 1 6: n0npax killed Turbo Wpierdol by MOD_ROCKET 5
+337.6 Item: 5 weapon_rocketlauncher
+337.7 Item: 5 item_quad
+338.1 Kill: 2 4 7: Bartoszer killed Stefan by MOD_ROCKET_SPLASH 1
+338.4 Item: 6 weapon_rocketlauncher
+339.2 Item: 3 item_health_large
+340.0 Item: 4 ammo_shells
+340.1 Item: 0 weapon_lightning
+341.6 Item: 4 ammo_rockets
+341.8 Item: 4 ammo_rockets
+342.6 Kill: 0 4 11: MACIEK killed Stefan by MOD_LIGHTNING 2
+345.5 Item: 2 ammo_rockets
+345.8 Item: 2 weapon_grenadelauncher
+347.0 Item: 1 weapon_rocketlauncher
+347.2 Item: 1 item_health
+347.3 Item: 5 ammo_lightning
+347.5 Kill: 6 7 6: BOLEK killed darkside by MOD_ROCKET 2
+347.5 Kill: 6 6 7: BOLEK killed BOLEK by MOD_ROCKET_SPLASH 5
+348.2 Item: 2 item_armor_combat
+348.2 Item: 2 item_health
+349.5 Item: 5 weapon_rocketlauncher
+350.9 Item: 5 item_armor_combat
+351.3 Item: 3 weapon_lightning
+351.4 Kill: 7 1 3: darkside killed Turbo Wpierdol by MOD_MACHINEGUN 5
+352.2 Item: 2 weapon_rocketlauncher
+352.9 Kill: 5 0 6: n0npax killed MACIEK by MOD_ROCKET 6
+353.3 Kill: 7 4 3: darkside killed Stefan by MOD_MACHINEGUN 1
+354.1 Item: 3 item_health
+354.3 Item: 3 item_health
+354.3 Item: 2 weapon_rocketlauncher
+354.9 Item: 5 weapon_lightning
+355.8 Kill: 3 6 11: killer clown killed BOLEK by MOD_LIGHTNING 2
+355.9 Item: 0 item_armor_body
+358.3 Kill: 2 7 6: Bartoszer killed darkside by MOD_ROCKET 2
+358.8 Item: 6 ammo_shells
+359.0 Item: 6 weapon_shotgun
+359.1 Item: 2 weapon_lightning
+360.1 Item: 6 item_armor_shard
+360.2 Kill: 2 3 6: Bartoszer killed killer clown by MOD_ROCKET 6
+360.2 Kill: 2 2 7: Bartoszer killed Bartoszer by MOD_ROCKET_SPLASH 5
+360.3 Item: 6 item_armor_shard
+360.7 Kill: 5 1 6: n0npax killed Turbo Wpierdol by MOD_ROCKET 2
+360.7 Kill: 5 5 7: n0npax killed n0npax by MOD_ROCKET_SPLASH 5
+360.8 Item: 0 weapon_shotgun
+361.1 Item: 4 weapon_rocketlauncher
+361.9 Item: 4 item_armor_shard
+364.5 Item: 4 item_armor_shard
+364.5 Item: 2 weapon_rocketlauncher
+366.7 Item: 7 item_health_small
+366.7 Item: 7 item_health_small
+366.8 Item: 7 item_health_small
+367.0 Item: 7 item_health_small
+367.2 Item: 1 weapon_grenadelauncher
+367.3 Item: 5 weapon_rocketlauncher
+367.5 Item: 5 weapon_lightning
+368.7 Item: 5 weapon_lightning
+369.1 Kill: 2 6 6: Bartoszer killed BOLEK by MOD_ROCKET 3
+370.0 Item: 2 item_health
+371.7 Item: 2 item_health_mega
+372.1 Kill: 2 3 6: Bartoszer killed killer clown by MOD_ROCKET 2
+372.3 Item: 6 weapon_shotgun
+372.5 Kill: 5 0 7: n0npax killed MACIEK by MOD_ROCKET_SPLASH 3
+373.0 Item: 2 ammo_shells
+373.5 Kill: 4 4 7: Stefan killed Stefan by MOD_ROCKET_SPLASH 5
+373.9 Item: 7 weapon_rocketlauncher
+374.5 Kill: 7 1 6: darkside killed Turbo Wpierdol by MOD_ROCKET 4
+374.5 Kill: 7 7 7: darkside killed darkside by MOD_ROCKET_SPLASH 5
+376.4 Item: 4 weapon_shotgun
+376.4 Item: 3 weapon_lightning
+379.7 Kill: 3 5 11: killer clown killed n0npax by MOD_LIGHTNING 5
+379.9 Item: 6 weapon_rocketlauncher
+382.0 Item: 3 item_health
+382.0 Item: 7 item_armor_body
+384.2 Kill: 5 2 3: n0npax killed Bartoszer by MOD_MACHINEGUN 1
+385.0 Item: 3 ammo_rockets
+385.1 Kill: 1 4 3: Turbo Wpierdol killed Stefan by MOD_MACHINEGUN 3
+385.2 Item: 3 ammo_rockets
+386.4 Item: 1 weapon_shotgun
+386.5 Item: 3 ammo_shells
+387.0 Item: 7 weapon_shotgun
+387.4 Item: 3 weapon_lightning
+387.5 Item: 0 ammo_grenades
+388.6 Item: 3 weapon_rocketlauncher
+388.6 Kill: 1 0 1: Turbo Wpierdol killed MACIEK by MOD_SHOTGUN 2
+388.9 Kill: 6 5 6: BOLEK killed n0npax by MOD_ROCKET 2
+390.5 Kill: 4 1 3: Stefan killed Turbo Wpierdol by MOD_MACHINEGUN 3
+391.0 Item: 4 weapon_shotgun
+391.7 Item: 4 item_armor_combat
+392.7 Kill: 6 2 1: BOLEK killed Bartoszer by MOD_SHOTGUN 1
+393.1 Item: 5 weapon_shotgun
+394.7 Kill: 7 0 1: darkside killed MACIEK by MOD_SHOTGUN 2
+396.4 Item: 0 weapon_shotgun
+396.5 Item: 1 ammo_lightning
+397.0 Kill: 3 6 6: killer clown killed BOLEK by MOD_ROCKET 3
+397.1 Kill: 7 4 1: darkside killed Stefan by MOD_SHOTGUN 3
+398.1 Item: 5 weapon_shotgun
+398.1 Item: 7 weapon_shotgun
+399.8 Item: 0 weapon_lightning
+401.5 Kill: 3 0 7: killer clown killed MACIEK by MOD_ROCKET_SPLASH 6
+401.8 Item: 4 weapon_rocketlauncher
+402.1 Item: 3 weapon_lightning
+402.7 Kill: 6 3 3: BOLEK killed killer clown by MOD_MACHINEGUN 5
+403.4 Item: 6 weapon_rocketlauncher
+404.0 Item: 2 weapon_shotgun
+404.0 Item: 2 ammo_shells
+405.5 Kill: 1022 5 16: <world> killed n0npax by MOD_LAVA 2
+407.5 Kill: 2 7 1: Bartoszer killed darkside by MOD_SHOTGUN 3
+407.9 Item: 5 ammo_grenades
+408.0 Item: 5 ammo_bullets
+408.7 Item: 5 ammo_rockets
+408.9 Item: 6 weapon_lightning
+408.9 Kill: 2 1 1: Bartoszer killed Turbo Wpierdol by MOD_SHOTGUN 1
+411.0 Item: 0 item_health_mega
+411.1 Item: 2 item_armor_shard
+411.8 Item: 2 item_armor_shard
+413.1 Item: 1 weapon_shotgun
+413.2 Kill: 4 0 7: Stefan killed MACIEK by MOD_ROCKET_SPLASH 2
+413.6 Item: 5 item_health_large
+414.2 Kill: 2 5 1: Bartoszer killed n0npax by MOD_SHOTGUN 2
+414.5 Kill: 6 4 11: BOLEK killed Stefan by MOD_LIGHTNING 5
+416.2 Item: 6 weapon_rocketlauncher
+416.2 Item: 3 weapon_shotgun
+417.8 Item: 3 item_health_small
+418.0 Item: 2 weapon_lightning
+418.0 Item: 3 item_health_small
+418.1 Item: 3 item_health_small
+418.2 Item: 6 item_armor_combat
+418.3 Item: 3 item_health_small
+418.3 Item: 0 item_health
+419.0 Item: 0 weapon_rocketlauncher
+419.4 Item: 2 item_health
+419.5 Item: 2 item_health
+420.1 Kill: 2 7 11: Bartoszer killed darkside by MOD_LIGHTNING 2
+422.7 Item: 2 item_health
+423.1 Item: 6 ammo_shells
+423.3 Item: 7 weapon_shotgun
+423.5 Kill: 4 0 3: Stefan killed MACIEK by MOD_MACHINEGUN 5
+424.1 Item: 4 weapon_rocketlauncher
+424.5 Kill: 2 5 11: Bartoszer killed n0npax by MOD_LIGHTNING 2
+424.7 Kill: 3 6 1: killer clown killed BOLEK by MOD_SHOTGUN 6
+426.9 Kill: 2 3 11: Bartoszer killed killer clown by MOD_LIGHTNING 3
+426.9 Item: 2 weapon_shotgun
+427.4 Item: 4 item_health
+427.9 Kill: 2 7 11: Bartoszer killed darkside by MOD_LIGHTNING 3
+429.0 Item: 2 weapon_shotgun
+429.1 Item: 5 weapon_rocketlauncher
+430.2 Kill: 3 1 3: killer clown killed Turbo Wpierdol by MOD_MACHINEGUN 3
+430.7 Item: 6 ammo_rockets
+430.9 Item: 6 ammo_rockets
+431.6 Kill: 5 0 6: n0npax killed MACIEK by MOD_ROCKET 2
+431.9 Kill: 7 5 3: darkside killed n0npax by MOD_MACHINEGUN 5
+432.1 Item: 6 ammo_shells
+432.2 Kill: 3 2 3: killer clown killed Bartoszer by MOD_MACHINEGUN 3
+433.0 Item: 6 weapon_lightning
+434.2 Item: 7 weapon_rocketlauncher
+434.3 Item: 3 weapon_shotgun
+434.4 Item: 7 weapon_rocketlauncher
+436.7 Item: 1 ammo_grenades
+437.7 Item: 2 item_armor_body
+437.9 Kill: 4 1 6: Stefan killed Turbo Wpierdol by MOD_ROCKET 2
+439.1 Kill: 7 3 6: darkside killed killer clown by MOD_ROCKET 3
+439.4 Kill: 6 5 11: BOLEK killed n0npax by MOD_LIGHTNING 2
+442.3 Item: 4 item_armor_shard
+442.4 Item: 1 weapon_rocketlauncher
+442.6 Item: 4 item_armor_shard
+442.6 Kill: 2 6 2: Bartoszer killed BOLEK by MOD_GAUNTLET 6
+442.7 Item: 2 weapon_lightning
+445.0 Item: 7 item_armor_shard
+445.3 Kill: 2 4 11: Bartoszer killed Stefan by MOD_LIGHTNING 5
+445.5 Item: 1 item_health_large
+445.6 Item: 7 weapon_shotgun
+446.8 Item: 2 weapon_rocketlauncher
+447.4 Item: 6 weapon_lightning
+447.8 Item: 3 item_armor_combat
+448.4 Item: 3 item_health_mega
+449.2 Item: 5 weapon_rocketlauncher
+450.8 Kill: 4 5 3: Stefan killed n0npax by MOD_MACHINEGUN 5
+451.5 Item: 4 weapon_rocketlauncher
+451.9 Kill: 2 4 11: Bartoszer killed Stefan by MOD_LIGHTNING 5
+452.0 Item: 2 weapon_rocketlauncher
+453.0 Kill: 1 3 7: Turbo Wpierdol killed killer clown by MOD_ROCKET_SPLASH 2
+453.8 Item: 2 item_quad
+454.4 Item: 4 ammo_grenades
+454.6 Item: 4 ammo_bullets
+454.8 Item: 6 ammo_lightning
+454.8 Kill: 5 1 3: n0npax killed Turbo Wpierdol by MOD_MACHINEGUN 5
+455.0 Item: 7 weapon_rocketlauncher
+455.3 Item: 4 ammo_rockets
+456.0 Kill: 5 7 3: n0npax killed darkside by MOD_MACHINEGUN 5
+457.0 Item: 0 weapon_rocketlauncher
+457.0 Item: 6 weapon_rocketlauncher
+457.3 Kill: 5 6 3: n0npax killed BOLEK by MOD_MACHINEGUN 6
+458.2 Item: 5 weapon_lightning
+458.2 Kill: 3 0 3: killer clown killed MACIEK by MOD_MACHINEGUN 5
+459.1 Item: 4 weapon_grenadelauncher
+459.6 Item: 1 weapon_rocketlauncher
+459.8 Item: 2 item_health_small
+459.9 Item: 2 item_health_small
+460.1 Item: 2 item_health_small
+460.3 Item: 2 item_health_small
+461.1 Kill: 4 2 4: Stefan killed Bartoszer by MOD_GRENADE 5
+461.2 Kill: 1 3 7: Turbo Wpierdol killed killer clown by MOD_ROCKET_SPLASH 2
+462.8 Kill: 0 7 2: MACIEK killed darkside by MOD_GAUNTLET 2
+464.1 Item: 6 weapon_lightning
+464.8 Kill: 1 0 6: Turbo Wpierdol killed MACIEK by MOD_ROCKET 1
+466.2 Item: 4 weapon_rocketlauncher
+466.2 Item: 4 item_quad
+466.2 Item: 3 ammo_shells
+466.4 Item: 3 weapon_shotgun
+466.7 Item: 7 item_armor_combat
+467.5 Kill: 4 4 7: Stefan killed Stefan by MOD_ROCKET_SPLASH 5
+467.9 Kill: 6 2 11: BOLEK killed Bartoszer by MOD_LIGHTNING 1
+468.9 Item: 5 item_armor_shard
+468.9 Item: 5 item_armor_shard
+469.1 Item: 5 weapon_rocketlauncher
+469.3 Item: 5 item_quad
+469.8 Item: 0 weapon_rocketlauncher
+470.2 Kill: 7 5 3: darkside killed n0npax by MOD_MACHINEGUN 6
+470.8 Kill: 0 1 7: MACIEK killed Turbo Wpierdol by MOD_ROCKET_SPLASH 5
+471.0 Item: 4 ammo_rockets
+471.3 Item: 4 ammo_rockets
+471.5 Item: 7 weapon_lightning
+471.6 Item: 7 item_quad
+471.9 Item: 0 weapon_rocketlauncher
+472.1 Item: 5 ammo_shells
+473.1 Item: 2 item_armor_shard
+473.1 Item: 2 item_armor_shard
+473.4 Item: 2 item_armor_shard
+474.0 Item: 7 item_health
+474.3 Item: 2 weapon_shotgun
+478.9 Item: 2 item_health
+479.2 Kill: 4 1 3: Stefan killed Turbo Wpierdol by MOD_MACHINEGUN 2
+480.0 Item: 6 item_health_large
+480.3 Item: 4 item_armor_combat
+481.1 Item: 4 ammo_shells
+482.8 Kill: 2 7 1: Bartoszer killed darkside by MOD_SHOTGUN 6
+483.3 Item: 2 item_quad
+483.4 Item: 2 item_health_mega
+484.0 Kill: 2 4 1: Bartoszer killed Stefan by MOD_SHOTGUN 2
+484.0 Item: 2 weapon_lightning
+486.3 Item: 6 weapon_rocketlauncher
+486.5 Item: 6 item_health
+487.8 Item: 5 weapon_shotgun
+488.7 Kill: 6 4 6: BOLEK killed Stefan by MOD_ROCKET 2
+492.0 Kill: 6 6 7: BOLEK killed BOLEK by MOD_ROCKET_SPLASH 5
+492.9 Kill: 2 3 11: Bartoszer killed killer clown by MOD_LIGHTNING 3
+493.5 Item: 2 weapon_shotgun
+493.5 Item: 4 weapon_rocketlauncher
+493.7 Item: 7 weapon_rocketlauncher
+494.5 Item: 6 ammo_grenades
+494.6 Item: 6 ammo_bullets
+495.3 Kill: 2 0 11: Bartoszer killed MACIEK by MOD_LIGHTNING 5
+495.5 Item: 2 item_armor_shard
+496.4 Item: 6 weapon_rocketlauncher
+497.1 Kill: 6 2 7: BOLEK killed Bartoszer by MOD_ROCKET_SPLASH 6
+497.1 Item: 6 ammo_rockets
+498.1 Kill: 4 7 6: Stefan killed darkside by MOD_ROCKET 5
+498.1 Item: 4 weapon_rocketlauncher
+498.3 Item: 0 item_armor_body
+499.5 Item: 6 weapon_lightning
+499.7 Kill: 5 6 1: n0npax killed BOLEK by MOD_SHOTGUN 5
+500.2 Item: 3 weapon_rocketlauncher
+500.5 Kill: 4 2 7: Stefan killed Bartoszer by MOD_ROCKET_SPLASH 1
+500.8 Item: 5 weapon_rocketlauncher
+501.2 Item: 1 ammo_lightning
+502.1 Item: 0 weapon_shotgun
+503.6 Item: 1 ammo_grenades
+504.1 Item: 2 item_armor_combat
+504.4 Item: 3 item_health_large
+504.5 Kill: 7 5 3: darkside killed n0npax by MOD_MACHINEGUN 2
+504.5 Item: 1 item_health_small
+504.7 Item: 1 item_health_small
+504.9 Item: 1 item_health_small
+505.3 Item: 2 weapon_rocketlauncher
+506.6 Kill: 3 6 7: killer clown killed BOLEK by MOD_ROCKET_SPLASH 2
+507.0 Kill: 2 7 7: Bartoszer killed darkside by MOD_ROCKET_SPLASH 2
+508.6 Item: 0 item_armor_shard
+508.7 Kill: 2 1 6: Bartoszer killed Turbo Wpierdol by MOD_ROCKET 2
+508.7 Item: 3 item_health_small
+509.2 Item: 4 weapon_rocketlauncher
+512.1 Kill: 4 1 7: Stefan killed Turbo Wpierdol by MOD_ROCKET_SPLASH 2
+512.4 Kill: 3 5 7: killer clown killed n0npax by MOD_ROCKET_SPLASH 2
+513.4 Item: 7 ammo_rockets
+513.5 Kill: 2 0 7: Bartoszer killed MACIEK by MOD_ROCKET_SPLASH 3
+513.6 Item: 7 ammo_rockets
+514.1 Item: 4 item_health
+515.0 Item: 7 ammo_shells
+516.0 Item: 7 weapon_lightning
+517.2 Item: 2 weapon_shotgun
+517.3 Item: 5 weapon_rocketlauncher
+517.3 Item: 4 item_armor_combat
+517.3 Kill: 4 3 6: Stefan killed killer clown by MOD_ROCKET 5
+518.6 Item: 4 weapon_rocketlauncher
+519.5 Kill: 2 6 1: Bartoszer killed BOLEK by MOD_SHOTGUN 2
+520.7 Item: 2 weapon_grenadelauncher
+520.8 Item: 4 item_armor_shard
+520.9 Item: 4 item_armor_shard
+521.1 Item: 4 item_armor_shard
+524.9 Kill: 5 6 7: n0npax killed BOLEK by MOD_ROCKET_SPLASH 2
+525.2 Item: 2 item_health_large
+525.5 Kill: 3 7 3: killer clown killed darkside by MOD_MACHINEGUN 6
+526.0 Item: 2 weapon_lightning
+526.6 Item: 5 item_health
+527.6 Item: 4 weapon_rocketlauncher
+529.4 Kill: 5 0 7: n0npax killed MACIEK by MOD_ROCKET_SPLASH 2
+529.9 Kill: 2 4 4: Bartoszer killed Stefan by MOD_GRENADE 5
+530.6 Item: 2 item_health
+530.7 Item: 3 item_armor_shard
+531.1 Item: 2 weapon_rocketlauncher
+532.2 Kill: 2 7 4: Bartoszer killed darkside by MOD_GRENADE 2
+534.5 Item: 4 weapon_lightning
+536.7 Kill: 2 7 6: Bartoszer killed darkside by MOD_ROCKET 2
+537.4 Kill: 0 6 2: MACIEK killed BOLEK by MOD_GAUNTLET 2
+538.9 Kill: 4 3 11: Stefan killed killer clown by MOD_LIGHTNING 1
+539.2 Item: 5 item_armor_shard
+539.6 Item: 2 weapon_rocketlauncher
+540.7 Kill: 4 0 11: Stefan killed MACIEK by MOD_LIGHTNING 1
+542.0 Kill: 2 7 7: Bartoszer killed darkside by MOD_ROCKET_SPLASH 2
+542.6 Item: 6 weapon_lightning
+543.7 Kill: 2 3 7: Bartoszer killed killer clown by MOD_ROCKET_SPLASH 2
+545.9 Kill: 4 5 11: Stefan killed n0npax by MOD_LIGHTNING 2
+546.1 Item: 2 item_health_mega
+547.2 Item: 2 item_armor_combat
+547.4 Item: 7 ammo_grenades
+547.5 Kill: 6 4 11: BOLEK killed Stefan by MOD_LIGHTNING 6
+548.4 Item: 7 item_health_small
+548.4 Item: 3 weapon_rocketlauncher
+548.6 Item: 7 item_health_small
+548.7 Item: 2 ammo_shells
+548.7 Item: 7 item_health_small
+548.9 Item: 7 item_health_small
+549.7 Kill: 3 6 6: killer clown killed BOLEK by MOD_ROCKET 6
+550.7 Kill: 7 0 3: darkside killed MACIEK by MOD_MACHINEGUN 1
+554.5 Item: 6 weapon_lightning
+555.1 Item: 4 item_health
+556.6 Kill: 4 3 2: Stefan killed killer clown by MOD_GAUNTLET 5
+556.7 Item: 4 weapon_rocketlauncher
+557.8 Item: 6 weapon_lightning
+558.0 Kill: 2 5 5: Bartoszer killed n0npax by MOD_GRENADE_SPLASH 2
+558.4 Item: 3 ammo_shells
+559.5 Kill: 6 4 11: BOLEK killed Stefan by MOD_LIGHTNING 5
+559.6 Item: 6 weapon_rocketlauncher
+559.9 Kill: 2 0 6: Bartoszer killed MACIEK by MOD_ROCKET 1
+560.5 Item: 6 weapon_rocketlauncher
+561.2 Item: 5 item_armor_body
+561.3 Item: 3 weapon_lightning
+565.1 Item: 0 ammo_rockets
+565.8 Item: 5 weapon_shotgun
+566.9 Item: 7 weapon_rocketlauncher
+567.2 Item: 4 weapon_lightning
+568.7 Item: 7 item_health_large
+569.6 Item: 0 weapon_grenadelauncher
+571.1 Kill: 7 6 7: darkside killed BOLEK by MOD_ROCKET_SPLASH 5
+571.2 Kill: 6 7 7: BOLEK killed darkside by MOD_ROCKET_SPLASH 5
+571.6 Item: 5 item_armor_shard
+571.8 Item: 5 item_armor_shard
+573.7 Kill: 4 3 11: Stefan killed killer clown by MOD_LIGHTNING 6
+574.0 Item: 5 item_health_large
+576.1 Item: 7 weapon_rocketlauncher
+576.3 Item: 7 weapon_rocketlauncher
+576.4 Item: 0 weapon_grenadelauncher
+576.6 Kill: 4 5 11: Stefan killed n0npax by MOD_LIGHTNING 3
+576.7 Item: 6 ammo_rockets
+576.9 Item: 6 ammo_rockets
+577.2 Item: 2 item_health_large
+577.4 Item: 3 item_armor_shard
+577.6 Item: 3 item_armor_shard
+577.7 Item: 3 item_armor_shard
+578.6 Item: 3 ammo_shells
+578.6 Item: 3 weapon_shotgun
+579.0 Kill: 0 4 4: MACIEK killed Stefan by MOD_GRENADE 6
+579.1 Item: 6 weapon_lightning
+580.5 Item: 3 item_armor_combat
+581.3 Item: 3 item_health_mega
+581.3 Item: 5 weapon_rocketlauncher
+581.4 Item: 0 weapon_grenadelauncher
+582.4 Kill: 2 0 11: Bartoszer killed MACIEK by MOD_LIGHTNING 4
+582.7 Kill: 6 5 11: BOLEK killed n0npax by MOD_LIGHTNING 5
+583.2 Item: 2 weapon_lightning
+583.5 Item: 6 weapon_rocketlauncher
+584.5 Kill: 0 2 5: MACIEK killed Bartoszer by MOD_GRENADE_SPLASH 6
+585.8 Item: 4 weapon_lightning
+586.1 Item: 7 weapon_lightning
+586.8 Item: 7 weapon_shotgun
+586.9 Item: 6 item_quad
+589.4 Kill: 6 0 7: BOLEK killed MACIEK by MOD_ROCKET_SPLASH 1
+590.7 Kill: 3 6 1: killer clown killed BOLEK by MOD_SHOTGUN 5
+591.2 Item: 2 weapon_rocketlauncher
+591.4 Item: 2 item_health
+592.6 Item: 4 item_health
+592.7 Item: 3 weapon_rocketlauncher
+592.9 Item: 3 item_quad
+593.3 Kill: 4 5 11: Stefan killed n0npax by MOD_LIGHTNING 1
+595.0 Item: 0 ammo_lightning
+596.9 Item: 3 item_health_small
+596.9 Item: 4 item_health
+597.0 Item: 3 item_health_small
+597.0 Kill: 5 7 3: n0npax killed darkside by MOD_MACHINEGUN 6
+597.5 Item: 5 weapon_lightning
+598.5 Item: 4 weapon_lightning
+599.5 Kill: 6 5 3: BOLEK killed n0npax by MOD_MACHINEGUN 2
+599.9 Item: 6 weapon_lightning
+600.2 Item: 7 item_armor_body
+600.6 Item: 3 ammo_grenades
+601.3 Item: 2 item_armor_shard
+601.4 Item: 3 item_health_small
+601.6 Item: 3 item_health_small
+602.2 Kill: 0 3 2: MACIEK killed killer clown by MOD_GAUNTLET 5
+602.3 Item: 0 item_quad
+602.3 Item: 0 weapon_rocketlauncher
+603.0 Item: 6 weapon_rocketlauncher
+603.1 Item: 7 weapon_shotgun
+604.8 Kill: 4 2 11: Stefan killed Bartoszer by MOD_LIGHTNING 5
+606.2 Item: 4 weapon_grenadelauncher
+606.6 Item: 4 weapon_grenadelauncher
+606.9 Kill: 0 5 6: MACIEK killed n0npax by MOD_ROCKET 2
+608.0 Kill: 0 6 7: MACIEK killed BOLEK by MOD_ROCKET_SPLASH 5
+608.1 Item: 3 weapon_rocketlauncher
+608.3 Item: 7 ammo_rockets
+610.2 Item: 0 weapon_rocketlauncher
+610.4 Item: 2 weapon_shotgun
+611.1 Item: 7 item_armor_combat
+611.6 Item: 4 weapon_grenadelauncher
+613.1 Item: 3 weapon_rocketlauncher
+613.1 Item: 6 item_armor_shard
+613.2 Item: 6 item_armor_shard
+613.4 Item: 6 item_armor_shard
+613.4 Item: 5 item_armor_shard
+616.6 Item: 4 weapon_grenadelauncher
+617.0 Item: 2 item_health
+617.4 Kill: 5 4 3: n0npax killed Stefan by MOD_MACHINEGUN 4
+617.4 Item: 5 weapon_grenadelauncher
+618.2 Kill: 2 6 2: Bartoszer killed BOLEK by MOD_GAUNTLET 2
+620.2 Kill: 2 3 2: Bartoszer killed killer clown by MOD_GAUNTLET 5
+620.2 Item: 2 weapon_rocketlauncher
+621.6 Item: 5 weapon_grenadelauncher
+622.7 Kill: 6 5 3: BOLEK killed n0npax by MOD_MACHINEGUN 4
+622.9 Kill: 5 0 4: n0npax killed MACIEK by MOD_GRENADE 5
+623.0 Item: 7 item_armor_combat
+623.1 Item: 2 weapon_rocketlauncher
+624.1 Item: 6 weapon_grenadelauncher
+624.6 Item: 3 item_health_large
+624.7 Item: 0 ammo_shells
+625.6 Kill: 2 3 7: Bartoszer killed killer clown by MOD_ROCKET_SPLASH 2
+626.6 Kill: 2 7 6: Bartoszer killed darkside by MOD_ROCKET 3
+626.8 Item: 0 weapon_lightning
+629.3 Item: 2 item_health
+629.4 Item: 4 weapon_rocketlauncher
+631.2 Kill: 0 2 11: MACIEK killed Bartoszer by MOD_LIGHTNING 5
+631.8 Item: 3 item_health
+632.5 Item: 0 weapon_rocketlauncher
+633.3 Kill: 6 3 4: BOLEK killed killer clown by MOD_GRENADE 2
+633.9 Item: 0 ammo_rockets
+634.3 Item: 0 item_health
+634.5 Item: 0 item_health
+634.6 Item: 4 weapon_rocketlauncher
+634.6 Kill: 7 5 3: darkside killed n0npax by MOD_MACHINEGUN 2
+635.0 Kill: 4 6 7: Stefan killed BOLEK by MOD_ROCKET_SPLASH 4
+635.9 Item: 4 weapon_grenadelauncher
+636.4 Item: 0 weapon_lightning
+636.4 Item: 7 item_health_small
+636.5 Item: 2 item_armor_shard
+636.6 Item: 7 item_health_small
+636.6 Item: 7 item_health_small
+636.8 Item: 7 item_health_small
+637.5 Item: 5 weapon_shotgun
+640.5 Kill: 4 0 7: Stefan killed MACIEK by MOD_ROCKET_SPLASH 5
+640.6 Kill: 0 4 7: MACIEK killed Stefan by MOD_ROCKET_SPLASH 5
+641.1 Item: 7 item_armor_shard
+641.2 Item: 3 weapon_rocketlauncher
+641.4 Item: 3 weapon_rocketlauncher
+641.5 Item: 6 weapon_rocketlauncher
+642.3 Item: 2 item_health_large
+642.9 Item: 0 ammo_bullets
+642.9 Item: 0 ammo_grenades
+643.2 Item: 6 item_armor_combat
+644.4 Item: 2 weapon_grenadelauncher
+645.5 Kill: 3 7 7: killer clown killed darkside by MOD_ROCKET_SPLASH 2
+645.5 Kill: 3 0 7: killer clown killed MACIEK by MOD_ROCKET_SPLASH 1
+645.6 Item: 4 weapon_rocketlauncher
+648.0 Kill: 2 3 4: Bartoszer killed killer clown by MOD_GRENADE 5
+649.2 Kill: 2 5 4: Bartoszer killed n0npax by MOD_GRENADE 3
+649.2 Item: 7 ammo_rockets
+649.6 Item: 0 weapon_lightning
+650.3 Item: 2 weapon_rocketlauncher
+651.7 Item: 6 weapon_rocketlauncher
+652.3 Item: 4 item_armor_shard
+652.4 Kill: 0 7 11: MACIEK killed darkside by MOD_LIGHTNING 2
+652.5 Item: 4 item_armor_shard
+652.7 Item: 4 item_armor_shard
+653.6 Item: 4 ammo_shells
+653.8 Item: 4 weapon_shotgun
+654.7 Kill: 0 3 11: MACIEK killed killer clown by MOD_LIGHTNING 2
+655.4 Item: 0 weapon_lightning
+657.0 Kill: 4 7 7: Stefan killed darkside by MOD_ROCKET_SPLASH 2
+657.8 Kill: 0 2 11: MACIEK killed Bartoszer by MOD_LIGHTNING 4
+657.8 Item: 0 weapon_grenadelauncher
+659.2 Kill: 2 6 5: Bartoszer killed BOLEK by MOD_GRENADE_SPLASH 5
+662.1 Item: 4 item_armor_shard
+664.2 Item: 6 weapon_rocketlauncher
+665.1 Kill: 2 7 3: Bartoszer killed darkside by MOD_MACHINEGUN 2
+665.4 Item: 0 item_health
+665.5 Kill: 2 5 3: Bartoszer killed n0npax by MOD_MACHINEGUN 2
+665.6 Item: 3 weapon_shotgun
+666.1 Item: 4 item_armor_shard
+666.9 Item: 2 weapon_lightning
+667.7 Item: 3 item_armor_combat
+668.0 Item: 2 ammo_shells
+668.5 Item: 0 weapon_rocketlauncher
+668.5 Item: 7 weapon_shotgun
+668.7 Item: 0 item_health_large
+669.3 Kill: 7 4 1: darkside killed Stefan by MOD_SHOTGUN 5
+670.6 Item: 7 weapon_rocketlauncher
+671.0 Kill: 3 0 1: killer clown killed MACIEK by MOD_SHOTGUN 5
+671.7 Item: 5 item_health_mega
+672.2 Item: 7 ammo_rockets
+673.4 Item: 3 item_health_small
+673.5 Item: 3 item_health_small
+673.7 Item: 3 item_health_small
+674.1 Item: 4 weapon_rocketlauncher
+674.3 Item: 3 item_health_small
+674.5 Item: 7 item_armor_combat
+675.2 Kill: 4 6 6: Stefan killed BOLEK by MOD_ROCKET 5
+679.8 Kill: 4 4 7: Stefan killed Stefan by MOD_ROCKET_SPLASH 5
+680.5 Kill: 5 3 3: n0npax killed killer clown by MOD_MACHINEGUN 3
+681.1 Item: 0 weapon_rocketlauncher
+681.1 Item: 2 item_armor_body
+681.6 Item: 5 weapon_shotgun
+682.1 Kill: 7 0 6: darkside killed MACIEK by MOD_ROCKET 5
+682.2 Item: 6 weapon_rocketlauncher
+682.5 Item: 6 weapon_rocketlauncher
+683.0 Item: 7 weapon_rocketlauncher
+683.1 Item: 2 item_health_large
+683.9 Item: 5 ammo_grenades
+685.9 Kill: 2 5 11: Bartoszer killed n0npax by MOD_LIGHTNING 3
+686.2 Item: 3 weapon_rocketlauncher
+686.3 Kill: 6 3 7: BOLEK killed killer clown by MOD_ROCKET_SPLASH 2
+686.8 Item: 2 weapon_shotgun
+687.0 Kill: 6 6 7: BOLEK killed BOLEK by MOD_ROCKET_SPLASH 5
+687.0 Item: 0 weapon_rocketlauncher
+687.5 Item: 4 weapon_rocketlauncher
+687.9 Kill: 0 0 7: MACIEK killed MACIEK by MOD_ROCKET_SPLASH 5
+688.7 Kill: 2 7 1: Bartoszer killed darkside by MOD_SHOTGUN 5
+689.2 Item: 5 ammo_rockets
+689.4 Item: 5 ammo_rockets
+689.8 Item: 2 weapon_rocketlauncher
+690.2 Item: 4 weapon_rocketlauncher
+690.8 Item: 2 ammo_lightning
+691.9 Item: 0 weapon_shotgun
+692.2 Item: 5 weapon_lightning
+692.4 Kill: 4 3 7: Stefan killed killer clown by MOD_ROCKET_SPLASH 2
+692.6 Kill: 2 4 1: Bartoszer killed Stefan by MOD_SHOTGUN 5
+693.6 Item: 6 weapon_rocketlauncher
+694.8 Kill: 5 7 11: n0npax killed darkside by MOD_LIGHTNING 2
+695.7 Item: 2 weapon_rocketlauncher
+696.3 Kill: 5 2 11: n0npax killed Bartoszer by MOD_LIGHTNING 6
+696.7 Item: 5 weapon_lightning
+697.3 Item: 4 ammo_shells
+697.5 Item: 4 weapon_shotgun
+698.0 Item: 3 weapon_lightning
+698.4 Item: 4 item_armor_shard
+698.5 Item: 4 item_armor_shard
+698.7 Item: 4 item_armor_shard
+699.2 Kill: 5 6 11: n0npax killed BOLEK by MOD_LIGHTNING 5
+699.3 Kill: 6 5 6: BOLEK killed n0npax by MOD_ROCKET 6
+701.6 Item: 0 weapon_rocketlauncher
+701.8 Item: 0 weapon_lightning
+701.9 Item: 2 weapon_grenadelauncher
+703.7 Item: 3 weapon_lightning
+704.1 Item: 6 weapon_rocketlauncher
+704.3 Item: 6 item_health
+704.4 Item: 7 item_armor_combat
+708.3 Item: 3 item_health
+708.4 Item: 3 item_health
+708.9 Item: 4 item_health_mega
+709.4 Item: 2 weapon_lightning
+709.7 Item: 4 ammo_shells
+709.8 Item: 3 ammo_shells
+710.4 Kill: 1022 6 16: <world> killed BOLEK by MOD_LAVA 5
+710.5 Kill: 0 7 7: MACIEK killed darkside by MOD_ROCKET_SPLASH 2
+712.9 ClientDisconnect: 1
+712.9 Weapon_Stats: 1 MachineGun:1105:254:0:0 Shotgun:154:29:4:2 G.Launcher:9:2:1:1 R.Launcher:55:25:13:11 LightningGun:198:26:4:0 Given:3609 Recvd:4677 Armor:170 Health:330
+713.4 Kill: 3 2 11: killer clown killed Bartoszer by MOD_LIGHTNING 6
+713.8 Kill: 6 0 3: BOLEK killed MACIEK by MOD_MACHINEGUN 5
+714.3 Item: 5 weapon_rocketlauncher
+714.7 Item: 6 item_health_small
+715.0 Item: 6 weapon_rocketlauncher
+715.0 Item: 3 item_health
+715.0 Item: 6 item_health_small
+715.1 Item: 3 weapon_lightning
+715.3 Item: 6 item_health_small
+715.5 Item: 6 item_health_small
+716.1 Item: 2 item_armor_combat
+717.2 Kill: 6 4 6: BOLEK killed Stefan by MOD_ROCKET 3
+717.8 Item: 3 item_health_large
+718.2 Item: 0 weapon_rocketlauncher
+718.8 Item: 2 item_armor_shard
+719.1 Item: 2 item_armor_shard
+721.9 Kill: 3 6 11: killer clown killed BOLEK by MOD_LIGHTNING 5
+722.4 Item: 0 item_health_large
+722.7 Kill: 1022 7 16: <world> killed darkside by MOD_LAVA 2
+722.8 Item: 2 weapon_grenadelauncher
+723.5 Item: 3 weapon_rocketlauncher
+723.9 Kill: 0 5 7: MACIEK killed n0npax by MOD_ROCKET_SPLASH 5
+724.1 Item: 4 weapon_rocketlauncher
+725.7 Item: 4 item_quad
+725.8 Kill: 2 0 4: Bartoszer killed MACIEK by MOD_GRENADE 5
+725.8 Item: 6 weapon_lightning
+727.3 Item: 5 item_armor_body
+728.4 Item: 3 weapon_rocketlauncher
+729.8 Item: 7 item_health_large
+730.8 Item: 4 weapon_rocketlauncher
+730.9 Item: 5 weapon_shotgun
+732.8 Kill: 2 7 4: Bartoszer killed darkside by MOD_GRENADE 2
+732.8 Kill: 2 6 5: Bartoszer killed BOLEK by MOD_GRENADE_SPLASH 6
+733.7 Item: 4 item_armor_combat
+734.8 Item: 3 weapon_lightning
+736.0 Kill: 2 3 2: Bartoszer killed killer clown by MOD_GAUNTLET 6
+736.0 Item: 2 weapon_lightning
+736.2 Kill: 4 0 7: Stefan killed MACIEK by MOD_ROCKET_SPLASH 2
+737.7 Item: 2 weapon_lightning
+737.7 Item: 7 weapon_rocketlauncher
+738.8 Item: 4 ammo_grenades
+739.5 Item: 2 ammo_rockets
+739.7 Item: 6 item_health
+739.7 Item: 2 ammo_rockets
+740.3 Item: 5 weapon_grenadelauncher
+741.0 Kill: 1022 7 16: <world> killed darkside by MOD_LAVA 5
+742.3 Kill: 3 6 3: killer clown killed BOLEK by MOD_MACHINEGUN 2
+745.2 Item: 2 weapon_rocketlauncher
+746.1 Item: 4 item_health
+746.9 Item: 7 item_armor_shard
+747.4 Item: 7 item_armor_shard
+747.7 Item: 3 item_health_mega
+748.0 Kill: 5 2 5: n0npax killed Bartoszer by MOD_GRENADE_SPLASH 6
+749.6 Kill: 5 7 5: n0npax killed darkside by MOD_GRENADE_SPLASH 2
+749.6 Item: 4 weapon_rocketlauncher
+750.6 Item: 3 weapon_shotgun
+750.8 Item: 3 ammo_shells
+753.5 Item: 2 weapon_lightning
+753.6 Kill: 3 0 1: killer clown killed MACIEK by MOD_SHOTGUN 1
+754.8 Kill: 4 3 7: Stefan killed killer clown by MOD_ROCKET_SPLASH 3
+754.9 Item: 6 weapon_rocketlauncher
+755.8 Item: 4 weapon_shotgun
+756.5 Item: 5 weapon_grenadelauncher
+756.9 Kill: 6 4 6: BOLEK killed Stefan by MOD_ROCKET 3
+757.6 Item: 7 ammo_shells
+758.4 Item: 7 weapon_lightning
+758.4 Item: 6 weapon_shotgun
+758.6 Kill: 5 2 1: n0npax killed Bartoszer by MOD_SHOTGUN 6
+758.8 Item: 3 item_health_small
+759.0 Item: 5 weapon_lightning
+759.0 Item: 3 item_health_small
+759.1 Item: 3 item_health_small
+759.3 Item: 3 item_health_small
+761.9 Item: 5 weapon_grenadelauncher
+762.4 Item: 3 item_armor_combat
+762.7 Item: 3 ammo_shells
+765.2 Kill: 3 4 3: killer clown killed Stefan by MOD_MACHINEGUN 2
+766.4 Kill: 7 2 11: darkside killed Bartoszer by MOD_LIGHTNING 1
+767.7 Item: 3 item_health_large
+769.0 Kill: 4 7 2: Stefan killed darkside by MOD_GAUNTLET 6
+769.1 Item: 0 ammo_lightning
+770.4 Item: 2 weapon_rocketlauncher
+772.1 Item: 6 item_armor_body
+773.5 Kill: 5 7 5: n0npax killed darkside by MOD_GRENADE_SPLASH 2
+773.8 Kill: 6 0 1: BOLEK killed MACIEK by MOD_SHOTGUN 1
+774.8 Item: 4 item_health
+775.1 Kill: 5 3 5: n0npax killed killer clown by MOD_GRENADE_SPLASH 2
+775.7 Item: 4 weapon_rocketlauncher
+775.9 Item: 5 weapon_grenadelauncher
+777.8 Item: 4 item_health_large
+781.1 Kill: 4 7 7: Stefan killed darkside by MOD_ROCKET_SPLASH 2
+781.4 Item: 0 item_armor_combat
+781.6 Item: 3 weapon_rocketlauncher
+782.0 Item: 6 weapon_shotgun
+783.5 Item: 5 weapon_grenadelauncher
+786.1 Item: 7 ammo_grenades
+787.2 Item: 3 weapon_rocketlauncher
+789.9 Kill: 7 6 3: darkside killed BOLEK by MOD_MACHINEGUN 3
+790.2 Kill: 2 5 6: Bartoszer killed n0npax by MOD_ROCKET 4
+790.4 Item: 2 item_armor_shard
+790.5 Item: 2 item_armor_shard
+790.9 Item: 3 item_health
+791.4 Item: 7 weapon_shotgun
+791.4 Item: 2 ammo_rockets
+793.0 Kill: 3 0 7: killer clown killed MACIEK by MOD_ROCKET_SPLASH 1
+793.1 Item: 3 item_health_mega
+793.3 Item: 2 item_health
+793.6 Item: 7 weapon_grenadelauncher
+794.0 Item: 3 item_armor_combat
+794.2 Item: 4 item_health
+796.1 Item: 7 ammo_bullets
+796.1 Item: 7 ammo_grenades
+796.6 Item: 4 ammo_rockets
+796.8 Item: 4 ammo_rockets
+796.9 Item: 6 weapon_grenadelauncher
+797.2 Item: 0 weapon_lightning
+797.3 Item: 5 weapon_shotgun
+798.8 Item: 4 item_health
+800.4 Item: 2 ammo_shells
+800.4 Item: 2 weapon_shotgun
+801.2 Item: 7 weapon_rocketlauncher
+801.9 Kill: 4 0 7: Stefan killed MACIEK by MOD_ROCKET_SPLASH 6
+802.2 Kill: 6 7 4: BOLEK killed darkside by MOD_GRENADE 5
+803.1 Item: 4 weapon_lightning
+803.6 Kill: 3 2 6: killer clown killed Bartoszer by MOD_ROCKET 5
+803.6 Item: 3 weapon_rocketlauncher
+804.3 Item: 6 weapon_rocketlauncher
+804.8 Item: 4 item_health
+805.3 Item: 4 ammo_shells
+806.4 Item: 4 weapon_lightning
+808.2 Item: 2 weapon_rocketlauncher
+809.0 Item: 3 item_health_small
+809.0 Item: 3 item_health_small
+809.2 Item: 3 item_health_small
+809.4 Item: 3 item_health_small
+810.6 Item: 4 item_health_large
+812.7 Item: 0 ammo_lightning
+813.3 Kill: 6 3 7: BOLEK killed killer clown by MOD_ROCKET_SPLASH 5
+813.8 Kill: 3 0 7: killer clown killed MACIEK by MOD_ROCKET_SPLASH 2
+814.3 Item: 2 item_health
+814.9 Item: 2 weapon_rocketlauncher
+815.3 Item: 7 ammo_shells
+815.8 Kill: 4 6 6: Stefan killed BOLEK by MOD_ROCKET 5
+816.0 Item: 4 weapon_grenadelauncher
+816.4 Item: 2 item_health_large
+816.6 Item: 3 item_armor_body
+816.7 Kill: 5 4 1: n0npax killed Stefan by MOD_SHOTGUN 4
+819.3 Item: 7 weapon_rocketlauncher
+821.0 Item: 5 weapon_grenadelauncher
+822.1 Item: 3 weapon_shotgun
+822.8 Kill: 2 0 7: Bartoszer killed MACIEK by MOD_ROCKET_SPLASH 1
+823.4 Item: 2 item_armor_combat
+823.5 Item: 6 weapon_lightning
+825.9 Kill: 5 7 4: n0npax killed darkside by MOD_GRENADE 5
+827.3 Kill: 2 4 7: Bartoszer killed Stefan by MOD_ROCKET_SPLASH 1
+830.0 Kill: 5 3 4: n0npax killed killer clown by MOD_GRENADE 3
+830.3 Item: 2 weapon_rocketlauncher
+830.3 Item: 2 weapon_rocketlauncher
+832.1 Item: 6 weapon_rocketlauncher
+833.0 Kill: 7 0 3: darkside killed MACIEK by MOD_MACHINEGUN 1
+833.4 Item: 4 weapon_shotgun
+834.6 Kill: 2 5 6: Bartoszer killed n0npax by MOD_ROCKET 4
+834.7 Item: 7 weapon_lightning
+835.9 Item: 3 item_health
+836.3 Item: 2 weapon_grenadelauncher
+836.5 Kill: 6 3 7: BOLEK killed killer clown by MOD_ROCKET_SPLASH 2
+840.7 Item: 0 ammo_shells
+840.7 Item: 0 weapon_shotgun
+841.1 Item: 3 weapon_rocketlauncher
+841.7 Item: 0 item_armor_shard
+843.0 Item: 5 weapon_shotgun
+844.0 Item: 7 ammo_grenades
+844.0 Item: 7 ammo_bullets
+844.1 Item: 6 item_armor_shard
+844.3 Item: 6 item_armor_shard
+846.1 Item: 3 weapon_rocketlauncher
+846.2 Item: 4 item_armor_shard
+846.2 Item: 4 weapon_grenadelauncher
+846.4 Item: 4 weapon_shotgun
+847.5 Kill: 0 6 1: MACIEK killed BOLEK by MOD_SHOTGUN 6
+847.7 Item: 5 item_armor_shard
+847.8 Kill: 5 7 1: n0npax killed darkside by MOD_SHOTGUN 6
+847.8 Item: 0 weapon_lightning
+849.6 Item: 3 item_quad
+850.8 Kill: 5 4 1: n0npax killed Stefan by MOD_SHOTGUN 3
+851.2 Item: 5 weapon_shotgun
+851.5 Kill: 2 5 7: Bartoszer killed n0npax by MOD_ROCKET_SPLASH 3
+852.7 Item: 3 item_armor_combat
+852.8 Item: 4 ammo_shells
+852.9 Item: 0 ammo_lightning
+853.3 Item: 6 weapon_rocketlauncher
+854.6 Item: 3 weapon_shotgun
+854.7 Item: 7 item_health
+854.7 Item: 4 ammo_rockets
+854.8 Item: 4 ammo_rockets
+854.9 Item: 0 ammo_grenades
+855.0 Item: 2 weapon_grenadelauncher
+856.8 Item: 4 weapon_lightning
+857.1 Kill: 1022 6 16: <world> killed BOLEK by MOD_LAVA 5
+857.2 Item: 2 item_health_large
+860.0 Kill: 3 7 7: killer clown killed darkside by MOD_ROCKET_SPLASH 2
+861.0 Item: 2 weapon_rocketlauncher
+862.8 Kill: 0 6 11: MACIEK killed BOLEK by MOD_LIGHTNING 2
+864.0 Item: 4 weapon_grenadelauncher
+865.8 Item: 5 weapon_lightning
+865.9 Kill: 3 0 7: killer clown killed MACIEK by MOD_ROCKET_SPLASH 6
+868.6 Item: 7 weapon_shotgun
+868.6 Kill: 4 7 5: Stefan killed darkside by MOD_GRENADE_SPLASH 2
+869.0 Item: 0 item_armor_body
+869.1 Kill: 3 2 7: killer clown killed Bartoszer by MOD_ROCKET_SPLASH 5
+869.3 Kill: 2 3 7: Bartoszer killed killer clown by MOD_ROCKET_SPLASH 5
+870.2 Kill: 4 5 5: Stefan killed n0npax by MOD_GRENADE_SPLASH 6
+871.5 Item: 6 weapon_rocketlauncher
+872.7 Item: 4 item_armor_shard
+875.7 Item: 0 weapon_rocketlauncher
+877.0 Item: 5 weapon_rocketlauncher
+877.1 Item: 6 weapon_rocketlauncher
+877.5 Item: 6 weapon_rocketlauncher
+877.5 Item: 6 item_quad
+878.6 Item: 6 weapon_lightning
+879.7 Item: 3 weapon_shotgun
+879.8 Item: 7 item_health_small
+879.9 Item: 7 item_health_small
+880.1 Item: 0 item_health_small
+880.1 Item: 7 item_health_small
+881.9 Kill: 6 5 11: BOLEK killed n0npax by MOD_LIGHTNING 5
+881.9 Item: 2 item_armor_combat
+882.2 Item: 2 item_health
+882.3 Item: 3 item_health_large
+883.0 Item: 6 weapon_rocketlauncher
+883.0 Item: 6 weapon_rocketlauncher
+884.3 Kill: 6 4 6: BOLEK killed Stefan by MOD_ROCKET 2
+884.3 Kill: 6 6 7: BOLEK killed BOLEK by MOD_ROCKET_SPLASH 5
+884.5 Kill: 7 3 3: darkside killed killer clown by MOD_MACHINEGUN 3
+884.5 Item: 7 weapon_shotgun
+885.6 Item: 5 weapon_lightning
+885.9 Kill: 0 7 7: MACIEK killed darkside by MOD_ROCKET_SPLASH 3
+886.1 Item: 2 weapon_rocketlauncher
+886.3 Item: 2 item_quad
+886.7 Item: 5 ammo_rockets
+887.2 Item: 4 ammo_grenades
+887.3 Item: 4 ammo_bullets
+888.2 Item: 6 weapon_shotgun
+890.2 Kill: 6 0 1: BOLEK killed MACIEK by MOD_SHOTGUN 5
+891.1 Item: 3 weapon_rocketlauncher
+891.3 Kill: 2 4 7: Bartoszer killed Stefan by MOD_ROCKET_SPLASH 1
+892.2 Kill: 2 5 7: Bartoszer killed n0npax by MOD_ROCKET_SPLASH 6
+893.6 Item: 6 item_armor_combat
+894.7 Item: 7 weapon_lightning
+895.9 Item: 2 item_health
+897.4 Item: 3 item_health
+898.7 Kill: 7 2 11: darkside killed Bartoszer by MOD_LIGHTNING 1
+899.6 Item: 4 weapon_shotgun
+900.2 Item: 5 item_health
+903.6 Kill: 3 0 7: killer clown killed MACIEK by MOD_ROCKET_SPLASH 2
+904.4 Item: 7 weapon_lightning
+905.2 Kill: 7 2 11: darkside killed Bartoszer by MOD_LIGHTNING 2
+905.8 Item: 4 item_armor_shard
+906.0 Kill: 7 5 11: darkside killed n0npax by MOD_LIGHTNING 1
+906.2 Item: 4 item_armor_shard
+906.9 Kill: 4 3 1: Stefan killed killer clown by MOD_SHOTGUN 5
+907.4 Kill: 7 6 11: darkside killed BOLEK by MOD_LIGHTNING 2
+908.7 Item: 3 ammo_shells
+909.9 Item: 7 ammo_rockets
+910.7 Item: 4 item_armor_combat
+910.7 Item: 7 item_health
+910.8 Item: 2 weapon_rocketlauncher
+910.9 Item: 7 item_health
+911.1 Kill: 7 3 11: darkside killed killer clown by MOD_LIGHTNING 2
+912.7 Kill: 2 2 7: Bartoszer killed Bartoszer by MOD_ROCKET_SPLASH 5
+912.7 Item: 7 weapon_lightning
+915.5 Item: 0 ammo_lightning
+915.5 Item: 2 ammo_shells
+915.5 Item: 2 weapon_shotgun
+915.6 Game_End: Timelimit
+915.6 Exit: Timelimit hit.
+915.6 score: 85  ping: 0  client: 2 Bartoszer
+915.6 score: 45  ping: 3  client: 4 Stefan
+915.6 score: 42  ping: 3  client: 6 BOLEK
+915.6 score: 41  ping: 3  client: 3 killer clown
+915.6 score: 37  ping: 4  client: 5 n0npax
+915.6 score: 33  ping: 1  client: 7 darkside
+915.6 score: 27  ping: 3  client: 0 MACIEK
+917.8 Weapon_Stats: 0 Gauntlet:0:10:0:0 MachineGun:1221:207:0:0 Shotgun:418:59:10:6 G.Launcher:14:2:6:2 R.Launcher:71:26:20:12 LightningGun:474:110:11:6 Given:5161 Recvd:8688 Armor:630 Health:505
+917.8 Weapon_Stats: 2 Gauntlet:0:26:0:0 MachineGun:146:26:0:0 Shotgun:517:137:13:2 G.Launcher:78:23:10:2 R.Launcher:190:96:35:10 LightningGun:833:231:20:9 Given:13193 Recvd:5924 Armor:680 Health:1695
+917.8 Weapon_Stats: 3 MachineGun:1230:311:0:0 Shotgun:682:134:16:12 G.Launcher:0:0:1:0 R.Launcher:127:48:27:14 LightningGun:444:85:13:4 Given:7173 Recvd:9244 Armor:485 Health:1300
+917.8 Weapon_Stats: 4 Gauntlet:0:7:0:0 MachineGun:591:160:0:0 Shotgun:473:51:14:8 G.Launcher:181:41:34:5 R.Launcher:97:49:24:14 LightningGun:525:115:10:2 Given:8465 Recvd:6385 Armor:430 Health:520
+917.8 Weapon_Stats: 5 MachineGun:1314:341:0:0 Shotgun:319:64:11:5 G.Launcher:38:12:8:3 R.Launcher:100:43:21:15 LightningGun:398:82:14:6 Given:7055 Recvd:7866 Armor:395 Health:420
+917.8 Weapon_Stats: 6 MachineGun:1093:248:0:0 Shotgun:473:83:8:4 G.Launcher:16:3:4:1 R.Launcher:179:63:38:21 LightningGun:967:152:22:9 Given:8569 Recvd:7386 Armor:405 Health:270
+917.8 Weapon_Stats: 7 MachineGun:1985:372:0:0 Shotgun:319:70:16:6 G.Launcher:5:2:2:0 R.Launcher:55:20:24:16 LightningGun:520:97:9:5 Given:6562 Recvd:9617 Armor:725 Health:575
+919.2 ClientDisconnect: 0
+921.3 ShutdownGame:
+923.0 ------------------------------------------------------------

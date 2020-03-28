@@ -110,6 +110,13 @@ class DefaultParserMixin():
         )
         return result
 
+    def parse_kill(self, raw_event: RawEvent) -> events.Q3EVPlayerKill:
+        match = re.search(r"(\d+) (\d+) (\d+): .* by (\w+)", raw_event.payload)
+        killer_id, victim_id, weapon_id, reason = match.groups()
+        return events.Q3EVPlayerKill(
+            raw_event.time, int(killer_id), int(victim_id), reason
+        )
+
 
 class OspParserMixin():
     STAT_WEAPON_MAP = {
@@ -186,6 +193,8 @@ class Q3LogParserModOsp(
             return self.parse_user_info(raw_event)
         elif raw_event.name == 'Weapon_Stats':
             return self.parse_weapon_stat(raw_event)
+        elif raw_event.name == 'Kill':
+            return self.parse_kill(raw_event)
 
     @classmethod
     def mktime(cls, event_time: str) -> int:
