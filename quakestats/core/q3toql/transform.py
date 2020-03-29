@@ -67,14 +67,14 @@ class QuakeGame():
     single quake match (compatible with Quake Live)
 
     QL event support:
-    [x] - MATCH_STARTED
-    [x] - PLAYER_CONNECT
-    [x] - PLAYER_SWITCHTEAM - FREE/RED/BLUE/SPECTATOR
+    [+] - MATCH_STARTED
+    [+] - PLAYER_CONNECT
+    [+] - PLAYER_SWITCHTEAM - FREE/RED/BLUE/SPECTATOR
     [*] - PLAYER_STATS team is 0,1,2, partial implementation
     [*] - PLAYER_KILL, partial implementation
-    [ ] - PLAYER_DEATH
+    [*] - PLAYER_DEATH, partial implementation
     [ ] - PLAYER_DISCONNECT
-    [ ] - PLAYER_MEDAL
+    [-] - PLAYER_MEDAL, not supported no such info in Quake3 logs
     [ ] - MATCH_REPORT
     [ ] - ROUND_OVER
     """
@@ -173,6 +173,9 @@ class QuakeGame():
         ql_ev: qlevents.PlayerKill = self.add_event(
             ev.time, qlevents.PlayerKill
         )
+        ql_ev_death: qlevents.PlayerDeath = self.add_event(
+            ev.time, qlevents.PlayerDeath
+        )
 
         killer = self.get_client(ev.client_id)
         victim = self.get_client(ev.victim_id)
@@ -180,6 +183,9 @@ class QuakeGame():
         ql_ev.add_victim(victim.lazy_identity)
         mod = ev.reason.split("MOD_")[1]
         ql_ev.set_data(mod)
+
+        # same event different 'type'
+        ql_ev_death['DATA'] = ql_ev['DATA']
 
 
 class Q3toQL():

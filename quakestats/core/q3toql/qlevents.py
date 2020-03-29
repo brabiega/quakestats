@@ -219,3 +219,7 @@ class PlayerKill(QLEvent):
 
     def add_victim(self, steam_id):
         self.data['VICTIM'] = self._user_info(steam_id)
+
+
+class PlayerDeath(PlayerKill):
+    name = 'PLAYER_DEATH'

@@ -28,6 +28,7 @@ class TestQ3toQL_OSPFFA1():
         e = ql_events
         # py.test tests/component/test_q3toql_ospffa1.py  -vs | grep assert >> tests/component/test_q3toql_ospffa1.py  # noqa
         # _regen_asserts(e)
+        assert e[0]['DATA']['CAPTURE_LIMIT'] == '0'  # noqa
         assert e[0]['DATA']['FACTORY'] == 'quake3'  # noqa
         assert e[0]['DATA']['FACTORY_TITLE'] == 'quake3'  # noqa
         assert e[0]['DATA']['FRAG_LIMIT'] == '20'  # noqa
@@ -169,7 +170,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[8]['DATA']['TEAMKILL'] is None  # noqa
         assert e[8]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[8]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[8]['DATA']['TIME'] == 27900  # noqa
+        assert e[8]['DATA']['TIME'] == 15700  # noqa
         assert e[8]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[8]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[8]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -191,7 +192,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[8]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[8]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[8]['DATA']['WARMUP'] == False  # noqa
-        assert e[8]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[8]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[9]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[9]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[9]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -221,7 +222,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[9]['DATA']['TEAMKILL'] is None  # noqa
         assert e[9]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[9]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[9]['DATA']['TIME'] == 41600  # noqa
+        assert e[9]['DATA']['TIME'] == 27900  # noqa
         assert e[9]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[9]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[9]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -235,7 +236,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[9]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[9]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[9]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[9]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[9]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[9]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[9]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[9]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -265,7 +266,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[10]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[10]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[10]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[10]['DATA']['MOD'] == 'PLASMA'  # noqa
+        assert e[10]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[10]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[10]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[10]['DATA']['ROUND'] is None  # noqa
@@ -273,7 +274,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[10]['DATA']['TEAMKILL'] is None  # noqa
         assert e[10]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[10]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[10]['DATA']['TIME'] == 53900  # noqa
+        assert e[10]['DATA']['TIME'] == 27900  # noqa
         assert e[10]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[10]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[10]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -287,7 +288,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[10]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[10]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[10]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[10]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[10]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[10]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[10]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[10]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -295,7 +296,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[10]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[10]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[10]['DATA']['WARMUP'] == False  # noqa
-        assert e[10]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[10]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[11]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[11]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[11]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -317,7 +318,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[11]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[11]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[11]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[11]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[11]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[11]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[11]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[11]['DATA']['ROUND'] is None  # noqa
@@ -325,7 +326,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[11]['DATA']['TEAMKILL'] is None  # noqa
         assert e[11]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[11]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[11]['DATA']['TIME'] == 55600  # noqa
+        assert e[11]['DATA']['TIME'] == 41600  # noqa
         assert e[11]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[11]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[11]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -339,7 +340,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[11]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[11]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[11]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[11]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[11]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[11]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[11]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[11]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -369,7 +370,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[12]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[12]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[12]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[12]['DATA']['MOD'] == 'PLASMA'  # noqa
+        assert e[12]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[12]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[12]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[12]['DATA']['ROUND'] is None  # noqa
@@ -377,7 +378,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[12]['DATA']['TEAMKILL'] is None  # noqa
         assert e[12]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[12]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[12]['DATA']['TIME'] == 60300  # noqa
+        assert e[12]['DATA']['TIME'] == 41600  # noqa
         assert e[12]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[12]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[12]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -391,7 +392,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[12]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[12]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[12]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[12]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[12]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[12]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[12]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[12]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -399,7 +400,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[12]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[12]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[12]['DATA']['WARMUP'] == False  # noqa
-        assert e[12]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[12]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[13]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[13]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[13]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -421,7 +422,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[13]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[13]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[13]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[13]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[13]['DATA']['MOD'] == 'PLASMA'  # noqa
         assert e[13]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[13]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[13]['DATA']['ROUND'] is None  # noqa
@@ -429,7 +430,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[13]['DATA']['TEAMKILL'] is None  # noqa
         assert e[13]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[13]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[13]['DATA']['TIME'] == 72300  # noqa
+        assert e[13]['DATA']['TIME'] == 53900  # noqa
         assert e[13]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[13]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[13]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -443,7 +444,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[13]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[13]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[13]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[13]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[13]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[13]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[13]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[13]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -473,7 +474,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[14]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[14]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[14]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[14]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[14]['DATA']['MOD'] == 'PLASMA'  # noqa
         assert e[14]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[14]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[14]['DATA']['ROUND'] is None  # noqa
@@ -481,7 +482,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[14]['DATA']['TEAMKILL'] is None  # noqa
         assert e[14]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[14]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[14]['DATA']['TIME'] == 74100  # noqa
+        assert e[14]['DATA']['TIME'] == 53900  # noqa
         assert e[14]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[14]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[14]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -503,7 +504,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[14]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[14]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[14]['DATA']['WARMUP'] == False  # noqa
-        assert e[14]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[14]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[15]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[15]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[15]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -525,7 +526,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[15]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[15]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[15]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[15]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[15]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[15]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[15]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[15]['DATA']['ROUND'] is None  # noqa
@@ -533,7 +534,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[15]['DATA']['TEAMKILL'] is None  # noqa
         assert e[15]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[15]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[15]['DATA']['TIME'] == 77400  # noqa
+        assert e[15]['DATA']['TIME'] == 55600  # noqa
         assert e[15]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[15]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[15]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -547,7 +548,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[15]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[15]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[15]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[15]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[15]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[15]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[15]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[15]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -577,7 +578,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[16]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[16]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[16]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[16]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[16]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[16]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[16]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[16]['DATA']['ROUND'] is None  # noqa
@@ -585,7 +586,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[16]['DATA']['TEAMKILL'] is None  # noqa
         assert e[16]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[16]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[16]['DATA']['TIME'] == 88600  # noqa
+        assert e[16]['DATA']['TIME'] == 55600  # noqa
         assert e[16]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[16]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[16]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -607,7 +608,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[16]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[16]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[16]['DATA']['WARMUP'] == False  # noqa
-        assert e[16]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[16]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[17]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[17]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[17]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -629,7 +630,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[17]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[17]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[17]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[17]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[17]['DATA']['MOD'] == 'PLASMA'  # noqa
         assert e[17]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[17]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[17]['DATA']['ROUND'] is None  # noqa
@@ -637,7 +638,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[17]['DATA']['TEAMKILL'] is None  # noqa
         assert e[17]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[17]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[17]['DATA']['TIME'] == 89500  # noqa
+        assert e[17]['DATA']['TIME'] == 60300  # noqa
         assert e[17]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[17]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[17]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -651,7 +652,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[17]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[17]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[17]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[17]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[17]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[17]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[17]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[17]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -681,7 +682,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[18]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[18]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[18]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[18]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
+        assert e[18]['DATA']['MOD'] == 'PLASMA'  # noqa
         assert e[18]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[18]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[18]['DATA']['ROUND'] is None  # noqa
@@ -689,7 +690,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[18]['DATA']['TEAMKILL'] is None  # noqa
         assert e[18]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[18]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[18]['DATA']['TIME'] == 107600  # noqa
+        assert e[18]['DATA']['TIME'] == 60300  # noqa
         assert e[18]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[18]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[18]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -703,7 +704,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[18]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[18]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[18]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[18]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[18]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[18]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[18]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[18]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -711,7 +712,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[18]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[18]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[18]['DATA']['WARMUP'] == False  # noqa
-        assert e[18]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[18]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[19]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[19]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[19]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -725,7 +726,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[19]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[19]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[19]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[19]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[19]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
         assert e[19]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[19]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[19]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -733,7 +734,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[19]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[19]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[19]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[19]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[19]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[19]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[19]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[19]['DATA']['ROUND'] is None  # noqa
@@ -741,7 +742,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[19]['DATA']['TEAMKILL'] is None  # noqa
         assert e[19]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[19]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[19]['DATA']['TIME'] == 112900  # noqa
+        assert e[19]['DATA']['TIME'] == 72300  # noqa
         assert e[19]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[19]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[19]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -755,7 +756,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[19]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[19]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[19]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[19]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[19]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[19]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[19]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[19]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -777,7 +778,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[20]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[20]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[20]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[20]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[20]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
         assert e[20]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[20]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[20]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -785,7 +786,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[20]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[20]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[20]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[20]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[20]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[20]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[20]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[20]['DATA']['ROUND'] is None  # noqa
@@ -793,7 +794,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[20]['DATA']['TEAMKILL'] is None  # noqa
         assert e[20]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[20]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[20]['DATA']['TIME'] == 114900  # noqa
+        assert e[20]['DATA']['TIME'] == 72300  # noqa
         assert e[20]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[20]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[20]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -815,7 +816,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[20]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[20]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[20]['DATA']['WARMUP'] == False  # noqa
-        assert e[20]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[20]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[21]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[21]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[21]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -829,7 +830,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[21]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[21]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[21]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[21]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[21]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
         assert e[21]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[21]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[21]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -837,7 +838,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[21]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[21]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[21]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[21]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[21]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[21]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[21]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[21]['DATA']['ROUND'] is None  # noqa
@@ -845,7 +846,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[21]['DATA']['TEAMKILL'] is None  # noqa
         assert e[21]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[21]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[21]['DATA']['TIME'] == 122200  # noqa
+        assert e[21]['DATA']['TIME'] == 74100  # noqa
         assert e[21]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[21]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[21]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -897,7 +898,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[22]['DATA']['TEAMKILL'] is None  # noqa
         assert e[22]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[22]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[22]['DATA']['TIME'] == 130800  # noqa
+        assert e[22]['DATA']['TIME'] == 74100  # noqa
         assert e[22]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[22]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[22]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -919,7 +920,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[22]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[22]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[22]['DATA']['WARMUP'] == False  # noqa
-        assert e[22]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[22]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[23]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[23]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[23]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -941,7 +942,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[23]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[23]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[23]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[23]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
+        assert e[23]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[23]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[23]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[23]['DATA']['ROUND'] is None  # noqa
@@ -949,7 +950,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[23]['DATA']['TEAMKILL'] is None  # noqa
         assert e[23]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[23]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[23]['DATA']['TIME'] == 135400  # noqa
+        assert e[23]['DATA']['TIME'] == 77400  # noqa
         assert e[23]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[23]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[23]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -993,7 +994,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[24]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[24]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[24]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[24]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[24]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[24]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[24]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[24]['DATA']['ROUND'] is None  # noqa
@@ -1001,7 +1002,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[24]['DATA']['TEAMKILL'] is None  # noqa
         assert e[24]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[24]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[24]['DATA']['TIME'] == 138400  # noqa
+        assert e[24]['DATA']['TIME'] == 77400  # noqa
         assert e[24]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[24]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[24]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1015,7 +1016,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[24]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[24]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[24]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[24]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[24]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[24]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[24]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[24]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -1023,7 +1024,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[24]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[24]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[24]['DATA']['WARMUP'] == False  # noqa
-        assert e[24]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[24]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[25]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[25]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[25]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -1053,7 +1054,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[25]['DATA']['TEAMKILL'] is None  # noqa
         assert e[25]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[25]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[25]['DATA']['TIME'] == 147800  # noqa
+        assert e[25]['DATA']['TIME'] == 88600  # noqa
         assert e[25]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[25]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[25]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1089,7 +1090,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[26]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[26]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[26]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[26]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[26]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
         assert e[26]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[26]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[26]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -1097,7 +1098,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[26]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[26]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[26]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[26]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[26]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[26]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[26]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[26]['DATA']['ROUND'] is None  # noqa
@@ -1105,7 +1106,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[26]['DATA']['TEAMKILL'] is None  # noqa
         assert e[26]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[26]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[26]['DATA']['TIME'] == 151400  # noqa
+        assert e[26]['DATA']['TIME'] == 88600  # noqa
         assert e[26]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[26]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[26]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1119,7 +1120,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[26]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[26]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[26]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[26]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[26]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[26]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[26]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[26]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -1127,7 +1128,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[26]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[26]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[26]['DATA']['WARMUP'] == False  # noqa
-        assert e[26]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[26]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[27]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[27]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[27]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -1149,7 +1150,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[27]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[27]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[27]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[27]['DATA']['MOD'] == 'GAUNTLET'  # noqa
+        assert e[27]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[27]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[27]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[27]['DATA']['ROUND'] is None  # noqa
@@ -1157,7 +1158,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[27]['DATA']['TEAMKILL'] is None  # noqa
         assert e[27]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[27]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[27]['DATA']['TIME'] == 169900  # noqa
+        assert e[27]['DATA']['TIME'] == 89500  # noqa
         assert e[27]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[27]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[27]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1193,7 +1194,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[28]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[28]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[28]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[28]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[28]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
         assert e[28]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[28]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[28]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -1201,7 +1202,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[28]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[28]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[28]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[28]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[28]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[28]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[28]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[28]['DATA']['ROUND'] is None  # noqa
@@ -1209,7 +1210,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[28]['DATA']['TEAMKILL'] is None  # noqa
         assert e[28]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[28]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[28]['DATA']['TIME'] == 180100  # noqa
+        assert e[28]['DATA']['TIME'] == 89500  # noqa
         assert e[28]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[28]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[28]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1223,7 +1224,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[28]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[28]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[28]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[28]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[28]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[28]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[28]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[28]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -1231,7 +1232,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[28]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[28]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[28]['DATA']['WARMUP'] == False  # noqa
-        assert e[28]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[28]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[29]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[29]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[29]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -1253,7 +1254,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[29]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[29]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[29]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[29]['DATA']['MOD'] == 'GAUNTLET'  # noqa
+        assert e[29]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[29]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[29]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[29]['DATA']['ROUND'] is None  # noqa
@@ -1261,7 +1262,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[29]['DATA']['TEAMKILL'] is None  # noqa
         assert e[29]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[29]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[29]['DATA']['TIME'] == 190500  # noqa
+        assert e[29]['DATA']['TIME'] == 107600  # noqa
         assert e[29]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[29]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[29]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1297,7 +1298,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[30]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[30]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[30]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[30]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[30]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
         assert e[30]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[30]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[30]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -1305,7 +1306,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[30]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[30]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[30]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[30]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[30]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[30]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[30]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[30]['DATA']['ROUND'] is None  # noqa
@@ -1313,7 +1314,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[30]['DATA']['TEAMKILL'] is None  # noqa
         assert e[30]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[30]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[30]['DATA']['TIME'] == 202100  # noqa
+        assert e[30]['DATA']['TIME'] == 107600  # noqa
         assert e[30]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[30]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[30]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1327,7 +1328,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[30]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[30]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[30]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[30]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[30]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[30]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[30]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[30]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -1335,7 +1336,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[30]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[30]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[30]['DATA']['WARMUP'] == False  # noqa
-        assert e[30]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[30]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[31]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[31]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[31]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -1349,7 +1350,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[31]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[31]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[31]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[31]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[31]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[31]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[31]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[31]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -1357,7 +1358,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[31]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[31]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[31]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[31]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[31]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[31]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[31]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[31]['DATA']['ROUND'] is None  # noqa
@@ -1365,7 +1366,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[31]['DATA']['TEAMKILL'] is None  # noqa
         assert e[31]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[31]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[31]['DATA']['TIME'] == 209200  # noqa
+        assert e[31]['DATA']['TIME'] == 112900  # noqa
         assert e[31]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[31]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[31]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1379,7 +1380,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[31]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[31]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[31]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[31]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[31]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
         assert e[31]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[31]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[31]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -1401,7 +1402,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[32]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[32]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[32]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[32]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[32]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[32]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[32]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[32]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -1409,7 +1410,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[32]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[32]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[32]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[32]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[32]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[32]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[32]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[32]['DATA']['ROUND'] is None  # noqa
@@ -1417,7 +1418,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[32]['DATA']['TEAMKILL'] is None  # noqa
         assert e[32]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[32]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[32]['DATA']['TIME'] == 220800  # noqa
+        assert e[32]['DATA']['TIME'] == 112900  # noqa
         assert e[32]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[32]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[32]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1439,7 +1440,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[32]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[32]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[32]['DATA']['WARMUP'] == False  # noqa
-        assert e[32]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[32]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[33]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[33]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[33]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -1453,7 +1454,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[33]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[33]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[33]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[33]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[33]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[33]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[33]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[33]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -1461,7 +1462,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[33]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[33]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[33]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[33]['DATA']['MOD'] == 'GAUNTLET'  # noqa
+        assert e[33]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[33]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[33]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[33]['DATA']['ROUND'] is None  # noqa
@@ -1469,7 +1470,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[33]['DATA']['TEAMKILL'] is None  # noqa
         assert e[33]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[33]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[33]['DATA']['TIME'] == 230000  # noqa
+        assert e[33]['DATA']['TIME'] == 114900  # noqa
         assert e[33]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[33]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[33]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1483,7 +1484,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[33]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[33]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[33]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[33]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[33]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[33]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[33]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[33]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -1521,7 +1522,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[34]['DATA']['TEAMKILL'] is None  # noqa
         assert e[34]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[34]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[34]['DATA']['TIME'] == 246300  # noqa
+        assert e[34]['DATA']['TIME'] == 114900  # noqa
         assert e[34]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[34]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[34]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1543,7 +1544,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[34]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[34]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[34]['DATA']['WARMUP'] == False  # noqa
-        assert e[34]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[34]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[35]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[35]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[35]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -1557,7 +1558,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[35]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[35]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[35]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[35]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[35]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[35]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[35]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[35]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -1565,7 +1566,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[35]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[35]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[35]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[35]['DATA']['MOD'] == 'PLASMA_SPLASH'  # noqa
+        assert e[35]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[35]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[35]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[35]['DATA']['ROUND'] is None  # noqa
@@ -1573,7 +1574,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[35]['DATA']['TEAMKILL'] is None  # noqa
         assert e[35]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[35]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[35]['DATA']['TIME'] == 260000  # noqa
+        assert e[35]['DATA']['TIME'] == 122200  # noqa
         assert e[35]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[35]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[35]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1587,7 +1588,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[35]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[35]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[35]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[35]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[35]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[35]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[35]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[35]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -1609,7 +1610,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[36]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
         assert e[36]['DATA']['KILLER']['POWERUPS'] is None  # noqa
         assert e[36]['DATA']['KILLER']['SPEED'] is None  # noqa
-        assert e[36]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[36]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
         assert e[36]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
         assert e[36]['DATA']['KILLER']['TEAM'] is None  # noqa
         assert e[36]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
@@ -1617,7 +1618,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[36]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[36]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[36]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[36]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[36]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[36]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[36]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[36]['DATA']['ROUND'] is None  # noqa
@@ -1625,7 +1626,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[36]['DATA']['TEAMKILL'] is None  # noqa
         assert e[36]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[36]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[36]['DATA']['TIME'] == 300400  # noqa
+        assert e[36]['DATA']['TIME'] == 122200  # noqa
         assert e[36]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[36]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[36]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1639,7 +1640,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[36]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[36]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[36]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[36]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[36]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[36]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[36]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[36]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -1647,7 +1648,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[36]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
         assert e[36]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[36]['DATA']['WARMUP'] == False  # noqa
-        assert e[36]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[36]['TYPE'] == 'PLAYER_DEATH'  # noqa
         assert e[37]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
         assert e[37]['DATA']['KILLER']['AMMO'] is None  # noqa
         assert e[37]['DATA']['KILLER']['ARMOR'] is None  # noqa
@@ -1669,7 +1670,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[37]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[37]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[37]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[37]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[37]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[37]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[37]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
         assert e[37]['DATA']['ROUND'] is None  # noqa
@@ -1677,7 +1678,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[37]['DATA']['TEAMKILL'] is None  # noqa
         assert e[37]['DATA']['TEAM_ALIVE'] is None  # noqa
         assert e[37]['DATA']['TEAM_DEAD'] is None  # noqa
-        assert e[37]['DATA']['TIME'] == 313000  # noqa
+        assert e[37]['DATA']['TIME'] == 130800  # noqa
         assert e[37]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
         assert e[37]['DATA']['VICTIM']['AMMO'] is None  # noqa
         assert e[37]['DATA']['VICTIM']['ARMOR'] is None  # noqa
@@ -1691,7 +1692,7 @@ class TestQ3toQL_OSPFFA1():
         assert e[37]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
         assert e[37]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
         assert e[37]['DATA']['VICTIM']['SPEED'] is None  # noqa
-        assert e[37]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[37]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
         assert e[37]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
         assert e[37]['DATA']['VICTIM']['TEAM'] is None  # noqa
         assert e[37]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
@@ -1700,543 +1701,2155 @@ class TestQ3toQL_OSPFFA1():
         assert e[37]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[37]['DATA']['WARMUP'] == False  # noqa
         assert e[37]['TYPE'] == 'PLAYER_KILL'  # noqa
-        assert e[38]['DATA']['ABORTED'] == False  # noqa
-        assert e[38]['DATA']['BLUE_FLAG_PICKUPS'] == 0  # noqa
-        assert e[38]['DATA']['DAMAGE']['DEALT'] == 0  # noqa
-        assert e[38]['DATA']['DAMAGE']['TAKEN'] == 0  # noqa
-        assert e[38]['DATA']['DEATHS'] == 0  # noqa
-        assert e[38]['DATA']['HOLY_SHITS'] == 0  # noqa
-        assert e[38]['DATA']['KILLS'] == 0  # noqa
-        assert e[38]['DATA']['LOSE'] == 0  # noqa
+        assert e[38]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[38]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[38]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[38]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[38]['DATA']['MAX_STREAK'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['CAPTURES'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['COMBOKILL'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['DEFENDS'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['EXCELLENT'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['FIRSTFRAG'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['HEADSHOT'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['HUMILIATION'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['IMPRESSIVE'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['MIDAIR'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['PERFECT'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['PERFORATED'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['QUADGOD'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['RAMPAGE'] == 0  # noqa
-        assert e[38]['DATA']['MEDALS']['REVENGE'] == 0  # noqa
-        assert e[38]['DATA']['MODEL'] is None  # noqa
-        assert e[38]['DATA']['NAME'] == 'Bartoszer'  # noqa
-        assert e[38]['DATA']['NEUTRAL_FLAG_PICKUPS'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['AMMO'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['ARMOR'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['ARMOR_REGEN'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['BATTLESUIT'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['DOUBLER'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['FLIGHT'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['GREEN_ARMOR'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['GUARD'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['HASTE'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['HEALTH'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['INVIS'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['INVULNERABILITY'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['KAMIKAZE'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['MEDKIT'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['MEGA_HEALTH'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['OTHER_HOLDABLE'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['OTHER_POWERUP'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['PORTAL'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['QUAD'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['RED_ARMOR'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['REGEN'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['SCOUT'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['TELEPORTER'] == 0  # noqa
-        assert e[38]['DATA']['PICKUPS']['YELLOW_ARMOR'] == 0  # noqa
-        assert e[38]['DATA']['PLAY_TIME'] == 0  # noqa
-        assert e[38]['DATA']['QUIT'] is None  # noqa
-        assert e[38]['DATA']['RANK'] == 0  # noqa
-        assert e[38]['DATA']['RED_FLAG_PICKUPS'] == 0  # noqa
-        assert e[38]['DATA']['SCORE'] == 0  # noqa
-        assert e[38]['DATA']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
-        assert e[38]['DATA']['TEAM'] is None  # noqa
-        assert e[38]['DATA']['TEAM_JOIN_TIME'] == 0  # noqa
-        assert e[38]['DATA']['TEAM_RANK'] is None  # noqa
-        assert e[38]['DATA']['TIED_RANK'] is None  # noqa
-        assert e[38]['DATA']['TIED_TEAM_RANK'] is None  # noqa
-        assert e[38]['DATA']['TIME'] == 315200  # noqa
+        assert e[38]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[38]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[38]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[38]['DATA']['ROUND'] is None  # noqa
+        assert e[38]['DATA']['SUICIDE'] is None  # noqa
+        assert e[38]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[38]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[38]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[38]['DATA']['TIME'] == 130800  # noqa
+        assert e[38]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[38]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[38]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[38]['DATA']['WARMUP'] == False  # noqa
-        assert e[38]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GAUNTLET']['H'] == 8  # noqa
-        assert e[38]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GRENADE']['H'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GRENADE']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['LIGHTNING']['H'] == 78  # noqa
-        assert e[38]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['LIGHTNING']['S'] == 209  # noqa
-        assert e[38]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 23  # noqa
-        assert e[38]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 152  # noqa
-        assert e[38]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PLASMA']['H'] == 19  # noqa
-        assert e[38]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PLASMA']['S'] == 126  # noqa
-        assert e[38]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['ROCKET']['H'] == 18  # noqa
-        assert e[38]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['ROCKET']['S'] == 44  # noqa
-        assert e[38]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['SHOTGUN']['H'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['SHOTGUN']['S'] == 0  # noqa
-        assert e[38]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
-        assert e[38]['DATA']['WIN'] == 0  # noqa
-        assert e[38]['TYPE'] == 'PLAYER_STATS'  # noqa
-        assert e[39]['DATA']['ABORTED'] == False  # noqa
-        assert e[39]['DATA']['BLUE_FLAG_PICKUPS'] == 0  # noqa
-        assert e[39]['DATA']['DAMAGE']['DEALT'] == 0  # noqa
-        assert e[39]['DATA']['DAMAGE']['TAKEN'] == 0  # noqa
-        assert e[39]['DATA']['DEATHS'] == 0  # noqa
-        assert e[39]['DATA']['HOLY_SHITS'] == 0  # noqa
-        assert e[39]['DATA']['KILLS'] == 0  # noqa
-        assert e[39]['DATA']['LOSE'] == 0  # noqa
+        assert e[38]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[39]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[39]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[39]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[39]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[39]['DATA']['MAX_STREAK'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['CAPTURES'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['COMBOKILL'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['DEFENDS'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['EXCELLENT'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['FIRSTFRAG'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['HEADSHOT'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['HUMILIATION'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['IMPRESSIVE'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['MIDAIR'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['PERFECT'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['PERFORATED'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['QUADGOD'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['RAMPAGE'] == 0  # noqa
-        assert e[39]['DATA']['MEDALS']['REVENGE'] == 0  # noqa
-        assert e[39]['DATA']['MODEL'] is None  # noqa
-        assert e[39]['DATA']['NAME'] == 'Daemia'  # noqa
-        assert e[39]['DATA']['NEUTRAL_FLAG_PICKUPS'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['AMMO'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['ARMOR'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['ARMOR_REGEN'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['BATTLESUIT'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['DOUBLER'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['FLIGHT'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['GREEN_ARMOR'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['GUARD'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['HASTE'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['HEALTH'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['INVIS'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['INVULNERABILITY'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['KAMIKAZE'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['MEDKIT'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['MEGA_HEALTH'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['OTHER_HOLDABLE'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['OTHER_POWERUP'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['PORTAL'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['QUAD'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['RED_ARMOR'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['REGEN'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['SCOUT'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['TELEPORTER'] == 0  # noqa
-        assert e[39]['DATA']['PICKUPS']['YELLOW_ARMOR'] == 0  # noqa
-        assert e[39]['DATA']['PLAY_TIME'] == 0  # noqa
-        assert e[39]['DATA']['QUIT'] is None  # noqa
-        assert e[39]['DATA']['RANK'] == 0  # noqa
-        assert e[39]['DATA']['RED_FLAG_PICKUPS'] == 0  # noqa
-        assert e[39]['DATA']['SCORE'] == 0  # noqa
-        assert e[39]['DATA']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
-        assert e[39]['DATA']['TEAM'] is None  # noqa
-        assert e[39]['DATA']['TEAM_JOIN_TIME'] == 0  # noqa
-        assert e[39]['DATA']['TEAM_RANK'] is None  # noqa
-        assert e[39]['DATA']['TIED_RANK'] is None  # noqa
-        assert e[39]['DATA']['TIED_TEAM_RANK'] is None  # noqa
-        assert e[39]['DATA']['TIME'] == 315200  # noqa
+        assert e[39]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
+        assert e[39]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[39]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[39]['DATA']['ROUND'] is None  # noqa
+        assert e[39]['DATA']['SUICIDE'] is None  # noqa
+        assert e[39]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[39]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[39]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[39]['DATA']['TIME'] == 135400  # noqa
+        assert e[39]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[39]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[39]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[39]['DATA']['WARMUP'] == False  # noqa
-        assert e[39]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GAUNTLET']['H'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GRENADE']['H'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GRENADE']['S'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['LIGHTNING']['H'] == 67  # noqa
-        assert e[39]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['LIGHTNING']['S'] == 497  # noqa
-        assert e[39]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 31  # noqa
-        assert e[39]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 136  # noqa
-        assert e[39]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PLASMA']['H'] == 1  # noqa
-        assert e[39]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PLASMA']['S'] == 10  # noqa
-        assert e[39]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['ROCKET']['H'] == 9  # noqa
-        assert e[39]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['ROCKET']['S'] == 22  # noqa
-        assert e[39]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['SHOTGUN']['H'] == 48  # noqa
-        assert e[39]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
-        assert e[39]['DATA']['WEAPONS']['SHOTGUN']['S'] == 330  # noqa
-        assert e[39]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
-        assert e[39]['DATA']['WIN'] == 0  # noqa
-        assert e[39]['TYPE'] == 'PLAYER_STATS'  # noqa
-        assert e[40]['DATA']['ABORTED'] == False  # noqa
-        assert e[40]['DATA']['BLUE_FLAG_PICKUPS'] == 0  # noqa
-        assert e[40]['DATA']['DAMAGE']['DEALT'] == 0  # noqa
-        assert e[40]['DATA']['DAMAGE']['TAKEN'] == 0  # noqa
-        assert e[40]['DATA']['DEATHS'] == 0  # noqa
-        assert e[40]['DATA']['HOLY_SHITS'] == 0  # noqa
-        assert e[40]['DATA']['KILLS'] == 0  # noqa
-        assert e[40]['DATA']['LOSE'] == 0  # noqa
+        assert e[39]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[40]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[40]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[40]['DATA']['KILLER']['WEAPON'] is None  # noqa
         assert e[40]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
-        assert e[40]['DATA']['MAX_STREAK'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['CAPTURES'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['COMBOKILL'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['DEFENDS'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['EXCELLENT'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['FIRSTFRAG'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['HEADSHOT'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['HUMILIATION'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['IMPRESSIVE'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['MIDAIR'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['PERFECT'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['PERFORATED'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['QUADGOD'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['RAMPAGE'] == 0  # noqa
-        assert e[40]['DATA']['MEDALS']['REVENGE'] == 0  # noqa
-        assert e[40]['DATA']['MODEL'] is None  # noqa
-        assert e[40]['DATA']['NAME'] == 'Doom'  # noqa
-        assert e[40]['DATA']['NEUTRAL_FLAG_PICKUPS'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['AMMO'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['ARMOR'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['ARMOR_REGEN'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['BATTLESUIT'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['DOUBLER'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['FLIGHT'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['GREEN_ARMOR'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['GUARD'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['HASTE'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['HEALTH'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['INVIS'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['INVULNERABILITY'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['KAMIKAZE'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['MEDKIT'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['MEGA_HEALTH'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['OTHER_HOLDABLE'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['OTHER_POWERUP'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['PORTAL'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['QUAD'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['RED_ARMOR'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['REGEN'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['SCOUT'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['TELEPORTER'] == 0  # noqa
-        assert e[40]['DATA']['PICKUPS']['YELLOW_ARMOR'] == 0  # noqa
-        assert e[40]['DATA']['PLAY_TIME'] == 0  # noqa
-        assert e[40]['DATA']['QUIT'] is None  # noqa
-        assert e[40]['DATA']['RANK'] == 0  # noqa
-        assert e[40]['DATA']['RED_FLAG_PICKUPS'] == 0  # noqa
-        assert e[40]['DATA']['SCORE'] == 0  # noqa
-        assert e[40]['DATA']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
-        assert e[40]['DATA']['TEAM'] is None  # noqa
-        assert e[40]['DATA']['TEAM_JOIN_TIME'] == 0  # noqa
-        assert e[40]['DATA']['TEAM_RANK'] is None  # noqa
-        assert e[40]['DATA']['TIED_RANK'] is None  # noqa
-        assert e[40]['DATA']['TIED_TEAM_RANK'] is None  # noqa
-        assert e[40]['DATA']['TIME'] == 315200  # noqa
+        assert e[40]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
+        assert e[40]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[40]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[40]['DATA']['ROUND'] is None  # noqa
+        assert e[40]['DATA']['SUICIDE'] is None  # noqa
+        assert e[40]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[40]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[40]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[40]['DATA']['TIME'] == 135400  # noqa
+        assert e[40]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[40]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[40]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[40]['DATA']['WARMUP'] == False  # noqa
-        assert e[40]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GAUNTLET']['H'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GRENADE']['H'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GRENADE']['S'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['LIGHTNING']['H'] == 26  # noqa
-        assert e[40]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['LIGHTNING']['S'] == 156  # noqa
-        assert e[40]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 30  # noqa
-        assert e[40]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 228  # noqa
-        assert e[40]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PLASMA']['H'] == 2  # noqa
-        assert e[40]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PLASMA']['S'] == 6  # noqa
-        assert e[40]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['ROCKET']['H'] == 11  # noqa
-        assert e[40]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['ROCKET']['S'] == 24  # noqa
-        assert e[40]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['SHOTGUN']['H'] == 30  # noqa
-        assert e[40]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
-        assert e[40]['DATA']['WEAPONS']['SHOTGUN']['S'] == 275  # noqa
-        assert e[40]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
-        assert e[40]['DATA']['WIN'] == 0  # noqa
-        assert e[40]['TYPE'] == 'PLAYER_STATS'  # noqa
+        assert e[40]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[41]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[41]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[41]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[41]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[41]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[41]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[41]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[41]['DATA']['ROUND'] is None  # noqa
+        assert e[41]['DATA']['SUICIDE'] is None  # noqa
+        assert e[41]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[41]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[41]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[41]['DATA']['TIME'] == 138400  # noqa
+        assert e[41]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[41]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[41]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[41]['DATA']['WARMUP'] == False  # noqa
+        assert e[41]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[42]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[42]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[42]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[42]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[42]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[42]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[42]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[42]['DATA']['ROUND'] is None  # noqa
+        assert e[42]['DATA']['SUICIDE'] is None  # noqa
+        assert e[42]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[42]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[42]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[42]['DATA']['TIME'] == 138400  # noqa
+        assert e[42]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[42]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[42]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[42]['DATA']['WARMUP'] == False  # noqa
+        assert e[42]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[43]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[43]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[43]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[43]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[43]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[43]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[43]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[43]['DATA']['ROUND'] is None  # noqa
+        assert e[43]['DATA']['SUICIDE'] is None  # noqa
+        assert e[43]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[43]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[43]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[43]['DATA']['TIME'] == 147800  # noqa
+        assert e[43]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[43]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[43]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[43]['DATA']['WARMUP'] == False  # noqa
+        assert e[43]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[44]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[44]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[44]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[44]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[44]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[44]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[44]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[44]['DATA']['ROUND'] is None  # noqa
+        assert e[44]['DATA']['SUICIDE'] is None  # noqa
+        assert e[44]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[44]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[44]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[44]['DATA']['TIME'] == 147800  # noqa
+        assert e[44]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[44]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[44]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[44]['DATA']['WARMUP'] == False  # noqa
+        assert e[44]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[45]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[45]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[45]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[45]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[45]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[45]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[45]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[45]['DATA']['ROUND'] is None  # noqa
+        assert e[45]['DATA']['SUICIDE'] is None  # noqa
+        assert e[45]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[45]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[45]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[45]['DATA']['TIME'] == 151400  # noqa
+        assert e[45]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[45]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[45]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[45]['DATA']['WARMUP'] == False  # noqa
+        assert e[45]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[46]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[46]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[46]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[46]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[46]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[46]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[46]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[46]['DATA']['ROUND'] is None  # noqa
+        assert e[46]['DATA']['SUICIDE'] is None  # noqa
+        assert e[46]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[46]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[46]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[46]['DATA']['TIME'] == 151400  # noqa
+        assert e[46]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[46]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[46]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[46]['DATA']['WARMUP'] == False  # noqa
+        assert e[46]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[47]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[47]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[47]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[47]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[47]['DATA']['MOD'] == 'GAUNTLET'  # noqa
+        assert e[47]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[47]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[47]['DATA']['ROUND'] is None  # noqa
+        assert e[47]['DATA']['SUICIDE'] is None  # noqa
+        assert e[47]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[47]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[47]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[47]['DATA']['TIME'] == 169900  # noqa
+        assert e[47]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[47]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[47]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[47]['DATA']['WARMUP'] == False  # noqa
+        assert e[47]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[48]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[48]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[48]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[48]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[48]['DATA']['MOD'] == 'GAUNTLET'  # noqa
+        assert e[48]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[48]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[48]['DATA']['ROUND'] is None  # noqa
+        assert e[48]['DATA']['SUICIDE'] is None  # noqa
+        assert e[48]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[48]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[48]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[48]['DATA']['TIME'] == 169900  # noqa
+        assert e[48]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[48]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[48]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[48]['DATA']['WARMUP'] == False  # noqa
+        assert e[48]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[49]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[49]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[49]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[49]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[49]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[49]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[49]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[49]['DATA']['ROUND'] is None  # noqa
+        assert e[49]['DATA']['SUICIDE'] is None  # noqa
+        assert e[49]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[49]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[49]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[49]['DATA']['TIME'] == 180100  # noqa
+        assert e[49]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[49]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[49]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[49]['DATA']['WARMUP'] == False  # noqa
+        assert e[49]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[50]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[50]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[50]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[50]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[50]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[50]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[50]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[50]['DATA']['ROUND'] is None  # noqa
+        assert e[50]['DATA']['SUICIDE'] is None  # noqa
+        assert e[50]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[50]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[50]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[50]['DATA']['TIME'] == 180100  # noqa
+        assert e[50]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[50]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[50]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[50]['DATA']['WARMUP'] == False  # noqa
+        assert e[50]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[51]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[51]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[51]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[51]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[51]['DATA']['MOD'] == 'GAUNTLET'  # noqa
+        assert e[51]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[51]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[51]['DATA']['ROUND'] is None  # noqa
+        assert e[51]['DATA']['SUICIDE'] is None  # noqa
+        assert e[51]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[51]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[51]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[51]['DATA']['TIME'] == 190500  # noqa
+        assert e[51]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[51]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[51]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[51]['DATA']['WARMUP'] == False  # noqa
+        assert e[51]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[52]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[52]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[52]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[52]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[52]['DATA']['MOD'] == 'GAUNTLET'  # noqa
+        assert e[52]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[52]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[52]['DATA']['ROUND'] is None  # noqa
+        assert e[52]['DATA']['SUICIDE'] is None  # noqa
+        assert e[52]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[52]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[52]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[52]['DATA']['TIME'] == 190500  # noqa
+        assert e[52]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[52]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[52]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[52]['DATA']['WARMUP'] == False  # noqa
+        assert e[52]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[53]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[53]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[53]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[53]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[53]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[53]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[53]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[53]['DATA']['ROUND'] is None  # noqa
+        assert e[53]['DATA']['SUICIDE'] is None  # noqa
+        assert e[53]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[53]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[53]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[53]['DATA']['TIME'] == 202100  # noqa
+        assert e[53]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[53]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[53]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[53]['DATA']['WARMUP'] == False  # noqa
+        assert e[53]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[54]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[54]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[54]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[54]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[54]['DATA']['MOD'] == 'SHOTGUN'  # noqa
+        assert e[54]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[54]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[54]['DATA']['ROUND'] is None  # noqa
+        assert e[54]['DATA']['SUICIDE'] is None  # noqa
+        assert e[54]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[54]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[54]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[54]['DATA']['TIME'] == 202100  # noqa
+        assert e[54]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[54]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[54]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[54]['DATA']['WARMUP'] == False  # noqa
+        assert e[54]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[55]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[55]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[55]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[55]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[55]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[55]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[55]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[55]['DATA']['ROUND'] is None  # noqa
+        assert e[55]['DATA']['SUICIDE'] is None  # noqa
+        assert e[55]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[55]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[55]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[55]['DATA']['TIME'] == 209200  # noqa
+        assert e[55]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[55]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[55]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[55]['DATA']['WARMUP'] == False  # noqa
+        assert e[55]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[56]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[56]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[56]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[56]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[56]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[56]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[56]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[56]['DATA']['ROUND'] is None  # noqa
+        assert e[56]['DATA']['SUICIDE'] is None  # noqa
+        assert e[56]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[56]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[56]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[56]['DATA']['TIME'] == 209200  # noqa
+        assert e[56]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[56]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[56]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[56]['DATA']['WARMUP'] == False  # noqa
+        assert e[56]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[57]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[57]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[57]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[57]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[57]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[57]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[57]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[57]['DATA']['ROUND'] is None  # noqa
+        assert e[57]['DATA']['SUICIDE'] is None  # noqa
+        assert e[57]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[57]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[57]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[57]['DATA']['TIME'] == 220800  # noqa
+        assert e[57]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[57]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[57]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[57]['DATA']['WARMUP'] == False  # noqa
+        assert e[57]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[58]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[58]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[58]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[58]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[58]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[58]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[58]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[58]['DATA']['ROUND'] is None  # noqa
+        assert e[58]['DATA']['SUICIDE'] is None  # noqa
+        assert e[58]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[58]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[58]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[58]['DATA']['TIME'] == 220800  # noqa
+        assert e[58]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[58]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[58]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[58]['DATA']['WARMUP'] == False  # noqa
+        assert e[58]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[59]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[59]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[59]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[59]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[59]['DATA']['MOD'] == 'GAUNTLET'  # noqa
+        assert e[59]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[59]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[59]['DATA']['ROUND'] is None  # noqa
+        assert e[59]['DATA']['SUICIDE'] is None  # noqa
+        assert e[59]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[59]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[59]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[59]['DATA']['TIME'] == 230000  # noqa
+        assert e[59]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[59]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[59]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[59]['DATA']['WARMUP'] == False  # noqa
+        assert e[59]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[60]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[60]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[60]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[60]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[60]['DATA']['MOD'] == 'GAUNTLET'  # noqa
+        assert e[60]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[60]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[60]['DATA']['ROUND'] is None  # noqa
+        assert e[60]['DATA']['SUICIDE'] is None  # noqa
+        assert e[60]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[60]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[60]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[60]['DATA']['TIME'] == 230000  # noqa
+        assert e[60]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[60]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[60]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[60]['DATA']['WARMUP'] == False  # noqa
+        assert e[60]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[61]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[61]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[61]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[61]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[61]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[61]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[61]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[61]['DATA']['ROUND'] is None  # noqa
+        assert e[61]['DATA']['SUICIDE'] is None  # noqa
+        assert e[61]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[61]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[61]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[61]['DATA']['TIME'] == 246300  # noqa
+        assert e[61]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[61]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[61]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[61]['DATA']['WARMUP'] == False  # noqa
+        assert e[61]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[62]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[62]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[62]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[62]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[62]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[62]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[62]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[62]['DATA']['ROUND'] is None  # noqa
+        assert e[62]['DATA']['SUICIDE'] is None  # noqa
+        assert e[62]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[62]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[62]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[62]['DATA']['TIME'] == 246300  # noqa
+        assert e[62]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[62]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[62]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[62]['DATA']['WARMUP'] == False  # noqa
+        assert e[62]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[63]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[63]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[63]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[63]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[63]['DATA']['MOD'] == 'PLASMA_SPLASH'  # noqa
+        assert e[63]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[63]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[63]['DATA']['ROUND'] is None  # noqa
+        assert e[63]['DATA']['SUICIDE'] is None  # noqa
+        assert e[63]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[63]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[63]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[63]['DATA']['TIME'] == 260000  # noqa
+        assert e[63]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[63]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[63]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[63]['DATA']['WARMUP'] == False  # noqa
+        assert e[63]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[64]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[64]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[64]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[64]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[64]['DATA']['MOD'] == 'PLASMA_SPLASH'  # noqa
+        assert e[64]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[64]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[64]['DATA']['ROUND'] is None  # noqa
+        assert e[64]['DATA']['SUICIDE'] is None  # noqa
+        assert e[64]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[64]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[64]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[64]['DATA']['TIME'] == 260000  # noqa
+        assert e[64]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[64]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[64]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[64]['DATA']['WARMUP'] == False  # noqa
+        assert e[64]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[65]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[65]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[65]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[65]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[65]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[65]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[65]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[65]['DATA']['ROUND'] is None  # noqa
+        assert e[65]['DATA']['SUICIDE'] is None  # noqa
+        assert e[65]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[65]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[65]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[65]['DATA']['TIME'] == 300400  # noqa
+        assert e[65]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[65]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[65]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[65]['DATA']['WARMUP'] == False  # noqa
+        assert e[65]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[66]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[66]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[66]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[66]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[66]['DATA']['MOD'] == 'LIGHTNING'  # noqa
+        assert e[66]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[66]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[66]['DATA']['ROUND'] is None  # noqa
+        assert e[66]['DATA']['SUICIDE'] is None  # noqa
+        assert e[66]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[66]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[66]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[66]['DATA']['TIME'] == 300400  # noqa
+        assert e[66]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[66]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[66]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[66]['DATA']['WARMUP'] == False  # noqa
+        assert e[66]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[67]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[67]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[67]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[67]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[67]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[67]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[67]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[67]['DATA']['ROUND'] is None  # noqa
+        assert e[67]['DATA']['SUICIDE'] is None  # noqa
+        assert e[67]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[67]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[67]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[67]['DATA']['TIME'] == 313000  # noqa
+        assert e[67]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[67]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[67]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[67]['DATA']['WARMUP'] == False  # noqa
+        assert e[67]['TYPE'] == 'PLAYER_KILL'  # noqa
+        assert e[68]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['AMMO'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['ARMOR'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['BOT'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['BOT_SKILL'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['HEALTH'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['HOLDABLE'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['NAME'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['POSITION']['X'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['POSITION']['Y'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['POSITION']['Z'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['POWERUPS'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['SPEED'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[68]['DATA']['KILLER']['SUBMERGED'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['TEAM'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['VIEW']['X'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
+        assert e[68]['DATA']['KILLER']['WEAPON'] is None  # noqa
+        assert e[68]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[68]['DATA']['MOD'] == 'ROCKET'  # noqa
+        assert e[68]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
+        assert e[68]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
+        assert e[68]['DATA']['ROUND'] is None  # noqa
+        assert e[68]['DATA']['SUICIDE'] is None  # noqa
+        assert e[68]['DATA']['TEAMKILL'] is None  # noqa
+        assert e[68]['DATA']['TEAM_ALIVE'] is None  # noqa
+        assert e[68]['DATA']['TEAM_DEAD'] is None  # noqa
+        assert e[68]['DATA']['TIME'] == 313000  # noqa
+        assert e[68]['DATA']['VICTIM']['AIRBORNE'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['AMMO'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['ARMOR'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['BOT'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['BOT_SKILL'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['HEALTH'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['HOLDABLE'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['NAME'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['POSITION']['X'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['POSITION']['Y'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['POSITION']['Z'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['POWERUPS'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['SPEED'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[68]['DATA']['VICTIM']['SUBMERGED'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['TEAM'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['VIEW']['X'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['VIEW']['Y'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['VIEW']['Z'] is None  # noqa
+        assert e[68]['DATA']['VICTIM']['WEAPON'] is None  # noqa
+        assert e[68]['DATA']['WARMUP'] == False  # noqa
+        assert e[68]['TYPE'] == 'PLAYER_DEATH'  # noqa
+        assert e[69]['DATA']['ABORTED'] == False  # noqa
+        assert e[69]['DATA']['BLUE_FLAG_PICKUPS'] == 0  # noqa
+        assert e[69]['DATA']['DAMAGE']['DEALT'] == 0  # noqa
+        assert e[69]['DATA']['DAMAGE']['TAKEN'] == 0  # noqa
+        assert e[69]['DATA']['DEATHS'] == 0  # noqa
+        assert e[69]['DATA']['HOLY_SHITS'] == 0  # noqa
+        assert e[69]['DATA']['KILLS'] == 0  # noqa
+        assert e[69]['DATA']['LOSE'] == 0  # noqa
+        assert e[69]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[69]['DATA']['MAX_STREAK'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['CAPTURES'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['COMBOKILL'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['DEFENDS'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['EXCELLENT'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['FIRSTFRAG'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['HEADSHOT'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['HUMILIATION'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['IMPRESSIVE'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['MIDAIR'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['PERFECT'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['PERFORATED'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['QUADGOD'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['RAMPAGE'] == 0  # noqa
+        assert e[69]['DATA']['MEDALS']['REVENGE'] == 0  # noqa
+        assert e[69]['DATA']['MODEL'] is None  # noqa
+        assert e[69]['DATA']['NAME'] == 'Bartoszer'  # noqa
+        assert e[69]['DATA']['NEUTRAL_FLAG_PICKUPS'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['AMMO'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['ARMOR'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['ARMOR_REGEN'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['BATTLESUIT'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['DOUBLER'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['FLIGHT'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['GREEN_ARMOR'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['GUARD'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['HASTE'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['HEALTH'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['INVIS'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['INVULNERABILITY'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['KAMIKAZE'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['MEDKIT'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['MEGA_HEALTH'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['OTHER_HOLDABLE'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['OTHER_POWERUP'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['PORTAL'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['QUAD'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['RED_ARMOR'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['REGEN'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['SCOUT'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['TELEPORTER'] == 0  # noqa
+        assert e[69]['DATA']['PICKUPS']['YELLOW_ARMOR'] == 0  # noqa
+        assert e[69]['DATA']['PLAY_TIME'] == 0  # noqa
+        assert e[69]['DATA']['QUIT'] is None  # noqa
+        assert e[69]['DATA']['RANK'] == 0  # noqa
+        assert e[69]['DATA']['RED_FLAG_PICKUPS'] == 0  # noqa
+        assert e[69]['DATA']['SCORE'] == 0  # noqa
+        assert e[69]['DATA']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[69]['DATA']['TEAM'] is None  # noqa
+        assert e[69]['DATA']['TEAM_JOIN_TIME'] == 0  # noqa
+        assert e[69]['DATA']['TEAM_RANK'] is None  # noqa
+        assert e[69]['DATA']['TIED_RANK'] is None  # noqa
+        assert e[69]['DATA']['TIED_TEAM_RANK'] is None  # noqa
+        assert e[69]['DATA']['TIME'] == 315200  # noqa
+        assert e[69]['DATA']['WARMUP'] == False  # noqa
+        assert e[69]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GAUNTLET']['H'] == 8  # noqa
+        assert e[69]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GRENADE']['H'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GRENADE']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['LIGHTNING']['H'] == 78  # noqa
+        assert e[69]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['LIGHTNING']['S'] == 209  # noqa
+        assert e[69]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 23  # noqa
+        assert e[69]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 152  # noqa
+        assert e[69]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PLASMA']['H'] == 19  # noqa
+        assert e[69]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PLASMA']['S'] == 126  # noqa
+        assert e[69]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['ROCKET']['H'] == 18  # noqa
+        assert e[69]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['ROCKET']['S'] == 44  # noqa
+        assert e[69]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['SHOTGUN']['H'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['SHOTGUN']['S'] == 0  # noqa
+        assert e[69]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[69]['DATA']['WIN'] == 0  # noqa
+        assert e[69]['TYPE'] == 'PLAYER_STATS'  # noqa
+        assert e[70]['DATA']['ABORTED'] == False  # noqa
+        assert e[70]['DATA']['BLUE_FLAG_PICKUPS'] == 0  # noqa
+        assert e[70]['DATA']['DAMAGE']['DEALT'] == 0  # noqa
+        assert e[70]['DATA']['DAMAGE']['TAKEN'] == 0  # noqa
+        assert e[70]['DATA']['DEATHS'] == 0  # noqa
+        assert e[70]['DATA']['HOLY_SHITS'] == 0  # noqa
+        assert e[70]['DATA']['KILLS'] == 0  # noqa
+        assert e[70]['DATA']['LOSE'] == 0  # noqa
+        assert e[70]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[70]['DATA']['MAX_STREAK'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['CAPTURES'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['COMBOKILL'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['DEFENDS'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['EXCELLENT'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['FIRSTFRAG'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['HEADSHOT'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['HUMILIATION'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['IMPRESSIVE'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['MIDAIR'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['PERFECT'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['PERFORATED'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['QUADGOD'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['RAMPAGE'] == 0  # noqa
+        assert e[70]['DATA']['MEDALS']['REVENGE'] == 0  # noqa
+        assert e[70]['DATA']['MODEL'] is None  # noqa
+        assert e[70]['DATA']['NAME'] == 'Daemia'  # noqa
+        assert e[70]['DATA']['NEUTRAL_FLAG_PICKUPS'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['AMMO'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['ARMOR'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['ARMOR_REGEN'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['BATTLESUIT'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['DOUBLER'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['FLIGHT'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['GREEN_ARMOR'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['GUARD'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['HASTE'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['HEALTH'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['INVIS'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['INVULNERABILITY'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['KAMIKAZE'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['MEDKIT'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['MEGA_HEALTH'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['OTHER_HOLDABLE'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['OTHER_POWERUP'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['PORTAL'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['QUAD'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['RED_ARMOR'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['REGEN'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['SCOUT'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['TELEPORTER'] == 0  # noqa
+        assert e[70]['DATA']['PICKUPS']['YELLOW_ARMOR'] == 0  # noqa
+        assert e[70]['DATA']['PLAY_TIME'] == 0  # noqa
+        assert e[70]['DATA']['QUIT'] is None  # noqa
+        assert e[70]['DATA']['RANK'] == 0  # noqa
+        assert e[70]['DATA']['RED_FLAG_PICKUPS'] == 0  # noqa
+        assert e[70]['DATA']['SCORE'] == 0  # noqa
+        assert e[70]['DATA']['STEAM_ID'] == '254e24151c9e5466251073e6'  # noqa
+        assert e[70]['DATA']['TEAM'] is None  # noqa
+        assert e[70]['DATA']['TEAM_JOIN_TIME'] == 0  # noqa
+        assert e[70]['DATA']['TEAM_RANK'] is None  # noqa
+        assert e[70]['DATA']['TIED_RANK'] is None  # noqa
+        assert e[70]['DATA']['TIED_TEAM_RANK'] is None  # noqa
+        assert e[70]['DATA']['TIME'] == 315200  # noqa
+        assert e[70]['DATA']['WARMUP'] == False  # noqa
+        assert e[70]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GAUNTLET']['H'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GRENADE']['H'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GRENADE']['S'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['LIGHTNING']['H'] == 67  # noqa
+        assert e[70]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['LIGHTNING']['S'] == 497  # noqa
+        assert e[70]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 31  # noqa
+        assert e[70]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 136  # noqa
+        assert e[70]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PLASMA']['H'] == 1  # noqa
+        assert e[70]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PLASMA']['S'] == 10  # noqa
+        assert e[70]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['ROCKET']['H'] == 9  # noqa
+        assert e[70]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['ROCKET']['S'] == 22  # noqa
+        assert e[70]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['SHOTGUN']['H'] == 48  # noqa
+        assert e[70]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[70]['DATA']['WEAPONS']['SHOTGUN']['S'] == 330  # noqa
+        assert e[70]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[70]['DATA']['WIN'] == 0  # noqa
+        assert e[70]['TYPE'] == 'PLAYER_STATS'  # noqa
+        assert e[71]['DATA']['ABORTED'] == False  # noqa
+        assert e[71]['DATA']['BLUE_FLAG_PICKUPS'] == 0  # noqa
+        assert e[71]['DATA']['DAMAGE']['DEALT'] == 0  # noqa
+        assert e[71]['DATA']['DAMAGE']['TAKEN'] == 0  # noqa
+        assert e[71]['DATA']['DEATHS'] == 0  # noqa
+        assert e[71]['DATA']['HOLY_SHITS'] == 0  # noqa
+        assert e[71]['DATA']['KILLS'] == 0  # noqa
+        assert e[71]['DATA']['LOSE'] == 0  # noqa
+        assert e[71]['DATA']['MATCH_GUID'] == '84b6924313d35786dc04603e71e5f6f3'  # noqa
+        assert e[71]['DATA']['MAX_STREAK'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['CAPTURES'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['COMBOKILL'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['DEFENDS'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['EXCELLENT'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['FIRSTFRAG'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['HEADSHOT'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['HUMILIATION'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['IMPRESSIVE'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['MIDAIR'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['PERFECT'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['PERFORATED'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['QUADGOD'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['RAMPAGE'] == 0  # noqa
+        assert e[71]['DATA']['MEDALS']['REVENGE'] == 0  # noqa
+        assert e[71]['DATA']['MODEL'] is None  # noqa
+        assert e[71]['DATA']['NAME'] == 'Doom'  # noqa
+        assert e[71]['DATA']['NEUTRAL_FLAG_PICKUPS'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['AMMO'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['ARMOR'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['ARMOR_REGEN'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['BATTLESUIT'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['DOUBLER'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['FLIGHT'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['GREEN_ARMOR'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['GUARD'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['HASTE'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['HEALTH'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['INVIS'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['INVULNERABILITY'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['KAMIKAZE'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['MEDKIT'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['MEGA_HEALTH'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['OTHER_HOLDABLE'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['OTHER_POWERUP'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['PORTAL'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['QUAD'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['RED_ARMOR'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['REGEN'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['SCOUT'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['TELEPORTER'] == 0  # noqa
+        assert e[71]['DATA']['PICKUPS']['YELLOW_ARMOR'] == 0  # noqa
+        assert e[71]['DATA']['PLAY_TIME'] == 0  # noqa
+        assert e[71]['DATA']['QUIT'] is None  # noqa
+        assert e[71]['DATA']['RANK'] == 0  # noqa
+        assert e[71]['DATA']['RED_FLAG_PICKUPS'] == 0  # noqa
+        assert e[71]['DATA']['SCORE'] == 0  # noqa
+        assert e[71]['DATA']['STEAM_ID'] == '7727c59e2bf61c4a67428d15'  # noqa
+        assert e[71]['DATA']['TEAM'] is None  # noqa
+        assert e[71]['DATA']['TEAM_JOIN_TIME'] == 0  # noqa
+        assert e[71]['DATA']['TEAM_RANK'] is None  # noqa
+        assert e[71]['DATA']['TIED_RANK'] is None  # noqa
+        assert e[71]['DATA']['TIED_TEAM_RANK'] is None  # noqa
+        assert e[71]['DATA']['TIME'] == 315200  # noqa
+        assert e[71]['DATA']['WARMUP'] == False  # noqa
+        assert e[71]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GAUNTLET']['H'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GRENADE']['H'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GRENADE']['S'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['LIGHTNING']['H'] == 26  # noqa
+        assert e[71]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['LIGHTNING']['S'] == 156  # noqa
+        assert e[71]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 30  # noqa
+        assert e[71]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 228  # noqa
+        assert e[71]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PLASMA']['H'] == 2  # noqa
+        assert e[71]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PLASMA']['S'] == 6  # noqa
+        assert e[71]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['ROCKET']['H'] == 11  # noqa
+        assert e[71]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['ROCKET']['S'] == 24  # noqa
+        assert e[71]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['SHOTGUN']['H'] == 30  # noqa
+        assert e[71]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[71]['DATA']['WEAPONS']['SHOTGUN']['S'] == 275  # noqa
+        assert e[71]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[71]['DATA']['WIN'] == 0  # noqa
+        assert e[71]['TYPE'] == 'PLAYER_STATS'  # noqa
