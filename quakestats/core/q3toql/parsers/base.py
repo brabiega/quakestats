@@ -117,6 +117,13 @@ class DefaultParserMixin():
             raw_event.time, int(killer_id), int(victim_id), reason
         )
 
+    def parse_client_disconnect(
+        self, raw_event: RawEvent
+    ) -> events.Q3EVClientDisconnect:
+        match = re.search(r"(\d+)", raw_event.payload)
+        client_id = int(match.groups()[0])
+        return events.Q3EVClientDisconnect(raw_event.time, client_id)
+
 
 class OspParserMixin():
     STAT_WEAPON_MAP = {
@@ -195,6 +202,8 @@ class Q3LogParserModOsp(
             return self.parse_weapon_stat(raw_event)
         elif raw_event.name == 'Kill':
             return self.parse_kill(raw_event)
+        elif raw_event.name == 'ClientDisconnect':
+            return self.parse_client_disconnect(raw_event)
 
     @classmethod
     def mktime(cls, event_time: str) -> int:

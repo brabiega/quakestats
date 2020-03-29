@@ -73,7 +73,7 @@ class QuakeGame():
     [*] - PLAYER_STATS team is 0,1,2, partial implementation
     [*] - PLAYER_KILL, partial implementation
     [*] - PLAYER_DEATH, partial implementation
-    [ ] - PLAYER_DISCONNECT
+    [+] - PLAYER_DISCONNECT
     [-] - PLAYER_MEDAL, not supported no such info in Quake3 logs
     [ ] - MATCH_REPORT
     [ ] - ROUND_OVER
@@ -146,7 +146,9 @@ class QuakeGame():
                 ev.data['KILLER']['STEAM_ID'] = (
                     ev.data['KILLER']['STEAM_ID'].resolve()
                 )
-            elif ev.type in ['PLAYER_CONNECT', 'PLAYER_STATS']:
+            elif ev.type in [
+                'PLAYER_CONNECT', 'PLAYER_STATS', 'PLAYER_DISCONNECT'
+            ]:
                 ev.data['STEAM_ID'] = ev.data['STEAM_ID'].resolve()
 
             elif ev.type == 'PLAYER_KILL':
@@ -187,6 +189,14 @@ class QuakeGame():
         # same event different 'type'
         ql_ev_death['DATA'] = ql_ev['DATA']
 
+    def client_disconnect(self, ev: q3_events.Q3EVClientDisconnect):
+        ql_ev: qlevents.PlayerDisconnect = self.add_event(
+            ev.time, qlevents.PlayerDisconnect
+        )
+        client = self.get_client(ev.client_id)
+        ql_ev.set_data(client.name, client.lazy_identity)
+        client.disconnect()
+
 
 class Q3toQL():
     """
@@ -217,5 +227,7 @@ class Q3toQL():
                 self.game.weapon_stats(event)
             elif isinstance(event, q3_events.Q3EVPlayerKill):
                 self.game.kill(event)
+            elif isinstance(event, q3_events.Q3EVClientDisconnect):
+                self.game.client_disconnect(event)
 
         return self.game

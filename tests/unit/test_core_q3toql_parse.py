@@ -122,6 +122,13 @@ class TestDefaultParser():
         assert event.victim_id == 3
         assert event.reason == 'MOD_SHOTGUN'
 
+    def test_parse_disconnect(self):
+        raw_data = r'8'
+        raw_event = RawEvent(0, '', raw_data)
+        parser = DefaultParserMixin()
+        ev = parser.parse_client_disconnect(raw_event)
+        assert ev.client_id == 8
+
 
 class TestOspParser():
     def test_parse_weapon_stats(self):

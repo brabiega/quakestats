@@ -78,6 +78,10 @@ class PlayerConnect(QLEvent):
         self.data['STEAM_ID'] = steam_id
 
 
+class PlayerDisconnect(PlayerConnect):
+    name = "PLAYER_DISCONNECT"
+
+
 class PlayerSwitchteam(QLEvent):
     name = 'PLAYER_SWITCHTEAM'
     payload = {

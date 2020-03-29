@@ -81,3 +81,9 @@ class Q3EVPlayerKill(Q3GameEvent):
         self.client_id = client_id
         self.victim_id = victim_id
         self.reason = reason
+
+
+class Q3EVClientDisconnect(Q3GameEvent):
+    def __init__(self, ev_time: int, client_id: int):
+        super().__init__(ev_time)
+        self.client_id = client_id
