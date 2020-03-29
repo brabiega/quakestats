@@ -75,7 +75,7 @@ class QuakeGame():
     [*] - PLAYER_DEATH, partial implementation
     [+] - PLAYER_DISCONNECT
     [-] - PLAYER_MEDAL, not supported no such info in Quake3 logs
-    [ ] - MATCH_REPORT
+    [*] - MATCH_REPORT, partial implementation
     [ ] - ROUND_OVER
     """
     def __init__(self):
@@ -197,6 +197,12 @@ class QuakeGame():
         ql_ev.set_data(client.name, client.lazy_identity)
         client.disconnect()
 
+    def exit(self, ev: q3_events.Q3EventExit):
+        ql_ev: qlevents.MatchReport = self.add_event(
+            ev.time, qlevents.MatchReport
+        )
+        ql_ev.set_data(ev.reason)
+
 
 class Q3toQL():
     """
@@ -229,5 +235,7 @@ class Q3toQL():
                 self.game.kill(event)
             elif isinstance(event, q3_events.Q3EVClientDisconnect):
                 self.game.client_disconnect(event)
+            elif isinstance(event, q3_events.Q3EventExit):
+                self.game.exit(event)
 
         return self.game

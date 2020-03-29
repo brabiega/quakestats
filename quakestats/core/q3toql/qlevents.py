@@ -13,12 +13,12 @@ class QLEvent(dict):
 
     def __init__(self, time: int, match_guid: str, warmup: bool = False):
         self['TYPE'] = self.name
-        self['DATA'] = {
+        self['DATA'] = deepcopy(self.payload)
+        self['DATA'].update({
             'TIME': time,
             'WARMUP': warmup,
             'MATCH_GUID': match_guid,
-        }
-        self['DATA'].update(deepcopy(self.payload))
+        })
 
     def update_payload(self, data: dict):
         self["DATA"].update(data)
@@ -227,3 +227,38 @@ class PlayerKill(QLEvent):
 
 class PlayerDeath(PlayerKill):
     name = 'PLAYER_DEATH'
+
+
+class MatchReport(QLEvent):
+    name = 'MATCH_REPORT'
+    payload = {
+        "LAST_TEAMSCORER": None,
+        "MERCY_LIMIT": None,
+        "EXIT_MSG": None,
+        "MAP": None,
+        "TSCORE1": None,
+        "INSTAGIB": None,
+        "LAST_SCORER": None,
+        "TIME_LIMIT": None,
+        "TRAINING": None,
+        "FRAG_LIMIT": None,
+        "CAPTURE_LIMIT": None,
+        "GAME_LENGTH": None,
+        "SERVER_TITLE": None,
+        "RESTARTED": None,
+        "FACTORY": None,
+        "MATCH_GUID": None,  # set in constructor
+        "ABORTED": None,
+        "INFECTED": None,
+        "SCORE_LIMIT": None,
+        "LAST_LEAD_CHANGE_TIME": None,
+        "FIRST_SCORER": None,
+        "FACTORY_TITLE": None,
+        "TSCORE0": None,
+        "GAME_TYPE": None,
+        "QUADHOG": None,
+        "ROUND_LIMIT": None,
+    }
+
+    def set_data(self, exit_msg: str):
+        self.data['EXIT_MSG'] = exit_msg

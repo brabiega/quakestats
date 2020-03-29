@@ -87,3 +87,9 @@ class Q3EVClientDisconnect(Q3GameEvent):
     def __init__(self, ev_time: int, client_id: int):
         super().__init__(ev_time)
         self.client_id = client_id
+
+
+class Q3EventExit(Q3GameEvent):
+    def __init__(self, ev_time: int, reason: str):
+        super().__init__(ev_time)
+        self.reason = reason

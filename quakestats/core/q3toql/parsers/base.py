@@ -36,12 +36,19 @@ class Q3LogParser():
             if event.name == SEPARATOR:
                 # this seems to mean that single q3 game has ended or started
                 if not game.is_empty():
+                    self.close_game(game)
                     yield game
                 game = Q3GameLog()
                 continue
 
             ev = self.build_event(event)
             game.add_event(ev, event.name, event.payload)
+
+    def close_game(self, game: Q3GameLog):
+        """
+        Do some logic to close the game
+        """
+        raise NotImplementedError()
 
     def read_lines(self) -> Iterator[str]:
         for line in self.raw_data.splitlines():
@@ -124,6 +131,11 @@ class DefaultParserMixin():
         client_id = int(match.groups()[0])
         return events.Q3EVClientDisconnect(raw_event.time, client_id)
 
+    def parse_exit(self, raw_event: RawEvent) -> events.Q3EventExit:
+        match = re.search(r"(.*)", raw_event.payload)
+        reason = match.groups()[0]
+        return events.Q3EventExit(raw_event.time, reason)
+
 
 class OspParserMixin():
     STAT_WEAPON_MAP = {
@@ -169,6 +181,10 @@ class Q3LogParserModOsp(
     separator_format = r"(\d+\.\d+) ------*$"
     event_format = r"(\d+\.\d+) (.+?):(.*)"
 
+    def __init__(self, raw_data: str):
+        self.raw_data = raw_data
+        self.ev_exit = None
+
     def read_raw_events(self) -> Iterator[RawEvent]:
         for line in self.read_lines():
             yield self.line_to_raw_event(line)
@@ -204,8 +220,14 @@ class Q3LogParserModOsp(
             return self.parse_kill(raw_event)
         elif raw_event.name == 'ClientDisconnect':
             return self.parse_client_disconnect(raw_event)
+        elif raw_event.name == 'Exit':
+            self.ev_exit = self.parse_exit(raw_event)
 
     @classmethod
     def mktime(cls, event_time: str) -> int:
         seconds, tenths = event_time.split('.')
         return int(seconds) * 1000 + int(tenths) * 100
+
+    def close_game(self, game: Q3GameLog):
+        if self.ev_exit:
+            game.add_event(self.ev_exit, 'Exit', '')

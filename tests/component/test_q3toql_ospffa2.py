@@ -27,7 +27,7 @@ class TestQ3toQL_OSPFFA2():
         ql_events = list(game.get_events())
         e = ql_events
         # py.test tests/component/test_q3toql_ospffa1.py  -vs | grep assert >> tests/component/test_q3toql_ospffa1.py  # noqa
-        # _regen_asserts(e)
+        _regen_asserts(e)
         assert e[0]['DATA']['CAPTURE_LIMIT'] == '8'  # noqa
         assert e[0]['DATA']['FACTORY'] == 'quake3'  # noqa
         assert e[0]['DATA']['FACTORY_TITLE'] == 'quake3'  # noqa
@@ -36,7 +36,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[0]['DATA']['INFECTED'] == 0  # noqa
         assert e[0]['DATA']['INSTAGIB'] == 0  # noqa
         assert e[0]['DATA']['MAP'] == 'nodm9'  # noqa
-        assert e[0]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[0]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[0]['DATA']['MERCY_LIMIT'] == 0  # noqa
         assert e[0]['DATA']['QUADHOG'] == 0  # noqa
         assert e[0]['DATA']['ROUND_LIMIT'] == 0  # noqa
@@ -47,7 +47,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[0]['DATA']['TRAINING'] == 0  # noqa
         assert e[0]['DATA']['WARMUP'] == False  # noqa
         assert e[0]['TYPE'] == 'MATCH_STARTED'  # noqa
-        assert e[1]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[1]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[1]['DATA']['NAME'] == 'MACIEK'  # noqa
         assert e[1]['DATA']['STEAM_ID'] == '773fa00f3f3a7e960b561492'  # noqa
         assert e[1]['DATA']['TIME'] == 200  # noqa
@@ -57,11 +57,11 @@ class TestQ3toQL_OSPFFA2():
         assert e[2]['DATA']['KILLER']['OLD_TEAM'] == 'SPECTATOR'  # noqa
         assert e[2]['DATA']['KILLER']['STEAM_ID'] == '773fa00f3f3a7e960b561492'  # noqa
         assert e[2]['DATA']['KILLER']['TEAM'] == 'FREE'  # noqa
-        assert e[2]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[2]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[2]['DATA']['TIME'] == 200  # noqa
         assert e[2]['DATA']['WARMUP'] == False  # noqa
         assert e[2]['TYPE'] == 'PLAYER_SWITCHTEAM'  # noqa
-        assert e[3]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[3]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[3]['DATA']['NAME'] == 'Turbo Wpierdol'  # noqa
         assert e[3]['DATA']['STEAM_ID'] == '2f7d40fff23683c6ab15b2ba'  # noqa
         assert e[3]['DATA']['TIME'] == 200  # noqa
@@ -71,11 +71,11 @@ class TestQ3toQL_OSPFFA2():
         assert e[4]['DATA']['KILLER']['OLD_TEAM'] == 'SPECTATOR'  # noqa
         assert e[4]['DATA']['KILLER']['STEAM_ID'] == '2f7d40fff23683c6ab15b2ba'  # noqa
         assert e[4]['DATA']['KILLER']['TEAM'] == 'FREE'  # noqa
-        assert e[4]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[4]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[4]['DATA']['TIME'] == 200  # noqa
         assert e[4]['DATA']['WARMUP'] == False  # noqa
         assert e[4]['TYPE'] == 'PLAYER_SWITCHTEAM'  # noqa
-        assert e[5]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[5]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[5]['DATA']['NAME'] == 'Bartoszer'  # noqa
         assert e[5]['DATA']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
         assert e[5]['DATA']['TIME'] == 200  # noqa
@@ -85,11 +85,11 @@ class TestQ3toQL_OSPFFA2():
         assert e[6]['DATA']['KILLER']['OLD_TEAM'] == 'SPECTATOR'  # noqa
         assert e[6]['DATA']['KILLER']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
         assert e[6]['DATA']['KILLER']['TEAM'] == 'FREE'  # noqa
-        assert e[6]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[6]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[6]['DATA']['TIME'] == 200  # noqa
         assert e[6]['DATA']['WARMUP'] == False  # noqa
         assert e[6]['TYPE'] == 'PLAYER_SWITCHTEAM'  # noqa
-        assert e[7]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[7]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[7]['DATA']['NAME'] == 'killer clown'  # noqa
         assert e[7]['DATA']['STEAM_ID'] == '761d1593e6faf9c12eaba9d4'  # noqa
         assert e[7]['DATA']['TIME'] == 200  # noqa
@@ -99,11 +99,11 @@ class TestQ3toQL_OSPFFA2():
         assert e[8]['DATA']['KILLER']['OLD_TEAM'] == 'SPECTATOR'  # noqa
         assert e[8]['DATA']['KILLER']['STEAM_ID'] == '761d1593e6faf9c12eaba9d4'  # noqa
         assert e[8]['DATA']['KILLER']['TEAM'] == 'FREE'  # noqa
-        assert e[8]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[8]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[8]['DATA']['TIME'] == 200  # noqa
         assert e[8]['DATA']['WARMUP'] == False  # noqa
         assert e[8]['TYPE'] == 'PLAYER_SWITCHTEAM'  # noqa
-        assert e[9]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[9]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[9]['DATA']['NAME'] == 'Stefan'  # noqa
         assert e[9]['DATA']['STEAM_ID'] == '14e3d92ed5055145aab6e920'  # noqa
         assert e[9]['DATA']['TIME'] == 200  # noqa
@@ -113,11 +113,11 @@ class TestQ3toQL_OSPFFA2():
         assert e[10]['DATA']['KILLER']['OLD_TEAM'] == 'SPECTATOR'  # noqa
         assert e[10]['DATA']['KILLER']['STEAM_ID'] == '14e3d92ed5055145aab6e920'  # noqa
         assert e[10]['DATA']['KILLER']['TEAM'] == 'FREE'  # noqa
-        assert e[10]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[10]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[10]['DATA']['TIME'] == 200  # noqa
         assert e[10]['DATA']['WARMUP'] == False  # noqa
         assert e[10]['TYPE'] == 'PLAYER_SWITCHTEAM'  # noqa
-        assert e[11]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[11]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[11]['DATA']['NAME'] == 'n0npax'  # noqa
         assert e[11]['DATA']['STEAM_ID'] == '3086e90f19e4d4d30a6ece78'  # noqa
         assert e[11]['DATA']['TIME'] == 200  # noqa
@@ -127,11 +127,11 @@ class TestQ3toQL_OSPFFA2():
         assert e[12]['DATA']['KILLER']['OLD_TEAM'] == 'SPECTATOR'  # noqa
         assert e[12]['DATA']['KILLER']['STEAM_ID'] == '3086e90f19e4d4d30a6ece78'  # noqa
         assert e[12]['DATA']['KILLER']['TEAM'] == 'FREE'  # noqa
-        assert e[12]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[12]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[12]['DATA']['TIME'] == 200  # noqa
         assert e[12]['DATA']['WARMUP'] == False  # noqa
         assert e[12]['TYPE'] == 'PLAYER_SWITCHTEAM'  # noqa
-        assert e[13]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[13]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[13]['DATA']['NAME'] == 'BOLEK'  # noqa
         assert e[13]['DATA']['STEAM_ID'] == 'a8f9128a42e1e6a4168f26fc'  # noqa
         assert e[13]['DATA']['TIME'] == 200  # noqa
@@ -141,11 +141,11 @@ class TestQ3toQL_OSPFFA2():
         assert e[14]['DATA']['KILLER']['OLD_TEAM'] == 'SPECTATOR'  # noqa
         assert e[14]['DATA']['KILLER']['STEAM_ID'] == 'a8f9128a42e1e6a4168f26fc'  # noqa
         assert e[14]['DATA']['KILLER']['TEAM'] == 'FREE'  # noqa
-        assert e[14]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[14]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[14]['DATA']['TIME'] == 200  # noqa
         assert e[14]['DATA']['WARMUP'] == False  # noqa
         assert e[14]['TYPE'] == 'PLAYER_SWITCHTEAM'  # noqa
-        assert e[15]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[15]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[15]['DATA']['NAME'] == 'darkside'  # noqa
         assert e[15]['DATA']['STEAM_ID'] == 'cc6b3555fc360da8aec21f60'  # noqa
         assert e[15]['DATA']['TIME'] == 200  # noqa
@@ -155,7 +155,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[16]['DATA']['KILLER']['OLD_TEAM'] == 'SPECTATOR'  # noqa
         assert e[16]['DATA']['KILLER']['STEAM_ID'] == 'cc6b3555fc360da8aec21f60'  # noqa
         assert e[16]['DATA']['KILLER']['TEAM'] == 'FREE'  # noqa
-        assert e[16]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[16]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[16]['DATA']['TIME'] == 200  # noqa
         assert e[16]['DATA']['WARMUP'] == False  # noqa
         assert e[16]['TYPE'] == 'PLAYER_SWITCHTEAM'  # noqa
@@ -179,7 +179,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[17]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[17]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[17]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[17]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[17]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[17]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[17]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[17]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -231,7 +231,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[18]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[18]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[18]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[18]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[18]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[18]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[18]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[18]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -283,7 +283,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[19]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[19]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[19]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[19]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[19]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[19]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[19]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[19]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -335,7 +335,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[20]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[20]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[20]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[20]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[20]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[20]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[20]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[20]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -387,7 +387,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[21]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[21]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[21]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[21]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[21]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[21]['DATA']['MOD'] == 'FALLING'  # noqa
         assert e[21]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[21]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -439,7 +439,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[22]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[22]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[22]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[22]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[22]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[22]['DATA']['MOD'] == 'FALLING'  # noqa
         assert e[22]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[22]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -491,7 +491,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[23]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[23]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[23]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[23]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[23]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[23]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[23]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[23]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -543,7 +543,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[24]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[24]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[24]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[24]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[24]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[24]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[24]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[24]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -595,7 +595,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[25]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[25]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[25]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[25]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[25]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[25]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[25]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[25]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -647,7 +647,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[26]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[26]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[26]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[26]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[26]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[26]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[26]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[26]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -699,7 +699,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[27]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[27]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[27]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[27]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[27]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[27]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[27]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[27]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -751,7 +751,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[28]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[28]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[28]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[28]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[28]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[28]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[28]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[28]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -803,7 +803,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[29]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[29]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[29]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[29]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[29]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[29]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[29]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[29]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -855,7 +855,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[30]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[30]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[30]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[30]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[30]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[30]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[30]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[30]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -907,7 +907,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[31]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[31]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[31]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[31]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[31]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[31]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[31]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[31]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -959,7 +959,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[32]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[32]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[32]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[32]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[32]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[32]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[32]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[32]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1011,7 +1011,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[33]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[33]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[33]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[33]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[33]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[33]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[33]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[33]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1063,7 +1063,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[34]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[34]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[34]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[34]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[34]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[34]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[34]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[34]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1115,7 +1115,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[35]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[35]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[35]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[35]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[35]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[35]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[35]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[35]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1167,7 +1167,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[36]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[36]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[36]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[36]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[36]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[36]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[36]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[36]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1219,7 +1219,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[37]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[37]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[37]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[37]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[37]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[37]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[37]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[37]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1271,7 +1271,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[38]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[38]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[38]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[38]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[38]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[38]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[38]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[38]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1323,7 +1323,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[39]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[39]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[39]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[39]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[39]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[39]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[39]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[39]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1375,7 +1375,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[40]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[40]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[40]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[40]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[40]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[40]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[40]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[40]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1427,7 +1427,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[41]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[41]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[41]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[41]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[41]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[41]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[41]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[41]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1479,7 +1479,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[42]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[42]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[42]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[42]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[42]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[42]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[42]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[42]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1531,7 +1531,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[43]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[43]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[43]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[43]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[43]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[43]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[43]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[43]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1583,7 +1583,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[44]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[44]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[44]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[44]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[44]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[44]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[44]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[44]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1635,7 +1635,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[45]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[45]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[45]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[45]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[45]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[45]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[45]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[45]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1687,7 +1687,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[46]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[46]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[46]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[46]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[46]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[46]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[46]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[46]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1739,7 +1739,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[47]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[47]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[47]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[47]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[47]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[47]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[47]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[47]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1791,7 +1791,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[48]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[48]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[48]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[48]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[48]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[48]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[48]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[48]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1843,7 +1843,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[49]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[49]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[49]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[49]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[49]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[49]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[49]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[49]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1895,7 +1895,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[50]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[50]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[50]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[50]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[50]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[50]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[50]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[50]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1947,7 +1947,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[51]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[51]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[51]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[51]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[51]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[51]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[51]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[51]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -1999,7 +1999,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[52]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[52]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[52]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[52]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[52]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[52]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[52]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[52]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2051,7 +2051,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[53]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[53]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[53]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[53]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[53]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[53]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[53]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[53]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2103,7 +2103,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[54]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[54]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[54]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[54]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[54]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[54]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[54]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[54]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2155,7 +2155,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[55]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[55]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[55]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[55]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[55]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[55]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[55]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[55]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2207,7 +2207,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[56]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[56]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[56]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[56]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[56]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[56]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[56]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[56]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2259,7 +2259,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[57]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[57]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[57]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[57]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[57]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[57]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[57]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[57]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2311,7 +2311,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[58]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[58]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[58]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[58]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[58]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[58]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[58]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[58]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2363,7 +2363,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[59]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[59]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[59]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[59]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[59]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[59]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[59]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[59]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2415,7 +2415,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[60]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[60]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[60]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[60]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[60]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[60]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[60]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[60]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2467,7 +2467,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[61]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[61]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[61]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[61]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[61]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[61]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[61]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[61]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2519,7 +2519,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[62]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[62]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[62]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[62]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[62]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[62]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[62]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[62]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2571,7 +2571,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[63]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[63]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[63]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[63]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[63]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[63]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[63]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[63]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2623,7 +2623,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[64]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[64]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[64]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[64]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[64]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[64]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[64]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[64]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2675,7 +2675,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[65]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[65]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[65]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[65]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[65]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[65]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[65]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[65]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2727,7 +2727,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[66]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[66]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[66]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[66]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[66]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[66]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[66]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[66]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2779,7 +2779,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[67]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[67]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[67]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[67]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[67]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[67]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[67]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[67]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2831,7 +2831,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[68]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[68]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[68]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[68]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[68]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[68]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[68]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[68]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2883,7 +2883,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[69]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[69]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[69]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[69]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[69]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[69]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[69]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[69]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2935,7 +2935,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[70]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[70]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[70]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[70]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[70]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[70]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[70]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[70]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -2987,7 +2987,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[71]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[71]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[71]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[71]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[71]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[71]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[71]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[71]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3039,7 +3039,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[72]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[72]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[72]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[72]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[72]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[72]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[72]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[72]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3091,7 +3091,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[73]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[73]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[73]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[73]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[73]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[73]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[73]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[73]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3143,7 +3143,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[74]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[74]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[74]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[74]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[74]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[74]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[74]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[74]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3195,7 +3195,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[75]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[75]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[75]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[75]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[75]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[75]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[75]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[75]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3247,7 +3247,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[76]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[76]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[76]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[76]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[76]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[76]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[76]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[76]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3299,7 +3299,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[77]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[77]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[77]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[77]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[77]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[77]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[77]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[77]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3351,7 +3351,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[78]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[78]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[78]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[78]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[78]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[78]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[78]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[78]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3403,7 +3403,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[79]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[79]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[79]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[79]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[79]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[79]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[79]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[79]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3455,7 +3455,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[80]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[80]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[80]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[80]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[80]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[80]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[80]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[80]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3507,7 +3507,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[81]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[81]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[81]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[81]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[81]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[81]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[81]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[81]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3559,7 +3559,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[82]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[82]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[82]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[82]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[82]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[82]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[82]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[82]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3611,7 +3611,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[83]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[83]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[83]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[83]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[83]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[83]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[83]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[83]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3663,7 +3663,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[84]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[84]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[84]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[84]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[84]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[84]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[84]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[84]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3715,7 +3715,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[85]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[85]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[85]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[85]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[85]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[85]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[85]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[85]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3767,7 +3767,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[86]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[86]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[86]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[86]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[86]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[86]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[86]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[86]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3819,7 +3819,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[87]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[87]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[87]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[87]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[87]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[87]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[87]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[87]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3871,7 +3871,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[88]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[88]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[88]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[88]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[88]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[88]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[88]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[88]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3923,7 +3923,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[89]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[89]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[89]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[89]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[89]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[89]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[89]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[89]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -3975,7 +3975,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[90]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[90]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[90]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[90]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[90]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[90]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[90]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[90]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4027,7 +4027,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[91]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[91]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[91]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[91]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[91]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[91]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[91]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[91]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4079,7 +4079,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[92]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[92]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[92]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[92]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[92]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[92]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[92]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[92]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4131,7 +4131,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[93]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[93]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[93]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[93]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[93]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[93]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[93]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[93]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4183,7 +4183,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[94]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[94]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[94]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[94]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[94]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[94]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[94]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[94]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4235,7 +4235,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[95]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[95]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[95]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[95]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[95]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[95]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[95]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[95]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4287,7 +4287,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[96]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[96]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[96]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[96]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[96]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[96]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[96]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[96]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4339,7 +4339,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[97]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[97]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[97]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[97]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[97]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[97]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[97]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[97]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4391,7 +4391,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[98]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[98]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[98]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[98]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[98]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[98]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[98]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[98]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4443,7 +4443,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[99]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[99]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[99]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[99]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[99]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[99]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[99]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[99]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4495,7 +4495,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[100]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[100]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[100]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[100]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[100]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[100]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[100]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[100]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4547,7 +4547,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[101]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[101]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[101]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[101]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[101]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[101]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[101]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[101]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4599,7 +4599,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[102]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[102]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[102]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[102]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[102]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[102]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[102]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[102]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4651,7 +4651,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[103]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[103]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[103]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[103]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[103]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[103]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[103]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[103]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4703,7 +4703,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[104]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[104]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[104]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[104]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[104]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[104]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[104]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[104]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4755,7 +4755,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[105]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[105]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[105]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[105]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[105]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[105]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[105]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[105]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4807,7 +4807,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[106]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[106]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[106]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[106]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[106]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[106]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[106]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[106]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4859,7 +4859,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[107]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[107]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[107]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[107]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[107]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[107]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[107]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[107]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4911,7 +4911,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[108]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[108]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[108]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[108]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[108]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[108]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[108]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[108]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -4963,7 +4963,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[109]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[109]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[109]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[109]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[109]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[109]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[109]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[109]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5015,7 +5015,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[110]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[110]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[110]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[110]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[110]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[110]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[110]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[110]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5067,7 +5067,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[111]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[111]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[111]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[111]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[111]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[111]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[111]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[111]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5119,7 +5119,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[112]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[112]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[112]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[112]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[112]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[112]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[112]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[112]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5171,7 +5171,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[113]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[113]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[113]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[113]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[113]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[113]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[113]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[113]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5223,7 +5223,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[114]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[114]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[114]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[114]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[114]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[114]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[114]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[114]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5275,7 +5275,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[115]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[115]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[115]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[115]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[115]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[115]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[115]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[115]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5327,7 +5327,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[116]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[116]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[116]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[116]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[116]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[116]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[116]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[116]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5379,7 +5379,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[117]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[117]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[117]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[117]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[117]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[117]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[117]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[117]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5431,7 +5431,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[118]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[118]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[118]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[118]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[118]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[118]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[118]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[118]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5483,7 +5483,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[119]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[119]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[119]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[119]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[119]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[119]['DATA']['MOD'] == 'FALLING'  # noqa
         assert e[119]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[119]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5535,7 +5535,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[120]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[120]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[120]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[120]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[120]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[120]['DATA']['MOD'] == 'FALLING'  # noqa
         assert e[120]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[120]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5587,7 +5587,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[121]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[121]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[121]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[121]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[121]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[121]['DATA']['MOD'] == 'FALLING'  # noqa
         assert e[121]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[121]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5639,7 +5639,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[122]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[122]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[122]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[122]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[122]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[122]['DATA']['MOD'] == 'FALLING'  # noqa
         assert e[122]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[122]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5691,7 +5691,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[123]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[123]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[123]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[123]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[123]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[123]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[123]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[123]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5743,7 +5743,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[124]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[124]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[124]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[124]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[124]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[124]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[124]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[124]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5795,7 +5795,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[125]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[125]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[125]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[125]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[125]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[125]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[125]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[125]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5847,7 +5847,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[126]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[126]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[126]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[126]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[126]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[126]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[126]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[126]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5899,7 +5899,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[127]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[127]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[127]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[127]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[127]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[127]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[127]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[127]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -5951,7 +5951,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[128]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[128]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[128]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[128]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[128]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[128]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[128]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[128]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6003,7 +6003,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[129]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[129]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[129]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[129]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[129]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[129]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[129]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[129]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6055,7 +6055,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[130]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[130]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[130]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[130]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[130]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[130]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[130]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[130]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6107,7 +6107,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[131]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[131]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[131]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[131]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[131]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[131]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[131]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[131]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6159,7 +6159,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[132]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[132]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[132]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[132]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[132]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[132]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[132]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[132]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6211,7 +6211,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[133]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[133]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[133]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[133]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[133]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[133]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[133]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[133]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6263,7 +6263,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[134]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[134]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[134]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[134]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[134]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[134]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[134]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[134]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6315,7 +6315,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[135]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[135]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[135]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[135]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[135]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[135]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[135]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[135]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6367,7 +6367,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[136]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[136]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[136]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[136]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[136]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[136]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[136]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[136]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6419,7 +6419,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[137]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[137]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[137]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[137]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[137]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[137]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[137]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[137]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6471,7 +6471,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[138]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[138]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[138]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[138]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[138]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[138]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[138]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[138]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6523,7 +6523,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[139]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[139]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[139]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[139]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[139]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[139]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[139]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[139]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6575,7 +6575,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[140]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[140]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[140]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[140]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[140]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[140]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[140]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[140]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6627,7 +6627,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[141]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[141]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[141]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[141]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[141]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[141]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[141]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[141]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6679,7 +6679,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[142]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[142]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[142]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[142]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[142]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[142]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[142]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[142]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6731,7 +6731,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[143]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[143]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[143]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[143]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[143]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[143]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[143]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[143]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6783,7 +6783,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[144]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[144]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[144]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[144]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[144]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[144]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[144]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[144]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6835,7 +6835,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[145]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[145]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[145]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[145]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[145]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[145]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[145]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[145]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6887,7 +6887,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[146]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[146]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[146]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[146]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[146]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[146]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[146]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[146]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6939,7 +6939,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[147]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[147]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[147]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[147]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[147]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[147]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[147]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[147]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -6991,7 +6991,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[148]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[148]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[148]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[148]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[148]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[148]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[148]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[148]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7043,7 +7043,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[149]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[149]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[149]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[149]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[149]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[149]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[149]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[149]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7095,7 +7095,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[150]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[150]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[150]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[150]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[150]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[150]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[150]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[150]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7147,7 +7147,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[151]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[151]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[151]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[151]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[151]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[151]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[151]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[151]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7199,7 +7199,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[152]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[152]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[152]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[152]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[152]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[152]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[152]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[152]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7251,7 +7251,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[153]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[153]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[153]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[153]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[153]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[153]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[153]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[153]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7303,7 +7303,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[154]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[154]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[154]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[154]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[154]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[154]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[154]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[154]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7355,7 +7355,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[155]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[155]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[155]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[155]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[155]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[155]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[155]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[155]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7407,7 +7407,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[156]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[156]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[156]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[156]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[156]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[156]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[156]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[156]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7459,7 +7459,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[157]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[157]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[157]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[157]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[157]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[157]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[157]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[157]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7511,7 +7511,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[158]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[158]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[158]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[158]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[158]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[158]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[158]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[158]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7563,7 +7563,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[159]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[159]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[159]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[159]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[159]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[159]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[159]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[159]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7615,7 +7615,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[160]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[160]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[160]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[160]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[160]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[160]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[160]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[160]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7667,7 +7667,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[161]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[161]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[161]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[161]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[161]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[161]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[161]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[161]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7719,7 +7719,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[162]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[162]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[162]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[162]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[162]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[162]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[162]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[162]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7771,7 +7771,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[163]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[163]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[163]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[163]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[163]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[163]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[163]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[163]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7823,7 +7823,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[164]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[164]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[164]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[164]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[164]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[164]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[164]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[164]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7875,7 +7875,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[165]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[165]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[165]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[165]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[165]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[165]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[165]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[165]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7927,7 +7927,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[166]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[166]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[166]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[166]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[166]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[166]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[166]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[166]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -7979,7 +7979,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[167]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[167]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[167]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[167]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[167]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[167]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[167]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[167]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8031,7 +8031,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[168]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[168]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[168]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[168]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[168]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[168]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[168]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[168]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8083,7 +8083,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[169]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[169]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[169]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[169]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[169]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[169]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[169]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[169]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8135,7 +8135,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[170]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[170]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[170]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[170]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[170]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[170]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[170]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[170]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8187,7 +8187,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[171]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[171]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[171]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[171]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[171]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[171]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[171]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[171]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8239,7 +8239,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[172]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[172]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[172]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[172]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[172]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[172]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[172]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[172]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8291,7 +8291,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[173]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[173]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[173]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[173]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[173]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[173]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[173]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[173]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8343,7 +8343,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[174]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[174]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[174]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[174]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[174]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[174]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[174]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[174]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8395,7 +8395,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[175]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[175]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[175]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[175]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[175]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[175]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[175]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[175]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8447,7 +8447,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[176]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[176]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[176]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[176]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[176]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[176]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[176]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[176]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8499,7 +8499,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[177]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[177]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[177]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[177]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[177]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[177]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[177]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[177]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8551,7 +8551,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[178]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[178]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[178]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[178]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[178]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[178]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[178]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[178]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8603,7 +8603,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[179]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[179]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[179]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[179]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[179]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[179]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[179]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[179]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8655,7 +8655,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[180]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[180]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[180]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[180]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[180]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[180]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[180]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[180]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8707,7 +8707,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[181]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[181]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[181]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[181]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[181]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[181]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[181]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[181]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8759,7 +8759,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[182]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[182]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[182]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[182]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[182]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[182]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[182]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[182]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8811,7 +8811,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[183]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[183]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[183]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[183]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[183]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[183]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[183]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[183]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8863,7 +8863,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[184]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[184]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[184]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[184]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[184]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[184]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[184]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[184]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8915,7 +8915,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[185]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[185]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[185]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[185]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[185]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[185]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[185]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[185]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -8967,7 +8967,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[186]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[186]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[186]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[186]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[186]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[186]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[186]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[186]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9019,7 +9019,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[187]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[187]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[187]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[187]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[187]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[187]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[187]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[187]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9071,7 +9071,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[188]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[188]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[188]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[188]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[188]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[188]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[188]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[188]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9123,7 +9123,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[189]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[189]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[189]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[189]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[189]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[189]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[189]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[189]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9175,7 +9175,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[190]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[190]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[190]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[190]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[190]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[190]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[190]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[190]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9227,7 +9227,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[191]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[191]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[191]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[191]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[191]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[191]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[191]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[191]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9279,7 +9279,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[192]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[192]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[192]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[192]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[192]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[192]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[192]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[192]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9331,7 +9331,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[193]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[193]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[193]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[193]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[193]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[193]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[193]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[193]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9383,7 +9383,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[194]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[194]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[194]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[194]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[194]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[194]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[194]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[194]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9435,7 +9435,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[195]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[195]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[195]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[195]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[195]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[195]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[195]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[195]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9487,7 +9487,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[196]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[196]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[196]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[196]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[196]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[196]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[196]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[196]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9539,7 +9539,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[197]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[197]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[197]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[197]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[197]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[197]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[197]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[197]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9591,7 +9591,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[198]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[198]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[198]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[198]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[198]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[198]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[198]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[198]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9643,7 +9643,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[199]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[199]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[199]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[199]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[199]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[199]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[199]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[199]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9695,7 +9695,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[200]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[200]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[200]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[200]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[200]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[200]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[200]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[200]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9747,7 +9747,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[201]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[201]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[201]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[201]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[201]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[201]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[201]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[201]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9799,7 +9799,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[202]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[202]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[202]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[202]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[202]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[202]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[202]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[202]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9851,7 +9851,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[203]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[203]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[203]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[203]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[203]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[203]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[203]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[203]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9903,7 +9903,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[204]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[204]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[204]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[204]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[204]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[204]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[204]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[204]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -9955,7 +9955,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[205]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[205]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[205]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[205]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[205]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[205]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[205]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[205]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10007,7 +10007,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[206]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[206]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[206]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[206]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[206]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[206]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[206]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[206]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10059,7 +10059,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[207]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[207]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[207]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[207]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[207]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[207]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[207]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[207]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10111,7 +10111,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[208]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[208]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[208]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[208]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[208]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[208]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[208]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[208]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10163,7 +10163,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[209]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[209]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[209]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[209]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[209]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[209]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[209]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[209]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10215,7 +10215,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[210]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[210]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[210]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[210]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[210]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[210]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[210]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[210]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10267,7 +10267,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[211]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[211]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[211]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[211]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[211]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[211]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[211]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[211]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10319,7 +10319,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[212]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[212]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[212]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[212]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[212]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[212]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[212]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[212]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10371,7 +10371,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[213]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[213]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[213]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[213]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[213]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[213]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[213]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[213]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10423,7 +10423,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[214]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[214]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[214]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[214]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[214]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[214]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[214]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[214]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10475,7 +10475,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[215]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[215]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[215]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[215]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[215]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[215]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[215]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[215]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10527,7 +10527,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[216]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[216]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[216]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[216]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[216]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[216]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[216]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[216]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10579,7 +10579,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[217]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[217]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[217]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[217]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[217]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[217]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[217]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[217]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10631,7 +10631,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[218]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[218]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[218]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[218]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[218]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[218]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[218]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[218]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10683,7 +10683,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[219]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[219]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[219]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[219]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[219]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[219]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[219]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[219]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10735,7 +10735,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[220]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[220]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[220]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[220]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[220]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[220]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[220]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[220]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10787,7 +10787,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[221]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[221]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[221]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[221]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[221]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[221]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[221]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[221]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10839,7 +10839,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[222]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[222]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[222]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[222]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[222]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[222]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[222]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[222]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10891,7 +10891,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[223]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[223]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[223]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[223]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[223]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[223]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[223]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[223]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10943,7 +10943,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[224]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[224]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[224]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[224]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[224]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[224]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[224]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[224]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -10995,7 +10995,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[225]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[225]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[225]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[225]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[225]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[225]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[225]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[225]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11047,7 +11047,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[226]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[226]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[226]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[226]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[226]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[226]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[226]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[226]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11099,7 +11099,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[227]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[227]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[227]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[227]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[227]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[227]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[227]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[227]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11151,7 +11151,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[228]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[228]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[228]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[228]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[228]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[228]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[228]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[228]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11203,7 +11203,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[229]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[229]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[229]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[229]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[229]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[229]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[229]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[229]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11255,7 +11255,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[230]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[230]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[230]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[230]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[230]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[230]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[230]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[230]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11307,7 +11307,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[231]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[231]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[231]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[231]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[231]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[231]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[231]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[231]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11359,7 +11359,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[232]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[232]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[232]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[232]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[232]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[232]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[232]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[232]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11411,7 +11411,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[233]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[233]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[233]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[233]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[233]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[233]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[233]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[233]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11463,7 +11463,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[234]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[234]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[234]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[234]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[234]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[234]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[234]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[234]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11515,7 +11515,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[235]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[235]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[235]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[235]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[235]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[235]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[235]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[235]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11567,7 +11567,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[236]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[236]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[236]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[236]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[236]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[236]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[236]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[236]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11619,7 +11619,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[237]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[237]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[237]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[237]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[237]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[237]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[237]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[237]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11671,7 +11671,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[238]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[238]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[238]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[238]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[238]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[238]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[238]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[238]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11723,7 +11723,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[239]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[239]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[239]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[239]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[239]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[239]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[239]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[239]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11775,7 +11775,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[240]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[240]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[240]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[240]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[240]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[240]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[240]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[240]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11827,7 +11827,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[241]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[241]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[241]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[241]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[241]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[241]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[241]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[241]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11879,7 +11879,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[242]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[242]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[242]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[242]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[242]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[242]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[242]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[242]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11931,7 +11931,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[243]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[243]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[243]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[243]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[243]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[243]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[243]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[243]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -11983,7 +11983,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[244]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[244]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[244]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[244]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[244]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[244]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[244]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[244]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12035,7 +12035,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[245]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[245]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[245]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[245]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[245]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[245]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[245]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[245]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12087,7 +12087,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[246]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[246]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[246]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[246]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[246]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[246]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[246]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[246]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12139,7 +12139,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[247]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[247]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[247]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[247]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[247]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[247]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[247]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[247]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12191,7 +12191,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[248]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[248]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[248]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[248]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[248]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[248]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[248]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[248]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12243,7 +12243,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[249]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[249]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[249]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[249]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[249]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[249]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[249]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[249]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12295,7 +12295,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[250]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[250]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[250]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[250]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[250]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[250]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[250]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[250]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12347,7 +12347,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[251]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[251]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[251]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[251]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[251]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[251]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[251]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[251]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12399,7 +12399,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[252]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[252]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[252]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[252]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[252]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[252]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[252]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[252]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12451,7 +12451,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[253]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[253]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[253]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[253]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[253]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[253]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[253]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[253]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12503,7 +12503,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[254]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[254]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[254]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[254]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[254]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[254]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[254]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[254]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12555,7 +12555,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[255]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[255]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[255]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[255]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[255]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[255]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[255]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[255]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12607,7 +12607,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[256]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[256]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[256]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[256]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[256]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[256]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[256]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[256]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12659,7 +12659,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[257]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[257]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[257]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[257]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[257]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[257]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[257]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[257]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12711,7 +12711,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[258]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[258]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[258]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[258]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[258]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[258]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[258]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[258]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12763,7 +12763,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[259]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[259]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[259]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[259]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[259]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[259]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[259]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[259]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12815,7 +12815,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[260]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[260]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[260]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[260]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[260]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[260]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[260]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[260]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12867,7 +12867,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[261]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[261]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[261]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[261]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[261]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[261]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[261]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[261]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12919,7 +12919,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[262]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[262]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[262]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[262]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[262]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[262]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[262]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[262]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -12971,7 +12971,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[263]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[263]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[263]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[263]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[263]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[263]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[263]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[263]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13023,7 +13023,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[264]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[264]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[264]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[264]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[264]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[264]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[264]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[264]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13075,7 +13075,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[265]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[265]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[265]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[265]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[265]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[265]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[265]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[265]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13127,7 +13127,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[266]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[266]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[266]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[266]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[266]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[266]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[266]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[266]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13179,7 +13179,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[267]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[267]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[267]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[267]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[267]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[267]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[267]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[267]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13231,7 +13231,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[268]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[268]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[268]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[268]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[268]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[268]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[268]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[268]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13283,7 +13283,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[269]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[269]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[269]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[269]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[269]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[269]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[269]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[269]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13335,7 +13335,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[270]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[270]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[270]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[270]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[270]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[270]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[270]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[270]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13387,7 +13387,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[271]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[271]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[271]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[271]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[271]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[271]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[271]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[271]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13439,7 +13439,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[272]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[272]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[272]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[272]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[272]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[272]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[272]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[272]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13491,7 +13491,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[273]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[273]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[273]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[273]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[273]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[273]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[273]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[273]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13543,7 +13543,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[274]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[274]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[274]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[274]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[274]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[274]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[274]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[274]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13595,7 +13595,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[275]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[275]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[275]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[275]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[275]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[275]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[275]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[275]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13647,7 +13647,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[276]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[276]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[276]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[276]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[276]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[276]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[276]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[276]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13699,7 +13699,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[277]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[277]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[277]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[277]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[277]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[277]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[277]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[277]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13751,7 +13751,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[278]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[278]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[278]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[278]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[278]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[278]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[278]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[278]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13803,7 +13803,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[279]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[279]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[279]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[279]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[279]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[279]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[279]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[279]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13855,7 +13855,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[280]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[280]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[280]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[280]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[280]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[280]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[280]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[280]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13907,7 +13907,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[281]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[281]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[281]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[281]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[281]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[281]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[281]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[281]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -13959,7 +13959,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[282]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[282]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[282]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[282]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[282]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[282]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[282]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[282]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14011,7 +14011,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[283]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[283]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[283]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[283]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[283]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[283]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[283]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[283]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14063,7 +14063,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[284]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[284]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[284]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[284]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[284]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[284]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[284]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[284]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14115,7 +14115,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[285]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[285]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[285]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[285]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[285]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[285]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[285]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[285]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14167,7 +14167,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[286]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[286]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[286]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[286]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[286]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[286]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[286]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[286]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14219,7 +14219,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[287]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[287]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[287]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[287]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[287]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[287]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[287]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[287]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14271,7 +14271,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[288]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[288]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[288]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[288]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[288]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[288]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[288]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[288]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14323,7 +14323,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[289]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[289]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[289]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[289]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[289]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[289]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[289]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[289]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14375,7 +14375,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[290]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[290]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[290]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[290]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[290]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[290]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[290]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[290]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14427,7 +14427,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[291]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[291]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[291]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[291]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[291]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[291]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[291]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[291]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14479,7 +14479,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[292]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[292]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[292]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[292]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[292]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[292]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[292]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[292]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14531,7 +14531,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[293]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[293]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[293]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[293]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[293]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[293]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[293]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[293]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14583,7 +14583,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[294]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[294]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[294]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[294]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[294]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[294]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[294]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[294]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14635,7 +14635,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[295]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[295]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[295]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[295]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[295]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[295]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[295]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[295]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14687,7 +14687,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[296]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[296]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[296]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[296]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[296]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[296]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[296]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[296]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14739,7 +14739,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[297]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[297]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[297]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[297]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[297]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[297]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[297]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[297]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14791,7 +14791,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[298]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[298]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[298]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[298]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[298]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[298]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[298]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[298]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14843,7 +14843,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[299]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[299]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[299]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[299]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[299]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[299]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[299]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[299]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14895,7 +14895,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[300]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[300]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[300]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[300]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[300]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[300]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[300]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[300]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14947,7 +14947,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[301]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[301]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[301]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[301]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[301]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[301]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[301]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[301]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -14999,7 +14999,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[302]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[302]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[302]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[302]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[302]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[302]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[302]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[302]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15051,7 +15051,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[303]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[303]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[303]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[303]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[303]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[303]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[303]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[303]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15103,7 +15103,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[304]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[304]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[304]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[304]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[304]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[304]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[304]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[304]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15155,7 +15155,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[305]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[305]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[305]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[305]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[305]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[305]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[305]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[305]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15207,7 +15207,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[306]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[306]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[306]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[306]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[306]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[306]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[306]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[306]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15259,7 +15259,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[307]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[307]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[307]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[307]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[307]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[307]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[307]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[307]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15311,7 +15311,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[308]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[308]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[308]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[308]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[308]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[308]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[308]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[308]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15363,7 +15363,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[309]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[309]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[309]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[309]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[309]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[309]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[309]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[309]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15415,7 +15415,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[310]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[310]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[310]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[310]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[310]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[310]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[310]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[310]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15467,7 +15467,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[311]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[311]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[311]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[311]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[311]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[311]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[311]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[311]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15519,7 +15519,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[312]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[312]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[312]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[312]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[312]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[312]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[312]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[312]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15571,7 +15571,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[313]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[313]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[313]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[313]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[313]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[313]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[313]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[313]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15623,7 +15623,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[314]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[314]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[314]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[314]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[314]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[314]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[314]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[314]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15675,7 +15675,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[315]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[315]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[315]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[315]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[315]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[315]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[315]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[315]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15727,7 +15727,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[316]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[316]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[316]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[316]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[316]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[316]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[316]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[316]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15779,7 +15779,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[317]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[317]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[317]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[317]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[317]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[317]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[317]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[317]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15831,7 +15831,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[318]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[318]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[318]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[318]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[318]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[318]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[318]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[318]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15883,7 +15883,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[319]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[319]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[319]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[319]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[319]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[319]['DATA']['MOD'] == 'FALLING'  # noqa
         assert e[319]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[319]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15935,7 +15935,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[320]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[320]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[320]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[320]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[320]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[320]['DATA']['MOD'] == 'FALLING'  # noqa
         assert e[320]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[320]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -15987,7 +15987,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[321]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[321]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[321]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[321]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[321]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[321]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[321]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[321]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16039,7 +16039,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[322]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[322]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[322]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[322]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[322]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[322]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[322]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[322]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16091,7 +16091,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[323]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[323]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[323]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[323]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[323]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[323]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[323]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[323]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16143,7 +16143,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[324]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[324]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[324]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[324]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[324]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[324]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[324]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[324]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16195,7 +16195,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[325]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[325]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[325]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[325]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[325]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[325]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[325]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[325]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16247,7 +16247,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[326]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[326]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[326]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[326]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[326]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[326]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[326]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[326]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16299,7 +16299,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[327]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[327]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[327]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[327]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[327]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[327]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[327]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[327]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16351,7 +16351,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[328]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[328]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[328]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[328]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[328]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[328]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[328]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[328]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16403,7 +16403,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[329]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[329]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[329]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[329]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[329]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[329]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[329]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[329]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16455,7 +16455,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[330]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[330]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[330]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[330]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[330]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[330]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[330]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[330]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16507,7 +16507,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[331]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[331]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[331]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[331]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[331]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[331]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[331]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[331]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16559,7 +16559,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[332]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[332]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[332]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[332]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[332]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[332]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[332]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[332]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16611,7 +16611,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[333]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[333]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[333]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[333]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[333]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[333]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[333]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[333]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16663,7 +16663,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[334]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[334]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[334]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[334]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[334]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[334]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[334]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[334]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16715,7 +16715,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[335]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[335]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[335]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[335]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[335]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[335]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[335]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[335]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16767,7 +16767,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[336]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[336]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[336]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[336]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[336]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[336]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[336]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[336]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16819,7 +16819,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[337]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[337]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[337]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[337]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[337]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[337]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[337]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[337]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16871,7 +16871,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[338]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[338]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[338]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[338]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[338]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[338]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[338]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[338]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16923,7 +16923,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[339]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[339]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[339]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[339]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[339]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[339]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[339]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[339]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -16975,7 +16975,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[340]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[340]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[340]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[340]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[340]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[340]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[340]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[340]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17027,7 +17027,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[341]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[341]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[341]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[341]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[341]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[341]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[341]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[341]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17079,7 +17079,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[342]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[342]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[342]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[342]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[342]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[342]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[342]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[342]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17131,7 +17131,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[343]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[343]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[343]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[343]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[343]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[343]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[343]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[343]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17183,7 +17183,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[344]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[344]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[344]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[344]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[344]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[344]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[344]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[344]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17235,7 +17235,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[345]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[345]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[345]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[345]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[345]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[345]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[345]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[345]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17287,7 +17287,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[346]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[346]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[346]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[346]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[346]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[346]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[346]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[346]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17339,7 +17339,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[347]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[347]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[347]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[347]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[347]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[347]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[347]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[347]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17391,7 +17391,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[348]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[348]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[348]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[348]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[348]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[348]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[348]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[348]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17443,7 +17443,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[349]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[349]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[349]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[349]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[349]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[349]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[349]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[349]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17495,7 +17495,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[350]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[350]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[350]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[350]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[350]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[350]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[350]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[350]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17547,7 +17547,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[351]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[351]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[351]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[351]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[351]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[351]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[351]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[351]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17599,7 +17599,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[352]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[352]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[352]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[352]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[352]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[352]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[352]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[352]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17651,7 +17651,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[353]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[353]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[353]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[353]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[353]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[353]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[353]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[353]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17703,7 +17703,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[354]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[354]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[354]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[354]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[354]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[354]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[354]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[354]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17755,7 +17755,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[355]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[355]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[355]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[355]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[355]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[355]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[355]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[355]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17807,7 +17807,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[356]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[356]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[356]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[356]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[356]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[356]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[356]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[356]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17859,7 +17859,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[357]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[357]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[357]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[357]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[357]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[357]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[357]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[357]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17911,7 +17911,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[358]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[358]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[358]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[358]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[358]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[358]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[358]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[358]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -17963,7 +17963,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[359]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[359]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[359]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[359]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[359]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[359]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[359]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[359]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18015,7 +18015,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[360]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[360]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[360]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[360]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[360]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[360]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[360]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[360]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18067,7 +18067,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[361]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[361]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[361]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[361]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[361]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[361]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[361]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[361]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18119,7 +18119,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[362]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[362]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[362]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[362]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[362]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[362]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[362]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[362]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18171,7 +18171,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[363]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[363]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[363]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[363]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[363]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[363]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[363]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[363]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18223,7 +18223,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[364]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[364]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[364]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[364]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[364]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[364]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[364]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[364]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18275,7 +18275,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[365]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[365]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[365]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[365]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[365]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[365]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[365]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[365]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18327,7 +18327,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[366]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[366]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[366]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[366]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[366]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[366]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[366]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[366]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18379,7 +18379,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[367]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[367]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[367]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[367]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[367]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[367]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[367]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[367]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18431,7 +18431,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[368]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[368]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[368]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[368]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[368]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[368]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[368]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[368]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18483,7 +18483,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[369]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[369]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[369]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[369]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[369]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[369]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[369]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[369]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18535,7 +18535,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[370]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[370]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[370]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[370]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[370]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[370]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[370]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[370]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18587,7 +18587,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[371]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[371]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[371]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[371]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[371]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[371]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[371]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[371]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18639,7 +18639,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[372]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[372]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[372]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[372]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[372]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[372]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[372]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[372]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18691,7 +18691,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[373]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[373]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[373]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[373]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[373]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[373]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[373]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[373]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18743,7 +18743,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[374]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[374]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[374]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[374]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[374]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[374]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[374]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[374]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18795,7 +18795,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[375]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[375]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[375]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[375]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[375]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[375]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[375]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[375]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18847,7 +18847,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[376]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[376]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[376]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[376]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[376]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[376]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[376]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[376]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18899,7 +18899,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[377]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[377]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[377]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[377]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[377]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[377]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[377]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[377]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -18951,7 +18951,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[378]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[378]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[378]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[378]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[378]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[378]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[378]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[378]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19003,7 +19003,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[379]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[379]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[379]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[379]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[379]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[379]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[379]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[379]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19055,7 +19055,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[380]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[380]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[380]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[380]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[380]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[380]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[380]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[380]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19107,7 +19107,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[381]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[381]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[381]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[381]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[381]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[381]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[381]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[381]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19159,7 +19159,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[382]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[382]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[382]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[382]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[382]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[382]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[382]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[382]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19211,7 +19211,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[383]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[383]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[383]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[383]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[383]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[383]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[383]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[383]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19263,7 +19263,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[384]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[384]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[384]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[384]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[384]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[384]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[384]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[384]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19315,7 +19315,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[385]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[385]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[385]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[385]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[385]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[385]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[385]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[385]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19367,7 +19367,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[386]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[386]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[386]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[386]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[386]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[386]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[386]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[386]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19419,7 +19419,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[387]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[387]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[387]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[387]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[387]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[387]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[387]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[387]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19471,7 +19471,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[388]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[388]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[388]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[388]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[388]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[388]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[388]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[388]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19523,7 +19523,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[389]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[389]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[389]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[389]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[389]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[389]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[389]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[389]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19575,7 +19575,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[390]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[390]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[390]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[390]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[390]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[390]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[390]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[390]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19627,7 +19627,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[391]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[391]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[391]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[391]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[391]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[391]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[391]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[391]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19679,7 +19679,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[392]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[392]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[392]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[392]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[392]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[392]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[392]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[392]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19731,7 +19731,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[393]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[393]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[393]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[393]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[393]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[393]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[393]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[393]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19783,7 +19783,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[394]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[394]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[394]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[394]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[394]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[394]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[394]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[394]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19835,7 +19835,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[395]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[395]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[395]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[395]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[395]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[395]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[395]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[395]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19887,7 +19887,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[396]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[396]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[396]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[396]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[396]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[396]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[396]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[396]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19939,7 +19939,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[397]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[397]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[397]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[397]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[397]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[397]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[397]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[397]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -19991,7 +19991,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[398]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[398]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[398]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[398]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[398]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[398]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[398]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[398]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20043,7 +20043,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[399]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[399]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[399]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[399]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[399]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[399]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[399]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[399]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20095,7 +20095,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[400]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[400]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[400]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[400]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[400]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[400]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[400]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[400]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20147,7 +20147,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[401]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[401]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[401]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[401]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[401]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[401]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[401]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[401]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20199,7 +20199,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[402]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[402]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[402]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[402]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[402]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[402]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[402]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[402]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20251,7 +20251,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[403]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[403]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[403]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[403]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[403]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[403]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[403]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[403]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20303,7 +20303,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[404]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[404]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[404]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[404]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[404]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[404]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[404]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[404]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20355,7 +20355,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[405]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[405]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[405]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[405]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[405]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[405]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[405]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[405]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20407,7 +20407,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[406]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[406]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[406]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[406]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[406]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[406]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[406]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[406]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20459,7 +20459,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[407]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[407]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[407]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[407]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[407]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[407]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[407]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[407]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20511,7 +20511,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[408]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[408]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[408]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[408]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[408]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[408]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[408]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[408]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20563,7 +20563,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[409]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[409]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[409]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[409]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[409]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[409]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[409]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[409]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20615,7 +20615,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[410]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[410]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[410]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[410]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[410]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[410]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[410]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[410]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20667,7 +20667,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[411]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[411]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[411]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[411]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[411]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[411]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[411]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[411]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20719,7 +20719,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[412]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[412]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[412]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[412]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[412]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[412]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[412]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[412]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20771,7 +20771,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[413]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[413]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[413]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[413]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[413]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[413]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[413]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[413]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20823,7 +20823,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[414]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[414]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[414]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[414]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[414]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[414]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[414]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[414]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20875,7 +20875,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[415]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[415]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[415]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[415]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[415]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[415]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[415]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[415]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20927,7 +20927,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[416]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[416]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[416]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[416]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[416]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[416]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[416]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[416]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -20979,7 +20979,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[417]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[417]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[417]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[417]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[417]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[417]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[417]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[417]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21031,7 +21031,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[418]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[418]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[418]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[418]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[418]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[418]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[418]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[418]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21083,7 +21083,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[419]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[419]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[419]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[419]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[419]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[419]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[419]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[419]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21135,7 +21135,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[420]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[420]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[420]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[420]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[420]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[420]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[420]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[420]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21187,7 +21187,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[421]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[421]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[421]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[421]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[421]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[421]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[421]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[421]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21239,7 +21239,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[422]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[422]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[422]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[422]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[422]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[422]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[422]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[422]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21291,7 +21291,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[423]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[423]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[423]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[423]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[423]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[423]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[423]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[423]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21343,7 +21343,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[424]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[424]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[424]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[424]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[424]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[424]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[424]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[424]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21395,7 +21395,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[425]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[425]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[425]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[425]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[425]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[425]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[425]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[425]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21447,7 +21447,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[426]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[426]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[426]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[426]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[426]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[426]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[426]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[426]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21499,7 +21499,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[427]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[427]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[427]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[427]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[427]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[427]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[427]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[427]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21551,7 +21551,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[428]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[428]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[428]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[428]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[428]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[428]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[428]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[428]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21603,7 +21603,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[429]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[429]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[429]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[429]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[429]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[429]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[429]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[429]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21655,7 +21655,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[430]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[430]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[430]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[430]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[430]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[430]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[430]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[430]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21707,7 +21707,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[431]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[431]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[431]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[431]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[431]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[431]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[431]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[431]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21759,7 +21759,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[432]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[432]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[432]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[432]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[432]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[432]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[432]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[432]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21811,7 +21811,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[433]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[433]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[433]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[433]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[433]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[433]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[433]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[433]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21863,7 +21863,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[434]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[434]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[434]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[434]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[434]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[434]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[434]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[434]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21915,7 +21915,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[435]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[435]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[435]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[435]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[435]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[435]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[435]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[435]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -21967,7 +21967,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[436]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[436]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[436]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[436]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[436]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[436]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[436]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[436]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22019,7 +22019,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[437]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[437]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[437]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[437]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[437]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[437]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[437]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[437]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22071,7 +22071,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[438]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[438]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[438]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[438]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[438]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[438]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[438]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[438]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22123,7 +22123,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[439]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[439]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[439]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[439]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[439]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[439]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[439]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[439]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22175,7 +22175,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[440]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[440]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[440]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[440]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[440]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[440]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[440]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[440]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22227,7 +22227,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[441]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[441]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[441]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[441]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[441]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[441]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[441]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[441]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22279,7 +22279,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[442]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[442]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[442]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[442]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[442]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[442]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[442]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[442]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22331,7 +22331,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[443]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[443]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[443]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[443]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[443]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[443]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[443]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[443]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22383,7 +22383,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[444]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[444]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[444]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[444]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[444]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[444]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[444]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[444]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22435,7 +22435,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[445]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[445]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[445]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[445]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[445]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[445]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[445]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[445]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22487,7 +22487,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[446]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[446]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[446]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[446]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[446]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[446]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[446]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[446]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22539,7 +22539,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[447]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[447]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[447]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[447]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[447]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[447]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[447]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[447]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22591,7 +22591,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[448]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[448]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[448]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[448]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[448]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[448]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[448]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[448]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22643,7 +22643,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[449]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[449]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[449]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[449]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[449]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[449]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[449]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[449]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22695,7 +22695,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[450]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[450]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[450]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[450]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[450]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[450]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[450]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[450]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22747,7 +22747,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[451]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[451]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[451]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[451]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[451]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[451]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[451]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[451]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22799,7 +22799,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[452]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[452]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[452]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[452]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[452]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[452]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[452]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[452]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22851,7 +22851,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[453]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[453]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[453]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[453]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[453]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[453]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[453]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[453]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22903,7 +22903,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[454]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[454]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[454]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[454]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[454]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[454]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[454]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[454]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -22955,7 +22955,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[455]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[455]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[455]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[455]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[455]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[455]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[455]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[455]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23007,7 +23007,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[456]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[456]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[456]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[456]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[456]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[456]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[456]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[456]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23059,7 +23059,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[457]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[457]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[457]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[457]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[457]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[457]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[457]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[457]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23111,7 +23111,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[458]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[458]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[458]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[458]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[458]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[458]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[458]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[458]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23163,7 +23163,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[459]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[459]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[459]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[459]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[459]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[459]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[459]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[459]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23215,7 +23215,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[460]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[460]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[460]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[460]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[460]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[460]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[460]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[460]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23267,7 +23267,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[461]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[461]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[461]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[461]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[461]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[461]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[461]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[461]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23319,7 +23319,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[462]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[462]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[462]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[462]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[462]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[462]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[462]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[462]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23371,7 +23371,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[463]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[463]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[463]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[463]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[463]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[463]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[463]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[463]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23423,7 +23423,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[464]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[464]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[464]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[464]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[464]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[464]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[464]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[464]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23475,7 +23475,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[465]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[465]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[465]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[465]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[465]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[465]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[465]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[465]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23527,7 +23527,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[466]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[466]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[466]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[466]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[466]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[466]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[466]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[466]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23579,7 +23579,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[467]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[467]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[467]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[467]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[467]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[467]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[467]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[467]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23631,7 +23631,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[468]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[468]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[468]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[468]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[468]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[468]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[468]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[468]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23683,7 +23683,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[469]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[469]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[469]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[469]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[469]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[469]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[469]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[469]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23735,7 +23735,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[470]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[470]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[470]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[470]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[470]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[470]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[470]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[470]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23787,7 +23787,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[471]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[471]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[471]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[471]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[471]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[471]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[471]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[471]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23839,7 +23839,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[472]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[472]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[472]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[472]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[472]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[472]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[472]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[472]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23891,7 +23891,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[473]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[473]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[473]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[473]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[473]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[473]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[473]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[473]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23943,7 +23943,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[474]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[474]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[474]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[474]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[474]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[474]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[474]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[474]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -23995,7 +23995,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[475]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[475]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[475]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[475]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[475]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[475]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[475]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[475]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24047,7 +24047,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[476]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[476]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[476]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[476]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[476]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[476]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[476]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[476]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24099,7 +24099,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[477]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[477]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[477]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[477]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[477]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[477]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[477]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[477]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24151,7 +24151,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[478]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[478]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[478]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[478]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[478]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[478]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[478]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[478]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24203,7 +24203,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[479]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[479]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[479]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[479]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[479]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[479]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[479]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[479]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24255,7 +24255,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[480]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[480]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[480]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[480]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[480]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[480]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[480]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[480]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24307,7 +24307,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[481]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[481]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[481]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[481]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[481]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[481]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[481]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[481]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24359,7 +24359,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[482]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[482]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[482]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[482]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[482]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[482]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[482]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[482]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24411,7 +24411,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[483]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[483]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[483]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[483]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[483]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[483]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[483]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[483]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24463,7 +24463,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[484]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[484]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[484]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[484]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[484]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[484]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[484]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[484]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24515,7 +24515,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[485]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[485]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[485]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[485]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[485]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[485]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[485]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[485]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24567,7 +24567,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[486]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[486]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[486]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[486]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[486]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[486]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[486]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[486]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24619,7 +24619,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[487]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[487]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[487]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[487]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[487]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[487]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[487]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[487]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24671,7 +24671,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[488]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[488]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[488]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[488]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[488]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[488]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[488]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[488]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24723,7 +24723,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[489]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[489]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[489]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[489]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[489]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[489]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[489]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[489]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24775,7 +24775,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[490]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[490]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[490]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[490]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[490]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[490]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[490]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[490]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24827,7 +24827,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[491]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[491]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[491]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[491]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[491]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[491]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[491]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[491]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24879,7 +24879,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[492]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[492]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[492]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[492]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[492]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[492]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[492]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[492]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24931,7 +24931,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[493]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[493]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[493]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[493]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[493]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[493]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[493]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[493]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -24983,7 +24983,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[494]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[494]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[494]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[494]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[494]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[494]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[494]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[494]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25035,7 +25035,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[495]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[495]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[495]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[495]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[495]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[495]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[495]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[495]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25087,7 +25087,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[496]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[496]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[496]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[496]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[496]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[496]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[496]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[496]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25139,7 +25139,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[497]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[497]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[497]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[497]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[497]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[497]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[497]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[497]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25191,7 +25191,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[498]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[498]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[498]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[498]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[498]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[498]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[498]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[498]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25243,7 +25243,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[499]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[499]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[499]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[499]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[499]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[499]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[499]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[499]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25295,7 +25295,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[500]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[500]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[500]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[500]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[500]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[500]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[500]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[500]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25347,7 +25347,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[501]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[501]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[501]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[501]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[501]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[501]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[501]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[501]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25399,7 +25399,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[502]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[502]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[502]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[502]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[502]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[502]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[502]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[502]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25451,7 +25451,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[503]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[503]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[503]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[503]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[503]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[503]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[503]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[503]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25503,7 +25503,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[504]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[504]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[504]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[504]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[504]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[504]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[504]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[504]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25555,7 +25555,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[505]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[505]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[505]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[505]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[505]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[505]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[505]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[505]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25607,7 +25607,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[506]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[506]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[506]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[506]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[506]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[506]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[506]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[506]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25659,7 +25659,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[507]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[507]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[507]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[507]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[507]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[507]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[507]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[507]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25711,7 +25711,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[508]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[508]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[508]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[508]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[508]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[508]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[508]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[508]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25763,7 +25763,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[509]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[509]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[509]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[509]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[509]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[509]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[509]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[509]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25815,7 +25815,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[510]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[510]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[510]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[510]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[510]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[510]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[510]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[510]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25867,7 +25867,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[511]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[511]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[511]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[511]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[511]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[511]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[511]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[511]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25919,7 +25919,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[512]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[512]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[512]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[512]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[512]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[512]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[512]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[512]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -25971,7 +25971,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[513]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[513]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[513]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[513]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[513]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[513]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[513]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[513]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26023,7 +26023,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[514]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[514]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[514]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[514]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[514]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[514]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[514]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[514]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26075,7 +26075,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[515]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[515]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[515]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[515]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[515]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[515]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[515]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[515]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26127,7 +26127,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[516]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[516]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[516]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[516]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[516]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[516]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[516]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[516]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26179,7 +26179,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[517]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[517]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[517]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[517]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[517]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[517]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[517]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[517]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26231,7 +26231,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[518]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[518]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[518]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[518]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[518]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[518]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[518]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[518]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26283,7 +26283,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[519]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[519]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[519]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[519]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[519]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[519]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[519]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[519]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26335,7 +26335,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[520]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[520]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[520]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[520]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[520]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[520]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[520]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[520]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26387,7 +26387,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[521]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[521]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[521]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[521]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[521]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[521]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[521]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[521]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26439,7 +26439,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[522]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[522]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[522]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[522]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[522]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[522]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[522]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[522]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26491,7 +26491,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[523]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[523]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[523]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[523]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[523]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[523]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[523]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[523]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26543,7 +26543,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[524]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[524]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[524]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[524]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[524]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[524]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[524]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[524]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26595,7 +26595,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[525]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[525]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[525]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[525]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[525]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[525]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[525]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[525]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26647,7 +26647,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[526]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[526]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[526]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[526]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[526]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[526]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[526]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[526]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26699,7 +26699,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[527]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[527]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[527]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[527]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[527]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[527]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[527]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[527]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26751,7 +26751,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[528]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[528]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[528]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[528]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[528]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[528]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[528]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[528]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26803,7 +26803,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[529]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[529]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[529]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[529]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[529]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[529]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[529]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[529]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26855,7 +26855,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[530]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[530]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[530]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[530]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[530]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[530]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[530]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[530]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26907,7 +26907,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[531]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[531]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[531]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[531]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[531]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[531]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[531]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[531]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -26959,7 +26959,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[532]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[532]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[532]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[532]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[532]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[532]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[532]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[532]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27011,7 +27011,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[533]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[533]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[533]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[533]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[533]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[533]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[533]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[533]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27063,7 +27063,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[534]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[534]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[534]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[534]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[534]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[534]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[534]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[534]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27115,7 +27115,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[535]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[535]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[535]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[535]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[535]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[535]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[535]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[535]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27167,7 +27167,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[536]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[536]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[536]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[536]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[536]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[536]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[536]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[536]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27219,7 +27219,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[537]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[537]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[537]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[537]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[537]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[537]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[537]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[537]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27271,7 +27271,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[538]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[538]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[538]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[538]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[538]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[538]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[538]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[538]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27323,7 +27323,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[539]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[539]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[539]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[539]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[539]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[539]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[539]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[539]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27375,7 +27375,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[540]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[540]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[540]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[540]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[540]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[540]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[540]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[540]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27427,7 +27427,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[541]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[541]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[541]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[541]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[541]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[541]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[541]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[541]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27479,7 +27479,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[542]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[542]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[542]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[542]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[542]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[542]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[542]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[542]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27531,7 +27531,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[543]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[543]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[543]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[543]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[543]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[543]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[543]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[543]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27583,7 +27583,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[544]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[544]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[544]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[544]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[544]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[544]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[544]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[544]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27635,7 +27635,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[545]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[545]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[545]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[545]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[545]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[545]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[545]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[545]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27687,7 +27687,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[546]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[546]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[546]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[546]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[546]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[546]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[546]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[546]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27739,7 +27739,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[547]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[547]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[547]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[547]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[547]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[547]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[547]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[547]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27791,7 +27791,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[548]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[548]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[548]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[548]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[548]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[548]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[548]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[548]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27843,7 +27843,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[549]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[549]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[549]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[549]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[549]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[549]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[549]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[549]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27895,7 +27895,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[550]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[550]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[550]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[550]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[550]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[550]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[550]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[550]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27947,7 +27947,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[551]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[551]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[551]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[551]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[551]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[551]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[551]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[551]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -27999,7 +27999,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[552]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[552]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[552]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[552]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[552]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[552]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[552]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[552]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28051,7 +28051,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[553]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[553]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[553]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[553]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[553]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[553]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[553]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[553]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28103,7 +28103,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[554]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[554]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[554]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[554]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[554]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[554]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[554]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[554]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28155,7 +28155,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[555]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[555]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[555]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[555]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[555]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[555]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[555]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[555]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28207,7 +28207,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[556]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[556]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[556]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[556]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[556]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[556]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[556]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[556]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28259,7 +28259,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[557]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[557]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[557]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[557]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[557]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[557]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[557]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[557]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28311,7 +28311,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[558]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[558]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[558]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[558]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[558]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[558]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[558]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[558]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28363,7 +28363,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[559]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[559]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[559]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[559]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[559]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[559]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[559]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[559]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28415,7 +28415,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[560]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[560]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[560]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[560]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[560]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[560]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[560]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[560]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28467,7 +28467,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[561]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[561]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[561]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[561]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[561]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[561]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[561]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[561]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28519,7 +28519,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[562]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[562]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[562]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[562]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[562]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[562]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[562]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[562]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28571,7 +28571,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[563]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[563]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[563]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[563]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[563]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[563]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[563]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[563]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28623,7 +28623,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[564]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[564]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[564]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[564]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[564]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[564]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[564]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[564]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28675,7 +28675,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[565]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[565]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[565]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[565]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[565]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[565]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[565]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[565]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28727,7 +28727,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[566]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[566]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[566]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[566]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[566]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[566]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[566]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[566]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28779,7 +28779,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[567]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[567]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[567]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[567]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[567]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[567]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[567]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[567]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28831,7 +28831,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[568]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[568]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[568]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[568]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[568]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[568]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[568]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[568]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28883,7 +28883,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[569]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[569]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[569]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[569]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[569]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[569]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[569]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[569]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28935,7 +28935,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[570]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[570]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[570]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[570]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[570]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[570]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[570]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[570]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -28987,7 +28987,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[571]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[571]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[571]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[571]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[571]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[571]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[571]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[571]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29039,7 +29039,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[572]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[572]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[572]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[572]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[572]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[572]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[572]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[572]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29091,7 +29091,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[573]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[573]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[573]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[573]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[573]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[573]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[573]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[573]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29143,7 +29143,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[574]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[574]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[574]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[574]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[574]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[574]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[574]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[574]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29195,7 +29195,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[575]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[575]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[575]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[575]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[575]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[575]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[575]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[575]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29247,7 +29247,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[576]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[576]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[576]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[576]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[576]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[576]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[576]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[576]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29299,7 +29299,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[577]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[577]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[577]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[577]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[577]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[577]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[577]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[577]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29351,7 +29351,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[578]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[578]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[578]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[578]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[578]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[578]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[578]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[578]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29403,7 +29403,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[579]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[579]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[579]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[579]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[579]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[579]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[579]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[579]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29455,7 +29455,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[580]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[580]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[580]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[580]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[580]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[580]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[580]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[580]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29507,7 +29507,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[581]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[581]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[581]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[581]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[581]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[581]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[581]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[581]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29559,7 +29559,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[582]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[582]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[582]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[582]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[582]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[582]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[582]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[582]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29611,7 +29611,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[583]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[583]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[583]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[583]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[583]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[583]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[583]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[583]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29663,7 +29663,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[584]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[584]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[584]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[584]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[584]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[584]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[584]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[584]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29715,7 +29715,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[585]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[585]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[585]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[585]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[585]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[585]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[585]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[585]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29767,7 +29767,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[586]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[586]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[586]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[586]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[586]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[586]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[586]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[586]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29819,7 +29819,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[587]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[587]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[587]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[587]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[587]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[587]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[587]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[587]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29871,7 +29871,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[588]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[588]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[588]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[588]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[588]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[588]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[588]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[588]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29923,7 +29923,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[589]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[589]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[589]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[589]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[589]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[589]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[589]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[589]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -29975,7 +29975,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[590]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[590]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[590]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[590]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[590]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[590]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[590]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[590]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30027,7 +30027,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[591]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[591]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[591]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[591]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[591]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[591]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[591]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[591]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30079,7 +30079,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[592]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[592]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[592]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[592]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[592]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[592]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[592]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[592]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30131,7 +30131,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[593]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[593]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[593]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[593]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[593]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[593]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[593]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[593]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30183,7 +30183,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[594]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[594]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[594]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[594]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[594]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[594]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[594]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[594]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30235,7 +30235,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[595]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[595]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[595]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[595]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[595]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[595]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[595]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[595]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30287,7 +30287,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[596]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[596]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[596]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[596]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[596]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[596]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[596]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[596]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30339,7 +30339,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[597]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[597]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[597]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[597]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[597]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[597]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[597]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[597]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30391,7 +30391,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[598]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[598]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[598]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[598]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[598]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[598]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[598]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[598]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30443,7 +30443,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[599]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[599]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[599]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[599]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[599]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[599]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[599]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[599]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30495,7 +30495,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[600]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[600]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[600]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[600]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[600]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[600]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[600]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[600]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30547,7 +30547,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[601]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[601]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[601]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[601]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[601]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[601]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[601]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[601]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30599,7 +30599,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[602]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[602]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[602]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[602]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[602]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[602]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[602]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[602]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30651,7 +30651,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[603]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[603]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[603]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[603]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[603]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[603]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[603]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[603]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30703,7 +30703,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[604]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[604]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[604]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[604]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[604]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[604]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[604]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[604]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30755,7 +30755,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[605]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[605]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[605]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[605]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[605]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[605]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[605]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[605]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30807,7 +30807,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[606]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[606]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[606]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[606]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[606]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[606]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[606]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[606]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30859,7 +30859,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[607]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[607]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[607]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[607]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[607]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[607]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[607]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[607]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30911,7 +30911,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[608]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[608]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[608]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[608]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[608]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[608]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[608]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[608]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -30963,7 +30963,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[609]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[609]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[609]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[609]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[609]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[609]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[609]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[609]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31015,7 +31015,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[610]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[610]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[610]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[610]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[610]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[610]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[610]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[610]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31067,7 +31067,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[611]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[611]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[611]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[611]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[611]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[611]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[611]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[611]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31119,7 +31119,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[612]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[612]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[612]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[612]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[612]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[612]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[612]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[612]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31171,7 +31171,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[613]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[613]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[613]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[613]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[613]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[613]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[613]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[613]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31223,7 +31223,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[614]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[614]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[614]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[614]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[614]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[614]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[614]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[614]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31275,7 +31275,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[615]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[615]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[615]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[615]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[615]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[615]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[615]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[615]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31327,7 +31327,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[616]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[616]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[616]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[616]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[616]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[616]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[616]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[616]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31379,7 +31379,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[617]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[617]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[617]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[617]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[617]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[617]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[617]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[617]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31431,7 +31431,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[618]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[618]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[618]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[618]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[618]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[618]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[618]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[618]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31483,7 +31483,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[619]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[619]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[619]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[619]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[619]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[619]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[619]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[619]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31535,7 +31535,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[620]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[620]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[620]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[620]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[620]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[620]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[620]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[620]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31587,7 +31587,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[621]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[621]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[621]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[621]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[621]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[621]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[621]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[621]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31639,7 +31639,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[622]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[622]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[622]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[622]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[622]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[622]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[622]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[622]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31691,7 +31691,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[623]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[623]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[623]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[623]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[623]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[623]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[623]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[623]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31743,7 +31743,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[624]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[624]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[624]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[624]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[624]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[624]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[624]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[624]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31795,7 +31795,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[625]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[625]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[625]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[625]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[625]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[625]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[625]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[625]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31847,7 +31847,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[626]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[626]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[626]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[626]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[626]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[626]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[626]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[626]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31899,7 +31899,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[627]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[627]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[627]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[627]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[627]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[627]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[627]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[627]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -31951,7 +31951,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[628]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[628]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[628]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[628]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[628]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[628]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[628]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[628]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32003,7 +32003,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[629]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[629]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[629]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[629]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[629]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[629]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[629]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[629]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32055,7 +32055,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[630]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[630]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[630]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[630]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[630]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[630]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[630]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[630]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32107,7 +32107,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[631]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[631]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[631]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[631]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[631]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[631]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[631]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[631]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32159,7 +32159,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[632]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[632]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[632]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[632]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[632]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[632]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[632]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[632]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32211,7 +32211,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[633]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[633]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[633]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[633]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[633]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[633]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[633]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[633]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32263,7 +32263,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[634]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[634]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[634]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[634]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[634]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[634]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[634]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[634]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32315,7 +32315,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[635]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[635]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[635]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[635]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[635]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[635]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[635]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[635]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32367,7 +32367,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[636]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[636]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[636]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[636]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[636]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[636]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[636]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[636]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32419,7 +32419,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[637]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[637]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[637]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[637]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[637]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[637]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[637]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[637]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32471,7 +32471,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[638]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[638]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[638]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[638]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[638]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[638]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[638]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[638]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32523,7 +32523,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[639]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[639]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[639]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[639]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[639]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[639]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[639]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[639]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32575,7 +32575,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[640]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[640]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[640]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[640]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[640]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[640]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[640]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[640]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32627,7 +32627,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[641]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[641]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[641]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[641]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[641]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[641]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[641]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[641]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32679,7 +32679,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[642]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[642]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[642]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[642]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[642]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[642]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[642]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[642]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32731,7 +32731,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[643]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[643]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[643]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[643]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[643]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[643]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[643]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[643]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32783,7 +32783,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[644]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[644]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[644]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[644]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[644]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[644]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[644]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[644]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32835,7 +32835,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[645]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[645]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[645]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[645]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[645]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[645]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[645]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[645]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32887,7 +32887,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[646]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[646]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[646]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[646]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[646]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[646]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[646]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[646]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32939,7 +32939,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[647]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[647]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[647]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[647]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[647]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[647]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[647]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[647]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -32991,7 +32991,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[648]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[648]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[648]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[648]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[648]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[648]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[648]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[648]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33043,7 +33043,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[649]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[649]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[649]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[649]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[649]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[649]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[649]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[649]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33095,7 +33095,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[650]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[650]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[650]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[650]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[650]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[650]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[650]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[650]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33147,7 +33147,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[651]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[651]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[651]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[651]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[651]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[651]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[651]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[651]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33199,7 +33199,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[652]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[652]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[652]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[652]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[652]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[652]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[652]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[652]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33251,7 +33251,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[653]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[653]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[653]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[653]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[653]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[653]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[653]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[653]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33303,7 +33303,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[654]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[654]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[654]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[654]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[654]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[654]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[654]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[654]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33355,7 +33355,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[655]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[655]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[655]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[655]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[655]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[655]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[655]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[655]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33407,7 +33407,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[656]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[656]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[656]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[656]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[656]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[656]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[656]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[656]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33459,7 +33459,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[657]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[657]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[657]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[657]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[657]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[657]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[657]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[657]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33511,7 +33511,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[658]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[658]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[658]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[658]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[658]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[658]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[658]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[658]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33563,7 +33563,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[659]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[659]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[659]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[659]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[659]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[659]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[659]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[659]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33615,7 +33615,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[660]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[660]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[660]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[660]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[660]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[660]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[660]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[660]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33647,7 +33647,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[660]['DATA']['VICTIM']['WEAPON'] is None  # noqa
         assert e[660]['DATA']['WARMUP'] == False  # noqa
         assert e[660]['TYPE'] == 'PLAYER_DEATH'  # noqa
-        assert e[661]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[661]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[661]['DATA']['NAME'] == 'Turbo Wpierdol'  # noqa
         assert e[661]['DATA']['STEAM_ID'] == '2f7d40fff23683c6ab15b2ba'  # noqa
         assert e[661]['DATA']['TIME'] == 697300  # noqa
@@ -33661,7 +33661,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[662]['DATA']['HOLY_SHITS'] == 0  # noqa
         assert e[662]['DATA']['KILLS'] == 0  # noqa
         assert e[662]['DATA']['LOSE'] == 0  # noqa
-        assert e[662]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[662]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[662]['DATA']['MAX_STREAK'] == 0  # noqa
         assert e[662]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
         assert e[662]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
@@ -33853,7 +33853,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[663]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[663]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[663]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[663]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[663]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[663]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[663]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[663]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33905,7 +33905,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[664]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[664]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[664]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[664]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[664]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[664]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[664]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[664]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -33957,7 +33957,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[665]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[665]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[665]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[665]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[665]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[665]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[665]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[665]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34009,7 +34009,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[666]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[666]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[666]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[666]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[666]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[666]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[666]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[666]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34061,7 +34061,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[667]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[667]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[667]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[667]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[667]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[667]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[667]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[667]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34113,7 +34113,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[668]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[668]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[668]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[668]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[668]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[668]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[668]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[668]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34165,7 +34165,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[669]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[669]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[669]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[669]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[669]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[669]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[669]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[669]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34217,7 +34217,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[670]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[670]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[670]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[670]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[670]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[670]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[670]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[670]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34269,7 +34269,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[671]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[671]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[671]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[671]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[671]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[671]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[671]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[671]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34321,7 +34321,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[672]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[672]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[672]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[672]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[672]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[672]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[672]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[672]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34373,7 +34373,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[673]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[673]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[673]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[673]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[673]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[673]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[673]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[673]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34425,7 +34425,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[674]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[674]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[674]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[674]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[674]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[674]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[674]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[674]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34477,7 +34477,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[675]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[675]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[675]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[675]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[675]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[675]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[675]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[675]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34529,7 +34529,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[676]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[676]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[676]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[676]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[676]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[676]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[676]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[676]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34581,7 +34581,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[677]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[677]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[677]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[677]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[677]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[677]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[677]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[677]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34633,7 +34633,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[678]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[678]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[678]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[678]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[678]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[678]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[678]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[678]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34685,7 +34685,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[679]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[679]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[679]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[679]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[679]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[679]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[679]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[679]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34737,7 +34737,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[680]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[680]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[680]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[680]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[680]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[680]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[680]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[680]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34789,7 +34789,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[681]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[681]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[681]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[681]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[681]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[681]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[681]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[681]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34841,7 +34841,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[682]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[682]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[682]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[682]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[682]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[682]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[682]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[682]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34893,7 +34893,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[683]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[683]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[683]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[683]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[683]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[683]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[683]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[683]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34945,7 +34945,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[684]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[684]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[684]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[684]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[684]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[684]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[684]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[684]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -34997,7 +34997,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[685]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[685]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[685]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[685]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[685]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[685]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[685]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[685]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35049,7 +35049,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[686]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[686]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[686]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[686]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[686]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[686]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[686]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[686]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35101,7 +35101,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[687]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[687]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[687]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[687]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[687]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[687]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[687]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[687]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35153,7 +35153,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[688]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[688]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[688]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[688]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[688]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[688]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[688]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[688]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35205,7 +35205,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[689]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[689]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[689]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[689]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[689]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[689]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[689]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[689]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35257,7 +35257,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[690]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[690]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[690]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[690]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[690]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[690]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[690]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[690]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35309,7 +35309,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[691]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[691]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[691]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[691]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[691]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[691]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[691]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[691]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35361,7 +35361,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[692]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[692]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[692]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[692]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[692]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[692]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[692]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[692]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35413,7 +35413,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[693]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[693]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[693]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[693]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[693]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[693]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[693]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[693]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35465,7 +35465,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[694]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[694]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[694]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[694]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[694]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[694]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[694]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[694]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35517,7 +35517,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[695]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[695]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[695]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[695]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[695]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[695]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[695]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[695]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35569,7 +35569,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[696]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[696]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[696]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[696]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[696]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[696]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[696]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[696]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35621,7 +35621,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[697]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[697]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[697]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[697]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[697]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[697]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[697]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[697]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35673,7 +35673,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[698]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[698]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[698]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[698]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[698]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[698]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[698]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[698]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35725,7 +35725,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[699]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[699]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[699]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[699]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[699]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[699]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[699]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[699]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35777,7 +35777,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[700]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[700]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[700]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[700]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[700]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[700]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[700]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[700]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35829,7 +35829,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[701]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[701]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[701]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[701]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[701]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[701]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[701]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[701]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35881,7 +35881,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[702]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[702]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[702]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[702]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[702]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[702]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[702]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[702]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35933,7 +35933,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[703]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[703]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[703]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[703]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[703]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[703]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[703]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[703]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -35985,7 +35985,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[704]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[704]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[704]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[704]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[704]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[704]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[704]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[704]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36037,7 +36037,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[705]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[705]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[705]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[705]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[705]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[705]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[705]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[705]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36089,7 +36089,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[706]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[706]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[706]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[706]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[706]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[706]['DATA']['MOD'] == 'GAUNTLET'  # noqa
         assert e[706]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[706]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36141,7 +36141,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[707]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[707]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[707]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[707]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[707]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[707]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[707]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[707]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36193,7 +36193,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[708]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[708]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[708]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[708]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[708]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[708]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[708]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[708]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36245,7 +36245,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[709]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[709]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[709]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[709]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[709]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[709]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[709]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[709]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36297,7 +36297,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[710]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[710]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[710]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[710]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[710]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[710]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[710]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[710]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36349,7 +36349,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[711]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[711]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[711]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[711]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[711]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[711]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[711]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[711]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36401,7 +36401,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[712]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[712]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[712]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[712]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[712]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[712]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[712]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[712]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36453,7 +36453,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[713]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[713]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[713]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[713]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[713]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[713]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[713]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[713]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36505,7 +36505,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[714]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[714]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[714]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[714]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[714]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[714]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[714]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[714]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36557,7 +36557,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[715]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[715]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[715]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[715]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[715]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[715]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[715]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[715]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36609,7 +36609,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[716]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[716]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[716]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[716]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[716]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[716]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[716]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[716]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36661,7 +36661,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[717]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[717]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[717]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[717]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[717]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[717]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[717]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[717]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36713,7 +36713,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[718]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[718]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[718]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[718]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[718]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[718]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[718]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[718]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36765,7 +36765,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[719]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[719]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[719]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[719]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[719]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[719]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[719]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[719]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36817,7 +36817,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[720]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[720]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[720]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[720]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[720]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[720]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[720]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[720]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36869,7 +36869,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[721]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[721]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[721]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[721]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[721]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[721]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[721]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[721]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36921,7 +36921,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[722]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[722]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[722]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[722]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[722]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[722]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[722]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[722]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -36973,7 +36973,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[723]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[723]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[723]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[723]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[723]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[723]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[723]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[723]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37025,7 +37025,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[724]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[724]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[724]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[724]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[724]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[724]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[724]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[724]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37077,7 +37077,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[725]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[725]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[725]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[725]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[725]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[725]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[725]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[725]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37129,7 +37129,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[726]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[726]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[726]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[726]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[726]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[726]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[726]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[726]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37181,7 +37181,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[727]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[727]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[727]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[727]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[727]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[727]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[727]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[727]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37233,7 +37233,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[728]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[728]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[728]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[728]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[728]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[728]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[728]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[728]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37285,7 +37285,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[729]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[729]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[729]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[729]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[729]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[729]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[729]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[729]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37337,7 +37337,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[730]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[730]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[730]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[730]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[730]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[730]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[730]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[730]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37389,7 +37389,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[731]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[731]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[731]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[731]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[731]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[731]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[731]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[731]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37441,7 +37441,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[732]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[732]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[732]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[732]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[732]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[732]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[732]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[732]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37493,7 +37493,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[733]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[733]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[733]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[733]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[733]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[733]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[733]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[733]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37545,7 +37545,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[734]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[734]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[734]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[734]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[734]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[734]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[734]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[734]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37597,7 +37597,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[735]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[735]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[735]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[735]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[735]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[735]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[735]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[735]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37649,7 +37649,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[736]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[736]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[736]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[736]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[736]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[736]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[736]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[736]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37701,7 +37701,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[737]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[737]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[737]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[737]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[737]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[737]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[737]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[737]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37753,7 +37753,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[738]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[738]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[738]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[738]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[738]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[738]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[738]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[738]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37805,7 +37805,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[739]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[739]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[739]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[739]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[739]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[739]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[739]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[739]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37857,7 +37857,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[740]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[740]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[740]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[740]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[740]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[740]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[740]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[740]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37909,7 +37909,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[741]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[741]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[741]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[741]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[741]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[741]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[741]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[741]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -37961,7 +37961,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[742]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[742]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[742]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[742]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[742]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[742]['DATA']['MOD'] == 'GRENADE'  # noqa
         assert e[742]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[742]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38013,7 +38013,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[743]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[743]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[743]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[743]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[743]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[743]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[743]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[743]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38065,7 +38065,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[744]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[744]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[744]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[744]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[744]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[744]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[744]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[744]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38117,7 +38117,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[745]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[745]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[745]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[745]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[745]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[745]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[745]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[745]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38169,7 +38169,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[746]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[746]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[746]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[746]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[746]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[746]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[746]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[746]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38221,7 +38221,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[747]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[747]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[747]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[747]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[747]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[747]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[747]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[747]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38273,7 +38273,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[748]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[748]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[748]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[748]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[748]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[748]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[748]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[748]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38325,7 +38325,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[749]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[749]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[749]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[749]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[749]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[749]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[749]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[749]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38377,7 +38377,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[750]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[750]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[750]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[750]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[750]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[750]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[750]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[750]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38429,7 +38429,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[751]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[751]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[751]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[751]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[751]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[751]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[751]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[751]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38481,7 +38481,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[752]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[752]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[752]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[752]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[752]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[752]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[752]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[752]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38533,7 +38533,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[753]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[753]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[753]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[753]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[753]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[753]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[753]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[753]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38585,7 +38585,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[754]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[754]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[754]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[754]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[754]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[754]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[754]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[754]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38637,7 +38637,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[755]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[755]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[755]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[755]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[755]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[755]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[755]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[755]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38689,7 +38689,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[756]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[756]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[756]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[756]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[756]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[756]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[756]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[756]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38741,7 +38741,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[757]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[757]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[757]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[757]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[757]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[757]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[757]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[757]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38793,7 +38793,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[758]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[758]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[758]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[758]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[758]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[758]['DATA']['MOD'] == 'LAVA'  # noqa
         assert e[758]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[758]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38845,7 +38845,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[759]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[759]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[759]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[759]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[759]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[759]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[759]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[759]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38897,7 +38897,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[760]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[760]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[760]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[760]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[760]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[760]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[760]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[760]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -38949,7 +38949,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[761]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[761]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[761]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[761]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[761]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[761]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[761]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[761]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39001,7 +39001,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[762]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[762]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[762]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[762]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[762]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[762]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[762]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[762]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39053,7 +39053,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[763]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[763]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[763]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[763]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[763]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[763]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[763]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[763]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39105,7 +39105,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[764]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[764]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[764]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[764]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[764]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[764]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[764]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[764]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39157,7 +39157,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[765]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[765]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[765]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[765]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[765]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[765]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[765]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[765]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39209,7 +39209,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[766]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[766]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[766]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[766]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[766]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[766]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[766]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[766]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39261,7 +39261,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[767]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[767]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[767]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[767]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[767]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[767]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[767]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[767]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39313,7 +39313,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[768]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[768]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[768]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[768]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[768]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[768]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[768]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[768]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39365,7 +39365,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[769]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[769]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[769]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[769]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[769]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[769]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[769]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[769]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39417,7 +39417,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[770]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[770]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[770]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[770]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[770]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[770]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[770]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[770]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39469,7 +39469,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[771]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[771]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[771]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[771]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[771]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[771]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[771]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[771]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39521,7 +39521,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[772]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[772]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[772]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[772]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[772]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[772]['DATA']['MOD'] == 'GRENADE_SPLASH'  # noqa
         assert e[772]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[772]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39573,7 +39573,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[773]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[773]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[773]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[773]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[773]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[773]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[773]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[773]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39625,7 +39625,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[774]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[774]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[774]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[774]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[774]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[774]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[774]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[774]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39677,7 +39677,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[775]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[775]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[775]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[775]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[775]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[775]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[775]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[775]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39729,7 +39729,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[776]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[776]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[776]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[776]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[776]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[776]['DATA']['MOD'] == 'ROCKET'  # noqa
         assert e[776]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[776]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39781,7 +39781,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[777]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[777]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[777]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[777]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[777]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[777]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[777]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[777]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39833,7 +39833,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[778]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[778]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[778]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[778]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[778]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[778]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[778]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[778]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39885,7 +39885,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[779]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[779]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[779]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[779]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[779]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[779]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[779]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[779]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39937,7 +39937,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[780]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[780]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[780]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[780]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[780]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[780]['DATA']['MOD'] == 'MACHINEGUN'  # noqa
         assert e[780]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[780]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -39989,7 +39989,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[781]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[781]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[781]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[781]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[781]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[781]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[781]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[781]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40041,7 +40041,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[782]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[782]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[782]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[782]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[782]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[782]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[782]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[782]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40093,7 +40093,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[783]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[783]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[783]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[783]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[783]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[783]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[783]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[783]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40145,7 +40145,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[784]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[784]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[784]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[784]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[784]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[784]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[784]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[784]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40197,7 +40197,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[785]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[785]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[785]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[785]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[785]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[785]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[785]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[785]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40249,7 +40249,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[786]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[786]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[786]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[786]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[786]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[786]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[786]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[786]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40301,7 +40301,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[787]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[787]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[787]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[787]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[787]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[787]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[787]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[787]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40353,7 +40353,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[788]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[788]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[788]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[788]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[788]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[788]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[788]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[788]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40405,7 +40405,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[789]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[789]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[789]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[789]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[789]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[789]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[789]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[789]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40457,7 +40457,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[790]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[790]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[790]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[790]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[790]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[790]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[790]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[790]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40509,7 +40509,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[791]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[791]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[791]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[791]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[791]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[791]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[791]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[791]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40561,7 +40561,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[792]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[792]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[792]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[792]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[792]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[792]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[792]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[792]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40613,7 +40613,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[793]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[793]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[793]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[793]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[793]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[793]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[793]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[793]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40665,7 +40665,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[794]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[794]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[794]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[794]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[794]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[794]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[794]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[794]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40717,7 +40717,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[795]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[795]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[795]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[795]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[795]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[795]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[795]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[795]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40769,7 +40769,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[796]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[796]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[796]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[796]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[796]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[796]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[796]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[796]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40821,7 +40821,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[797]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[797]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[797]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[797]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[797]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[797]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[797]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[797]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40873,7 +40873,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[798]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[798]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[798]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[798]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[798]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[798]['DATA']['MOD'] == 'SHOTGUN'  # noqa
         assert e[798]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[798]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40925,7 +40925,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[799]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[799]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[799]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[799]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[799]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[799]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[799]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[799]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -40977,7 +40977,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[800]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[800]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[800]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[800]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[800]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[800]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[800]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[800]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -41029,7 +41029,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[801]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[801]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[801]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[801]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[801]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[801]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[801]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[801]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -41081,7 +41081,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[802]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[802]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[802]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[802]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[802]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[802]['DATA']['MOD'] == 'LIGHTNING'  # noqa
         assert e[802]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[802]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -41133,7 +41133,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[803]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[803]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[803]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[803]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[803]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[803]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[803]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[803]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -41185,7 +41185,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[804]['DATA']['KILLER']['VIEW']['Y'] is None  # noqa
         assert e[804]['DATA']['KILLER']['VIEW']['Z'] is None  # noqa
         assert e[804]['DATA']['KILLER']['WEAPON'] is None  # noqa
-        assert e[804]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[804]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[804]['DATA']['MOD'] == 'ROCKET_SPLASH'  # noqa
         assert e[804]['DATA']['OTHER_TEAM_ALIVE'] is None  # noqa
         assert e[804]['DATA']['OTHER_TEAM_DEAD'] is None  # noqa
@@ -41225,7 +41225,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[805]['DATA']['HOLY_SHITS'] == 0  # noqa
         assert e[805]['DATA']['KILLS'] == 0  # noqa
         assert e[805]['DATA']['LOSE'] == 0  # noqa
-        assert e[805]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[805]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[805]['DATA']['MAX_STREAK'] == 0  # noqa
         assert e[805]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
         assert e[805]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
@@ -41405,7 +41405,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[806]['DATA']['HOLY_SHITS'] == 0  # noqa
         assert e[806]['DATA']['KILLS'] == 0  # noqa
         assert e[806]['DATA']['LOSE'] == 0  # noqa
-        assert e[806]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[806]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[806]['DATA']['MAX_STREAK'] == 0  # noqa
         assert e[806]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
         assert e[806]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
@@ -41585,7 +41585,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[807]['DATA']['HOLY_SHITS'] == 0  # noqa
         assert e[807]['DATA']['KILLS'] == 0  # noqa
         assert e[807]['DATA']['LOSE'] == 0  # noqa
-        assert e[807]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[807]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[807]['DATA']['MAX_STREAK'] == 0  # noqa
         assert e[807]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
         assert e[807]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
@@ -41765,7 +41765,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[808]['DATA']['HOLY_SHITS'] == 0  # noqa
         assert e[808]['DATA']['KILLS'] == 0  # noqa
         assert e[808]['DATA']['LOSE'] == 0  # noqa
-        assert e[808]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[808]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[808]['DATA']['MAX_STREAK'] == 0  # noqa
         assert e[808]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
         assert e[808]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
@@ -41945,7 +41945,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[809]['DATA']['HOLY_SHITS'] == 0  # noqa
         assert e[809]['DATA']['KILLS'] == 0  # noqa
         assert e[809]['DATA']['LOSE'] == 0  # noqa
-        assert e[809]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[809]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[809]['DATA']['MAX_STREAK'] == 0  # noqa
         assert e[809]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
         assert e[809]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
@@ -42125,7 +42125,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[810]['DATA']['HOLY_SHITS'] == 0  # noqa
         assert e[810]['DATA']['KILLS'] == 0  # noqa
         assert e[810]['DATA']['LOSE'] == 0  # noqa
-        assert e[810]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[810]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[810]['DATA']['MAX_STREAK'] == 0  # noqa
         assert e[810]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
         assert e[810]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
@@ -42305,7 +42305,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[811]['DATA']['HOLY_SHITS'] == 0  # noqa
         assert e[811]['DATA']['KILLS'] == 0  # noqa
         assert e[811]['DATA']['LOSE'] == 0  # noqa
-        assert e[811]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[811]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[811]['DATA']['MAX_STREAK'] == 0  # noqa
         assert e[811]['DATA']['MEDALS']['ACCURACY'] == 0  # noqa
         assert e[811]['DATA']['MEDALS']['ASSISTS'] == 0  # noqa
@@ -42477,9 +42477,38 @@ class TestQ3toQL_OSPFFA2():
         assert e[811]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
         assert e[811]['DATA']['WIN'] == 0  # noqa
         assert e[811]['TYPE'] == 'PLAYER_STATS'  # noqa
-        assert e[812]['DATA']['MATCH_GUID'] == 'dd8c67aae4da914182ffae28b1812505'  # noqa
+        assert e[812]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
         assert e[812]['DATA']['NAME'] == 'MACIEK'  # noqa
         assert e[812]['DATA']['STEAM_ID'] == '773fa00f3f3a7e960b561492'  # noqa
         assert e[812]['DATA']['TIME'] == 903600  # noqa
         assert e[812]['DATA']['WARMUP'] == False  # noqa
         assert e[812]['TYPE'] == 'PLAYER_DISCONNECT'  # noqa
+        assert e[813]['DATA']['ABORTED'] is None  # noqa
+        assert e[813]['DATA']['CAPTURE_LIMIT'] is None  # noqa
+        assert e[813]['DATA']['EXIT_MSG'] == 'Timelimit hit.'  # noqa
+        assert e[813]['DATA']['FACTORY'] is None  # noqa
+        assert e[813]['DATA']['FACTORY_TITLE'] is None  # noqa
+        assert e[813]['DATA']['FIRST_SCORER'] is None  # noqa
+        assert e[813]['DATA']['FRAG_LIMIT'] is None  # noqa
+        assert e[813]['DATA']['GAME_LENGTH'] is None  # noqa
+        assert e[813]['DATA']['GAME_TYPE'] is None  # noqa
+        assert e[813]['DATA']['INFECTED'] is None  # noqa
+        assert e[813]['DATA']['INSTAGIB'] is None  # noqa
+        assert e[813]['DATA']['LAST_LEAD_CHANGE_TIME'] is None  # noqa
+        assert e[813]['DATA']['LAST_SCORER'] is None  # noqa
+        assert e[813]['DATA']['LAST_TEAMSCORER'] is None  # noqa
+        assert e[813]['DATA']['MAP'] is None  # noqa
+        assert e[813]['DATA']['MATCH_GUID'] == '36d84a127e7fe2903250b924f898b7df'  # noqa
+        assert e[813]['DATA']['MERCY_LIMIT'] is None  # noqa
+        assert e[813]['DATA']['QUADHOG'] is None  # noqa
+        assert e[813]['DATA']['RESTARTED'] is None  # noqa
+        assert e[813]['DATA']['ROUND_LIMIT'] is None  # noqa
+        assert e[813]['DATA']['SCORE_LIMIT'] is None  # noqa
+        assert e[813]['DATA']['SERVER_TITLE'] is None  # noqa
+        assert e[813]['DATA']['TIME'] == 900000  # noqa
+        assert e[813]['DATA']['TIME_LIMIT'] is None  # noqa
+        assert e[813]['DATA']['TRAINING'] is None  # noqa
+        assert e[813]['DATA']['TSCORE0'] is None  # noqa
+        assert e[813]['DATA']['TSCORE1'] is None  # noqa
+        assert e[813]['DATA']['WARMUP'] == False  # noqa
+        assert e[813]['TYPE'] == 'MATCH_REPORT'  # noqa
