@@ -5,7 +5,7 @@ Not sure where to put it
 
 
 def _regen_asserts(data, accessor: str = 'e'):
-    if isinstance(data, int):
+    if isinstance(data, (int, float)):
         print(f'assert {accessor} == {data}  # noqa')
     elif isinstance(data, str):
         print(f"assert {accessor} == '{data}'  # noqa")

@@ -50,7 +50,7 @@ class MatchStarted(QLEvent):
         "MERCY_LIMIT": 0,
         "SCORE_LIMIT": 0,
         "MAP": None,
-        "PLAYERS": {}  # I think we can live without it
+        "PLAYERS": []  # I think we can live without it
     }
 
     def set_limits(self, fraglimit: int, timelimit: int, capturelimit: int):
@@ -64,6 +64,13 @@ class MatchStarted(QLEvent):
         self.data['SERVER_TITLE'] = server_title
         self.data['GAME_TYPE'] = game_type
         self.data['MAP'] = map_name
+
+    def add_player(self, steam_id, player_name):
+        self.data['PLAYERS'].append({
+            "STEAM_ID": steam_id,
+            "NAME": player_name,
+            "TEAM": 0,
+        })
 
 
 class PlayerConnect(QLEvent):
@@ -170,6 +177,14 @@ class PlayerStats(QLEvent):
         self.data['NAME'] = name
         self.data['STEAM_ID'] = steam_id
 
+    def set_pickups(self, health: int, armor: int):
+        self.data['PICKUPS']['TOTAL_HEALTH'] = health
+        self.data['PICKUPS']['TOTAL_ARMOR'] = armor
+
+    def set_damage(self, dealt: int, taken: int):
+        self.data['DAMAGE']['DEALT'] = dealt
+        self.data['DAMAGE']['TAKEN'] = taken
+
     def add_weapon(self, weapon: str, shots: int, hits: int):
         if weapon not in self.data['WEAPONS']:
             raise ValueError(f"Invalid weapon '{weapon}'")
@@ -260,5 +275,6 @@ class MatchReport(QLEvent):
         "ROUND_LIMIT": None,
     }
 
-    def set_data(self, exit_msg: str):
+    def set_data(self, exit_msg: str, game_length: int):
         self.data['EXIT_MSG'] = exit_msg
+        self.data['GAME_LENGTH'] = game_length

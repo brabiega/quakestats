@@ -30,7 +30,11 @@ class Q3LogParser():
     def __init__(self, raw_data: str):
         self.raw_data = raw_data
 
-    def games(self):
+    def games(self) -> Iterator[Q3GameLog]:
+        """
+        Parse given data and return iterator
+        over parsed games
+        """
         game = Q3GameLog()
         for event in self.read_raw_events():
             if event.name == SEPARATOR:
@@ -43,6 +47,11 @@ class Q3LogParser():
 
             ev = self.build_event(event)
             game.add_event(ev, event.name, event.payload)
+
+        # if no separator then handle it as well
+        if not game.is_empty():
+            self.close_game(game)
+            yield game
 
     def close_game(self, game: Q3GameLog):
         """
@@ -145,7 +154,8 @@ class OspParserMixin():
         'R.Launcher': 'ROCKET',
         'LightningGun': 'LIGHTNING',
         'Plasmagun': 'PLASMA',
-        'Gauntlet': 'GAUNTLET'
+        'Gauntlet': 'GAUNTLET',
+        'Railgun': 'RAILGUN',
     }
 
     def parse_weapon_stat(self, ev: RawEvent) -> events.Q3EVPlayerStats:
@@ -231,3 +241,4 @@ class Q3LogParserModOsp(
     def close_game(self, game: Q3GameLog):
         if self.ev_exit:
             game.add_event(self.ev_exit, 'Exit', '')
+            game.set_finished()

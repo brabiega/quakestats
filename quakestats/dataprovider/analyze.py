@@ -239,7 +239,8 @@ class Analyzer:
         # in q3 player can change his nickname. the generated id is
         # properly preserved between events but the name is not
         player_id = event.killer_id
-        self.players[player_id].name = event.killer_name
+        if event.killer_name:
+            self.players[player_id].name = event.killer_name
         self.player_scores.from_player_kill(event)
         self.special_scores.from_player_kill(event)
 

@@ -90,7 +90,7 @@ class QuakeGame():
         }
 
     def add_event(self, time: int, ev_cls) -> qlevents.QLEvent:
-        game_time = time - self.start_time
+        game_time = (time - self.start_time) / 1000
         ev = ev_cls(game_time, self.game_guid, self.warmup)
         self.ql_events.append(ev)
         return ev
@@ -105,6 +105,7 @@ class QuakeGame():
         )
         event.set_game_info(ev.hostname, ev.mapname, ev.gametype)
         event.set_limits(ev.fraglimit, ev.timelimit, ev.capturelimit)
+        event.add_player("q3-world", '__world__')
 
     def user_info_changed(
         self, ev: q3_events.Q3EVUpdateClient
@@ -170,6 +171,8 @@ class QuakeGame():
             ql_ev.add_weapon(name, stats.shots, stats.hits)
 
         ql_ev.set_data(client.name, client.lazy_identity)
+        ql_ev.set_pickups(ev.pickups.health, ev.pickups.armor)
+        ql_ev.set_damage(ev.damage.given, ev.damage.received)
 
     def kill(self, ev: q3_events.Q3EVPlayerKill):
         ql_ev: qlevents.PlayerKill = self.add_event(
@@ -201,7 +204,8 @@ class QuakeGame():
         ql_ev: qlevents.MatchReport = self.add_event(
             ev.time, qlevents.MatchReport
         )
-        ql_ev.set_data(ev.reason)
+        duration = ev.time - self.start_time
+        ql_ev.set_data(ev.reason, duration)
 
 
 class Q3toQL():

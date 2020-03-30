@@ -12,6 +12,7 @@ class Q3GameLog():
     def __init__(self):
         self.events: List[Q3GameEvent] = []
         self.checksum = hashlib.md5()
+        self.finished = False
 
     def add_event(self, event: Q3GameEvent, name, payload):
         # calculate game checksum, collisions should be very rare as
@@ -27,3 +28,6 @@ class Q3GameLog():
 
     def is_empty(self) -> bool:
         return not bool(self.events)
+
+    def set_finished(self):
+        self.finished = True
