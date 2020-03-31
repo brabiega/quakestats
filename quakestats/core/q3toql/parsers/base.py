@@ -2,6 +2,9 @@ import collections
 import hashlib
 import logging
 import re
+from datetime import (
+    datetime,
+)
 from typing import (
     Iterator,
 )
@@ -30,20 +33,22 @@ class Q3LogParser():
     """
     def __init__(self, raw_data: str):
         self.raw_data = raw_data
+        # game that is currently being parsed
+        self._current_game = None
 
     def games(self) -> Iterator[Q3GameLog]:
         """
         Parse given data and return iterator
         over parsed games
         """
-        game = Q3GameLog()
+        game = self.new_game()
         for event in self.read_raw_events():
             if event.name == SEPARATOR:
                 # this seems to mean that single q3 game has ended or started
                 if not game.is_empty():
                     self.close_game(game)
                     yield game
-                game = Q3GameLog()
+                game = self.new_game()
                 continue
 
             ev = self.build_event(event)
@@ -53,6 +58,11 @@ class Q3LogParser():
         if not game.is_empty():
             self.close_game(game)
             yield game
+
+    def new_game(self):
+        game = Q3GameLog()
+        self._current_game = game
+        return game
 
     def close_game(self, game: Q3GameLog):
         """
@@ -103,8 +113,8 @@ class DefaultParserMixin():
         gi = game_info_dict
         return events.Q3EVInitGame(
             ev.time, gi['sv_hostname'], gi['gametype'],
-            gi['mapname'], gi['fraglimit'],
-            gi['capturelimit'], gi['timelimit'],
+            gi['mapname'], int(gi['fraglimit']),
+            int(gi['capturelimit']), int(gi['timelimit']),
             gi['gamename']
         )
 
@@ -185,6 +195,16 @@ class OspParserMixin():
         event.set_pickups(grah_stats['Health'], grah_stats['Armor'])
         return event
 
+    def parse_server_time(self, raw_event: RawEvent) -> datetime:
+        """
+        Example: 20170622112609  11:26:09 (22 Jun 2017)
+        """
+        data = raw_event.payload
+        server_date = datetime.strptime(
+            data.split()[0].strip(), "%Y%m%d%H%M%S"
+        )
+        return server_date
+
 
 class Q3LogParserModOsp(
     Q3LogParser, DefaultParserMixin, OspParserMixin
@@ -238,6 +258,8 @@ class Q3LogParserModOsp(
             return self.parse_client_disconnect(raw_event)
         elif raw_event.name == 'Exit':
             self.ev_exit = self.parse_exit(raw_event)
+        elif raw_event.name == 'ServerTime':
+            self._current_game.start_date = self.parse_server_time(raw_event)
 
     @classmethod
     def mktime(cls, event_time: str) -> int:

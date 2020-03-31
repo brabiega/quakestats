@@ -275,6 +275,15 @@ class MatchReport(QLEvent):
         "ROUND_LIMIT": None,
     }
 
-    def set_data(self, exit_msg: str, game_length: int):
+    def set_data(
+        self, exit_msg: str, game_length: int, map: str, hostname: str
+    ):
+        self.data['SERVER_TITLE'] = hostname
         self.data['EXIT_MSG'] = exit_msg
         self.data['GAME_LENGTH'] = game_length
+        self.data['MAP'] = map
+
+    def set_limits(self, fraglimit: int, capturelimit: int, timelimit: int):
+        self.data['FRAG_LIMIT'] = fraglimit
+        self.data['CAPTURE_LIMIT'] = capturelimit
+        self.data['TIME_LIMIT'] = timelimit

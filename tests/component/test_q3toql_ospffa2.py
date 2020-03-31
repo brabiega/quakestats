@@ -28,10 +28,10 @@ class TestQ3toQL_OSPFFA2():
         e = ql_events
         # py.test tests/component/test_q3toql_ospffa1.py  -vs | grep assert >> tests/component/test_q3toql_ospffa1.py  # noqa
         # _regen_asserts(e)
-        assert e[0]['DATA']['CAPTURE_LIMIT'] == '8'  # noqa
+        assert e[0]['DATA']['CAPTURE_LIMIT'] == 8  # noqa
         assert e[0]['DATA']['FACTORY'] == 'quake3'  # noqa
         assert e[0]['DATA']['FACTORY_TITLE'] == 'quake3'  # noqa
-        assert e[0]['DATA']['FRAG_LIMIT'] == '200'  # noqa
+        assert e[0]['DATA']['FRAG_LIMIT'] == 200  # noqa
         assert e[0]['DATA']['GAME_TYPE'] == 'FFA'  # noqa
         assert e[0]['DATA']['INFECTED'] == 0  # noqa
         assert e[0]['DATA']['INSTAGIB'] == 0  # noqa
@@ -46,7 +46,7 @@ class TestQ3toQL_OSPFFA2():
         assert e[0]['DATA']['SCORE_LIMIT'] == 0  # noqa
         assert e[0]['DATA']['SERVER_TITLE'] == 'MY Q3'  # noqa
         assert e[0]['DATA']['TIME'] == 0.0  # noqa
-        assert e[0]['DATA']['TIME_LIMIT'] == '15'  # noqa
+        assert e[0]['DATA']['TIME_LIMIT'] == 15  # noqa
         assert e[0]['DATA']['TRAINING'] == 0  # noqa
         assert e[0]['DATA']['WARMUP'] == False  # noqa
         assert e[0]['TYPE'] == 'MATCH_STARTED'  # noqa
@@ -42503,12 +42503,12 @@ class TestQ3toQL_OSPFFA2():
         assert e[812]['DATA']['WARMUP'] == False  # noqa
         assert e[812]['TYPE'] == 'PLAYER_DISCONNECT'  # noqa
         assert e[813]['DATA']['ABORTED'] is None  # noqa
-        assert e[813]['DATA']['CAPTURE_LIMIT'] is None  # noqa
+        assert e[813]['DATA']['CAPTURE_LIMIT'] == 8  # noqa
         assert e[813]['DATA']['EXIT_MSG'] == 'Timelimit hit.'  # noqa
         assert e[813]['DATA']['FACTORY'] is None  # noqa
         assert e[813]['DATA']['FACTORY_TITLE'] is None  # noqa
         assert e[813]['DATA']['FIRST_SCORER'] is None  # noqa
-        assert e[813]['DATA']['FRAG_LIMIT'] is None  # noqa
+        assert e[813]['DATA']['FRAG_LIMIT'] == 200  # noqa
         assert e[813]['DATA']['GAME_LENGTH'] == 900000  # noqa
         assert e[813]['DATA']['GAME_TYPE'] is None  # noqa
         assert e[813]['DATA']['INFECTED'] is None  # noqa
@@ -42516,16 +42516,16 @@ class TestQ3toQL_OSPFFA2():
         assert e[813]['DATA']['LAST_LEAD_CHANGE_TIME'] is None  # noqa
         assert e[813]['DATA']['LAST_SCORER'] is None  # noqa
         assert e[813]['DATA']['LAST_TEAMSCORER'] is None  # noqa
-        assert e[813]['DATA']['MAP'] is None  # noqa
+        assert e[813]['DATA']['MAP'] == 'nodm9'  # noqa
         assert e[813]['DATA']['MATCH_GUID'] == '18e82f5f5f2c9c913f982daaead253d3'  # noqa
         assert e[813]['DATA']['MERCY_LIMIT'] is None  # noqa
         assert e[813]['DATA']['QUADHOG'] is None  # noqa
         assert e[813]['DATA']['RESTARTED'] is None  # noqa
         assert e[813]['DATA']['ROUND_LIMIT'] is None  # noqa
         assert e[813]['DATA']['SCORE_LIMIT'] is None  # noqa
-        assert e[813]['DATA']['SERVER_TITLE'] is None  # noqa
+        assert e[813]['DATA']['SERVER_TITLE'] == 'MY Q3'  # noqa
         assert e[813]['DATA']['TIME'] == 900.0  # noqa
-        assert e[813]['DATA']['TIME_LIMIT'] is None  # noqa
+        assert e[813]['DATA']['TIME_LIMIT'] == 15  # noqa
         assert e[813]['DATA']['TRAINING'] is None  # noqa
         assert e[813]['DATA']['TSCORE0'] is None  # noqa
         assert e[813]['DATA']['TSCORE1'] is None  # noqa

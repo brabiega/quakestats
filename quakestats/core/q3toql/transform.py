@@ -1,8 +1,10 @@
+import datetime
 import hashlib
 import logging
 import re
 from typing import (
     List,
+    Optional,
 )
 
 from quakestats.core.q3toql import (
@@ -61,6 +63,17 @@ class Client():
         return steam_id
 
 
+class QuakeGameMetadata():
+    def __init__(self):
+        self.start_date: Optional[datetime] = None
+        self.finish_date: Optional[datetime] = None
+        self.map = None
+        self.timelimit = None
+        self.fraglimit = None
+        self.capturelimit = None
+        self.hostname = None
+
+
 class QuakeGame():
     """
     This should be a claas which represents
@@ -83,6 +96,7 @@ class QuakeGame():
         self.start_time: int = 0
         self.game_guid = None
         self.warmup = False
+        self.metadata = QuakeGameMetadata()
 
         # keeps track of current clients
         self.clients = {
@@ -106,6 +120,11 @@ class QuakeGame():
         event.set_game_info(ev.hostname, ev.mapname, ev.gametype)
         event.set_limits(ev.fraglimit, ev.timelimit, ev.capturelimit)
         event.add_player("q3-world", '__world__')
+        self.metadata.map = ev.mapname
+        self.metadata.timelimit = ev.timelimit
+        self.metadata.fraglimit = ev.fraglimit
+        self.metadata.capturelimit = ev.capturelimit
+        self.metadata.hostname = ev.hostname
 
     def user_info_changed(
         self, ev: q3_events.Q3EVUpdateClient
@@ -205,7 +224,15 @@ class QuakeGame():
             ev.time, qlevents.MatchReport
         )
         duration = ev.time - self.start_time
-        ql_ev.set_data(ev.reason, duration)
+        ql_ev.set_data(
+            ev.reason, duration, self.metadata.map,
+            self.metadata.hostname
+        )
+        ql_ev.set_limits(
+            self.metadata.fraglimit,
+            self.metadata.capturelimit,
+            self.metadata.timelimit,
+        )
 
 
 class Q3toQL():
@@ -221,6 +248,7 @@ class Q3toQL():
     def transform(self, gamelog: Q3GameLog):
         self.game = QuakeGame()
         self.gamelog = gamelog
+        self.game.metadata.start_date = gamelog.start_date
 
         init_game = [
             e for e in self.gamelog.events

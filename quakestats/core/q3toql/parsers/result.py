@@ -12,7 +12,7 @@ class Q3GameLog():
         self.events: List[Q3GameEvent] = []
         self.checksum = None
         self.finished = False
-        self.start_time = None
+        self.start_date = None
         self.end_time = None
 
     def add_event(self, event: Q3GameEvent):

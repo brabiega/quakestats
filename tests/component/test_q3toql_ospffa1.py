@@ -28,10 +28,10 @@ class TestQ3toQL_OSPFFA1():
         e = ql_events
         # py.test tests/component/test_q3toql_ospffa1.py  -vs | grep assert >> tests/component/test_q3toql_ospffa1.py  # noqa
         # _regen_asserts(e)
-        assert e[0]['DATA']['CAPTURE_LIMIT'] == '0'  # noqa
+        assert e[0]['DATA']['CAPTURE_LIMIT'] == 0  # noqa
         assert e[0]['DATA']['FACTORY'] == 'quake3'  # noqa
         assert e[0]['DATA']['FACTORY_TITLE'] == 'quake3'  # noqa
-        assert e[0]['DATA']['FRAG_LIMIT'] == '20'  # noqa
+        assert e[0]['DATA']['FRAG_LIMIT'] == 20  # noqa
         assert e[0]['DATA']['GAME_TYPE'] == 'FFA'  # noqa
         assert e[0]['DATA']['INFECTED'] == 0  # noqa
         assert e[0]['DATA']['INSTAGIB'] == 0  # noqa
@@ -46,12 +46,14 @@ class TestQ3toQL_OSPFFA1():
         assert e[0]['DATA']['SCORE_LIMIT'] == 0  # noqa
         assert e[0]['DATA']['SERVER_TITLE'] == 'noname'  # noqa
         assert e[0]['DATA']['TIME'] == 0.0  # noqa
-        assert e[0]['DATA']['TIME_LIMIT'] == '0'  # noqa
+        assert e[0]['DATA']['TIME_LIMIT'] == 0  # noqa
         assert e[0]['DATA']['TRAINING'] == 0  # noqa
         assert e[0]['DATA']['WARMUP'] == False  # noqa
         assert e[0]['TYPE'] == 'MATCH_STARTED'  # noqa
         assert e[1]['DATA']['MATCH_GUID'] == '19b5bc9bf2e789eab15613dd3ee3e97b'  # noqa
-        assert e[1]['DATA']['NAME'] == 'Bartoszer'  # noqatests/component/test_q3toql_ospffa1.py::TestQ3toQL_OSPFFA1::test_process 
+        assert e[1]['DATA']['NAME'] == 'Bartoszer'  # noqa
+        assert e[1]['DATA']['STEAM_ID'] == '6179638dba55b8f5d2da7838'  # noqa
+        assert e[1]['DATA']['TIME'] == 0.3  # noqa
         assert e[1]['DATA']['WARMUP'] == False  # noqa
         assert e[1]['TYPE'] == 'PLAYER_CONNECT'  # noqa
         assert e[2]['DATA']['KILLER']['NAME'] == 'Bartoszer'  # noqa
@@ -3861,12 +3863,12 @@ class TestQ3toQL_OSPFFA1():
         assert e[71]['DATA']['WIN'] == 0  # noqa
         assert e[71]['TYPE'] == 'PLAYER_STATS'  # noqa
         assert e[72]['DATA']['ABORTED'] is None  # noqa
-        assert e[72]['DATA']['CAPTURE_LIMIT'] is None  # noqa
+        assert e[72]['DATA']['CAPTURE_LIMIT'] == 0  # noqa
         assert e[72]['DATA']['EXIT_MSG'] == 'Fraglimit hit.'  # noqa
         assert e[72]['DATA']['FACTORY'] is None  # noqa
         assert e[72]['DATA']['FACTORY_TITLE'] is None  # noqa
         assert e[72]['DATA']['FIRST_SCORER'] is None  # noqa
-        assert e[72]['DATA']['FRAG_LIMIT'] is None  # noqa
+        assert e[72]['DATA']['FRAG_LIMIT'] == 20  # noqa
         assert e[72]['DATA']['GAME_LENGTH'] == 313000  # noqa
         assert e[72]['DATA']['GAME_TYPE'] is None  # noqa
         assert e[72]['DATA']['INFECTED'] is None  # noqa
@@ -3874,16 +3876,16 @@ class TestQ3toQL_OSPFFA1():
         assert e[72]['DATA']['LAST_LEAD_CHANGE_TIME'] is None  # noqa
         assert e[72]['DATA']['LAST_SCORER'] is None  # noqa
         assert e[72]['DATA']['LAST_TEAMSCORER'] is None  # noqa
-        assert e[72]['DATA']['MAP'] is None  # noqa
+        assert e[72]['DATA']['MAP'] == 'ASYLUM'  # noqa
         assert e[72]['DATA']['MATCH_GUID'] == '19b5bc9bf2e789eab15613dd3ee3e97b'  # noqa
         assert e[72]['DATA']['MERCY_LIMIT'] is None  # noqa
         assert e[72]['DATA']['QUADHOG'] is None  # noqa
         assert e[72]['DATA']['RESTARTED'] is None  # noqa
         assert e[72]['DATA']['ROUND_LIMIT'] is None  # noqa
         assert e[72]['DATA']['SCORE_LIMIT'] is None  # noqa
-        assert e[72]['DATA']['SERVER_TITLE'] is None  # noqa
+        assert e[72]['DATA']['SERVER_TITLE'] == 'noname'  # noqa
         assert e[72]['DATA']['TIME'] == 313.0  # noqa
-        assert e[72]['DATA']['TIME_LIMIT'] is None  # noqa
+        assert e[72]['DATA']['TIME_LIMIT'] == 0  # noqa
         assert e[72]['DATA']['TRAINING'] is None  # noqa
         assert e[72]['DATA']['TSCORE0'] is None  # noqa
         assert e[72]['DATA']['TSCORE1'] is None  # noqa
