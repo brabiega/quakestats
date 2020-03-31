@@ -1,4 +1,5 @@
 import collections
+import hashlib
 import logging
 import re
 from typing import (
@@ -46,7 +47,7 @@ class Q3LogParser():
                 continue
 
             ev = self.build_event(event)
-            game.add_event(ev, event.name, event.payload)
+            game.add_event(ev)
 
         # if no separator then handle it as well
         if not game.is_empty():
@@ -194,6 +195,7 @@ class Q3LogParserModOsp(
     def __init__(self, raw_data: str):
         self.raw_data = raw_data
         self.ev_exit = None
+        self.game_hash = hashlib.md5()
 
     def read_raw_events(self) -> Iterator[RawEvent]:
         for line in self.read_lines():
@@ -202,6 +204,10 @@ class Q3LogParserModOsp(
     def line_to_raw_event(self, line: str) -> RawEvent:
         match = re.search(self.event_format, line)
         if match:
+            # calculate game checksum, collisions should be very rare as
+            # the hash depends on log lines and their order
+            # hash will be used as unique game identifier
+            self.game_hash.update(line.encode())
             ev_time = match.group(1)
             ev_name = match.group(2)
             ev_payload = match.group(3).strip()
@@ -239,6 +245,8 @@ class Q3LogParserModOsp(
         return int(seconds) * 1000 + int(tenths) * 100
 
     def close_game(self, game: Q3GameLog):
+        game.set_checksum(self.game_hash.hexdigest())
+        self.game_hash = hashlib.md5()
         if self.ev_exit:
-            game.add_event(self.ev_exit, 'Exit', '')
+            game.add_event(self.ev_exit)
             game.set_finished()

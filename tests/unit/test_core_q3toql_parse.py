@@ -32,10 +32,10 @@ class TestQ3LogParserModOsp():
         for idx, game in enumerate(games):
             accessor = 'e[{}]'.format(idx)
             ev_num = len(game.events)
-            ev_check = game.checksum.hexdigest()
+            ev_check = game.checksum
 
             print(f'assert len({accessor}.events) == {ev_num}  # noqa')
-            print(f"assert {accessor}.checksum.hexdigest() == '{ev_check}'  # noqa")
+            print(f"assert {accessor}.checksum == '{ev_check}'  # noqa")
 
     def test_games(self, testdata_loader):
         ld = testdata_loader('osp-warmups.log')
@@ -46,12 +46,12 @@ class TestQ3LogParserModOsp():
         # self.__regen_asserts(games)  # use to regenerate asserts
         e = games
         assert len(e) == 3
-        assert len(e[0].events) == 4  # noqa
-        assert e[0].checksum.hexdigest() == 'b8fee375dae59abeb06850fc82d8a1b3'  # noqa
-        assert len(e[1].events) == 4  # noqa
-        assert e[1].checksum.hexdigest() == '6275aafca888f67ee53936e9c548ab2d'  # noqa
-        assert len(e[2].events) == 10  # noqa
-        assert e[2].checksum.hexdigest() == '1ea0d0be8f93babc98fd4579a4c1ba20'  # noqa
+        assert len(e[0].events) == 1  # noqa
+        assert e[0].checksum == '5acd2bb0453735885f5a9294b5ff67a3'  # noqa
+        assert len(e[1].events) == 1  # noqa
+        assert e[1].checksum == '671b1bf98bb8e0c91d2137e749cb3d7c'  # noqa
+        assert len(e[2].events) == 4  # noqa
+        assert e[2].checksum == 'f66ad0e4bdb4216e77d5e5856af6f5c0'  # noqa
 
     @pytest.mark.parametrize('ts, expected', [
         ('0.0', 0),

@@ -227,7 +227,7 @@ class Q3toQL():
             if isinstance(e, q3_events.Q3EVInitGame)
         ][0]
         self.game.add_match_started(
-            self.gamelog.checksum.hexdigest(), init_game
+            self.gamelog.checksum, init_game
         )
 
         for event in self.gamelog.events:
