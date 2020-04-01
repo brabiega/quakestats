@@ -78,7 +78,14 @@ class DataStoreMongo:
                 )
             ]
         )
-
+        self.db.player_stats.bulk_write(
+            [
+                pymongo.UpdateMany(
+                    {"player_id": src_player_id},
+                    {"$set": {"player_id": target_player_id}},
+                )
+            ]
+        )
         rows = self.db.player_merge.find(
             {
                 "src_player_id": src_player_id,
