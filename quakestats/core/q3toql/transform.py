@@ -72,6 +72,7 @@ class QuakeGameMetadata():
         self.fraglimit = None
         self.capturelimit = None
         self.hostname = None
+        self.duration = None
 
 
 class QuakeGame():
@@ -97,6 +98,8 @@ class QuakeGame():
         self.game_guid = None
         self.warmup = False
         self.metadata = QuakeGameMetadata()
+        self.valid_start = False
+        self.valid_end = False
 
         # keeps track of current clients
         self.clients = {
@@ -125,6 +128,7 @@ class QuakeGame():
         self.metadata.fraglimit = ev.fraglimit
         self.metadata.capturelimit = ev.capturelimit
         self.metadata.hostname = ev.hostname
+        self.valid_start = True
 
     def user_info_changed(
         self, ev: q3_events.Q3EVUpdateClient
@@ -233,6 +237,12 @@ class QuakeGame():
             self.metadata.capturelimit,
             self.metadata.timelimit,
         )
+        self.valid_end = True
+        self.metadata.duration = (ev.time - self.start_time) / 1000
+
+    @property
+    def is_valid(self):
+        return self.valid_start and self.valid_end
 
 
 class Q3toQL():
@@ -249,6 +259,7 @@ class Q3toQL():
         self.game = QuakeGame()
         self.gamelog = gamelog
         self.game.metadata.start_date = gamelog.start_date
+        self.game.metadata.finish_date = gamelog.finish_date
 
         init_game = [
             e for e in self.gamelog.events

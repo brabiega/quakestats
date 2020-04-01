@@ -4,6 +4,7 @@ import logging
 import re
 from datetime import (
     datetime,
+    timedelta,
 )
 from typing import (
     Iterator,
@@ -51,10 +52,23 @@ class Q3LogParser():
                 game = self.new_game()
                 continue
 
-            ev = self.build_event(event)
+            try:
+                ev = self.build_event(event)
+            except Exception:
+                logger.exception("Failed to process event '%s'", event)
+                raise
+
+            if ev:
+                # check to detect some inconsistent logs, just warn
+                if ev.time < self.current_time:
+                    logger.warning(
+                        "Got out of time log line '%s', '%s'",
+                        ev.time, event
+                    )
+                self.current_time = ev.time
             game.add_event(ev)
 
-        # if no separator then handle it as well
+        # handle last game even if there is no separator
         if not game.is_empty():
             self.close_game(game)
             yield game
@@ -62,6 +76,7 @@ class Q3LogParser():
     def new_game(self):
         game = Q3GameLog()
         self._current_game = game
+        self.current_time: int = 0
         return game
 
     def close_game(self, game: Q3GameLog):
@@ -182,6 +197,9 @@ class OspParserMixin():
 
         event = events.Q3EVPlayerStats(ev.time, client_id)
         for weapon_name, shot, hit, pick, drop in weapons:
+            # seems like some bug in OSP
+            if weapon_name == 'None':
+                continue
             event.add_weapon(
                 self.STAT_WEAPON_MAP[weapon_name],
                 int(shot), int(hit),
@@ -272,3 +290,9 @@ class Q3LogParserModOsp(
         if self.ev_exit:
             game.add_event(self.ev_exit)
             game.set_finished()
+
+        if game.start_date and self.current_time:
+            game.finish_date = (
+                game.start_date +
+                timedelta(milliseconds=self.current_time)
+            )
