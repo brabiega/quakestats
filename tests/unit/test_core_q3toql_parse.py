@@ -16,6 +16,7 @@ class TestQ3LogParser():
         raw_data = ld.read()
 
         parser = Q3LogParser(raw_data)
+        parser.new_game()
 
         result = list(parser.read_lines())
 

@@ -2,9 +2,6 @@ import logging
 from collections import (
     defaultdict,
 )
-from os import (
-    path,
-)
 
 import flask
 
@@ -134,67 +131,6 @@ def api2_map_info():
     return "Bye"
 
 
-def _process_match(match):
-    server_domain = app.config["SERVER_DOMAIN"]
-    source_type = "Q3"
-
-    # TRANSFORM TO QL
-    transformer = quake3.Q3toQL(match["EVENTS"])
-    transformer.server_domain = server_domain
-
-    transformer.process()
-    results = transformer.result
-
-    # PREPROCESS
-    preprocessor = dataprovider.MatchPreprocessor()
-    preprocessor.process_events(results["events"])
-
-    if not preprocessor.finished:
-        return None
-
-    if app.config["RAW_DATA_DIR"]:
-        base = app.config["RAW_DATA_DIR"]
-        preprocessor.match_guid
-        p = path.join(base, "{}.log".format(preprocessor.match_guid))
-        with open(p, "w") as fh:
-            for line in match["EVENTS"]:
-                fh.write(line)
-                fh.write("\n")
-
-    fmi = dataprovider.FullMatchInfo(
-        events=preprocessor.events,
-        match_guid=preprocessor.match_guid,
-        duration=preprocessor.duration,
-        start_date=results["start_date"],
-        finish_date=results["finish_date"],
-        server_domain=server_domain,
-        source=source_type,
-    )
-
-    analyzer = analyze.Analyzer()
-    report = analyzer.analyze(fmi)
-    data_store().store_analysis_report(report)
-    return fmi
-
-
-@app.route("/api/v2/upload/json", methods=["POST"])
-def api2_upload_json():
-    data = flask.request.json
-
-    if not data:
-        flask.abort(400)
-
-    if not auth(data.get("TOKEN", None)):
-        flask.abort(400)
-
-    fmi = _process_match(data)
-
-    if not fmi:
-        return "Nothing to process"
-    else:
-        return flask.jsonify(fmi.get_summary())
-
-
 @app.route("/api/v2/upload", methods=["POST"])
 def api2_upload():
     if not auth(flask.request.form["token"]):
@@ -206,34 +142,16 @@ def api2_upload():
 
     req_file = flask.request.files["file"]
     data = req_file.read().decode("utf-8")
+    server_domain = app.config["SERVER_DOMAIN"]
 
-    feeder = quake3.Q3MatchFeeder()
-    matches = []
-
-    for line in data.splitlines():
-        try:
-            feeder.feed(line)
-        except quake3.FeedFull:
-            matches.append(feeder.consume())
-            feeder.feed(line)
-
-    errors = 0
-    final_results = []
-    for match in matches:
-        try:
-            fmi = _process_match(match)
-            if fmi:
-                final_results.append(fmi)
-
-        except Exception as e:
-            # TODO save for investigation
-            logger.exception(e)
-            errors += 1
+    final_results, errors = manage.process_q3_log(
+        server_domain, app.config['RAW_DATA_DIR'], data, 'osp', data_store()
+    )
 
     return flask.jsonify(
         {
             "ACCEPTED_MATCHES": [r.get_summary() for r in final_results],
-            "ERRORS": errors,
+            "ERRORS": [repr(e) for e in errors],
         }
     )
 

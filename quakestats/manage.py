@@ -3,6 +3,9 @@ from os import (
     listdir,
     path,
 )
+from typing import (
+    Optional,
+)
 
 from passlib.hash import (
     pbkdf2_sha256,
@@ -11,9 +14,12 @@ from passlib.hash import (
 from quakestats import (
     dataprovider,
 )
+from quakestats.core.q3toql.parse import (
+    QuakeGame,
+    read_games,
+)
 from quakestats.dataprovider import (
     analyze,
-    quake3,
 )
 
 logger = logging.getLogger(__name__)
@@ -33,57 +39,78 @@ def set_admin_password(db, password):
 
 def rebuild_db(data_dir, server_domain, data_store):
     # TODO add tests
-
     data_store().prepare_for_rebuild()
-
+    ds = data_store()
     counter = 0
-    for f in listdir(data_dir):
+    files = listdir(data_dir)
+    for f in files:
         with open(path.join(data_dir, f)) as fh:
             data = fh.read()
-            match = {"EVENTS": data.splitlines()}
-
-            source_type = "Q3"
-            transformer = quake3.Q3toQL(match["EVENTS"])
-            transformer.server_domain = server_domain
-
-            try:
-                transformer.process()
-
-            except Exception as e:
-                # TODO save for investigation if error
-                logger.exception(e)
-                continue
-
-            results = transformer.result
-
-            # PREPROCESS
-            preprocessor = dataprovider.MatchPreprocessor()
-            preprocessor.process_events(results["events"])
-
-            if not preprocessor.finished:
-                continue
-
-            fmi = dataprovider.FullMatchInfo(
-                events=preprocessor.events,
-                match_guid=preprocessor.match_guid,
-                duration=preprocessor.duration,
-                start_date=results["start_date"],
-                finish_date=results["finish_date"],
-                server_domain=server_domain,
-                source=source_type,
+            logger.info("Processing file %s", f)
+            results, errors = process_q3_log(
+                server_domain, None, data, 'osp', ds
             )
-
-            analyzer = analyze.Analyzer()
-            report = analyzer.analyze(fmi)
-            try:
-                data_store().store_analysis_report(report)
-            except Exception:
-                logger.error(
-                    "Failed to process match with guid %s", fmi.match_guid
-                )
-                raise
-
-            counter += 1
+            if errors:
+                logger.error("Got error, %s", errors)
 
     data_store().post_rebuild()
     return counter
+
+
+def process_q3_log(
+    server_domain: str, data_dir: Optional[str],
+    raw_game_log: str, q3mod: str, data_store
+):
+    """
+    Returns 2 lists
+    - list of results
+    - list of errors
+    """
+    errors = []
+    final_results = []
+    for game, game_log in read_games(raw_game_log, q3mod):
+        if isinstance(game, Exception):
+            errors.append(game)
+            continue
+
+        if not game.is_valid or game.metadata.duration < 60:
+            continue
+
+        if data_dir:
+            p = path.join(data_dir, "{}.log".format(game.game_guid))
+            with open(p, "w") as fh:
+                for line in game_log.raw_lines:
+                    fh.write(line)
+                    fh.write("\n")
+
+        try:
+            fmi = process_game(server_domain, data_dir, game, data_store)
+            final_results.append(fmi)
+        except Exception as e:
+            logger.exception(e)
+            errors.append(e)
+    return final_results, errors
+
+
+def process_game(
+    server_domain: str, data_dir: Optional[str], game: QuakeGame, data_store
+):
+    """
+    Process single q3 game
+    """
+    # TODO QuakeGame should keep source type (Q3/QL)
+    source_type = "Q3"
+    fmi = dataprovider.FullMatchInfo(
+        events=game.get_events(),
+        match_guid=game.game_guid,
+        duration=game.metadata.duration,
+        start_date=game.metadata.start_date,
+        finish_date=game.metadata.finish_date,
+        server_domain=server_domain,
+        source=source_type,
+    )
+
+    analyzer = analyze.Analyzer()
+    report = analyzer.analyze(fmi)
+    data_store.store_analysis_report(report)
+    return fmi
