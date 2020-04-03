@@ -72,7 +72,7 @@ class QuakeGameMetadata():
         self.fraglimit = None
         self.capturelimit = None
         self.hostname = None
-        self.duration = None
+        self.duration = 0
 
 
 class QuakeGame():

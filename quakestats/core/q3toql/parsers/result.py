@@ -14,6 +14,7 @@ class Q3GameLog():
         self.finished = False
         self.start_date = None
         self.finish_date = None
+        self.raw_lines = []
 
     def add_event(self, event: Q3GameEvent):
         if event:
@@ -27,3 +28,6 @@ class Q3GameLog():
 
     def set_checksum(self, checksum: str):
         self.checksum = checksum
+
+    def add_raw_line(self, line: str):
+        self.raw_lines.append(line)

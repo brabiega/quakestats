@@ -87,6 +87,7 @@ class Q3LogParser():
 
     def read_lines(self) -> Iterator[str]:
         for line in self.raw_data.splitlines():
+            self._current_game.add_raw_line(line)
             yield line
 
     def build_event(self, raw_event: RawEvent) -> events.Q3GameEvent:
@@ -232,7 +233,9 @@ class Q3LogParserModOsp(
 
     def __init__(self, raw_data: str):
         self.raw_data = raw_data
-        self.ev_exit = None
+        # time of game init event
+        self.__init_time = 0
+        self.__ev_exit = None
         self.game_hash = hashlib.md5()
 
     def read_raw_events(self) -> Iterator[RawEvent]:
@@ -265,7 +268,9 @@ class Q3LogParserModOsp(
 
     def build_event(self, raw_event: RawEvent) -> events.Q3GameEvent:
         if raw_event.name == 'InitGame':
-            return self.parse_init_game(raw_event)
+            ev = self.parse_init_game(raw_event)
+            self.__init_time = ev.time
+            return ev
         elif raw_event.name == 'ClientUserinfoChanged':
             return self.parse_user_info(raw_event)
         elif raw_event.name == 'Weapon_Stats':
@@ -275,7 +280,7 @@ class Q3LogParserModOsp(
         elif raw_event.name == 'ClientDisconnect':
             return self.parse_client_disconnect(raw_event)
         elif raw_event.name == 'Exit':
-            self.ev_exit = self.parse_exit(raw_event)
+            self.__ev_exit = self.parse_exit(raw_event)
         elif raw_event.name == 'ServerTime':
             self._current_game.start_date = self.parse_server_time(raw_event)
 
@@ -287,12 +292,13 @@ class Q3LogParserModOsp(
     def close_game(self, game: Q3GameLog):
         game.set_checksum(self.game_hash.hexdigest())
         self.game_hash = hashlib.md5()
-        if self.ev_exit:
-            game.add_event(self.ev_exit)
+        if self.__ev_exit:
+            game.add_event(self.__ev_exit)
             game.set_finished()
 
         if game.start_date and self.current_time:
             game.finish_date = (
                 game.start_date +
-                timedelta(milliseconds=self.current_time)
+                timedelta(milliseconds=self.current_time - self.__init_time)
             )
+        self.__ev_exit = None
