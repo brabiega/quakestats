@@ -99,7 +99,6 @@ def process_game(
     Process single q3 game
     """
     # TODO QuakeGame should keep source type (Q3/QL)
-    source_type = "Q3"
     fmi = dataprovider.FullMatchInfo(
         events=game.get_events(),
         match_guid=game.game_guid,
@@ -107,7 +106,7 @@ def process_game(
         start_date=game.metadata.start_date,
         finish_date=game.metadata.finish_date,
         server_domain=server_domain,
-        source=source_type,
+        source=game.source,
     )
 
     analyzer = analyze.Analyzer()

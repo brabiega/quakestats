@@ -7,7 +7,7 @@ from typing import (
     Optional,
 )
 
-from quakestats.core.q3toql import (
+from quakestats.core.game import (
     qlevents,
 )
 from quakestats.core.q3toql.parsers import events as q3_events
@@ -100,6 +100,7 @@ class QuakeGame():
         self.metadata = QuakeGameMetadata()
         self.valid_start = False
         self.valid_end = False
+        self.source = 'Q3'
 
         # keeps track of current clients
         self.clients = {

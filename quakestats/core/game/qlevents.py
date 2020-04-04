@@ -167,12 +167,6 @@ class PlayerStats(QLEvent):
         for key in entities.MEDALS:
             self.data['MEDALS'][key] = 0
 
-        for key in entities.WEAPONS:
-            self.data['WEAPONS'][key] = {
-                'K': 0, 'P': 0, 'DR': 0, 'H': 0,
-                'D': 0, 'DG': 0, 'T': 0, 'S': 0,
-            }
-
     def set_data(self, name: str, steam_id):
         self.data['NAME'] = name
         self.data['STEAM_ID'] = steam_id
@@ -186,11 +180,20 @@ class PlayerStats(QLEvent):
         self.data['DAMAGE']['TAKEN'] = taken
 
     def add_weapon(self, weapon: str, shots: int, hits: int):
-        if weapon not in self.data['WEAPONS']:
+        if weapon not in entities.WEAPONS:
             raise ValueError(f"Invalid weapon '{weapon}'")
 
-        self.data['WEAPONS'][weapon]['H'] = hits
-        self.data['WEAPONS'][weapon]['S'] = shots
+        try:
+            weapon_stat = self.data['WEAPONS'][weapon]
+        except KeyError:
+            weapon_stat = {
+                'K': None, 'P': None, 'DR': None, 'H': None,
+                'D': None, 'DG': None, 'T': None, 'S': None,
+            }
+            self.data['WEAPONS'][weapon] = weapon_stat
+
+        weapon_stat['H'] = hits
+        weapon_stat['S'] = shots
 
 
 class PlayerKill(QLEvent):

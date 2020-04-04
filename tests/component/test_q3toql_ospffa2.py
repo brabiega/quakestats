@@ -33724,118 +33724,46 @@ class TestQ3toQL_OSPFFA2():
         assert e[662]['DATA']['TIED_TEAM_RANK'] is None  # noqa
         assert e[662]['DATA']['TIME'] == 697.3  # noqa
         assert e[662]['DATA']['WARMUP'] == False  # noqa
-        assert e[662]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GAUNTLET']['H'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['GRENADE']['D'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['GRENADE']['DG'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['GRENADE']['DR'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['GRENADE']['H'] == 2  # noqa
-        assert e[662]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['GRENADE']['K'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['GRENADE']['P'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['GRENADE']['S'] == 9  # noqa
-        assert e[662]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['GRENADE']['T'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['D'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['DG'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['DR'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['LIGHTNING']['H'] == 26  # noqa
-        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['K'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['P'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['LIGHTNING']['S'] == 198  # noqa
-        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['LIGHTNING']['T'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['D'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['DG'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['DR'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 254  # noqa
-        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['K'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['P'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 1105  # noqa
-        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PLASMA']['H'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PLASMA']['S'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['MACHINEGUN']['T'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['ROCKET']['D'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['ROCKET']['DG'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['ROCKET']['DR'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['ROCKET']['H'] == 25  # noqa
-        assert e[662]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['ROCKET']['K'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['ROCKET']['P'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['ROCKET']['S'] == 55  # noqa
-        assert e[662]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['ROCKET']['T'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['D'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['DG'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['DR'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['SHOTGUN']['H'] == 29  # noqa
-        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['K'] is None  # noqa
+        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['P'] is None  # noqa
         assert e[662]['DATA']['WEAPONS']['SHOTGUN']['S'] == 154  # noqa
-        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[662]['DATA']['WEAPONS']['SHOTGUN']['T'] is None  # noqa
         assert e[662]['DATA']['WIN'] == 0  # noqa
         assert e[662]['TYPE'] == 'PLAYER_STATS'  # noqa
         assert e[663]['DATA']['KILLER']['AIRBORNE'] is None  # noqa
@@ -41290,118 +41218,54 @@ class TestQ3toQL_OSPFFA2():
         assert e[805]['DATA']['TIED_TEAM_RANK'] is None  # noqa
         assert e[805]['DATA']['TIME'] == 902.2  # noqa
         assert e[805]['DATA']['WARMUP'] == False  # noqa
-        assert e[805]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['D'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['DG'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['DR'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['GAUNTLET']['H'] == 10  # noqa
-        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['K'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['P'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['GAUNTLET']['T'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['GRENADE']['D'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['GRENADE']['DG'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['GRENADE']['DR'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['GRENADE']['H'] == 2  # noqa
-        assert e[805]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['GRENADE']['K'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['GRENADE']['P'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['GRENADE']['S'] == 14  # noqa
-        assert e[805]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['GRENADE']['T'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['D'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['DG'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['DR'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['LIGHTNING']['H'] == 110  # noqa
-        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['K'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['P'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['LIGHTNING']['S'] == 474  # noqa
-        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['LIGHTNING']['T'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['D'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['DG'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['DR'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 207  # noqa
-        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['K'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['P'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 1221  # noqa
-        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PLASMA']['H'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PLASMA']['S'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['MACHINEGUN']['T'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['ROCKET']['D'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['ROCKET']['DG'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['ROCKET']['DR'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['ROCKET']['H'] == 26  # noqa
-        assert e[805]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['ROCKET']['K'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['ROCKET']['P'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['ROCKET']['S'] == 71  # noqa
-        assert e[805]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['ROCKET']['T'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['D'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['DG'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['DR'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['SHOTGUN']['H'] == 59  # noqa
-        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['K'] is None  # noqa
+        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['P'] is None  # noqa
         assert e[805]['DATA']['WEAPONS']['SHOTGUN']['S'] == 418  # noqa
-        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[805]['DATA']['WEAPONS']['SHOTGUN']['T'] is None  # noqa
         assert e[805]['DATA']['WIN'] == 0  # noqa
         assert e[805]['TYPE'] == 'PLAYER_STATS'  # noqa
         assert e[806]['DATA']['ABORTED'] == False  # noqa
@@ -41472,118 +41336,54 @@ class TestQ3toQL_OSPFFA2():
         assert e[806]['DATA']['TIED_TEAM_RANK'] is None  # noqa
         assert e[806]['DATA']['TIME'] == 902.2  # noqa
         assert e[806]['DATA']['WARMUP'] == False  # noqa
-        assert e[806]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['D'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['DG'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['DR'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['GAUNTLET']['H'] == 26  # noqa
-        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['K'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['P'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['GAUNTLET']['T'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['GRENADE']['D'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['GRENADE']['DG'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['GRENADE']['DR'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['GRENADE']['H'] == 23  # noqa
-        assert e[806]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['GRENADE']['K'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['GRENADE']['P'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['GRENADE']['S'] == 78  # noqa
-        assert e[806]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['GRENADE']['T'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['D'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['DG'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['DR'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['LIGHTNING']['H'] == 231  # noqa
-        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['K'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['P'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['LIGHTNING']['S'] == 833  # noqa
-        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['LIGHTNING']['T'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['D'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['DG'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['DR'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 26  # noqa
-        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['K'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['P'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 146  # noqa
-        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PLASMA']['H'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PLASMA']['S'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['MACHINEGUN']['T'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['ROCKET']['D'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['ROCKET']['DG'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['ROCKET']['DR'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['ROCKET']['H'] == 96  # noqa
-        assert e[806]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['ROCKET']['K'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['ROCKET']['P'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['ROCKET']['S'] == 190  # noqa
-        assert e[806]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['ROCKET']['T'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['D'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['DG'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['DR'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['SHOTGUN']['H'] == 137  # noqa
-        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['K'] is None  # noqa
+        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['P'] is None  # noqa
         assert e[806]['DATA']['WEAPONS']['SHOTGUN']['S'] == 517  # noqa
-        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[806]['DATA']['WEAPONS']['SHOTGUN']['T'] is None  # noqa
         assert e[806]['DATA']['WIN'] == 0  # noqa
         assert e[806]['TYPE'] == 'PLAYER_STATS'  # noqa
         assert e[807]['DATA']['ABORTED'] == False  # noqa
@@ -41654,118 +41454,46 @@ class TestQ3toQL_OSPFFA2():
         assert e[807]['DATA']['TIED_TEAM_RANK'] is None  # noqa
         assert e[807]['DATA']['TIME'] == 902.2  # noqa
         assert e[807]['DATA']['WARMUP'] == False  # noqa
-        assert e[807]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GAUNTLET']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['GRENADE']['D'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['GRENADE']['DG'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['GRENADE']['DR'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['GRENADE']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['GRENADE']['K'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['GRENADE']['P'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['GRENADE']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['GRENADE']['T'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['D'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['DG'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['DR'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['LIGHTNING']['H'] == 85  # noqa
-        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['K'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['P'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['LIGHTNING']['S'] == 444  # noqa
-        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['LIGHTNING']['T'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['D'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['DG'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['DR'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 311  # noqa
-        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['K'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['P'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 1230  # noqa
-        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PLASMA']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PLASMA']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['MACHINEGUN']['T'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['ROCKET']['D'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['ROCKET']['DG'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['ROCKET']['DR'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['ROCKET']['H'] == 48  # noqa
-        assert e[807]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['ROCKET']['K'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['ROCKET']['P'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['ROCKET']['S'] == 127  # noqa
-        assert e[807]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['ROCKET']['T'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['D'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['DG'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['DR'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['SHOTGUN']['H'] == 134  # noqa
-        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['K'] is None  # noqa
+        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['P'] is None  # noqa
         assert e[807]['DATA']['WEAPONS']['SHOTGUN']['S'] == 682  # noqa
-        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[807]['DATA']['WEAPONS']['SHOTGUN']['T'] is None  # noqa
         assert e[807]['DATA']['WIN'] == 0  # noqa
         assert e[807]['TYPE'] == 'PLAYER_STATS'  # noqa
         assert e[808]['DATA']['ABORTED'] == False  # noqa
@@ -41836,118 +41564,54 @@ class TestQ3toQL_OSPFFA2():
         assert e[808]['DATA']['TIED_TEAM_RANK'] is None  # noqa
         assert e[808]['DATA']['TIME'] == 902.2  # noqa
         assert e[808]['DATA']['WARMUP'] == False  # noqa
-        assert e[808]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['D'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['DG'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['DR'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['GAUNTLET']['H'] == 7  # noqa
-        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['K'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['P'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['GAUNTLET']['T'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['GRENADE']['D'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['GRENADE']['DG'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['GRENADE']['DR'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['GRENADE']['H'] == 41  # noqa
-        assert e[808]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['GRENADE']['K'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['GRENADE']['P'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['GRENADE']['S'] == 181  # noqa
-        assert e[808]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['GRENADE']['T'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['D'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['DG'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['DR'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['LIGHTNING']['H'] == 115  # noqa
-        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['K'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['P'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['LIGHTNING']['S'] == 525  # noqa
-        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['LIGHTNING']['T'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['D'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['DG'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['DR'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 160  # noqa
-        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['K'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['P'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 591  # noqa
-        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PLASMA']['H'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PLASMA']['S'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['MACHINEGUN']['T'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['ROCKET']['D'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['ROCKET']['DG'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['ROCKET']['DR'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['ROCKET']['H'] == 49  # noqa
-        assert e[808]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['ROCKET']['K'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['ROCKET']['P'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['ROCKET']['S'] == 97  # noqa
-        assert e[808]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['ROCKET']['T'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['D'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['DG'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['DR'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['SHOTGUN']['H'] == 51  # noqa
-        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['K'] is None  # noqa
+        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['P'] is None  # noqa
         assert e[808]['DATA']['WEAPONS']['SHOTGUN']['S'] == 473  # noqa
-        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[808]['DATA']['WEAPONS']['SHOTGUN']['T'] is None  # noqa
         assert e[808]['DATA']['WIN'] == 0  # noqa
         assert e[808]['TYPE'] == 'PLAYER_STATS'  # noqa
         assert e[809]['DATA']['ABORTED'] == False  # noqa
@@ -42018,118 +41682,46 @@ class TestQ3toQL_OSPFFA2():
         assert e[809]['DATA']['TIED_TEAM_RANK'] is None  # noqa
         assert e[809]['DATA']['TIME'] == 902.2  # noqa
         assert e[809]['DATA']['WARMUP'] == False  # noqa
-        assert e[809]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GAUNTLET']['H'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['GRENADE']['D'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['GRENADE']['DG'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['GRENADE']['DR'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['GRENADE']['H'] == 12  # noqa
-        assert e[809]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['GRENADE']['K'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['GRENADE']['P'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['GRENADE']['S'] == 38  # noqa
-        assert e[809]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['GRENADE']['T'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['D'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['DG'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['DR'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['LIGHTNING']['H'] == 82  # noqa
-        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['K'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['P'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['LIGHTNING']['S'] == 398  # noqa
-        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['LIGHTNING']['T'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['D'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['DG'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['DR'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 341  # noqa
-        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['K'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['P'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 1314  # noqa
-        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PLASMA']['H'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PLASMA']['S'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['MACHINEGUN']['T'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['ROCKET']['D'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['ROCKET']['DG'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['ROCKET']['DR'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['ROCKET']['H'] == 43  # noqa
-        assert e[809]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['ROCKET']['K'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['ROCKET']['P'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['ROCKET']['S'] == 100  # noqa
-        assert e[809]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['ROCKET']['T'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['D'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['DG'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['DR'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['SHOTGUN']['H'] == 64  # noqa
-        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['K'] is None  # noqa
+        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['P'] is None  # noqa
         assert e[809]['DATA']['WEAPONS']['SHOTGUN']['S'] == 319  # noqa
-        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[809]['DATA']['WEAPONS']['SHOTGUN']['T'] is None  # noqa
         assert e[809]['DATA']['WIN'] == 0  # noqa
         assert e[809]['TYPE'] == 'PLAYER_STATS'  # noqa
         assert e[810]['DATA']['ABORTED'] == False  # noqa
@@ -42200,118 +41792,46 @@ class TestQ3toQL_OSPFFA2():
         assert e[810]['DATA']['TIED_TEAM_RANK'] is None  # noqa
         assert e[810]['DATA']['TIME'] == 902.2  # noqa
         assert e[810]['DATA']['WARMUP'] == False  # noqa
-        assert e[810]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GAUNTLET']['H'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['GRENADE']['D'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['GRENADE']['DG'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['GRENADE']['DR'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['GRENADE']['H'] == 3  # noqa
-        assert e[810]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['GRENADE']['K'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['GRENADE']['P'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['GRENADE']['S'] == 16  # noqa
-        assert e[810]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['GRENADE']['T'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['D'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['DG'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['DR'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['LIGHTNING']['H'] == 152  # noqa
-        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['K'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['P'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['LIGHTNING']['S'] == 967  # noqa
-        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['LIGHTNING']['T'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['D'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['DG'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['DR'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 248  # noqa
-        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['K'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['P'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 1093  # noqa
-        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PLASMA']['H'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PLASMA']['S'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['MACHINEGUN']['T'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['ROCKET']['D'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['ROCKET']['DG'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['ROCKET']['DR'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['ROCKET']['H'] == 63  # noqa
-        assert e[810]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['ROCKET']['K'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['ROCKET']['P'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['ROCKET']['S'] == 179  # noqa
-        assert e[810]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['ROCKET']['T'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['D'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['DG'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['DR'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['SHOTGUN']['H'] == 83  # noqa
-        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['K'] is None  # noqa
+        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['P'] is None  # noqa
         assert e[810]['DATA']['WEAPONS']['SHOTGUN']['S'] == 473  # noqa
-        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[810]['DATA']['WEAPONS']['SHOTGUN']['T'] is None  # noqa
         assert e[810]['DATA']['WIN'] == 0  # noqa
         assert e[810]['TYPE'] == 'PLAYER_STATS'  # noqa
         assert e[811]['DATA']['ABORTED'] == False  # noqa
@@ -42382,118 +41902,46 @@ class TestQ3toQL_OSPFFA2():
         assert e[811]['DATA']['TIED_TEAM_RANK'] is None  # noqa
         assert e[811]['DATA']['TIME'] == 902.2  # noqa
         assert e[811]['DATA']['WARMUP'] == False  # noqa
-        assert e[811]['DATA']['WEAPONS']['BFG']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['BFG']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['BFG']['DR'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['BFG']['H'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['BFG']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['BFG']['P'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['BFG']['S'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['BFG']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['CHAINGUN']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['CHAINGUN']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['CHAINGUN']['DR'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['CHAINGUN']['H'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['CHAINGUN']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['CHAINGUN']['P'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['CHAINGUN']['S'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['CHAINGUN']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GAUNTLET']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GAUNTLET']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GAUNTLET']['DR'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GAUNTLET']['H'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GAUNTLET']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GAUNTLET']['P'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GAUNTLET']['S'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GAUNTLET']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GRENADE']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GRENADE']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GRENADE']['DR'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['GRENADE']['D'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['GRENADE']['DG'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['GRENADE']['DR'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['GRENADE']['H'] == 2  # noqa
-        assert e[811]['DATA']['WEAPONS']['GRENADE']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['GRENADE']['P'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['GRENADE']['K'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['GRENADE']['P'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['GRENADE']['S'] == 5  # noqa
-        assert e[811]['DATA']['WEAPONS']['GRENADE']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['HMG']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['HMG']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['HMG']['DR'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['HMG']['H'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['HMG']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['HMG']['P'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['HMG']['S'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['HMG']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['DR'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['GRENADE']['T'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['D'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['DG'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['DR'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['LIGHTNING']['H'] == 97  # noqa
-        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['P'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['K'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['P'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['LIGHTNING']['S'] == 520  # noqa
-        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['DR'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['LIGHTNING']['T'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['D'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['DG'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['DR'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['H'] == 372  # noqa
-        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['P'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['K'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['P'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['S'] == 1985  # noqa
-        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['NAILGUN']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['NAILGUN']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['NAILGUN']['DR'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['NAILGUN']['H'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['NAILGUN']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['NAILGUN']['P'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['NAILGUN']['S'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['NAILGUN']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['OTHER_WEAPON']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['OTHER_WEAPON']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['OTHER_WEAPON']['DR'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['OTHER_WEAPON']['H'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['OTHER_WEAPON']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['OTHER_WEAPON']['P'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['OTHER_WEAPON']['S'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['OTHER_WEAPON']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PLASMA']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PLASMA']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PLASMA']['DR'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PLASMA']['H'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PLASMA']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PLASMA']['P'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PLASMA']['S'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PLASMA']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PROXMINE']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PROXMINE']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PROXMINE']['DR'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PROXMINE']['H'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PROXMINE']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PROXMINE']['P'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PROXMINE']['S'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['PROXMINE']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['RAILGUN']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['RAILGUN']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['RAILGUN']['DR'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['RAILGUN']['H'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['RAILGUN']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['RAILGUN']['P'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['RAILGUN']['S'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['RAILGUN']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['ROCKET']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['ROCKET']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['ROCKET']['DR'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['MACHINEGUN']['T'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['ROCKET']['D'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['ROCKET']['DG'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['ROCKET']['DR'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['ROCKET']['H'] == 20  # noqa
-        assert e[811]['DATA']['WEAPONS']['ROCKET']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['ROCKET']['P'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['ROCKET']['K'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['ROCKET']['P'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['ROCKET']['S'] == 55  # noqa
-        assert e[811]['DATA']['WEAPONS']['ROCKET']['T'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['D'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['DG'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['DR'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['ROCKET']['T'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['D'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['DG'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['DR'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['SHOTGUN']['H'] == 70  # noqa
-        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['K'] == 0  # noqa
-        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['P'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['K'] is None  # noqa
+        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['P'] is None  # noqa
         assert e[811]['DATA']['WEAPONS']['SHOTGUN']['S'] == 319  # noqa
-        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['T'] == 0  # noqa
+        assert e[811]['DATA']['WEAPONS']['SHOTGUN']['T'] is None  # noqa
         assert e[811]['DATA']['WIN'] == 0  # noqa
         assert e[811]['TYPE'] == 'PLAYER_STATS'  # noqa
         assert e[812]['DATA']['MATCH_GUID'] == '18e82f5f5f2c9c913f982daaead253d3'  # noqa

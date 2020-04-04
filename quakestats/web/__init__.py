@@ -5,7 +5,6 @@ from quakestats.web.app import (
     app,
     data_store,
     mongo_db,
-    utils,
 )
 
 # FIXME mongo shouldn't exposed here
