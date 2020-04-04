@@ -52,6 +52,8 @@ def rebuild_db(data_dir, server_domain, data_store):
             )
             if errors:
                 logger.error("Got error, %s", errors)
+            else:
+                counter += 1
 
     data_store().post_rebuild()
     return counter
