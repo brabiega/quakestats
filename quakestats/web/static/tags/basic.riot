@@ -1,0 +1,12 @@
+<weapon-img>
+    <img height={opts.height || 32} width={opts.width || 32} src={getImgPath(opts.weapon)} title={opts.weapon}/>
+    <script>
+        getImgPath(weaponName) {
+            let path = _.get(app.resources.weapons, `${weaponName}.img`)
+            if (path === undefined) {
+                path = _.get(app.resources.weapons, 'placeholder')
+            }
+            return path
+        }
+    </script>
+</weapon-img>

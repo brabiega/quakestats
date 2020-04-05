@@ -1,8 +1,16 @@
 {% extends "base2.jinja2" %}
 
+{% block script_load %}
+  <script src="/static/js/views/match.js"></script>
+{% endblock %}
+
 {% block body_top %}
 
 <script>
+
+  var view = new MatchView(app)
+  app.setView(view)
+  app.run()
 
   var fetch_match_kills = qapi.getMatchKills(context.match_guid)
   var fetch_players = qapi.getMatchPlayers(context.match_guid)
@@ -11,7 +19,10 @@
   var fetch_match_teams = qapi.getMatchTeams(context.match_guid)
   var fetch_match_specials = qapi.getMatchSpecial(context.match_guid)
   var fetch_match_badges = qapi.getMatchBadges(context.match_guid)
-  var fetch_match_player_stats = qapi.getMatchPlayerStats(context.match_guid)
+
+  app.view.fetch_match_kills = fetch_match_kills
+  app.view.fetch_players = fetch_players
+  app.view.fetch_match_player_stats = qapi.getMatchPlayerStats(context.match_guid)
 
   var dataProc = new QuakeStatsDataProcessor()
 
@@ -144,38 +155,6 @@
     .rollup((v) => {return v.length})
     .object(match_kills)
 
-    var weapon_kd = {}
-    Object.entries(weapon_kills).forEach(
-      ([player_id, stats]) => {
-        var stat = {}
-        weapon_kd[player_id] = stat;
-        Object.entries(stats).forEach(([weapon_name, kills]) => {
-          stat[weapon_name] = {"kills": kills}
-        })
-      })
-    Object.entries(weapon_deaths).forEach(
-      ([player_id, stats]) => {
-        var stat = weapon_kd[player_id] || {}
-        weapon_kd[player_id] = stat;
-        Object.entries(stats).forEach(([weapon_name, deaths]) => {
-          var weapon_stat = stat[weapon_name] || {}
-          stat[weapon_name] = weapon_stat
-          weapon_stat["deaths"] = deaths
-        })
-      })
-
-    var weapons = new Set(Object.keys(
-      d3.nest()
-      .key((e) => {return e.by_weapon})
-      .object(match_kills))
-    )
-
-    riot.mount('weapon-kills', {
-        'player_weapon_kills': weapon_kd,
-        'players': playersState,
-        'weapons': [...weapons].sort()
-    })
-
     var series = d3.nest().key(function(d) {return d.player_id}).entries(match_scores)
     var score_series = series.map(function(d) {return {
       x: d.values.map(function(d) {return d.game_time}),
@@ -304,10 +283,9 @@
     riot.mount('match-player-kill-death', {'kds': kds, 'players': playersState})
   })
 
-  Promise.all([fetch_match_player_stats, fetch_players])
+  Promise.all([app.view.fetch_match_player_stats, fetch_players])
   .then(values => {
     var stats = values[0]
-    riot.mount('accuracy-info', {stats: stats})
     riot.mount('player-damage-summary', {
       "players": playersState,
       "damageDealt":
@@ -364,11 +342,9 @@
   <div style="grid-column: auto / span 2">
     <worst-enemy></worst-enemy>
   </div>
-  <div style="grid-column: auto / span 4">
-    <weapon-kills></weapon-kills>
-  </div>
-  <div style="grid-column: auto / span 2">
-    <accuracy-info></accuracy-info>
+  <div style="grid-column: 1 / -1">
+    <h4>Weapon stats</h4>
+    <weapon-stats></weapon-stats>
   </div>
   <div style="grid-column: auto / span 3">
     <player-damage-summary></player-damage-summary>

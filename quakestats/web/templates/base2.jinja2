@@ -35,13 +35,19 @@
     <script src="/static/js/api/quakestats.js"></script>
     <script src="/static/js/utils.js"></script>
     <script src="/static/js/resources.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script type="riot/tag" src="/static/tags/basic.riot"></script>
     <script type="riot/tag" src="/static/tags/common.riot"></script>
     <script type="riot/tag" src="/static/tags/sample.riot"></script>
     <script type="riot/tag" src="/static/tags/player.riot"></script>
+    <script type="riot/tag" src="/static/tags/panels.riot"></script>
+    {% block script_load %}
+    {% endblock %}
 
     <script>
       // this should be a global context with data shared across components
       // it's probably a bad design but it's easy to implement and works fine :P
+      
       context.api = {}
       context.matches = []
       context.routes = {
@@ -49,6 +55,9 @@
       }
       qapi = new QuakeStatsApi()
 
+      // rewrite context, use app as entire page/view/gui stuff is built around
+      // some application, the app object to be precise
+      app = new Application(resources)
     </script>
     {% block body_top %}
     {% endblock %}

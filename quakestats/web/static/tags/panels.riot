@@ -1,0 +1,56 @@
+
+<weapon-stats>
+    <div>
+        <span if={opts.loading}>Loading</span>
+        <table if={!opts.loading}>
+            <tr>
+                <th>Player</th>
+                <th each={wname in this.uniqueWeapons()}>
+                    <weapon-img weapon={wname}></weapon-img>
+                </th>
+            </tr>
+            <tr each={entry in _.sortBy(opts.stats, 'player.name')}>
+                <td>{opts.players[entry.player_id].name}</td>
+                <td each={wname in this.uniqueWeapons()}>
+                    <span if={!_.has(entry.stats, wname)}>-</span>
+                    <div if={_.has(entry.stats, wname)} style="display: grid">
+                        <div>
+                            <span style="color: green">{entry.stats[wname].kills}</span> : <span style="color: red">{entry.stats[wname].deaths}</span>
+                        </div>
+                        <span if={entry.stats[wname].hits} class="acc-info">{getAcc(entry.stats[wname])}% {entry.stats[wname].hits}/{entry.stats[wname].shots}</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <style>
+    td {
+        text-align: center;
+    }
+
+    .acc-info {
+        color: gray;
+        font-size: 10px;
+    }
+    </style>
+
+    <script>
+        /*
+        Opts stats:
+        array = [
+            {player_id, stats: {
+                weapon: {kills, deaths, hits, shots},
+                weapon: {kills, deaths, hits, shots},
+            }}
+        ]
+        */
+
+        getAcc(stat) {
+            return _.round(100 * stat.hits / (stat.shots || stat.hits), 2)
+        }
+
+        uniqueWeapons() {
+            return _.sortBy(_.uniq(_.flatten(_.map(this.opts.stats, e => {return _.keys(e.stats)}))))
+        }
+    </script>
+</weapon-stats>
