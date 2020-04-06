@@ -8,21 +8,19 @@
 
 <script>
 
-  var view = new MatchView(app)
+  var view = new MatchView(app, context.match_guid)
   app.setView(view)
   app.run()
 
-  var fetch_match_kills = qapi.getMatchKills(context.match_guid)
-  var fetch_players = qapi.getMatchPlayers(context.match_guid)
-  var fetch_match = qapi.getMatch(context.match_guid)
-  var fetch_match_scores = qapi.getMatchScores(context.match_guid)
-  var fetch_match_teams = qapi.getMatchTeams(context.match_guid)
-  var fetch_match_specials = qapi.getMatchSpecial(context.match_guid)
-  var fetch_match_badges = qapi.getMatchBadges(context.match_guid)
+  var fetch_match = app.api.quake.getMatch(app.view.matchGuid)
+  var fetch_match_scores = app.api.quake.getMatchScores(app.view.matchGuid)
+  var fetch_match_teams = app.api.quake.getMatchTeams(app.view.matchGuid)
+  var fetch_match_specials = app.api.quake.getMatchSpecial(app.view.matchGuid)
+  var fetch_match_badges = app.api.quake.getMatchBadges(app.view.matchGuid)
 
-  app.view.fetch_match_kills = fetch_match_kills
-  app.view.fetch_players = fetch_players
-  app.view.fetch_match_player_stats = qapi.getMatchPlayerStats(context.match_guid)
+  app.view.fetch_match_kills = app.api.quake.getMatchKills(app.view.matchGuid)
+  app.view.fetch_players = app.api.quake.getMatchPlayers(app.view.matchGuid)
+  app.view.fetch_match_player_stats = app.api.quake.getMatchPlayerStats(app.view.matchGuid)
 
   var dataProc = new QuakeStatsDataProcessor()
 
@@ -62,7 +60,7 @@
   }
   var playersState = new PlayersState()
 
-  fetch_players.then(json => {
+  app.view.fetch_players.then(json => {
     context.players = dataProc.playersMap(json)
     playersState.setPlayers(context.players)
   })
@@ -71,14 +69,14 @@
     riot.mount('match-info', {'match': json})
   })
 
-  Promise.all([fetch_players, fetch_match_teams])
+  Promise.all([app.view.fetch_players, fetch_match_teams])
   .then(values => {
     //ignore fetch players result
     var json = values[1]
     riot.mount('team-switches', {'switches': json, 'players': playersState})
   })
 
-  Promise.all([fetch_players, fetch_match_kills, fetch_match_scores, fetch_match_specials, fetch_match])
+  Promise.all([app.view.fetch_players, app.view.fetch_match_kills, fetch_match_scores, fetch_match_specials, fetch_match])
   .then(values => {
     var match_scores = values[2]
     var match_kills = values[1]
@@ -191,7 +189,7 @@
     riot.mount('match-score-chart', {'series': score_series, specials_by_type: specials_by_type, scores: match_scores, 'match_info': match_info, 'max_score': max_score})
   })
 
-  Promise.all([fetch_players, fetch_match_specials])
+  Promise.all([app.view.fetch_players, fetch_match_specials])
   .then(values => {
     var json = values[1]
     var specials = d3.nest()
@@ -217,7 +215,7 @@
     riot.mount('special-scores', {'specials': specials_summary, 'details': specials_details, 'players': playersState})
   })
 
-  Promise.all([fetch_players, fetch_match_badges])
+  Promise.all([app.view.fetch_players, fetch_match_badges])
   .then(values => {
     var json = values[1]
     var badges = d3.nest()
@@ -233,7 +231,7 @@
     })
   })
 
-  Promise.all([fetch_players, fetch_match_kills])
+  Promise.all([app.view.fetch_players, app.view.fetch_match_kills])
   .then(values => {
     var match_scores = values[2]
     var match_kills = values[1]
@@ -283,7 +281,7 @@
     riot.mount('match-player-kill-death', {'kds': kds, 'players': playersState})
   })
 
-  Promise.all([app.view.fetch_match_player_stats, fetch_players])
+  Promise.all([app.view.fetch_match_player_stats, app.view.fetch_players])
   .then(values => {
     var stats = values[0]
     riot.mount('player-damage-summary', {

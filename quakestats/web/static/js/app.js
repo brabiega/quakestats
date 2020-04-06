@@ -5,6 +5,9 @@ class Application {
     constructor(resources, view) {
         this.resources = resources
         this.view = view
+        this.api = {
+            quake: new QuakeStatsApi()
+        }
     }
 
     run() {

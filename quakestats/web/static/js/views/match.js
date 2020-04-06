@@ -1,5 +1,6 @@
 class MatchView {
-    constructor(app) {
+    constructor(app, matchGuid) {
+        this.matchGuid = matchGuid
         this.app = app
         this.gui = {}
         this.players = {}
