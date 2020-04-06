@@ -184,13 +184,15 @@ var resources = {
     }
 }
 
+resources.weapons.placeholder = '/static/img/badges/placeholder.png'
+
 var weapon_map = {
     'ROCKET_SPLASH': 'ROCKET',
     'GRENADE_SPLASH': 'GRENADE',
     'PLASMA_SPLASH': 'PLASMA',
     'BFG_SPLASH': 'BFG',
 }
-
+resources.weaponMap = weapon_map
 
 
 resources.badges.getInfo = (badgeName) => {

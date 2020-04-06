@@ -122,50 +122,6 @@
   </style>
 </duel-info>
 
-<accuracy-info>
-  <h4>Accuracy info</h4>
-  <table>
-    <tr>
-      <td>Player</td>
-      <td each={weapon in this.getWeapons(opts.stats)} style="text-align: center">
-        <img if={context.resources.weapons[weapon]} src="{context.resources.weapons[weapon].img}" class="fav-weapon"></img>
-      </td>
-    </tr>
-    <tr each={stat in opts.stats}>
-      <td>{context.players[stat.player_id].name}</td>
-      <td each={weapon in this.getWeapons(opts.stats)} class="acc-text">
-        {calcAcc(stat.weapons[weapon])}
-      </td>
-    </tr>
-  <table>
-
-  <style>
-    .acc-text {
-      text-align: center;
-      font-size: 10px;
-    }
-  </style>
-
-  calcAcc(weaponStats) {
-    if (!weaponStats) {
-      return "-"
-    }
-    let hits = weaponStats.H
-    let shots = weaponStats.S
-
-    if (hits && shots) {
-      return (100 * hits/shots).toFixed(2)
-    } else {
-      return "-"
-    }
-  }
-
-  getWeapons(stats) {
-    return _.uniq(_.flatten(stats.map(e => _.keys(e.weapons))))
-  }
-
-</accuracy-info>
-
 <match-score-chart>
   <h4>Player scores</h4>
   <div id='score-chart'></div>
@@ -903,38 +859,6 @@
   }
 
 </map-list>
-
-<weapon-kills>
-  <h4>Weapon Kills & Deaths</h4>
-  <table>
-    <tr>
-      <th>Player</th>
-      <th each={weapon in opts.weapons}>
-          <img if={context.resources.weapons[weapon]} src="{context.resources.weapons[weapon].img}" class="fav-weapon"></img>
-          <span if={!context.resources.weapons[weapon]}>{weapon}</span></td>
-      </th>
-    </tr>
-    <tr each={player_id in Object.keys(opts.player_weapon_kills)}>
-      <td style="text-align: left">
-        <smart-player-name id={player_id} players={players}></smart-player-name>
-      </td>
-      <td each={weapon in opts.weapons}>
-        <span style='color: green'>
-          {opts.player_weapon_kills[player_id][weapon] && opts.player_weapon_kills[player_id][weapon]['kills'] || 0}
-        </span>
-        <span style='color: red'>
-          {opts.player_weapon_kills[player_id][weapon] && opts.player_weapon_kills[player_id][weapon]['deaths'] || 0}
-        </span>
-      </td>
-    </tr>
-  </table>
-
-  <style>
-    td {text-align: center;}
-  </style>
-
-  this.players = this.opts.players
-</weapon-kills>
 
 <match-player-kill-death>
   <h4>Player kills/deaths details</h4>
