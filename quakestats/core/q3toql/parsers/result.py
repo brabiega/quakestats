@@ -1,47 +1,33 @@
-import hashlib
 from typing import (
     List,
-    Optional,
 )
 
-
-class Q3MatchLogEvent():
-    def __init__(
-        self, time: int, name: str,
-        payload: Optional[str] = None
-    ):
-        """
-        time: game time in miliseconds
-        """
-        assert time >= 0
-        self.time = time
-        self.name = name
-        self.payload = payload
-        self.is_separator = False
-
-    @classmethod
-    def create_separator(cls, time: int):
-        obj = cls(time, '__separator__')
-        obj.is_separator = True
-        return obj
+from quakestats.core.q3toql.parsers.events import (
+    Q3GameEvent,
+)
 
 
 class Q3GameLog():
     def __init__(self):
-        self.events: List[Q3MatchLogEvent] = []
-        self.checksum = hashlib.md5()
+        self.events: List[Q3GameEvent] = []
+        self.checksum = None
+        self.finished = False
+        self.start_date = None
+        self.finish_date = None
+        self.raw_lines = []
 
-    def add_event(self, event: Q3MatchLogEvent):
-        # calculate game checksum, collisions should be very rare as
-        # the hash depends on
-        # - order of events
-        # - event names and their payloads
-        # if this ever becomes a problem we can include event.time
-        # into the hash
-        self.checksum.update(event.name.encode())
-        if event.payload:
-            self.checksum.update(event.payload.encode())
-        self.events.append(event)
+    def add_event(self, event: Q3GameEvent):
+        if event:
+            self.events.append(event)
 
     def is_empty(self) -> bool:
         return not bool(self.events)
+
+    def set_finished(self):
+        self.finished = True
+
+    def set_checksum(self, checksum: str):
+        self.checksum = checksum
+
+    def add_raw_line(self, line: str):
+        self.raw_lines.append(line)

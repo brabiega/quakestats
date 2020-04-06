@@ -51,7 +51,7 @@ The stats are presented with fancy charts, custom medals, etc. See the examples 
 - Modern web browser (requires css grid-layout)
 
 ## How to setup
-In order to setup the application you need to have python 2 or 3 (virtualenv recommended) and an instance of mongo DB.
+In order to setup the application you need to have python 3 (virtualenv recommended) and an instance of mongo DB.
 
 ### Installation
 #### Install from pip package

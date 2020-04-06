@@ -8,10 +8,6 @@ from flask_pymongo import (
 from quakestats.datasource import (
     mongo2,
 )
-# load web app handlers for views and api
-from quakestats.web import (
-    utils,
-)
 
 app = Flask(__name__)
 app.config.from_envvar("QUAKESTATS_SETTINGS")
@@ -28,5 +24,4 @@ def load_stuff():
     from quakestats.web import views  # noqa
 
 
-app.json_encoder = utils.QJsonEncoder
 load_stuff()
