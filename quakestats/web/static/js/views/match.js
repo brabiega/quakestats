@@ -1,3 +1,39 @@
+// helper class storing players
+class PlayersState {
+    constructor() {
+        riot.observable(this)
+        this.players = {}
+        this.focused = null
+    }
+
+    setPlayers(players) {
+        this.players = players
+
+        var colorHash = new ColorHash({
+            saturation: 0.9,
+            lightness: [0.5, 0.6, 0.65],
+        })
+
+        for (let player of Object.values(this.players)) {
+            player.color = colorHash.hsl(player.id)
+        }
+    }
+
+    getPlayerColor(playerId) {
+        var color = this.getPlayer(playerId).color
+        return `hsl(${color[0]}, ${color[1]}, ${color[2]})`
+    }
+
+    getPlayer(playerId) {
+        return this.players[playerId]
+    }
+
+    setFocus(playerId) {
+        this.focused = playerId
+        this.trigger('player_focused', playerId)
+    }
+}
+
 class MatchView {
     constructor(app, matchGuid) {
         this.matchGuid = matchGuid
