@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 
+import logging
+
 import click
 
 from quakestats import (
     manage,
+)
+from quakestats.core.collector import (
+    QLStatCollector,
 )
 from quakestats.health import (
     HealthInfo,
@@ -11,6 +16,8 @@ from quakestats.health import (
 from quakestats.system import (
     log,
 )
+
+logger = logging.getLogger(__name__)
 
 
 # TODO consider moving to separate CLI module
@@ -39,6 +46,33 @@ def run_rebuild_db():
     print("Processed {} matches".format(result))
 
 
+@cli.command(name="collect-ql")
+@click.argument("host")
+@click.argument("port")
+@click.argument("password")
+def collect_ql(host, port, password):
+    from quakestats.core.ql import QLGame, MatchMismatch
+
+    game = QLGame()
+
+    def event_cb(timestamp: int, event: dict):
+        nonlocal game
+        try:
+            ev = game.add_event(event)
+        except MatchMismatch:
+            logger.info("Got game %s", game.game_guid)
+            manage.store_game(game, 'QL', 'outdir')
+
+            game = QLGame()
+            ev = game.add_event(event)
+
+        if ev:
+            logger.debug("%s -> %s", ev.data['MATCH_GUID'], ev.type)
+
+    collector = QLStatCollector(host, port, password)
+    collector.read_loop(event_cb)
+
+
 @cli.command()
 def status():
     colormap = {
@@ -58,7 +92,7 @@ def status():
 
 
 def main(args=None):
-    log.configure_logging()
+    log.configure_logging(logging.DEBUG)
     cli()
 
 

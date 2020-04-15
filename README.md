@@ -106,6 +106,13 @@ Admin user is used by web application to access some additional administrative o
 quakestats set-admin-pwd <yourpassword>
 ```
 
+### Listening for Quake Live stats
+Quake Live exposes server events through tcp socket authenticated with password.
+Use following CLI command to listen and process such events.
+```bash
+quakestats collect-ql <ip> <port> <stats-password>
+```
+
 ### Uploading Quake 3 log file
 In order to process some data you need to send your match log file to web api endpoint ```/api/v2/upload```.
 You need an ```ADMIN_TOKEN``` set in configuration.

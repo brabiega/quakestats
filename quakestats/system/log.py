@@ -5,10 +5,10 @@ import sys
 logger = logging.getLogger(__name__)
 
 
-def configure_logging():
+def configure_logging(level=logging.INFO):
     logging.basicConfig(
         format="%(asctime)s : %(levelname)s : %(message)s",
-        level=logging.INFO,
+        level=level,
         stream=sys.stdout,
     )
 

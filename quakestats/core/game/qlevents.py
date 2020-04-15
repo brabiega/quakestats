@@ -6,13 +6,24 @@ from quakestats.core.q3toql import (
     entities,
 )
 
+EV_CLS_MAP = {}
+
+
+def __register(ql_event_cls):
+    # I'm too lazy to write metaclass
+    EV_CLS_MAP[ql_event_cls.name] = ql_event_cls
+    return ql_event_cls
+
 
 class QLEvent(dict):
     name = None
     payload = {}
 
-    def __init__(self, time: int, match_guid: str, warmup: bool = False):
+    def __init__(self):
         self['TYPE'] = self.name
+        self['DATA'] = {}
+
+    def initialize(self, time: int, match_guid: str, warmup: bool = False):
         self['DATA'] = deepcopy(self.payload)
         self['DATA'].update({
             'TIME': time,
@@ -31,7 +42,12 @@ class QLEvent(dict):
     def type(self) -> str:
         return self['TYPE']
 
+    @property
+    def match_guid(self) -> str:
+        return self.data['MATCH_GUID']
 
+
+@__register
 class MatchStarted(QLEvent):
     name = "MATCH_STARTED"
     payload = {
@@ -73,6 +89,7 @@ class MatchStarted(QLEvent):
         })
 
 
+@__register
 class PlayerConnect(QLEvent):
     name = "PLAYER_CONNECT"
     payload = {
@@ -85,10 +102,12 @@ class PlayerConnect(QLEvent):
         self.data['STEAM_ID'] = steam_id
 
 
+@__register
 class PlayerDisconnect(PlayerConnect):
     name = "PLAYER_DISCONNECT"
 
 
+@__register
 class PlayerSwitchteam(QLEvent):
     name = 'PLAYER_SWITCHTEAM'
     payload = {
@@ -118,6 +137,7 @@ class PlayerSwitchteam(QLEvent):
         self.data['KILLER']['STEAM_ID'] = val
 
 
+@__register
 class PlayerStats(QLEvent):
     name = "PLAYER_STATS"
     payload = {
@@ -156,8 +176,8 @@ class PlayerStats(QLEvent):
     during game analysis (e.g. total kills or play time)
     """
 
-    def __init__(self, time: int, match_guid: str, warmup: bool = False):
-        super().__init__(time, match_guid, warmup)
+    def initialize(self, time: int, match_guid: str, warmup: bool = False):
+        super().initialize(time, match_guid, warmup)
 
         # init pickups
         for key in entities.PICKUPS:
@@ -196,6 +216,7 @@ class PlayerStats(QLEvent):
         weapon_stat['S'] = shots
 
 
+@__register
 class PlayerKill(QLEvent):
     name = 'PLAYER_KILL'
     payload = {
@@ -242,11 +263,17 @@ class PlayerKill(QLEvent):
     def add_victim(self, steam_id):
         self.data['VICTIM'] = self._user_info(steam_id)
 
+    @property
+    def time(self):
+        return self.data['TIME']
 
+
+@__register
 class PlayerDeath(PlayerKill):
     name = 'PLAYER_DEATH'
 
 
+@__register
 class MatchReport(QLEvent):
     name = 'MATCH_REPORT'
     payload = {
@@ -290,3 +317,20 @@ class MatchReport(QLEvent):
         self.data['FRAG_LIMIT'] = fraglimit
         self.data['CAPTURE_LIMIT'] = capturelimit
         self.data['TIME_LIMIT'] = timelimit
+
+
+@__register
+class PlayerMedal(QLEvent):
+    name = 'PLAYER_MEDAL'
+
+
+@__register
+class RoundOver(QLEvent):
+    name = 'ROUND_OVER'
+
+
+def create_from_ql_dict(data: dict) -> QLEvent:
+    cls = EV_CLS_MAP[data['TYPE']]
+    obj = cls()
+    obj.update(data)
+    return obj
