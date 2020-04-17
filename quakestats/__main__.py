@@ -77,6 +77,14 @@ def collect_ql(host, port, password):
     collector.read_loop(event_cb)
 
 
+@cli.command(name="load-ql-game")
+@click.argument('file_path')
+def load_ql_game(file_path):
+    from quakestats.web import data_store
+    server_domain, game = manage.load_game(file_path)
+    manage.process_game(server_domain, None, game, data_store())
+
+
 @cli.command()
 def status():
     colormap = {

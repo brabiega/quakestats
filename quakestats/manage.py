@@ -68,7 +68,7 @@ def rebuild_db(data_dir, server_domain, data_store):
 
 def process_q3_log(
     server_domain: str, data_dir: Optional[str],
-    raw_game_log: str, q3mod: str, data_store
+    raw_game_log: str, q3mod: str, data_store,
 ):
     """
     Returns 2 lists
@@ -147,3 +147,27 @@ def store_game(game: QLGame, server_domain, store_dir):
         "Written game %s, with %s events",
         game.game_guid, len(game_dict['events'])
     )
+
+
+def load_game(file_path: str):
+    from datetime import datetime, timedelta
+    with open(file_path) as fh:
+        data = json.load(fh)
+
+    game = QLGame()
+    game.metadata.__dict__.update(data['metadata'])
+    game.game_guid = data['game_guid']
+    for ev in data['events']:
+        game.add_event(ev)
+    game.valid_start = game.valid_end = data['valid']
+    game.source = data['source']
+
+    store_time = data['store_time']
+    game.metadata.finish_date = datetime.fromtimestamp(store_time)
+    game.metadata.start_date = (
+        game.metadata.finish_date - timedelta(seconds=game.metadata.duration)
+    )
+
+    server_domain = data['server_domain']
+
+    return server_domain, game
