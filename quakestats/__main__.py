@@ -60,8 +60,12 @@ def collect_ql(host, port, password):
         try:
             ev = game.add_event(event)
         except MatchMismatch:
-            logger.info("Got game %s", game.game_guid)
-            manage.store_game(game, 'QL', 'outdir')
+            logger.info(
+                "Got game %s with %s events",
+                game.game_guid, len(game.ql_events)
+            )
+            if game.ql_events:
+                manage.store_game(game, 'QL', 'outdir')
 
             game = QLGame()
             ev = game.add_event(event)
