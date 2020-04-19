@@ -82,7 +82,7 @@
       y: d.values.map(function(d) {return d.kills}),
       type: 'scatter',
       mode: 'lines+markers',
-      name: `${context.players[d.key].name} (${d.values[d.values.length-1].kills})`,
+      name: `${playersState.thinName(d.key)} (${d.values[d.values.length-1].kills})`,
       line: {color: playersState.getPlayerColor(d.key)},
     }}).sort(function(a, b) {
       return b.y[b.y.length-1] - a.y[a.y.length-1]
@@ -93,7 +93,7 @@
       y: d.values.map(function(d) {return d.deaths}),
       type: 'scatter',
       mode: 'lines+markers',
-      name: `${context.players[d.key].name} (${d.values[d.values.length-1].deaths})`,
+      name: `${playersState.thinName(d.key)} (${d.values[d.values.length-1].deaths})`,
       line: {color: playersState.getPlayerColor(d.key)},
     }}).sort(function(a, b) {
       return b.y[b.y.length-1] - a.y[a.y.length-1]
@@ -111,7 +111,7 @@
       y: d.values.map(function(d) {return d.score}),
       type: 'scatter',
       mode: 'lines+markers',
-      name: `${context.players[d.key].name} (${d.values[d.values.length-1].score})`,
+      name: `${playersState.thinName(d.key)} (${d.values[d.values.length-1].score})`,
       line: {color: playersState.getPlayerColor(d.key)},
     }}).sort(function(a, b) {
       return b.y[b.y.length-1] - a.y[a.y.length-1]

@@ -28,7 +28,7 @@
     this.focused = false
 
     getPlayerName() {
-        return this.players.getPlayer(this.id).name
+        return this.players.thinName(this.id)
     }
 
     this.players.on('player_focused', (player_id) => {

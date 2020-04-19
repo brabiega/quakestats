@@ -15,7 +15,7 @@ class PlayersState {
         })
 
         for (let player of Object.values(this.players)) {
-            player.color = colorHash.hsl(player.id)
+            player.color = colorHash.hsl(cyrb53(player.id))
         }
     }
 
@@ -26,6 +26,10 @@ class PlayersState {
 
     getPlayer(playerId) {
         return this.players[playerId]
+    }
+
+    thinName(playerId) {
+        return quake.thinPlayerName(_.get(this.players, `${playerId}.name`, 'unkown'))
     }
 
     setFocus(playerId) {
