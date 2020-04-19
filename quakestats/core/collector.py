@@ -46,7 +46,7 @@ class QLStatCollector():
         self.socket.plain_username = b"stats"
         self.socket.plain_password = bytes(password, "utf-8")
         self.socket.setsockopt_string(zmq.SUBSCRIBE, "")
-        # seems to be working without settingd zap_domain
+        # seems to be working without setting zap_domain
         # self.socket.zap_domain = b"stats"
 
     def read_loop(self, on_event_cb: callable):
@@ -54,6 +54,7 @@ class QLStatCollector():
         def on_event_cb(timestamp, event)
         """
         while True:
+            logger.info("Establishing connection to %s", self.endpoint)
             self.socket.connect(self.endpoint)
 
             probe_ts = time.time()
@@ -81,7 +82,6 @@ class QLStatCollector():
 
                 try:
                     data = self.socket.recv_json(zmq.NOBLOCK)
-                    print(data)
                     counter += 1
                     if (counter % 50 == 0):
                         logger.info("Processed %s events", counter)
@@ -90,4 +90,4 @@ class QLStatCollector():
                     continue
 
                 probe_ts = time.time()
-                on_event_cb(time.time(), data)
+                on_event_cb(probe_ts, data)

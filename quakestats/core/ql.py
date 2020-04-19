@@ -1,6 +1,10 @@
 """
 Code to preprocess QL events
 """
+from datetime import (
+    datetime,
+    timedelta,
+)
 from typing import (
     List,
 )
@@ -37,7 +41,7 @@ class QLGame():
     def is_valid(self):
         return self.valid_start and self.valid_end
 
-    def add_event(self, event: dict):
+    def add_event(self, timestamp: int, event: dict):
         ql_ev = qlevents.create_from_ql_dict(event)
 
         if self.game_guid is None:
@@ -47,9 +51,15 @@ class QLGame():
 
         if isinstance(ql_ev, qlevents.MatchStarted):
             self.valid_start = True
+            self.metadata.start_date = datetime.fromtimestamp(timestamp)
+
         elif isinstance(ql_ev, qlevents.MatchReport):
             self.valid_end = True
             self.metadata.duration = ql_ev.data['GAME_LENGTH']
+            self.metadata.finish_date = (
+                self.metadata.start_date +
+                timedelta(seconds=self.metadata.duration)
+            )
 
         # ignore warmup and non-meaningful events
         if not self.valid_start:

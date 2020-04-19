@@ -1,9 +1,6 @@
 import json
 import logging
-from os import (
-    listdir,
-    path,
-)
+import os
 from time import (
     time,
 )
@@ -49,9 +46,15 @@ def rebuild_db(data_dir, server_domain, data_store):
     data_store().prepare_for_rebuild()
     ds = data_store()
     counter = 0
-    files = listdir(data_dir)
+    files = os.listdir(data_dir)
     for f in files:
-        with open(path.join(data_dir, f)) as fh:
+        fbasename, fext = os.path.splitext(f)
+        if fext != '.log':
+            # for now only support q3 .log files
+            # eventually .json ql files will be supported as well
+            continue
+
+        with open(os.path.join(data_dir, f)) as fh:
             data = fh.read()
             logger.info("Processing file %s", f)
             results, errors = process_q3_log(
@@ -86,14 +89,14 @@ def process_q3_log(
             continue
 
         if data_dir:
-            p = path.join(data_dir, "{}.log".format(game.game_guid))
+            p = os.path.join(data_dir, "{}.log".format(game.game_guid))
             with open(p, "w") as fh:
                 for line in game_log.raw_lines:
                     fh.write(line)
                     fh.write("\n")
 
         try:
-            fmi = process_game(server_domain, data_dir, game, data_store)
+            fmi = process_game(server_domain, game, data_store)
             final_results.append(fmi)
         except Exception as e:
             logger.exception(e)
@@ -102,7 +105,7 @@ def process_q3_log(
 
 
 def process_game(
-    server_domain: str, data_dir: Optional[str], game: QuakeGame, data_store
+    server_domain: str, game: QuakeGame, data_store
 ):
     """
     Process single q3 game
@@ -139,7 +142,7 @@ def store_game(game: QLGame, server_domain, store_dir):
     if not game_dict['events']:
         logger.info("Ignored game %s, no valid events", game.game_guid)
 
-    file_path = path.join(store_dir, f'{game.game_guid}.json')
+    file_path = os.path.join(store_dir, f'{game.game_guid}.json')
     with open(file_path, 'w') as fh:
         json.dump(game_dict, fh)
 
@@ -158,7 +161,7 @@ def load_game(file_path: str):
     game.metadata.__dict__.update(data['metadata'])
     game.game_guid = data['game_guid']
     for ev in data['events']:
-        game.add_event(ev)
+        game.add_event(0, ev)
     game.valid_start = game.valid_end = data['valid']
     game.source = data['source']
 
