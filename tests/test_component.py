@@ -1,11 +1,5 @@
 import json
 import os
-from contextlib import (
-    ExitStack,
-)
-from unittest import (
-    mock,
-)
 
 import pytest
 
@@ -16,9 +10,6 @@ from quakestats.core.q3toql import parse as q3parse
 from quakestats.dataprovider import (
     analyze,
     quakelive,
-)
-from quakestats.dataprovider.quakelive import (
-    collector,
 )
 
 FIXTURE_DATA_DIR = os.path.join(
@@ -80,23 +71,6 @@ def test_quakelive_feed_preprocess(quakelive_dump):
 
         if preprocessor.finished:
             assert preprocessor.duration
-
-
-def test_qukelive_collector(quakelive_dump):
-    mc = collector.MatchCollector('/tmp/qltest')
-    mock_open = mock.mock_open()
-    with ExitStack() as stack:
-        stack.enter_context(mock.patch(
-            'quakestats.dataprovider.quakelive.'
-            'collector.open', mock_open))
-        stack.enter_context(mock.patch(
-            'quakestats.dataprovider.quakelive.'
-            'collector.os.rename'))
-
-        for event in quakelive_dump:
-            mc.process_event(event)
-
-        assert mock_open.call_count == 5
 
 
 def test_quake3_analyze_nodm9(q3_dump):
