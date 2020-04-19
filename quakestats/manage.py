@@ -163,6 +163,7 @@ def load_game(file_path: str):
     game.source = data['source']
 
     store_time = data['store_time']
+    game.metadata.game_received_ts = store_time
     game.metadata.finish_date = datetime.fromtimestamp(store_time)
     game.metadata.start_date = (
         game.metadata.finish_date - timedelta(seconds=game.metadata.duration)
