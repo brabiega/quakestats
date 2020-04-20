@@ -9,7 +9,7 @@
                 </th>
             </tr>
             <tr each={entry in _.sortBy(opts.stats, 'player.name')}>
-                <td>{opts.players[entry.player_id].name}</td>
+                <td><player-name2 player_id={entry.player_id}></player-name2>   </td>
                 <td each={wname in this.uniqueWeapons()}>
                     <span if={!_.has(entry.stats, wname)}>-</span>
                     <div if={_.has(entry.stats, wname)} style="display: grid">

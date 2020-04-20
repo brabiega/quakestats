@@ -433,7 +433,7 @@
 
     for(state of Object.entries(kdr_state).sort((a, b) => {return b[1].r - a[1].r})) {
       if (state[0] == 'q3-world') {continue}
-      kdr_chart.x.push(this.players.getPlayer(state[0]).name)
+      kdr_chart.x.push(this.players.thinName(state[0]))
       kdr_chart.y.push(state[1].r)
       kdr_chart.marker.color.push(this.players.getPlayerColor(state[0]))
     }
@@ -564,7 +564,7 @@
     <tbody>
       <tr each={playerInfo in sortPlayers(firstBadges)}>
         <td nowrap>
-          <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
+          <a href="/player/{playerInfo.playerId}">{quake.thinPlayerName(opts.players[playerInfo.playerId].name)} ({playerInfo.sum})</a>
         </td>
         <td each={badgeName in firstBadges} class={getClass(badgeName, playerInfo.playerId)}>
           {
@@ -591,7 +591,7 @@
     <tbody>
       <tr each={playerInfo in sortPlayers(secondBadges)}>
         <td nowrap>
-          <a href="/player/{playerInfo.playerId}">{opts.players[playerInfo.playerId].name} ({playerInfo.sum})</a>
+          <a href="/player/{playerInfo.playerId}">{quake.thinPlayerName(opts.players[playerInfo.playerId].name)   } ({playerInfo.sum})</a>
         </td>
         <td each={badgeName in secondBadges} class={getClass(badgeName, playerInfo.playerId)}>
           {
@@ -769,7 +769,7 @@
     var data = rawData.sort((a, b) => {return a.total - b.total})
     var traces = data.reduce(
       (previous, current) => {
-        previous.y.push(context.players[current.player_id].name);
+        previous.y.push(quake.thinPlayerName(context.players[current.player_id].name));
         previous.x.push(current.total);
         return previous},
       {x: [], y: []})
@@ -867,7 +867,7 @@
       <table>
         <thead>
           <tr class="head">
-            <th>{players.getPlayer(this[0]).name}</th>
+            <th>{players.thinName(this[0])}</th>
             <th style="width:20%">K</th>
             <th style="width:20%">D</th>
           </tr>

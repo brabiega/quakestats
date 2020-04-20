@@ -298,6 +298,9 @@ class CA_Analyzer(SpecializedAnalyzer):
             self.player_state[player_id] = PlayerState()
 
     def on_player_death(self, event):
+        # THIS implementation is broken at the moment
+        # it doesn't track team state correctly
+        return
         game_time = int(event.time)
         player_id = event.victim_id
         dead_team_id = int(event["DATA"]["VICTIM"]["TEAM"])
@@ -324,8 +327,10 @@ class CA_Analyzer(SpecializedAnalyzer):
 
     def is_team_dead(self, team):
         for player_id in team:
+            # TODO rewrite this
             if self.player_state[player_id].alive:
                 return False
+
         return True
 
     def team_dead(self, dead_team_id):

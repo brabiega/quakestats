@@ -1,14 +1,15 @@
-import datetime
 import hashlib
 import logging
 import re
 from typing import (
     List,
-    Optional,
 )
 
 from quakestats.core.game import (
     qlevents,
+)
+from quakestats.core.game.metadata import (
+    QuakeGameMetadata,
 )
 from quakestats.core.q3toql.parsers import events as q3_events
 from quakestats.core.q3toql.parsers.result import (
@@ -63,18 +64,6 @@ class Client():
         return steam_id
 
 
-class QuakeGameMetadata():
-    def __init__(self):
-        self.start_date: Optional[datetime] = None
-        self.finish_date: Optional[datetime] = None
-        self.map = None
-        self.timelimit = None
-        self.fraglimit = None
-        self.capturelimit = None
-        self.hostname = None
-        self.duration = 0
-
-
 class QuakeGame():
     """
     This should be a claas which represents
@@ -109,7 +98,8 @@ class QuakeGame():
 
     def add_event(self, time: int, ev_cls) -> qlevents.QLEvent:
         game_time = (time - self.start_time) / 1000
-        ev = ev_cls(game_time, self.game_guid, self.warmup)
+        ev = ev_cls()
+        ev.initialize(game_time, self.game_guid, self.warmup)
         self.ql_events.append(ev)
         return ev
 

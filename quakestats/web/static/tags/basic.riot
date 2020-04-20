@@ -10,3 +10,12 @@
         }
     </script>
 </weapon-img>
+
+<player-name2>
+    <span>{getName(opts.player_id)}</span>
+    <script>
+        getName(id) {
+            return quake.thinPlayerName(_.get(app.view, `players.${id}.name`, 'undefined'))
+        }
+    </script>
+</player-name2>

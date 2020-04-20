@@ -44,7 +44,11 @@ class EventPlayerKill(Event):
 
     @property
     def killer_id(self):
-        return self.data["KILLER"]["STEAM_ID"]
+        # there is no killer if mod 'HURT' (killer None)
+        return (
+            self.data["KILLER"]["STEAM_ID"] if self.data['KILLER']
+            else 'q3-world'
+        )
 
     @property
     def killer_name(self):
@@ -58,7 +62,11 @@ class EventPlayerKill(Event):
 class EventPlayerSwitchTeam(Event):
     @property
     def player_id(self):
-        return self.data["KILLER"]["STEAM_ID"]
+        try:
+            return self.data["KILLER"]["STEAM_ID"]
+        except KeyError:
+            # there is no killer if mod 'HURT'
+            return 'q3-world'
 
     @property
     def player_name(self):
