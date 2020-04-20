@@ -128,10 +128,15 @@ def process_game(
 
 
 def store_game(game: QLGame, server_domain, store_dir):
+    from copy import deepcopy
+    from datetime import datetime
     assert game.game_guid
 
+    metadata = deepcopy(game.metadata.__dict__)
+    metadata['start_date'] = datetime.timestamp(metadata['start_date'])
+    metadata['finish_date'] = datetime.timestamp(metadata['finish_date'])
     game_dict = {
-        'metadata': game.metadata.__dict__,
+        'metadata': metadata,
         'game_guid': game.game_guid,
         'store_time': time(),
         'valid': game.is_valid,
@@ -157,8 +162,12 @@ def load_game(file_path: str):
     with open(file_path) as fh:
         data = json.load(fh)
 
+    metadata = data['metadata']
+    metadata['start_date'] = datetime.fromtimestamp(metadata['start_date'])
+    metadata['finish_date'] = datetime.fromtimestamp(metadata['finish_date'])
+
     game = QLGame()
-    game.metadata.__dict__.update(data['metadata'])
+    game.metadata.__dict__.update(metadata)
     game.game_guid = data['game_guid']
     for ev in data['events']:
         game.add_event(0, ev)
