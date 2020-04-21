@@ -49,12 +49,19 @@ def rebuild_db(data_dir, server_domain, data_store):
     files = os.listdir(data_dir)
     for f in files:
         fbasename, fext = os.path.splitext(f)
-        if fext != '.log':
+        fpath = os.path.join(data_dir, f)
+        if fext == '.json':
             # for now only support q3 .log files
             # eventually .json ql files will be supported as well
+            try:
+                server_domain, game = load_game(fpath)
+                process_game(server_domain, game, ds)
+                counter += 1
+            except Exception as e:
+                logger.exception(e)
             continue
 
-        with open(os.path.join(data_dir, f)) as fh:
+        with open(fpath) as fh:
             data = fh.read()
             logger.info("Processing file %s", f)
             results, errors = process_q3_log(
@@ -111,6 +118,10 @@ def process_game(
     Process single q3 game
     """
     # TODO QuakeGame should keep source type (Q3/QL)
+    if not game.is_valid:
+        logger.info("Gale %s ignored", game.game_guid)
+        return
+
     fmi = dataprovider.FullMatchInfo(
         events=game.get_events(),
         match_guid=game.game_guid,
@@ -159,19 +170,24 @@ def store_game(game: QLGame, server_domain, store_dir):
 
 def load_game(file_path: str):
     from datetime import datetime, timedelta
+
+    logger.info("Loading game %s", file_path)
     with open(file_path) as fh:
         data = json.load(fh)
 
     metadata = data['metadata']
-    metadata['start_date'] = datetime.fromtimestamp(metadata['start_date'])
-    metadata['finish_date'] = datetime.fromtimestamp(metadata['finish_date'])
+    metadata['start_date'] = datetime.fromtimestamp(
+        metadata['start_date'] or 0
+    )
+    metadata['finish_date'] = datetime.fromtimestamp(
+        metadata['finish_date'] or 0
+    )
 
     game = QLGame()
     game.metadata.__dict__.update(metadata)
     game.game_guid = data['game_guid']
     for ev in data['events']:
         game.add_event(0, ev)
-    game.valid_start = game.valid_end = data['valid']
     game.source = data['source']
 
     store_time = data['store_time']

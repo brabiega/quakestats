@@ -1,6 +1,7 @@
 """
 Code to preprocess QL events
 """
+import logging
 from datetime import (
     datetime,
     timedelta,
@@ -15,6 +16,8 @@ from quakestats.core.game import (
 from quakestats.core.game.metadata import (
     QuakeGameMetadata,
 )
+
+logger = logging.getLogger(__name__)
 
 
 class MatchMismatch(Exception):
@@ -60,6 +63,9 @@ class QLGame():
                 self.metadata.start_date +
                 timedelta(seconds=self.metadata.duration)
             )
+            if ql_ev.data['ABORTED']:
+                logger.info("Game %s is aborted", self.game_guid)
+                self.valid_end = False
 
         # ignore warmup and non-meaningful events
         if not self.valid_start:
