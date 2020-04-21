@@ -2,14 +2,29 @@ Changelog
 =========
 
 
-v1.3.1 (2020-03-21)
+v1.4.0 (2020-04-21)
 -------------------
-- Update README.md. [BR]
-
-  Minor improvements for readme file.
-- Update README.md. [BR]
-
-  Added quake3 mod support info.
+- Fixed QL store to file. [BR]
+- QL collector will process matches right after match received. [BR]
+- Better names in kills-deaths details. [BR]
+- Better player colors, initial work for fancy player names. [BR]
+- Added receive time to game metadata. [BR]
+- QL collector will try to reconnect if there are no events for 5m. [BR]
+- Added CLI for listening for QL server stats. [BR]
+- Added better weapon stats panel. [BR]
+- Renamed .tag to .riot. [BR]
+- More q3 MOD_ weapon support, added game finish date. [BR]
+- Endpoint to fetch total stats. [BR]
+- Bugfix: on merge players rewrite stats as well. [BR]
+- Code reorganization in tests [BR]
+- Added flake8 to CI. [BR]
+- Added checksum calculation. [BR]
+- Rewritten q3toql. [BR]
+- Fixed webapp resources path for packaging. [BR]
+- Moved around web application code. [BR]
+- Added flake8, commit hook, fixed linter errors. [BR]
+- Applied black on codebase. [BR]
+- Appplied isort on whole codebase. [BR]
 
 
 v1.3.1 (2020-02-05)
