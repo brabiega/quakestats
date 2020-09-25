@@ -7,7 +7,7 @@ clean:
 	rm -rf quakestats.egg-info
 
 lint:
-	flake8 quakestats
+	flake8 src
 
 test: lint
 	cd tests && py.test
