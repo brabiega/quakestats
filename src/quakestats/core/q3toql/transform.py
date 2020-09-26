@@ -66,7 +66,7 @@ class Client():
 
 class QuakeGame():
     """
-    This should be a claas which represents
+    This should be a class which represents
     single quake match (compatible with Quake Live)
 
     QL event support:
