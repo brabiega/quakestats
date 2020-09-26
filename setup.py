@@ -36,12 +36,11 @@ setup(
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
     ],
     keywords='quake stats statistics match analysis visualize',
-
     packages=find_packages(where='src'),
+    python_requires='>=3.6, <4',
     package_dir={'': 'src'},
     scripts=[
         'src/quakestats/scripts/q3-log-watch'
