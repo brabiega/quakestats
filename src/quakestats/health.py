@@ -1,6 +1,13 @@
 import os
 
 import quakestats
+from quakestats.system.conf import (
+    ENV_VAR_NAME,
+    get_conf_val,
+)
+from quakestats.system.context import (
+    SystemContext,
+)
 
 
 class HealthInfo:
@@ -10,7 +17,8 @@ class HealthInfo:
     ERROR = 3
     CRITICAL = 4
 
-    def __init__(self):
+    def __init__(self, ctx: SystemContext):
+        self.ctx = ctx
         self.status = {}
 
     def add_status(self, key, level, comment):
@@ -21,17 +29,15 @@ class HealthInfo:
         return self.INFO, quakestats.VERSION
 
     def check_quakestats_var(self):
-        settings_file = os.environ.get("QUAKESTATS_SETTINGS")
+        settings_file = os.environ.get(ENV_VAR_NAME)
         if settings_file is None:
-            return self.ERROR, "QUAKESTATS_SETTINGS env var not set"
+            return self.ERROR, "{QUAKESTATS_SETTINGS} env var not set"
 
         else:
             return self.OK, settings_file
 
     def check_settings_data_dir(self):
-        from quakestats.web import app
-
-        data_dir = app.config["RAW_DATA_DIR"]
+        data_dir = get_conf_val("RAW_DATA_DIR")
         if data_dir:
             return self.OK, data_dir
         else:
@@ -43,9 +49,7 @@ class HealthInfo:
         return self.OK, "Quakestats webapp is loadable"
 
     def check_db_access(self):
-        from quakestats.web import mongo_db
-
-        result = mongo_db.db.command("ping")
+        result = self.ctx.ds.db.command("ping")
         if result["ok"]:
             return self.OK, str(result)
         else:

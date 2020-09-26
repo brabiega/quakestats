@@ -1,15 +1,20 @@
 """
 TODO add documentation
 """
+import typing
 from copy import (
     deepcopy,
 )
 
 import pymongo
 
+from quakestats.datasource.entities import (
+    Q3Match,
+)
+
 
 class DataStoreMongo:
-    def __init__(self, db):
+    def __init__(self, db: pymongo.database.Database):
         self.db = db
 
     def store_analysis_report(self, analysis_report):
@@ -255,17 +260,28 @@ class DataStoreMongo:
                 result.append(entry)
         return result
 
+    def get_matches_n(self, latest: typing.Optional[int] = None) -> typing.Iterator[Q3Match]:
+        result = (
+            self.db.match.find()
+            .sort("start_date", pymongo.DESCENDING)
+        )
+
+        result = (
+            result if latest is None
+            else result.limit(latest)
+        )
+
+        for e in result:
+            yield self.strip_id(Q3Match(e))
+
     def get_matches(self, latest=None, raw=False):
+        result = (
+            self.db.match.find()
+            .sort("start_date", pymongo.DESCENDING)
+        )
+
         if latest:
-            result = (
-                self.db.match.find()
-                .sort("start_date", pymongo.DESCENDING)
-                .limit(latest)
-            )
-        else:
-            result = self.db.match.find().sort(
-                "start_date", pymongo.DESCENDING
-            )
+            result = result.limit(latest)
 
         if raw:
             return result

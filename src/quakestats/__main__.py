@@ -13,8 +13,12 @@ from quakestats.core.collector import (
 from quakestats.health import (
     HealthInfo,
 )
+from quakestats.sdk import (
+    QSSdk,
+)
 from quakestats.system import (
     conf,
+    context,
     log,
 )
 
@@ -108,12 +112,30 @@ def status():
         4: "red",
     }
 
-    health_info = HealthInfo()
+    ctx = context.SystemContext()
+    health_info = HealthInfo(ctx)
     health = health_info.run()
     for key, val in health.items():
         click.echo(key + ": ", nl=False)
         level, comment = val
         click.secho(comment, fg=colormap[level])
+
+
+@cli.command('list-matches')
+def list_matches():
+    from quakestats.core.wh import Warehouse
+
+    ctx = context.SystemContext()
+    wh = Warehouse(ctx.config.get("RAW_DATA_DIR"))
+    print(list(wh.list_matches()))
+
+    return
+    ctx = context.SystemContext()
+    sdk = QSSdk(ctx)
+
+    res = sdk.iter_matches()
+    for match in res:
+        print(match)
 
 
 def main(args=None):

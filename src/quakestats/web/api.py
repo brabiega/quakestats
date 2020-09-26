@@ -8,12 +8,20 @@ import flask
 from quakestats import (
     manage,
 )
+from quakestats.sdk import (
+    QSSdk,
+)
 from quakestats.web.app import (
     app,
     data_store,
+    get_sys_ctx,
 )
 
 logger = logging.getLogger("quakestats.webapp")
+
+
+def _sdk():
+    return QSSdk(get_sys_ctx())
 
 
 def auth(token):
@@ -22,12 +30,12 @@ def auth(token):
 
 @app.route("/api/v2/matches")
 def api2_matches():
-    return flask.jsonify(data_store().get_matches(25))
+    return flask.jsonify(list(_sdk().iter_matches(25)))
 
 
 @app.route("/api/v2/matches/all")
 def api2_matches_all():
-    return flask.jsonify(data_store().get_matches())
+    return flask.jsonify(list(_sdk().iter_matches()))
 
 
 @app.route("/api/v2/match/<match_guid>/metadata")
@@ -194,8 +202,9 @@ def api2_presence(count):
     except ValueError:
         flask.abort(400)
 
+    sdk = _sdk()
     ds = data_store()
-    last_matches = ds.get_matches(count)
+    last_matches = list(sdk.iter_matches(count))
 
     player_ids_per_match = ds.get_match_participants(
         [m["match_guid"] for m in last_matches]
