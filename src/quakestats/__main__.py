@@ -42,15 +42,9 @@ def set_admin_password(password):
 
 @cli.command(name="rebuild-db")
 def run_rebuild_db():
-    from quakestats.web import data_store
-
-    # TODO at the moment config is too closely bound to flask app
-    result = manage.rebuild_db(
-        conf.get_conf_val("RAW_DATA_DIR"),
-        conf.get_conf_val("SERVER_DOMAIN"),
-        data_store,
-    )
-    logger.info("Processed {} matches".format(result))
+    ctx = context.SystemContext()
+    sdk = QSSdk(ctx)
+    sdk.rebuild_db()
 
 
 @cli.command(name="collect-ql")
@@ -119,6 +113,25 @@ def status():
         click.echo(key + ": ", nl=False)
         level, comment = val
         click.secho(comment, fg=colormap[level])
+
+
+@cli.command(name="process-q3-log")
+@click.argument('file_path')
+def process_q3_log(file_path):
+    ctx = context.SystemContext()
+    sdk = QSSdk(ctx)
+
+    with open(file_path) as fh:
+        sdk.process_q3_log(fh.read())
+
+
+@cli.command('test')
+def handle_test():
+    from quakestats.core.wh import Warehouse
+
+    ctx = context.SystemContext()
+    wh = Warehouse(ctx.config.get("RAW_DATA_DIR"))
+    wh.save_match_log('test', 'asd')
 
 
 @cli.command('list-matches')

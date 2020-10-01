@@ -14,7 +14,7 @@ class Q3GameLog():
         self.finished = False
         self.start_date = None
         self.finish_date = None
-        self.raw_lines = []
+        self.raw_lines: List[str] = []
 
     def add_event(self, event: Q3GameEvent):
         if event:

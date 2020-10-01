@@ -5,9 +5,6 @@ from collections import (
 
 import flask
 
-from quakestats import (
-    manage,
-)
 from quakestats.sdk import (
     QSSdk,
 )
@@ -145,11 +142,7 @@ def api2_upload():
 
     req_file = flask.request.files["file"]
     data = req_file.read().decode("utf-8")
-    server_domain = app.config["SERVER_DOMAIN"]
-
-    final_results, errors = manage.process_q3_log(
-        server_domain, app.config['RAW_DATA_DIR'], data, 'osp', data_store()
-    )
+    final_results, errors = _sdk().process_q3_log(data)
 
     return flask.jsonify(
         {
@@ -176,11 +169,8 @@ def api2_admin_rebuild():
     if not auth(flask.request.form["token"]):
         return "Bye"
 
-    match_count = manage.rebuild_db(
-        app.config["RAW_DATA_DIR"], app.config["SERVER_DOMAIN"], data_store
-    )
-
-    return "Processed {} matches\n".format(match_count)
+    counter = _sdk().rebuild_db()
+    return "Processed {} matches\n".format(counter)
 
 
 @app.route("/api/v2/admin/delete", methods=["POST"])

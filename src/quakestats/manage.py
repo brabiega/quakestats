@@ -41,41 +41,6 @@ def set_admin_password(db, password):
     return result
 
 
-def rebuild_db(data_dir, server_domain, data_store):
-    # TODO add tests
-    data_store().prepare_for_rebuild()
-    ds = data_store()
-    counter = 0
-    files = os.listdir(data_dir)
-    for f in files:
-        fbasename, fext = os.path.splitext(f)
-        fpath = os.path.join(data_dir, f)
-        if fext == '.json':
-            # for now only support q3 .log files
-            # eventually .json ql files will be supported as well
-            try:
-                server_domain, game = load_game(fpath)
-                process_game(server_domain, game, ds)
-                counter += 1
-            except Exception as e:
-                logger.exception(e)
-            continue
-
-        with open(fpath) as fh:
-            data = fh.read()
-            logger.info("Processing file %s", f)
-            results, errors = process_q3_log(
-                server_domain, None, data, 'osp', ds
-            )
-            if errors:
-                logger.error("Got error, %s", errors)
-            else:
-                counter += 1
-
-    data_store().post_rebuild()
-    return counter
-
-
 def process_q3_log(
     server_domain: str, data_dir: Optional[str],
     raw_game_log: str, q3mod: str, data_store,
@@ -119,7 +84,7 @@ def process_game(
     """
     # TODO QuakeGame should keep source type (Q3/QL)
     if not game.is_valid:
-        logger.info("Gale %s ignored", game.game_guid)
+        logger.info("Game %s ignored", game.game_guid)
         return
 
     fmi = dataprovider.FullMatchInfo(

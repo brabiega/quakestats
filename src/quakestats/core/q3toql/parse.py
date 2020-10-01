@@ -6,6 +6,7 @@ import logging
 from typing import (
     Iterator,
     Tuple,
+    Union,
 )
 
 from quakestats.core.q3toql.parsers.base import (
@@ -22,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 def read_games(
     raw_data: str, mod_hint: str
-) -> Iterator[Tuple[QuakeGame, Q3GameLog]]:
+) -> Iterator[Tuple[Union[QuakeGame, Exception], Q3GameLog]]:
     """
     raw_data: raw string of quake log
     mod_name: name of game mod [baseq3, osp, cpma]
