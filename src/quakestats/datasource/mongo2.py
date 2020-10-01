@@ -33,6 +33,9 @@ class DataStoreMongo:
         self.store_player_stats(analysis_report)
         return True, match_guid
 
+    def get_match(self, match_guid: str):
+        return self.db.match.find_one({"match_guid": match_guid})
+
     def merge_players(self, src_player_id, target_player_id):
         # TODO this can probably be tested properly only with integration tests
         self.db.badge.bulk_write(

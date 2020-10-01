@@ -38,11 +38,12 @@ class QSSdk:
     def iter_matches(self, latest: Optional[int] = None) -> Iterator[Q3Match]:
         return self.ctx.ds.get_matches_n(latest=latest)
 
-    def get_match(self, matchid: str):
-        pass
+    def get_match(self, match_guid: str):
+        # TODO what to return here?
+        return self.ctx.ds.get_match(match_guid)
 
     # TODO This needs further refactoring so all games go through validation (is_valid, duration) condition
-    def process_q3_log(self, raw_data: str, save_log=True) -> Tuple[List[dataprovider.FullMatchInfo], List[Exception]]:
+    def process_q3_log(self, raw_data: str) -> Tuple[List[dataprovider.FullMatchInfo], List[Exception]]:
         errors: List[Exception] = []
         final_results: List[dataprovider.FullMatchInfo] = []
         # TODO handle different mods
@@ -57,11 +58,14 @@ class QSSdk:
             if not game.is_valid or game.metadata.duration < 60:
                 continue
 
-            if save_log:
-                self.warehouse.save_match_log(game.game_guid, "\n".join(game_log.raw_lines))
+            if self.get_match(game.game_guid):
+                logger.debug("Game %s already in DB", game.game_guid)
+                continue
+
+            self.warehouse.save_match_log(game.game_guid, "\n".join(game_log.raw_lines))
 
             try:
-                fmi = self.process_game(game)
+                fmi = self.analyze_and_store(game)
                 final_results.append(fmi)
             except Exception as e:
                 logger.exception(e)
@@ -70,7 +74,7 @@ class QSSdk:
         return final_results, errors
 
     # TODO FullMatchInfo should be in dataprovider?
-    def process_game(self, game: QuakeGame) -> dataprovider.FullMatchInfo:
+    def analyze_and_store(self, game: QuakeGame) -> dataprovider.FullMatchInfo:
         if not game.is_valid:
             logger.info("Game %s ignored", game.game_guid)
             return
@@ -88,6 +92,7 @@ class QSSdk:
         analyzer = analyze.Analyzer()
         report = analyzer.analyze(fmi)
         self.ctx.ds.store_analysis_report(report)
+        logger.info("Added game %s", game.game_guid)
         return fmi
 
     def rebuild_db(self):
