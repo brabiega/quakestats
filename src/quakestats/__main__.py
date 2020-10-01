@@ -136,18 +136,9 @@ def handle_test():
 
 @cli.command('list-matches')
 def list_matches():
-    from quakestats.core.wh import Warehouse
-
-    ctx = context.SystemContext()
-    wh = Warehouse(ctx.config.get("RAW_DATA_DIR"))
-    print(list(wh.list_matches()))
-
-    return
     ctx = context.SystemContext()
     sdk = QSSdk(ctx)
-
-    res = sdk.iter_matches()
-    for match in res:
+    for match in sdk.iter_matches():
         print(match)
 
 

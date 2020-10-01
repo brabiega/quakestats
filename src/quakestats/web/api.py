@@ -2,6 +2,9 @@ import logging
 from collections import (
     defaultdict,
 )
+from functools import (
+    wraps,
+)
 
 import flask
 
@@ -23,6 +26,17 @@ def _sdk():
 
 def auth(token):
     return token == app.config["ADMIN_TOKEN"]
+
+
+def authenticate(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        if not auth(flask.request.form["token"]):
+            return "Bye"
+
+        return func(*args, **kwargs)
+
+    return wrapper
 
 
 @app.route("/api/v2/matches")
@@ -132,10 +146,8 @@ def api2_map_info():
 
 
 @app.route("/api/v2/upload", methods=["POST"])
+@authenticate
 def api2_upload():
-    if not auth(flask.request.form["token"]):
-        return "Bye"
-
     # TODO this code should be rewritten
     if "file" not in flask.request.files:
         raise Exception("No Files")
@@ -153,11 +165,8 @@ def api2_upload():
 
 
 @app.route("/api/v2/admin/players/merge", methods=["POST"])
+@authenticate
 def api2_admin_players_merge():
-    # TODO PROPER AUTH
-    if not auth(flask.request.form["token"]):
-        return "Bye"
-
     source_id = flask.request.form["source_player_id"]
     target_id = flask.request.form["target_player_id"]
     data_store().merge_players(source_id, target_id)
@@ -165,19 +174,15 @@ def api2_admin_players_merge():
 
 
 @app.route("/api/v2/admin/rebuild", methods=["POST"])
+@authenticate
 def api2_admin_rebuild():
-    if not auth(flask.request.form["token"]):
-        return "Bye"
-
     counter = _sdk().rebuild_db()
     return "Processed {} matches\n".format(counter)
 
 
 @app.route("/api/v2/admin/delete", methods=["POST"])
+@authenticate
 def api2_admin_delete():
-    if not auth(flask.request.form["token"]):
-        return "Bye"
-
     if not flask.request.form["match_guid"]:
         return "Bye"
 
@@ -210,14 +215,11 @@ def api2_presence(count):
 
 
 @app.route("/api/v2/total_stats", methods=['POST'])
+@authenticate
 def api2_total_stats():
     """
     A little bit hacked endpoint to fetch total stats
     """
-    # auth required to prevent DOS as this call is quite expensive
-    if not auth(flask.request.form["token"]):
-        return "Bye"
-
     ds = data_store()
     db = ds.db
     matches = list(db.match.find(

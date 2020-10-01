@@ -73,7 +73,7 @@ class Q3LogParser():
             self.close_game(game)
             yield game
 
-    def new_game(self):
+    def new_game(self) -> Q3GameLog:
         game = Q3GameLog()
         self._current_game = game
         self.current_time: int = 0
