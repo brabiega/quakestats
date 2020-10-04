@@ -11,6 +11,7 @@ from typing import (
 
 from quakestats.core.q3toql.parsers.base import (
     Q3GameLog,
+    Q3LogParserModEdawn,
     Q3LogParserModOsp,
 )
 from quakestats.core.q3toql.transform import (
@@ -19,6 +20,12 @@ from quakestats.core.q3toql.transform import (
 )
 
 logger = logging.getLogger(__name__)
+
+
+parser_map = {
+    'osp': Q3LogParserModOsp,
+    'edawn': Q3LogParserModEdawn,
+}
 
 
 def read_games(
@@ -30,8 +37,9 @@ def read_games(
 
     Returns instance of QuakeGame and Q3GameLog
     """
-    assert mod_hint == 'osp'
-    parser = Q3LogParserModOsp(raw_data)
+    assert mod_hint in ('osp', 'edawn')
+
+    parser = parser_map[mod_hint](raw_data)
     for game_log in parser.games():
         tf = Q3toQL()
         try:

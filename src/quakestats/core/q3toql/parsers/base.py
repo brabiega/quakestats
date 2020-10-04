@@ -28,8 +28,9 @@ RawEvent = collections.namedtuple(
 class Q3LogParser():
     """
     Should be a base class for all mod parsers:
-    - [ ] baseq3
+    - [x] baseq3
     - [x] OSP
+    - [x] edawn
     - [ ] CPMA - it's probably the same as baseq3, need to check
     """
     def __init__(self, raw_data: str):
@@ -129,8 +130,8 @@ class DefaultParserMixin():
         gi = game_info_dict
         return events.Q3EVInitGame(
             ev.time, gi['sv_hostname'], gi['gametype'],
-            gi['mapname'], int(gi['fraglimit']),
-            int(gi['capturelimit']), int(gi['timelimit']),
+            gi['mapname'], int(gi.get('fraglimit', 0)),
+            int(gi.get('capturelimit', 0)), int(gi.get('timelimit', 0)),
             gi['gamename']
         )
 
@@ -176,6 +177,7 @@ class DefaultParserMixin():
 class OspParserMixin():
     STAT_WEAPON_MAP = {
         'MachineGun': 'MACHINEGUN',
+        'Machinegun': 'MACHINEGUN',
         'Shotgun': 'SHOTGUN',
         'G.Launcher': 'GRENADE',
         'R.Launcher': 'ROCKET',
@@ -288,6 +290,90 @@ class Q3LogParserModOsp(
     def mktime(cls, event_time: str) -> int:
         seconds, tenths = event_time.split('.')
         return int(seconds) * 1000 + int(tenths) * 100
+
+    def close_game(self, game: Q3GameLog):
+        game.set_checksum(self.game_hash.hexdigest())
+        self.game_hash = hashlib.md5()
+        if self.__ev_exit:
+            game.add_event(self.__ev_exit)
+            game.set_finished()
+
+        if game.start_date and self.current_time:
+            game.finish_date = (
+                game.start_date +
+                timedelta(milliseconds=self.current_time - self.__init_time)
+            )
+        self.__ev_exit = None
+
+
+class Q3LogParserModEdawn(
+    Q3LogParser, DefaultParserMixin, OspParserMixin
+):
+    """
+    Edawn has similar log format to OSP
+    Enchanced logging (higher granularity) is planned for 1.6.3
+    """
+    separator_format = r"(\d+:\d+\.\d+) ------*$"
+    event_format = r"(\d+:\d+\.\d+) (.+?):(.*)"
+    time_format = r"(\d+):(\d+)\.(\d+)"
+
+    def __init__(self, raw_data: str):
+        self.raw_data = raw_data
+        # time of game init event
+        self.__init_time = 0
+        self.__ev_exit = None
+        self.game_hash = hashlib.md5()
+
+    def read_raw_events(self) -> Iterator[RawEvent]:
+        for line in self.read_lines():
+            yield self.line_to_raw_event(line)
+
+    def line_to_raw_event(self, line: str) -> RawEvent:
+        match = re.search(self.event_format, line)
+        if match:
+            # calculate game checksum, collisions should be very rare as
+            # the hash depends on log lines and their order
+            # hash will be used as unique game identifier
+            self.game_hash.update(line.encode())
+            ev_time = match.group(1)
+            ev_name = match.group(2)
+            ev_payload = match.group(3).strip()
+            return RawEvent(
+                self.mktime(ev_time), ev_name,
+                ev_payload if ev_payload else None
+            )
+
+        separator_match = re.search(self.separator_format, line)
+        if separator_match:
+            ev_time = separator_match.group(1)
+            return RawEvent(
+                self.mktime(ev_time), SEPARATOR, None
+            )
+
+        logger.warning("Ignored malformed line '%s'", line)
+
+    def build_event(self, raw_event: RawEvent) -> events.Q3GameEvent:
+        if raw_event.name == 'InitGame':
+            ev = self.parse_init_game(raw_event)
+            self.__init_time = ev.time
+            return ev
+        elif raw_event.name == 'ClientUserinfoChanged':
+            return self.parse_user_info(raw_event)
+        elif raw_event.name == 'Weapon_Stats':
+            return self.parse_weapon_stat(raw_event)
+        elif raw_event.name == 'Kill':
+            return self.parse_kill(raw_event)
+        elif raw_event.name == 'ClientDisconnect':
+            return self.parse_client_disconnect(raw_event)
+        elif raw_event.name == 'Exit':
+            self.__ev_exit = self.parse_exit(raw_event)
+        elif raw_event.name == 'ServerTime':
+            self._current_game.start_date = self.parse_server_time(raw_event)
+
+    @classmethod
+    def mktime(cls, event_time: str) -> int:
+        minutes, seconds, tenths = re.search(cls.time_format, event_time).groups()
+        return int(minutes) * 60 * 1000 + int(seconds) * 1000 + int(tenths) * 100
 
     def close_game(self, game: Q3GameLog):
         game.set_checksum(self.game_hash.hexdigest())
