@@ -63,7 +63,7 @@ class Q3EVPlayerStats(Q3GameEvent):
         self.damage = self.DamageStat(0, 0)
 
     def add_weapon(self, name: str, shots: int, hits: int):
-        assert name in entities.WEAPONS, f"Got {name}"
+        assert name in entities.Q3Data.WEAPONS, f"Got {name}"
         self.weapons[name] = self.WeaponStat(shots, hits)
 
     def set_damage(self, given: int, received: int):

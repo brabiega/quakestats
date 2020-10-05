@@ -1,7 +1,7 @@
 import pytest
 
 from quakestats.core.q3toql.parsers.base import (
-    DefaultParserMixin,
+    BaseQ3ParserMixin,
     OspParserMixin,
     Q3LogParser,
     Q3LogParserModOsp,
@@ -104,7 +104,7 @@ class TestQ3LogParserModOsp():
 
 class TestDefaultParser():
     def test_parse_user_info_changed(self):
-        parser = DefaultParserMixin()
+        parser = BaseQ3ParserMixin()
         raw_data = r'4 n\n0npax\t\0\model\sarge\hmodel\sarge\c1\1\c2\5\hc\100\w\0\l\0\rt\0\st\0'  # noqa
         raw_event = RawEvent(0, '', raw_data)
         event = parser.parse_user_info(raw_event)
@@ -115,7 +115,7 @@ class TestDefaultParser():
         assert event.team == 'FREE'
 
     def test_parse_kill(self):
-        parser = DefaultParserMixin()
+        parser = BaseQ3ParserMixin()
         raw_data = r'Kill: 2 3 1: Bartoszer killed Turbo W by MOD_SHOTGUN 3'
         raw_event = RawEvent(0, '', raw_data)
         event = parser.parse_kill(raw_event)
@@ -126,7 +126,7 @@ class TestDefaultParser():
     def test_parse_disconnect(self):
         raw_data = r'8'
         raw_event = RawEvent(0, '', raw_data)
-        parser = DefaultParserMixin()
+        parser = BaseQ3ParserMixin()
         ev = parser.parse_client_disconnect(raw_event)
         assert ev.client_id == 8
 

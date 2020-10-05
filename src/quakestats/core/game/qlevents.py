@@ -180,11 +180,11 @@ class PlayerStats(QLEvent):
         super().initialize(time, match_guid, warmup)
 
         # init pickups
-        for key in entities.PICKUPS:
+        for key in entities.Q3Data.PICKUPS:
             self.data['PICKUPS'][key] = 0
 
         # init medals
-        for key in entities.MEDALS:
+        for key in entities.Q3Data.MEDALS:
             self.data['MEDALS'][key] = 0
 
     def set_data(self, name: str, steam_id):
@@ -200,7 +200,7 @@ class PlayerStats(QLEvent):
         self.data['DAMAGE']['TAKEN'] = taken
 
     def add_weapon(self, weapon: str, shots: int, hits: int):
-        if weapon not in entities.WEAPONS:
+        if weapon not in entities.Q3Data.WEAPONS:
             raise ValueError(f"Invalid weapon '{weapon}'")
 
         try:
@@ -253,7 +253,7 @@ class PlayerKill(QLEvent):
         }
 
     def set_data(self, mod: str):
-        if mod not in entities.MODS:
+        if mod not in entities.Q3Data.MODS:
             raise ValueError(f"Invalid mod, '{mod}'")
         self.data['MOD'] = mod
 
