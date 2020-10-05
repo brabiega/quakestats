@@ -6,10 +6,10 @@ from typing import (
     Tuple,
 )
 
-from quakestats import (
-    dataprovider,
+from quakestats.core.game.qlmatch import (
+    FullMatchInfo,
 )
-from quakestats.core.q3toql.parse import (
+from quakestats.core.q3toql.api import (
     QuakeGame,
     read_games,
 )
@@ -46,9 +46,9 @@ class QSSdk:
         return self.ctx.ds.get_match(match_guid)
 
     # TODO This needs further refactoring so all games go through validation (is_valid, duration) condition
-    def process_q3_log(self, raw_data: str) -> Tuple[List[dataprovider.FullMatchInfo], List[Exception]]:
+    def process_q3_log(self, raw_data: str) -> Tuple[List[FullMatchInfo], List[Exception]]:
         errors: List[Exception] = []
-        final_results: List[dataprovider.FullMatchInfo] = []
+        final_results: List[FullMatchInfo] = []
         # TODO handle different mods
         for game_or_error, game_log in read_games(raw_data, 'osp'):
             if isinstance(game_or_error, Exception):
@@ -77,13 +77,12 @@ class QSSdk:
 
         return final_results, errors
 
-    # TODO FullMatchInfo should be in dataprovider?
-    def analyze_and_store(self, game: QuakeGame) -> dataprovider.FullMatchInfo:
+    def analyze_and_store(self, game: QuakeGame) -> FullMatchInfo:
         if not game.is_valid:
             logger.info("Game %s ignored", game.game_guid)
             return
 
-        fmi = dataprovider.FullMatchInfo(
+        fmi = FullMatchInfo(
             events=game.get_events(),
             match_guid=game.game_guid,
             duration=game.metadata.duration,

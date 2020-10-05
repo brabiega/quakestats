@@ -3,7 +3,7 @@ import datetime
 DATE_FORMAT = "%Y-%m-%dT%H:%M:%S"
 
 
-class FullMatchInfo:
+class FullMatchInfo():
     """
     Object gathers all relevant info single match.
     Only data stored here will be used for further processing

@@ -3,13 +3,12 @@ import os
 
 import pytest
 
-from quakestats import (
-    dataprovider,
+from quakestats.core.game.qlmatch import (
+    FullMatchInfo,
 )
-from quakestats.core.q3toql import parse as q3parse
+from quakestats.core.q3toql import api as q3parse
 from quakestats.dataprovider import (
     analyze,
-    quakelive,
 )
 
 FIXTURE_DATA_DIR = os.path.join(
@@ -56,7 +55,7 @@ def test_quake3_analyze_nodm9(q3_dump):
     # nodm9
     game, game_log = matches[-1]
 
-    fmi = dataprovider.FullMatchInfo(
+    fmi = FullMatchInfo(
         events=game.get_events(),
         match_guid=game.game_guid,
         duration=game.metadata.duration,
@@ -170,7 +169,7 @@ def test_quake3_analyze_ktsdm3(q3_dump):
     # ktsdm3
     game, game_log = matches[15]
 
-    fmi = dataprovider.FullMatchInfo(
+    fmi = FullMatchInfo(
         events=game.get_events(),
         match_guid=game.game_guid,
         duration=game.metadata.duration,
