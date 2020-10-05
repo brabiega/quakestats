@@ -19,6 +19,9 @@ from quakestats.core.wh import (
 from quakestats.dataprovider import (
     analyze,
 )
+from quakestats.dataprovider.analyze import (
+    AnalysisResult,
+)
 from quakestats.datasource.entities import (
     Q3Match,
 )
@@ -62,7 +65,8 @@ class QSSdk:
                 logger.debug("Game %s already in DB", game.game_guid)
                 continue
 
-            self.warehouse.save_match_log(game.game_guid, "\n".join(game_log.raw_lines))
+            if not self.warehouse.has_item(game.game_guid):
+                self.warehouse.save_match_log(game.game_guid, "\n".join(game_log.raw_lines))
 
             try:
                 fmi = self.analyze_and_store(game)
@@ -91,9 +95,12 @@ class QSSdk:
 
         analyzer = analyze.Analyzer()
         report = analyzer.analyze(fmi)
-        self.ctx.ds.store_analysis_report(report)
-        logger.info("Added game %s", game.game_guid)
+        self.store_analysis_report(report)
         return fmi
+
+    def store_analysis_report(self, report: AnalysisResult):
+        self.ctx.ds.store_analysis_report(report)
+        logger.info("Storing game %s in datastore", report.match_metadata.match_guid)
 
     def rebuild_db(self):
         self.ctx.ds.prepare_for_rebuild()
@@ -103,7 +110,12 @@ class QSSdk:
             self.warehouse.read_item(item)
             logger.info("Processing file %s", item.path)
 
-            results, errors = self.process_q3_log(item.data, save_log=False)
+            try:
+                results, errors = self.process_q3_log(item.data)
+            except Exception as e:
+                logger.exception(e)
+                continue
+
             if errors:
                 logger.error("Got error, %s", errors)
             else:

@@ -24,14 +24,17 @@ class Warehouse():
     def __init__(self, datadir: str):
         self.datadir = datadir
 
+    def _gen_path(self, identifier: str) -> str:
+        return os.path.join(self.datadir, f"{identifier}.log")
+
     def iter_matches(self) -> typing.Iterator[WarehouseItem]:
         files = os.listdir(self.datadir)
         for fname in files:
             fbasename, fext = os.path.splitext(fname)
             yield WarehouseItem(fbasename, 'Q3-OSP', os.path.join(self.datadir, fname))
 
-    def save_match_log(self, match_id: str, match_log: str):
-        path = os.path.join(self.datadir, f"{match_id}.log")
+    def save_match_log(self, identifier: str, match_log: str):
+        path = self._gen_path(identifier)
         if os.path.isfile(path):
             raise Exception(f"File already exists {path}")
         with open(path, 'w') as fh:
@@ -42,3 +45,7 @@ class Warehouse():
             item.data = fh.read()
 
         return item
+
+    def has_item(self, identifier: str) -> bool:
+        path = self._gen_path(identifier)
+        return os.path.exists(path)

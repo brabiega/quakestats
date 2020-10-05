@@ -139,7 +139,7 @@ class Analyzer:
         self.player_stats = {}
         self.specific_analyzer = None
 
-    def analyze(self, full_match_info):
+    def analyze(self, full_match_info) -> AnalysisResult:
         """
         :param full_match_info: FullMatchInfo
         :return: AnalysisResult

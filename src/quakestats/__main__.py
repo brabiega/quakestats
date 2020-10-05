@@ -53,11 +53,12 @@ def run_rebuild_db():
 @click.argument("password")
 def collect_ql(host, port, password):
     from quakestats.core.ql import QLGame, MatchMismatch
-    from quakestats.web import data_store
 
     game = QLGame()
+    ctx = context.SystemContext()
+    sdk = QSSdk(ctx)
+
     data_dir = conf.get_conf_val("RAW_DATA_DIR")
-    server_domain = conf.get_conf_val("SERVER_DOMAIN")
 
     def event_cb(timestamp: int, event: dict):
         nonlocal game
@@ -71,7 +72,7 @@ def collect_ql(host, port, password):
                     manage.store_game(game, 'QL', data_dir)
 
                 try:
-                    manage.process_game(server_domain, game, data_store())
+                    sdk.analyze_and_store(game)
                 except Exception as e:
                     logger.error('Failed to process match %s', game.game_guid)
                     logger.exception(e)
@@ -89,9 +90,10 @@ def collect_ql(host, port, password):
 @cli.command(name="load-ql-game")
 @click.argument('file_path')
 def load_ql_game(file_path):
-    from quakestats.web import data_store
+    ctx = context.SystemContext()
+    sdk = QSSdk(ctx)
     server_domain, game = manage.load_game(file_path)
-    manage.process_game(server_domain, game, data_store())
+    sdk.analyze_and_store(game)
 
 
 @cli.command()
