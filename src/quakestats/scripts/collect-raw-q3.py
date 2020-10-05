@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """
+DEPRECATED, unusable
 Example usage
 cat q3log | ./collect-raw-q3.py
 Will write proper matches to specific path

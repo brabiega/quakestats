@@ -5,13 +5,9 @@ from quakestats.dataprovider.feeder import (
 from quakestats.dataprovider.match import (
     FullMatchInfo,
 )
-from quakestats.dataprovider.preprocessor import (
-    MatchPreprocessor,
-)
 
 __all__ = [
     "FeedFull",
-    "MatchPreprocessor",
     "MatchFeeder",
     "FullMatchInfo",
 ]

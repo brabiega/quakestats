@@ -50,29 +50,6 @@ def quakelive_dump():
     return json.loads(data)
 
 
-def test_quakelive_feed_preprocess(quakelive_dump):
-    feeder = quakelive.QLMatchFeeder()
-    matches = []
-    for event in quakelive_dump:
-        try:
-            feeder.feed(event)
-        except dataprovider.FeedFull:
-            matches.append(feeder.consume())
-
-    for match in matches:
-        preprocessor = dataprovider.MatchPreprocessor()
-        preprocessor.process_events(match['EVENTS'])
-
-        for ev in preprocessor.events:
-            assert not ev['DATA'].get('WARMUP', False)
-
-        assert preprocessor.match_guid
-        assert preprocessor.events
-
-        if preprocessor.finished:
-            assert preprocessor.duration
-
-
 def test_quake3_analyze_nodm9(q3_dump):
     matches = list(q3parse.read_games(q3_dump, 'osp'))
 
