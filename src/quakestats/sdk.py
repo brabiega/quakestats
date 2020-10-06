@@ -49,6 +49,7 @@ class QSSdk:
     def process_q3_log(self, raw_data: str) -> Tuple[List[FullMatchInfo], List[Exception]]:
         errors: List[Exception] = []
         final_results: List[FullMatchInfo] = []
+        skips = 0
         # TODO handle different mods
         for game_or_error, game_log in read_games(raw_data, 'osp'):
             if isinstance(game_or_error, Exception):
@@ -63,6 +64,7 @@ class QSSdk:
 
             if self.get_match(game.game_guid):
                 logger.debug("Game %s already in DB", game.game_guid)
+                skips += 1
                 continue
 
             if not self.warehouse.has_item(game.game_guid):
@@ -75,7 +77,7 @@ class QSSdk:
                 logger.exception(e)
                 errors.append(e)
 
-        return final_results, errors
+        return final_results, errors, skips
 
     def analyze_and_store(self, game: QuakeGame) -> FullMatchInfo:
         if not game.is_valid:
@@ -110,7 +112,7 @@ class QSSdk:
             logger.info("Processing file %s", item.path)
 
             try:
-                results, errors = self.process_q3_log(item.data)
+                results, errors, skips = self.process_q3_log(item.data)
             except Exception as e:
                 logger.exception(e)
                 continue
@@ -122,3 +124,7 @@ class QSSdk:
 
         self.ctx.ds.post_rebuild()
         return counter
+
+    def delete_match(self, match_guid: str):
+        self.ctx.ds.drop_match_info(match_guid)
+        self.warehouse.delete_item(match_guid)

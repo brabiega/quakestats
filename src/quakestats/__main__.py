@@ -125,21 +125,20 @@ def process_q3_log(file_path):
         sdk.process_q3_log(fh.read())
 
 
-@cli.command('test')
-def handle_test():
-    from quakestats.core.wh import Warehouse
-
-    ctx = context.SystemContext()
-    wh = Warehouse(ctx.config.get("RAW_DATA_DIR"))
-    wh.save_match_log('test', 'asd')
-
-
 @cli.command('list-matches')
 def list_matches():
     ctx = context.SystemContext()
     sdk = QSSdk(ctx)
     for match in sdk.iter_matches():
         print(match)
+
+
+@cli.command(name="match-delete")
+@click.argument('match-guid')
+def delete_match(match_guid):
+    ctx = context.SystemContext()
+    sdk = QSSdk(ctx)
+    sdk.delete_match(match_guid)
 
 
 def main(args=None):

@@ -154,12 +154,13 @@ def api2_upload():
 
     req_file = flask.request.files["file"]
     data = req_file.read().decode("utf-8")
-    final_results, errors = _sdk().process_q3_log(data)
+    final_results, errors, skips = _sdk().process_q3_log(data)
 
     return flask.jsonify(
         {
             "ACCEPTED_MATCHES": [r.get_summary() for r in final_results],
             "ERRORS": [repr(e) for e in errors],
+            "SKIPS": skips,
         }
     )
 
@@ -186,7 +187,7 @@ def api2_admin_delete():
     if not flask.request.form["match_guid"]:
         return "Bye"
 
-    data_store().drop_match_info(flask.request.form["match_guid"])
+    _sdk().delete_match(flask.request.form["match_guid"])
     return "OK"
 
 

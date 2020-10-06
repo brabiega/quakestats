@@ -1,5 +1,5 @@
 """
-File based warehouse for log files/event files from quake matches
+File based warehouse for raw log files/event files from quake matches
 """
 
 import logging
@@ -49,3 +49,7 @@ class Warehouse():
     def has_item(self, identifier: str) -> bool:
         path = self._gen_path(identifier)
         return os.path.exists(path)
+
+    def delete_item(self, identifier: str):
+        path = self._gen_path(identifier)
+        os.remove(path)
