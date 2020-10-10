@@ -21,6 +21,10 @@ class WarehouseItem():
 
 
 class Warehouse():
+    """
+    Warehouse stores raw quake log/event files before conversion/analysis
+    Such data can be used to rebuild the DB in case when some analysis logic changes
+    """
     def __init__(self, datadir: str):
         self.datadir = datadir
 

@@ -4,9 +4,16 @@ Parsed, structurized Quake3 events
 from collections import (
     namedtuple,
 )
+from datetime import (
+    datetime,
+)
 
 from quakestats.core.q3toql import (
     entities,
+)
+
+RawEvent = namedtuple(
+    'RawEvent', ['time', 'name', 'payload']
 )
 
 
@@ -93,3 +100,9 @@ class Q3EventExit(Q3GameEvent):
     def __init__(self, ev_time: int, reason: str):
         super().__init__(ev_time)
         self.reason = reason
+
+
+class Q3EVServerTime(Q3GameEvent):
+    def __init__(self, ev_time: int, dt: datetime):
+        super().__init__(ev_time)
+        self.dt = dt

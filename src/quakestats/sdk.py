@@ -9,9 +9,12 @@ from typing import (
 from quakestats.core.game.qlmatch import (
     FullMatchInfo,
 )
+from quakestats.core.q3parser.api import (
+    Q3ParserAPI,
+)
 from quakestats.core.q3toql.api import (
+    Q3toQLAPI,
     QuakeGame,
-    read_games,
 )
 from quakestats.core.wh import (
     Warehouse,
@@ -32,9 +35,11 @@ from quakestats.system.context import (
 logger = logging.getLogger(__name__)
 
 
-class QSSdk:
+class QSSdk():
     def __init__(self, ctx: SystemContext):
         self.ctx = ctx
+        self.q3parser = Q3ParserAPI()
+        self.q3toql = Q3toQLAPI()
         self.warehouse = Warehouse(ctx.config.get("RAW_DATA_DIR", None))
         self.server_domain: str = ctx.config.get("SERVER_DOMAIN")
 
@@ -50,28 +55,29 @@ class QSSdk:
         errors: List[Exception] = []
         final_results: List[FullMatchInfo] = []
         skips = 0
+
         # TODO handle different mods
-        for game_or_error, game_log in read_games(raw_data, 'osp'):
-            if isinstance(game_or_error, Exception):
-                error = game_or_error
-                errors.append(error)
-                continue
-            else:
-                game = game_or_error
 
-            if not game.is_valid or game.metadata.duration < 60:
+        for idx, game_log in enumerate(self.q3parser.split_games(raw_data, 'osd')):
+            logger.debug("Processing match %s, %s", idx, game_log.identifier)
+
+            # TODO error handling
+            q3_game = self.q3parser.parse_game_log(game_log)
+            ql_game = self.q3toql.transform(q3_game)
+
+            if not ql_game.is_valid or ql_game.metadata.duration < 60:
                 continue
 
-            if self.get_match(game.game_guid):
-                logger.debug("Game %s already in DB", game.game_guid)
+            if self.get_match(ql_game.game_guid):
+                logger.debug("Game %s already in DB", ql_game.game_guid)
                 skips += 1
                 continue
 
-            if not self.warehouse.has_item(game.game_guid):
-                self.warehouse.save_match_log(game.game_guid, "\n".join(game_log.raw_lines))
+            if not self.warehouse.has_item(ql_game.game_guid):
+                self.warehouse.save_match_log(ql_game.game_guid, "\n".join(game_log.lines))
 
             try:
-                fmi = self.analyze_and_store(game)
+                fmi = self.analyze_and_store(ql_game)
                 final_results.append(fmi)
             except Exception as e:
                 logger.exception(e)

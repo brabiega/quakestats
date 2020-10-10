@@ -1,13 +1,10 @@
-import collections
 import re
 
-from quakestats.core.q3toql.parsers import (
+from quakestats.core.q3parser import (
     events,
 )
 
-RawEvent = collections.namedtuple(
-    'RawEvent', ['time', 'name', 'payload']
-)
+RawEvent = events.RawEvent
 
 
 class BaseQ3ParserMixin():

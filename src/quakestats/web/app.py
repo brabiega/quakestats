@@ -1,3 +1,5 @@
+import logging
+
 from flask import (
     Flask,
 )
@@ -13,6 +15,9 @@ from quakestats.system.conf import (
 )
 from quakestats.system.context import (
     SystemContext,
+)
+from quakestats.system.log import (
+    configure_logging,
 )
 
 app = Flask(__name__)
@@ -35,3 +40,5 @@ def get_sys_ctx():
 
 
 load_stuff()
+
+configure_logging(logging.DEBUG)

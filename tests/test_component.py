@@ -6,7 +6,12 @@ import pytest
 from quakestats.core.game.qlmatch import (
     FullMatchInfo,
 )
-from quakestats.core.q3toql import api as q3parse
+from quakestats.core.q3parser.api import (
+    Q3ParserAPI,
+)
+from quakestats.core.q3toql.api import (
+    Q3toQLAPI,
+)
 from quakestats.dataprovider import (
     analyze,
 )
@@ -50,10 +55,14 @@ def quakelive_dump():
 
 
 def test_quake3_analyze_nodm9(q3_dump):
-    matches = list(q3parse.read_games(q3_dump, 'osp'))
+    parser_api = Q3ParserAPI()
+    q3toql_api = Q3toQLAPI()
+    game_logs = list(parser_api.split_games(q3_dump, 'osp'))
 
     # nodm9
-    game, game_log = matches[-1]
+    game_log = game_logs[-1]
+    parser_api.parse_game_log(game_log)
+    game = q3toql_api.transform(parser_api.parse_game_log(game_log))
 
     fmi = FullMatchInfo(
         events=game.get_events(),
@@ -165,9 +174,14 @@ def test_quake3_analyze_nodm9(q3_dump):
 
 
 def test_quake3_analyze_ktsdm3(q3_dump):
-    matches = list(q3parse.read_games(q3_dump, 'osp'))
-    # ktsdm3
-    game, game_log = matches[15]
+    parser_api = Q3ParserAPI()
+    q3toql_api = Q3toQLAPI()
+    game_logs = list(parser_api.split_games(q3_dump, 'osp'))
+
+    # nodm9
+    game_log = game_logs[15]
+    parser_api.parse_game_log(game_log)
+    game = q3toql_api.transform(parser_api.parse_game_log(game_log))
 
     fmi = FullMatchInfo(
         events=game.get_events(),

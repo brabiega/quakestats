@@ -11,9 +11,9 @@ from quakestats.core.game import (
 from quakestats.core.game.metadata import (
     QuakeGameMetadata,
 )
-from quakestats.core.q3toql.parsers import events as q3_events
-from quakestats.core.q3toql.parsers.result import (
-    Q3GameLog,
+from quakestats.core.q3parser import events as q3_events
+from quakestats.core.q3parser.parser import (
+    Q3Game,
 )
 
 logger = logging.getLogger(__name__)
@@ -246,7 +246,7 @@ class Q3toQL():
         self.game = None
         self.gamelog = None
 
-    def transform(self, gamelog: Q3GameLog):
+    def transform(self, gamelog: Q3Game):
         self.game = QuakeGame()
         self.gamelog = gamelog
         self.game.metadata.start_date = gamelog.start_date
@@ -257,9 +257,10 @@ class Q3toQL():
             if isinstance(e, q3_events.Q3EVInitGame)
         ][0]
         self.game.add_match_started(
-            self.gamelog.checksum, init_game
+            self.gamelog.identifier, init_game
         )
 
+        ev_exit = None
         for event in self.gamelog.events:
             if isinstance(event, q3_events.Q3EVUpdateClient):
                 self.game.user_info_changed(event)
@@ -269,7 +270,14 @@ class Q3toQL():
                 self.game.kill(event)
             elif isinstance(event, q3_events.Q3EVClientDisconnect):
                 self.game.client_disconnect(event)
+
+            # Exit event can be produced before player stats in q3
+            # for compatibility with QL we will always emmit
+            # MATCH_REPORT as a last event
             elif isinstance(event, q3_events.Q3EventExit):
-                self.game.exit(event)
+                ev_exit = event
+
+        if ev_exit:
+            self.game.exit(ev_exit)
 
         return self.game

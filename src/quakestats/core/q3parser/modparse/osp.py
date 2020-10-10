@@ -3,12 +3,11 @@ from datetime import (
     datetime,
 )
 
-from quakestats.core.q3toql.parsers import (
+from quakestats.core.q3parser import (
     events,
 )
-from quakestats.core.q3toql.parsers.baseq3 import (
-    RawEvent,
-)
+
+RawEvent = events.RawEvent
 
 
 class OspParserMixin():
@@ -53,12 +52,13 @@ class OspParserMixin():
         event.set_pickups(grah_stats['Health'], grah_stats['Armor'])
         return event
 
-    def parse_server_time(self, raw_event: RawEvent) -> datetime:
+    def parse_server_time(self, ev: RawEvent) -> datetime:
         """
         Example: 20170622112609  11:26:09 (22 Jun 2017)
         """
-        data = raw_event.payload
+        data = ev.payload
         server_date = datetime.strptime(
             data.split()[0].strip(), "%Y%m%d%H%M%S"
         )
-        return server_date
+        event = events.Q3EVServerTime(ev.time, server_date)
+        return event
