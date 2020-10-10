@@ -11,14 +11,14 @@ from quakestats.core.q3parser.splitter import (
 class TestQ3GameLog():
 
     def test_serialize(self):
-        log = Q3GameLog(datetime.datetime(2020, 10, 10, 22, 22), 'osp')
+        log = Q3GameLog(datetime.datetime(2020, 10, 10, 22, 22, tzinfo=datetime.timezone.utc), 'osp')
         log.add_line('testing 1')
         log.add_line('testing 2')
         res = log.serialize()
 
         assert res == (
             "Quake3\n"
-            "02cd73ea62677edd360fde3179013acd 1602361320.0 osp\n"
+            "02cd73ea62677edd360fde3179013acd 1602368520.0 osp\n"
             "testing 1\n"
             "testing 2"
         )
