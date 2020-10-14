@@ -5,19 +5,23 @@ File based warehouse for raw log files/event files from quake matches
 import logging
 import os
 import typing
+from datetime import (
+    datetime,
+)
 
 logger = logging.getLogger(__name__)
 
 
 class WarehouseItem():
-    def __init__(self, identifier: str, logtype: str, path: str):
+    def __init__(self, identifier: str, path: str, ext: str):
         self.identifier = identifier
-        self.logtype = logtype
+        self.ext = ext
+        self.create_date: datetime = None
         self.path: str = path
         self.data: str = None  # use read_item to fetch the data
 
     def __repr__(self) -> str:
-        return f"WarehouseItem({self.identifier}, {self.logtype})"
+        return f"WarehouseItem({self.identifier}) - {self.ext} {self.create_date}"
 
 
 class Warehouse():
@@ -35,7 +39,10 @@ class Warehouse():
         files = os.listdir(self.datadir)
         for fname in files:
             fbasename, fext = os.path.splitext(fname)
-            yield WarehouseItem(fbasename, 'Q3-OSP', os.path.join(self.datadir, fname))
+            path = os.path.join(self.datadir, fname)
+            item = WarehouseItem(fbasename, path, fext.lstrip('.'))
+            item.create_date = datetime.fromtimestamp(os.path.getctime(path))
+            yield item
 
     def save_match_log(self, identifier: str, match_log: str):
         path = self._gen_path(identifier)

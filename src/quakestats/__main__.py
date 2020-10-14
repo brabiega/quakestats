@@ -117,12 +117,13 @@ def status():
 
 @cli.command(name="process-q3-log")
 @click.argument('file_path')
-def process_q3_log(file_path):
+@click.argument('mod')
+def process_q3_log(file_path, mod):
     ctx = context.SystemContext()
     sdk = QSSdk(ctx)
 
     with open(file_path) as fh:
-        sdk.process_q3_log(fh.read())
+        sdk.process_q3_log(fh.read(), mod)
 
 
 @cli.command('list-matches')
@@ -131,6 +132,14 @@ def list_matches():
     sdk = QSSdk(ctx)
     for match in sdk.iter_matches():
         print(match)
+
+
+@cli.command('warehouse-list')
+def warehouse_list():
+    ctx = context.SystemContext()
+    sdk = QSSdk(ctx)
+    for item in sdk.warehouse_iter():
+        print(item)
 
 
 @cli.command(name="match-delete")

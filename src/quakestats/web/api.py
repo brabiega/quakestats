@@ -145,16 +145,18 @@ def api2_map_info():
     return "Bye"
 
 
-@app.route("/api/v2/upload", methods=["POST"])
+@app.route('/api/v2/upload', defaults={'mod': 'osp'}, methods=["POST"])
+@app.route("/api/v2/upload/<string:mod>", methods=["POST"])
 @authenticate
-def api2_upload():
+def api2_upload(mod):
     # TODO this code should be rewritten
     if "file" not in flask.request.files:
         raise Exception("No Files")
 
     req_file = flask.request.files["file"]
     data = req_file.read().decode("utf-8")
-    final_results, errors, skips = _sdk().process_q3_log(data)
+
+    final_results, errors, skips = _sdk().process_q3_log(data, mod)
 
     return flask.jsonify(
         {

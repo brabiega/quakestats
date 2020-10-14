@@ -11,6 +11,9 @@ from typing import (
 
 
 class RawGameLog():
+    """
+    Base class for game log, should be used for q3 and ql
+    """
     TYPE = None
 
     def serialize(self) -> str:
@@ -44,6 +47,26 @@ class Q3GameLog(RawGameLog):
         base_header = super().serialize()
         header = f"{self.identifier} {self.received.timestamp()} {self.mod}"
         return "\n".join(itertools.chain([base_header, header], self.lines))
+
+    @classmethod
+    def deserialize(cls, data: List[str], identifier: str, create_date: datetime) -> 'Q3GameLog':
+        if data[0] == cls.TYPE:
+            recv_identifier, recv_ts, mod = data[1].split(" ")
+            received = datetime.fromtimestamp(float(recv_ts))
+
+            obj = cls(received, mod)
+            obj.lines = data[2:]
+        else:
+            recv_identifier = identifier
+            received = create_date
+            # assume it is an old item when only OSP was supported
+            mod = 'osp'
+
+            obj = cls(received, mod)
+            obj.lines = data
+
+        obj.__checksum = recv_identifier
+        return obj
 
     @property
     def checksum(self) -> str:

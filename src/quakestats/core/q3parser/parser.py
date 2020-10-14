@@ -91,7 +91,7 @@ class GameLogParser():
 
 
 class GameLogParserOsp(GameLogParser, BaseQ3ParserMixin, OspParserMixin):
-    event_format = r"(\d+\.\d+) (.+?):(.*)"
+    event_format = r"^(\d+\.\d+) (.+?):(.*)"
 
     def __init__(self):
         # time of game init event
@@ -134,7 +134,7 @@ class GameLogParserOsp(GameLogParser, BaseQ3ParserMixin, OspParserMixin):
             game.start_date = server_time_ev.dt
         if all([init_ev, server_time_ev, exit_ev]):
             game_length = exit_ev.time - init_ev.time
-            game.finish_date = game.start_date + timedelta(seconds=game_length)
+            game.finish_date = game.start_date + timedelta(milliseconds=game_length)
 
         return game
 
@@ -164,7 +164,7 @@ class GameLogParserEdawn(GameLogParser, BaseQ3ParserMixin, OspParserMixin):
     Edawn has similar log format to OSP
     Enchanced logging (higher granularity) is planned for 1.6.3
     """
-    event_format = r"(\d+:\d+\.\d+) (.+?):(.*)"
+    event_format = r"^\s+(\d+:\d+\.\d+) (.+?):(.*)"
     time_format = r"(\d+):(\d+)\.(\d+)"
 
     def __init__(self):
@@ -187,6 +187,29 @@ class GameLogParserEdawn(GameLogParser, BaseQ3ParserMixin, OspParserMixin):
             )
         else:
             raise Exception(f"Malformed line, {line}")
+
+    def populate_dates(self, game: Q3Game) -> Q3Game:
+        init_ev: events.Q3EVInitGame = None
+        exit_ev: events.Q3EventExit = None
+        server_time_ev: events.Q3EVServerTime = None
+        for event in game.events:
+            if isinstance(event, events.Q3EVInitGame):
+                assert not init_ev
+                init_ev = event
+            elif isinstance(event, events.Q3EVServerTime):
+                assert not server_time_ev
+                server_time_ev = event
+            elif isinstance(event, events.Q3EventExit):
+                assert not exit_ev
+                exit_ev = event
+
+        if server_time_ev:
+            game.start_date = server_time_ev.dt
+        if all([init_ev, server_time_ev, exit_ev]):
+            game_length = exit_ev.time - init_ev.time
+            game.finish_date = game.start_date + timedelta(milliseconds=game_length)
+
+        return game
 
     def parse_event(self, raw_event: events.RawEvent) -> events.Q3GameEvent:
         if raw_event.name == 'InitGame':

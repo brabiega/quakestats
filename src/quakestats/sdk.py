@@ -18,6 +18,7 @@ from quakestats.core.q3toql.api import (
 )
 from quakestats.core.wh import (
     Warehouse,
+    WarehouseItem,
 )
 from quakestats.dataprovider import (
     analyze,
@@ -51,21 +52,19 @@ class QSSdk():
         return self.ctx.ds.get_match(match_guid)
 
     # TODO This needs further refactoring so all games go through validation (is_valid, duration) condition
-    def process_q3_log(self, raw_data: str) -> Tuple[List[FullMatchInfo], List[Exception]]:
+    def process_q3_log(self, raw_data: str, mod_hint: str) -> Tuple[List[FullMatchInfo], List[Exception]]:
         errors: List[Exception] = []
         final_results: List[FullMatchInfo] = []
         skips = 0
 
-        # TODO handle different mods
-
-        for idx, game_log in enumerate(self.q3parser.split_games(raw_data, 'osd')):
+        for idx, game_log in enumerate(self.q3parser.split_games(raw_data, mod_hint)):
             logger.debug("Processing match %s, %s", idx, game_log.identifier)
 
             # TODO error handling
             q3_game = self.q3parser.parse_game_log(game_log)
             ql_game = self.q3toql.transform(q3_game)
-
             if not ql_game.is_valid or ql_game.metadata.duration < 60:
+                logger.debug("Game %s ignored", q3_game.identifier)
                 continue
 
             if self.get_match(ql_game.game_guid):
@@ -74,7 +73,7 @@ class QSSdk():
                 continue
 
             if not self.warehouse.has_item(ql_game.game_guid):
-                self.warehouse.save_match_log(ql_game.game_guid, "\n".join(game_log.lines))
+                self.warehouse.save_match_log(ql_game.game_guid, game_log.serialize())
 
             try:
                 fmi = self.analyze_and_store(ql_game)
@@ -109,6 +108,23 @@ class QSSdk():
         self.ctx.ds.store_analysis_report(report)
         logger.info("Storing game %s in datastore", report.match_metadata.match_guid)
 
+    def load_game_from_wh(self, wh_item: WarehouseItem) -> QuakeGame:
+        if not wh_item.data:
+            raise Exception("WH item was not read")
+
+        lines = wh_item.data.splitlines()
+
+        if wh_item.ext == 'log':
+            # identifier and create date are needed for old warehouse items when only OSP was supported
+            game = self.q3parser.load_game_log(lines, wh_item.identifier, wh_item.create_date)
+
+        else:
+            # TODO where to put this logic
+            # TODO ql doesn't need transform
+            raise NotImplementedError()
+
+        return self.q3toql.transform(game)
+
     def rebuild_db(self):
         self.ctx.ds.prepare_for_rebuild()
         counter = 0
@@ -117,16 +133,9 @@ class QSSdk():
             self.warehouse.read_item(item)
             logger.info("Processing file %s", item.path)
 
-            try:
-                results, errors, skips = self.process_q3_log(item.data)
-            except Exception as e:
-                logger.exception(e)
-                continue
-
-            if errors:
-                logger.error("Got error, %s", errors)
-            else:
-                counter += 1
+            game = self.load_game_from_wh(item)
+            self.analyze_and_store(game)
+            counter += 1
 
         self.ctx.ds.post_rebuild()
         return counter
@@ -134,3 +143,6 @@ class QSSdk():
     def delete_match(self, match_guid: str):
         self.ctx.ds.drop_match_info(match_guid)
         self.warehouse.delete_item(match_guid)
+
+    def warehouse_iter(self) -> Iterator[WarehouseItem]:
+        return self.warehouse.iter_matches()
