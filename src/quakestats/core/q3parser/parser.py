@@ -13,6 +13,9 @@ from quakestats.core.q3parser import (
 from quakestats.core.q3parser.modparse.baseq3 import (
     BaseQ3ParserMixin,
 )
+from quakestats.core.q3parser.modparse.edawn import (
+    EdawnParserMixin,
+)
 from quakestats.core.q3parser.modparse.osp import (
     OspParserMixin,
 )
@@ -159,7 +162,7 @@ class GameLogParserOsp(GameLogParser, BaseQ3ParserMixin, OspParserMixin):
             return self.parse_server_time(raw_event)
 
 
-class GameLogParserEdawn(GameLogParser, BaseQ3ParserMixin, OspParserMixin):
+class GameLogParserEdawn(GameLogParser, BaseQ3ParserMixin, EdawnParserMixin):
     """
     Edawn has similar log format to OSP
     Enchanced logging (higher granularity) is planned for 1.6.3

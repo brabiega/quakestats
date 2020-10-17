@@ -18,9 +18,11 @@ class OspParserMixin():
         'G.Launcher': 'GRENADE',
         'R.Launcher': 'ROCKET',
         'LightningGun': 'LIGHTNING',
+        'Lightning': 'LIGHTNING',
         'Plasmagun': 'PLASMA',
         'Gauntlet': 'GAUNTLET',
         'Railgun': 'RAILGUN',
+        'BFG': 'BFG',
     }
 
     def parse_weapon_stat(self, ev: RawEvent) -> events.Q3EVPlayerStats:

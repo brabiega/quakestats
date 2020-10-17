@@ -23,13 +23,14 @@ Unfortunately only OSP FFA from Quake 3 is well tested as it was the main use ca
 #### mods
 - [x] - OSP (http://www.orangesmoothie.org/tourneyQ3A/index.html)
 - [x] - Quake Live - most of event processing is implemented
+- [x] - Edawn
 - [ ] - vanilla Q3 not supported due to missing ServerTime info
 - [ ] - CPMA not supported due to missing ServerTime info
 
 #### modes
 - [x] - DUEL
 - [x] - FFA
-- [ ] - CA
+- [ ] - CA - partially implemented
 - [ ] - TDM
 - [ ] - CTF
 
@@ -46,7 +47,7 @@ The stats are presented with fancy charts, custom medals, etc. See the examples 
 ![match1](examples/match1.png)
 
 ### Requirements
-- Decent version of Python 2 or 3
+- Python 3.6+
 - Instance of Mongo DB (pointed by ```settings.py```)
 - Modern web browser (requires css grid-layout)
 
@@ -114,7 +115,8 @@ quakestats collect-ql <ip> <port> <stats-password>
 ```
 
 ### Uploading Quake 3 log file
-In order to process some data you need to send your match log file to web api endpoint ```/api/v2/upload```.
+In order to process some data you need to send your match log file to web api endpoint ```/api/v2/upload```. By default mod ```osp``` is assumed.
+Mod specific endpoint is served under ```/api/v2/upload/<mod>```, e.g. ```/api/v2/upload/edawn```
 You need an ```ADMIN_TOKEN``` set in configuration.
 ```bash
 curl -X POST --form file=@/path/to/your/games.log --form token=adminsecrettoken host:port/api/v2/upload
