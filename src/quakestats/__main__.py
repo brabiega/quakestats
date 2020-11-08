@@ -3,6 +3,12 @@
 import asyncio
 import logging
 import time
+from configparser import (
+    ConfigParser,
+)
+from functools import (
+    partial,
+)
 
 import click
 
@@ -49,20 +55,47 @@ def run_rebuild_db():
 
 
 @cli.command(name="collect-ql")
-@click.argument("host")
-@click.argument("port")
-@click.argument("password")
-def collect_ql(host, port, password):
+@click.argument("configfile")
+def collect_ql(configfile):
+    """
+    Config format
+
+    [serv1]
+    port = 1
+    ip = 1.2.3.4
+    password = 101001
+
+    [serv2]
+    ...
+    """
     ctx = context.SystemContext()
     sdk = QSSdk(ctx)
-    feed = sdk.create_ql_feed()
 
-    def event_cb(timestamp: int, event: dict):
+    collector_config = ConfigParser()
+    collector_config.read(configfile)
+
+    def event_cb(feed, timestamp: int, event: dict):
         event['__recv_timestamp'] = time.time()
         sdk.feed_ql(feed, event)
 
-    collector = QLStatCollector(host, port, password)
-    asyncio.run(collector.read_loop(event_cb))
+    async def main():
+        tasks = []
+        for section in collector_config.sections():
+            logger.info("Attaching stats from %s", section)
+            feed = sdk.create_ql_feed()
+            cb = partial(event_cb, feed)
+
+            ip = collector_config.get(section, 'ip')
+            port = collector_config.get(section, 'port')
+            pwd = collector_config.get(section, 'password')
+
+            collector = QLStatCollector(ip, port, pwd)
+            tasks.append(asyncio.create_task(collector.read_loop(cb)))
+
+        for t in tasks:
+            await t
+
+    asyncio.run(main())
 
 
 @cli.command(name="load-ql-game")
