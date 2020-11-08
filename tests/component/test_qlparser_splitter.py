@@ -1,6 +1,7 @@
 import json
 from datetime import (
     datetime,
+    timezone,
 )
 
 from quakestats.core.qlparser.splitter import (
@@ -32,14 +33,14 @@ class TestQLSplitter():
 
 class TestQLGameLog():
     def test_serialize(self):
-        log = QLGameLog(datetime(2020, 10, 5, 22, 11), 'identifier123')
+        log = QLGameLog(datetime(2020, 10, 5, 22, 11, tzinfo=timezone.utc), 'identifier123')
         log.add_event({'type': 'kill', 'data': 'killem'})
         log.add_event({'type': 'kill2', 'data': 'killem2'})
 
         data = log.serialize()
         assert data == (
             "QuakeLive\n"
-            "identifier123 1601928660.0\n"
+            "identifier123 1601935860.0\n"
             '[{"type": "kill", "data": "killem"}, {"type": "kill2", "data": "killem2"}]'
         )
 
@@ -52,4 +53,5 @@ class TestQLGameLog():
         log = QLGameLog.deserialize(data)
 
         assert log.identifier == 'identifier123'
-        assert log.received == datetime(2020, 10, 5, 22, 11)
+        recv = log.received.replace(tzinfo=timezone.utc)
+        assert recv == datetime(2020, 10, 5, 22, 11, tzinfo=timezone.utc)

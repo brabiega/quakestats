@@ -3,6 +3,7 @@ import hashlib
 import itertools
 from datetime import (
     datetime,
+    timezone,
 )
 from typing import (
     Iterator,
@@ -42,7 +43,7 @@ class Q3GameLog(RawGameLog):
     def deserialize(cls, data: List[str], identifier: str, create_date: datetime) -> 'Q3GameLog':
         if data[0] == cls.TYPE:
             recv_identifier, recv_ts, mod = data[1].split(" ")
-            received = datetime.fromtimestamp(float(recv_ts))
+            received = datetime.fromtimestamp(float(recv_ts), tzinfo=timezone.utc)
 
             obj = cls(received, mod)
             obj.lines = data[2:]
