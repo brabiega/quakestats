@@ -16,6 +16,13 @@ from quakestats.core.q3toql.api import (
     Q3toQLAPI,
     QuakeGame,
 )
+from quakestats.core.ql import (
+    QLGame,
+)
+from quakestats.core.qlparser.api import (
+    QLFeed,
+    QLParserAPI,
+)
 from quakestats.core.wh import (
     Warehouse,
     WarehouseItem,
@@ -41,6 +48,7 @@ class QSSdk():
         self.ctx = ctx
         self.q3parser = Q3ParserAPI()
         self.q3toql = Q3toQLAPI()
+        self.qlparser = QLParserAPI()
         self.warehouse = Warehouse(ctx.config.get("RAW_DATA_DIR", None))
         self.server_domain: str = ctx.config.get("SERVER_DOMAIN")
 
@@ -50,6 +58,23 @@ class QSSdk():
     def get_match(self, match_guid: str):
         # TODO what to return here?
         return self.ctx.ds.get_match(match_guid)
+
+    def create_ql_feed(self) -> QLFeed:
+        return self.qlparser.create_feed()
+
+    def feed_ql(self, feed: QLFeed, event: dict):
+        match_log = feed.feed(event)
+        if match_log:
+            game = QLGame()
+            for ev in match_log.events:
+                game.add_event(ev['__recv_timestamp'], ev)
+
+            if game.is_valid:
+                logger.info(f"Got valid game {game.game_guid}")
+
+                if not self.warehouse.has_item(game.game_guid):
+                    self.warehouse.save_match_log(game.game_guid, match_log.serialize())
+                self.analyze_and_store(game)
 
     # TODO This needs further refactoring so all games go through validation (is_valid, duration) condition
     def process_q3_log(self, raw_data: str, mod_hint: str) -> Tuple[List[FullMatchInfo], List[Exception]]:
@@ -109,21 +134,31 @@ class QSSdk():
         logger.info("Storing game %s in datastore", report.match_metadata.match_guid)
 
     def load_game_from_wh(self, wh_item: WarehouseItem) -> QuakeGame:
+        """Loads QL or Q3 game from WH
+        Following formats are supported:
+        - q3 log - new format (header + data)
+        - q3 log - old format (data)
+        - ql log - new format (header + json)
+
+        Q3 Game is transformed to QL
+        QL Game representation is returned
+        """
         if not wh_item.data:
             raise Exception("WH item was not read")
 
         lines = wh_item.data.splitlines()
 
-        if wh_item.ext == 'log':
-            # identifier and create date are needed for old warehouse items when only OSP was supported
-            game = self.q3parser.load_game_log(lines, wh_item.identifier, wh_item.create_date)
-
+        if self.qlparser.is_log_from_ql(lines[0]):
+            game_log = self.qlparser.load_game_log(lines)
+            game = QLGame()
+            for ev in game_log.events:
+                game.add_event(ev['__recv_timestamp'], ev)
         else:
-            # TODO where to put this logic
-            # TODO ql doesn't need transform
-            raise NotImplementedError()
+            # identifier and create date are needed for old warehouse items when only OSP was supported
+            raw_game = self.q3parser.load_game_log(lines, wh_item.identifier, wh_item.create_date)
+            game = self.q3toql.transform(raw_game)
 
-        return self.q3toql.transform(game)
+        return game
 
     def rebuild_db(self):
         self.ctx.ds.prepare_for_rebuild()

@@ -1,15 +1,12 @@
 import hashlib
 import logging
 import re
-from typing import (
-    List,
-)
 
 from quakestats.core.game import (
     qlevents,
 )
-from quakestats.core.game.metadata import (
-    QuakeGameMetadata,
+from quakestats.core.game.base import (
+    QuakeGame,
 )
 from quakestats.core.q3parser import events as q3_events
 from quakestats.core.q3parser.parser import (
@@ -64,7 +61,7 @@ class Client():
         return steam_id
 
 
-class QuakeGame():
+class Quake3Game(QuakeGame):
     """
     This should be a class which represents
     single quake match (compatible with Quake Live)
@@ -82,14 +79,7 @@ class QuakeGame():
     [ ] - ROUND_OVER
     """
     def __init__(self):
-        self.ql_events: List[qlevents.QLEvent] = []
-        self.start_time: int = 0
-        self.game_guid = None
-        self.warmup = False
-        self.metadata = QuakeGameMetadata()
-        self.valid_start = False
-        self.valid_end = False
-        self.source = 'Q3'
+        super().__init__("Q3")
 
         # keeps track of current clients
         self.clients = {
@@ -231,10 +221,6 @@ class QuakeGame():
         self.valid_end = True
         self.metadata.duration = (ev.time - self.start_time) / 1000
 
-    @property
-    def is_valid(self):
-        return self.valid_start and self.valid_end
-
 
 class Q3toQL():
     """
@@ -247,7 +233,7 @@ class Q3toQL():
         self.gamelog = None
 
     def transform(self, gamelog: Q3Game):
-        self.game = QuakeGame()
+        self.game = Quake3Game()
         self.gamelog = gamelog
         self.game.metadata.start_date = gamelog.start_date
         self.game.metadata.finish_date = gamelog.finish_date

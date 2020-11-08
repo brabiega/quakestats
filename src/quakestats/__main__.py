@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
+import asyncio
 import logging
+import time
 
 import click
 
@@ -17,7 +19,6 @@ from quakestats.sdk import (
     QSSdk,
 )
 from quakestats.system import (
-    conf,
     context,
     log,
 )
@@ -52,48 +53,22 @@ def run_rebuild_db():
 @click.argument("port")
 @click.argument("password")
 def collect_ql(host, port, password):
-    from quakestats.core.ql import QLGame, MatchMismatch
-
-    game = QLGame()
     ctx = context.SystemContext()
     sdk = QSSdk(ctx)
-
-    data_dir = conf.get_conf_val("RAW_DATA_DIR")
+    feed = sdk.create_ql_feed()
 
     def event_cb(timestamp: int, event: dict):
-        nonlocal game
-        try:
-            ev = game.add_event(timestamp, event)
-        except MatchMismatch:
-            logger.info("Got game %s with %s events", game.game_guid, len(game.ql_events))
-
-            if game.ql_events:
-                if data_dir:
-                    manage.store_game(game, 'QL', data_dir)
-
-                try:
-                    sdk.analyze_and_store(game)
-                except Exception as e:
-                    logger.error('Failed to process match %s', game.game_guid)
-                    logger.exception(e)
-
-            game = QLGame()
-            ev = game.add_event(timestamp, event)
-
-        if ev:
-            logger.debug("%s -> %s", ev.data['MATCH_GUID'], ev.type)
+        event['__recv_timestamp'] = time.time()
+        sdk.feed_ql(feed, event)
 
     collector = QLStatCollector(host, port, password)
-    collector.read_loop(event_cb)
+    asyncio.run(collector.read_loop(event_cb))
 
 
 @cli.command(name="load-ql-game")
 @click.argument('file_path')
 def load_ql_game(file_path):
-    ctx = context.SystemContext()
-    sdk = QSSdk(ctx)
-    server_domain, game = manage.load_game(file_path)
-    sdk.analyze_and_store(game)
+    raise NotImplementedError()
 
 
 @cli.command()
