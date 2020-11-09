@@ -53,5 +53,4 @@ class TestQLGameLog():
         log = QLGameLog.deserialize(data)
 
         assert log.identifier == 'identifier123'
-        recv = log.received.replace(tzinfo=timezone.utc)
-        assert recv == datetime(2020, 10, 5, 22, 11, tzinfo=timezone.utc)
+        assert log.received.timestamp() == 1601928660.0
