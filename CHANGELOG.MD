@@ -1,6 +1,19 @@
 Changelog
 =========
 
+v1.5.0 (to be released)
+-------------------
+- Feature: Proper support for QL and Q3 logs in the same instance
+- Feature: Added Quake3 edawn mod support (requires enchanced logging, not yet released)
+- Feature: Added QL stats collector (single process can collect from multiple servers)
+- Bugfix: aborted QL matches will be ignored
+- Code: Rearranged project according to PYPA
+- Code: Bumped Python minimal version to 3.6 (typehints, asyncio)
+- Code: Rewritten raw data dir as log warehouse
+- Code: Rewritten a lot of code as SDK (CLI/WEB -> SDK)
+- Code: Added system context, module/component API classes
+- Code: Reorganization of parser code
+
 
 v1.4.0 (2020-04-21)
 -------------------
