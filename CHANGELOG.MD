@@ -1,6 +1,9 @@
 Changelog
 =========
 
+NEXT RELEASE
+-------------------
+
 v1.5.0 (to be released)
 -------------------
 - Feature: Proper support for QL and Q3 logs in the same instance
