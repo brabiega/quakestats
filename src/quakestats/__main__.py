@@ -90,10 +90,9 @@ def collect_ql(configfile):
             pwd = collector_config.get(section, 'password')
 
             collector = QLStatCollector(ip, port, pwd)
-            tasks.append(asyncio.create_task(collector.read_loop(cb)))
+            tasks.append(asyncio.create_task(collector.start(cb)))
 
-        for t in tasks:
-            await t
+        await asyncio.gather(*tasks)
 
     asyncio.run(main())
 
