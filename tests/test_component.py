@@ -3,13 +3,17 @@ import os
 
 import pytest
 
-from quakestats import (
-    dataprovider,
+from quakestats.core.game.qlmatch import (
+    FullMatchInfo,
 )
-from quakestats.core.q3toql import parse as q3parse
+from quakestats.core.q3parser.api import (
+    Q3ParserAPI,
+)
+from quakestats.core.q3toql.api import (
+    Q3toQLAPI,
+)
 from quakestats.dataprovider import (
     analyze,
-    quakelive,
 )
 
 FIXTURE_DATA_DIR = os.path.join(
@@ -50,36 +54,17 @@ def quakelive_dump():
     return json.loads(data)
 
 
-def test_quakelive_feed_preprocess(quakelive_dump):
-    feeder = quakelive.QLMatchFeeder()
-    matches = []
-    for event in quakelive_dump:
-        try:
-            feeder.feed(event)
-        except dataprovider.FeedFull:
-            matches.append(feeder.consume())
-
-    for match in matches:
-        preprocessor = dataprovider.MatchPreprocessor()
-        preprocessor.process_events(match['EVENTS'])
-
-        for ev in preprocessor.events:
-            assert not ev['DATA'].get('WARMUP', False)
-
-        assert preprocessor.match_guid
-        assert preprocessor.events
-
-        if preprocessor.finished:
-            assert preprocessor.duration
-
-
 def test_quake3_analyze_nodm9(q3_dump):
-    matches = list(q3parse.read_games(q3_dump, 'osp'))
+    parser_api = Q3ParserAPI()
+    q3toql_api = Q3toQLAPI()
+    game_logs = list(parser_api.split_games(q3_dump, 'osp'))
 
     # nodm9
-    game, game_log = matches[-1]
+    game_log = game_logs[-1]
+    parser_api.parse_game_log(game_log)
+    game = q3toql_api.transform(parser_api.parse_game_log(game_log))
 
-    fmi = dataprovider.FullMatchInfo(
+    fmi = FullMatchInfo(
         events=game.get_events(),
         match_guid=game.game_guid,
         duration=game.metadata.duration,
@@ -189,11 +174,16 @@ def test_quake3_analyze_nodm9(q3_dump):
 
 
 def test_quake3_analyze_ktsdm3(q3_dump):
-    matches = list(q3parse.read_games(q3_dump, 'osp'))
-    # ktsdm3
-    game, game_log = matches[15]
+    parser_api = Q3ParserAPI()
+    q3toql_api = Q3toQLAPI()
+    game_logs = list(parser_api.split_games(q3_dump, 'osp'))
 
-    fmi = dataprovider.FullMatchInfo(
+    # nodm9
+    game_log = game_logs[15]
+    parser_api.parse_game_log(game_log)
+    game = q3toql_api.transform(parser_api.parse_game_log(game_log))
+
+    fmi = FullMatchInfo(
         events=game.get_events(),
         match_guid=game.game_guid,
         duration=game.metadata.duration,

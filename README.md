@@ -11,8 +11,8 @@ The project doesn't aim to give global stats like [qlstats](http://qlstats.net) 
 
 ## Overview
 ### Supported features:
-* processing Quake 3 logs (log parsing, at the moment OSP mod only)
-* processing Quake Live event streams (zmq listen, needs some work)
+* processing Quake 3 logs (log parsing, transforming to QL)
+* processing Quake Live event streams (zmq listen on QL server stat endpoint)
 * translating (to some extent) Quake 3 logs into Quake Live events
 * analysing matches
 * storing matches in Database backend (Mongo DB)
@@ -23,13 +23,14 @@ Unfortunately only OSP FFA from Quake 3 is well tested as it was the main use ca
 #### mods
 - [x] - OSP (http://www.orangesmoothie.org/tourneyQ3A/index.html)
 - [x] - Quake Live - most of event processing is implemented
-- [ ] - vanilla Q3 not supported due to missing ServerTime info
-- [ ] - CPMA not supported due to missing ServerTime info
+- [x] - Edawn - requires 1.6.3+ (enchanced logging)
+- [ ] - vanilla Q3 not supported (need workaround for missing ServerTime)
+- [ ] - CPMA not supported (need workaround for missing ServerTime)
 
 #### modes
 - [x] - DUEL
 - [x] - FFA
-- [ ] - CA
+- [ ] - CA - partially implemented
 - [ ] - TDM
 - [ ] - CTF
 
@@ -46,12 +47,12 @@ The stats are presented with fancy charts, custom medals, etc. See the examples 
 ![match1](examples/match1.png)
 
 ### Requirements
-- Decent version of Python 2 or 3
+- Python 3.6+
 - Instance of Mongo DB (pointed by ```settings.py```)
 - Modern web browser (requires css grid-layout)
 
 ## How to setup
-In order to setup the application you need to have python 3 (virtualenv recommended) and an instance of mongo DB.
+In order to setup the application you need to have python 3.6+ (virtualenv recommended) and an instance of mongo DB.
 
 ### Installation
 #### Install from pip package
@@ -59,7 +60,7 @@ In order to setup the application you need to have python 3 (virtualenv recommen
 pip install quakestats
 ```
 
-#### Install from source code
+#### Install from source code (optional)
 Is also needed install ```quakestats``` package (in virtualenv if you are using it). To do that you could install it directly
 ```bash
 pip install -r requirements.txt
@@ -94,6 +95,7 @@ This documentation covers only running in *twisted* webserver
 You can launch Quake Stats web application using ```twistd``` webserver. Just make sure to install twisted framework first.
 Also make sure to use some recent version of twisted (tested with 18.7.0 installed by pip).
 ```bash
+pip install twisted
 FLASK_APP="quakestats.web"; QUAKESTATS_SETTINGS=`pwd`/settings.py; twistd web --wsgi quakestats.web.app
 ```
 
@@ -106,31 +108,41 @@ Admin user is used by web application to access some additional administrative o
 quakestats set-admin-pwd <yourpassword>
 ```
 
-### Listening for Quake Live stats
-Quake Live exposes server events through tcp socket authenticated with password.
-Use following CLI command to listen and process such events.
+### Collecting Quake Live stats
+Quake Live exposes stats server through tcp socket (zmq) authenticated with password.
+CLI can gather stats from multiple QL servers and process them automatically.
+Use following config file
+
+```ini
+[server-1]
+ip = 5.6.7.8
+port = 27967
+password = password1
+
+[server-1]
+ip = 1.2.3.4
+port = 27967
+password = password2
+
+```
+
+Use following CLI to start collecting events (assuming your config file is named ```collector.cfg```)
+
 ```bash
-quakestats collect-ql <ip> <port> <stats-password>
+quakestats collect-ql collector.cfg
 ```
 
 ### Uploading Quake 3 log file
-In order to process some data you need to send your match log file to web api endpoint ```/api/v2/upload```.
+In order to process some data you need to send your match log file to web api endpoint ```/api/v2/upload```. By default mod ```osp``` is assumed.
+Mod specific endpoint is served under ```/api/v2/upload/<mod>```, e.g. ```/api/v2/upload/edawn```
 You need an ```ADMIN_TOKEN``` set in configuration.
 ```bash
 curl -X POST --form file=@/path/to/your/games.log --form token=adminsecrettoken host:port/api/v2/upload
 ```
 All log files with extracted matches are stored in directory determined by ```RAW_DATA_DIR``` config entry
 
-### Using automated scrupt to send logs
-Quakestats includes a script which is able to watch q3 log file and
-automatically send match results when match end is detected.
-You need to install quakestats (use python pip) package on the server where your log file is.
- Example usage:
-
-```bash
-# q3-log-watch --q3logfile ~/.q3a/osp/games.log --api-endpoint http://<QUAKESTATS URL> --api-token <ADMIN TOKEN>
-q3-log-watch --q3logfile ~/.q3a/osp/games.log --api-endpoint http://localhost:8000 --api-token mytoken123
-```
+### Using automated script to send logs
+TODO, deprecated
 
 ### Rebuilding database
 You can rebuild your database using files stored in ```RAW_DATA_DIR``` with simple web api call or CLI.
@@ -162,42 +174,14 @@ curl -X POST --form file=@bugmatch.log --form token=admintoken host:port/api/v2/
 ### Tech stack
 Python, Flask, MongoDB, d3.js, riot.js, zmq
 
-### Building blocks
-There are several 'responsibility bound' components
-
-#### Dataprovider
-Groups logic related to gathering data (logs, events), processing and analysis.
-
 ##### How does it work with Quake 3 Players
 Quake 3 players don't have unique ID's so it's hard to distinguish players between matches. In order to overcome this problem each player has ```player_id``` assigned during match analysis. The ID is constructed as hash of ```SERVER_DOMAIN``` and player nickname as a result it's consistent between matches as long as player keeps his nickname and there is no nickname clash. Perhaps there is some better way? Server side auth?
-
-#### Datasource
-Groups logic related to storage backend and storage related operations
 
 #### Web
 Web application related components
 - api - web API used by frontend and to retrieve Quake 3 logs
 - views - typical flask views
 
-
-#### Data flow
-```
-# Data gathering
-Quake Live Data	(events) -> QLMatchFeeder >-------|
-                                                  |----> Data Preprocessor (FullMatchReport)
-Quake 3 Data (log) -> Q3MatchFeeder -> Q3toQL >---|
-
-# Data procesing
-Data Preprocessor (FullMatchReport) -> Data Analyzer (AnalysisResult)
-
-# Data storage
-Data Analyzer (AnalysisResult) -> StorageApi -> StorageBackend
-```
-
-#### Web data flow
-```
-Stats webapp ----| -> Web API -> StorageApi -> StorageBackend
-```
 ### Extending
 #### How to add new medal
 - see [SpecialScores class](quakestats/dataprovider/analyzer/specials.py) - for special scores
@@ -211,9 +195,6 @@ make test
 ### Assets
 Medals, icons, etc.
 Some of the assets are missing it would be nice to find some free ones or draw them ;)
-
-### TODO
-- [ ] Add support for listening to Quake Live event publisher, minor work needed
 
 ### How to release new version
 ```bash

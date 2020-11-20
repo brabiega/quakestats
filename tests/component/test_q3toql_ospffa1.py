@@ -1,7 +1,7 @@
 import pytest
 
-from quakestats.core.q3toql.parsers.base import (
-    Q3LogParserModOsp,
+from quakestats.core.q3parser.api import (
+    Q3ParserAPI,
 )
 from quakestats.core.q3toql.transform import (
     Q3toQL,
@@ -16,9 +16,9 @@ class TestQ3toQL_OSPFFA1():
     def osp_game_1(self, testdata_loader):
         ld = testdata_loader('osp-ffa-1.log')
         raw_data = ld.read()
-        parser = Q3LogParserModOsp(raw_data)
-        games = list(parser.games())
-        yield games[0]
+        parser_api = Q3ParserAPI()
+        games_logs = list(parser_api.split_games(raw_data, 'osp'))
+        yield parser_api.parse_game_log(games_logs[0])
 
     def test_process(self, osp_game_1,):
         tf = Q3toQL()

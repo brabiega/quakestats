@@ -1,12 +1,22 @@
-from setuptools import setup, find_packages
-from os import path
 # io.open is needed for projects that support Python 2.7
 # It ensures open() defaults to text mode with universal newlines,
 # and accepts an argument to specify the text encoding
 # Python 3 only projects can skip this import
-from io import open
+from io import (
+    open,
+)
+from os import (
+    path,
+)
 
-import quakestats
+from setuptools import (
+    find_packages,
+    setup,
+)
+
+from src import (
+    quakestats,
+)
 
 here = path.abspath(path.dirname(__file__))
 
@@ -26,16 +36,14 @@ setup(
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
     ],
     keywords='quake stats statistics match analysis visualize',
-
-    packages=find_packages(
-        include=['quakestats*'],
-    ),
+    packages=find_packages(where='src'),
+    python_requires='>=3.6, <4',
+    package_dir={'': 'src'},
     scripts=[
-        'quakestats/scripts/q3-log-watch'
+        'src/quakestats/scripts/q3-log-watch'
     ],
     entry_points={
         'console_scripts': [
