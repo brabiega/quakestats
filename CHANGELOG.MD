@@ -4,7 +4,7 @@ Changelog
 NEXT RELEASE
 -------------------
 
-v1.5.0 (to be released)
+v1.5.0 (2020-11-20)
 -------------------
 - Feature: Proper support for QL and Q3 logs in the same instance
 - Feature: Added Quake3 edawn mod support (requires enchanced logging, not yet released)
