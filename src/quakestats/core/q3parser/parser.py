@@ -229,6 +229,8 @@ class GameLogParserEdawn(GameLogParser, BaseQ3ParserMixin, EdawnParserMixin):
             return self.parse_exit(raw_event)
         elif raw_event.name == 'ServerTime':
             return self.parse_server_time(raw_event)
+        elif raw_event.name == 'Item':
+            return self.parse_item(raw_event)
 
     @classmethod
     def mktime(cls, event_time: str) -> int:

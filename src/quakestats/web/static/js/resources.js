@@ -125,6 +125,11 @@ var resources = {
                 img: '/static/img/badges/suicide-bomber.svg',
                 name: 'Suicide bomber',
                 desc: 'You killed yourself and 2+ other players'
+            },
+            'QUAD_TAKEN': {
+                img: '/static/img/badges/placeholder.png',
+                name: 'Quad taken',
+                desc: 'You took Quad Damage'
             }
         }
     },

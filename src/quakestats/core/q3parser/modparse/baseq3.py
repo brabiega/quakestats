@@ -81,3 +81,11 @@ class BaseQ3ParserMixin():
         match = re.search(r"(.*)", raw_event.payload)
         reason = match.groups()[0]
         return events.Q3EventExit(raw_event.time, reason)
+
+    def parse_item(self, raw_event: RawEvent) -> events.Q3EVItem:
+        """
+        3 item_quad
+        """
+        match = re.search(r"(\d+) (\w+)", raw_event.payload)
+        client_id, item_name = match.groups()
+        return events.Q3EVItem(raw_event.time, int(client_id), item_name)

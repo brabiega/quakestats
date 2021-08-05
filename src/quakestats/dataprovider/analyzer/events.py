@@ -134,6 +134,12 @@ class EventPlayerStats(Event):
         return self.data["WEAPONS"]
 
 
+class EventPlayerQuad(Event):
+    @property
+    def player_id(self):
+        return self.data['STEAM_ID']
+
+
 EVENT_CLASSES = {
     "PLAYER_KILL": EventPlayerKill,
     "PLAYER_DEATH": EventPlayerKill,
@@ -141,4 +147,5 @@ EVENT_CLASSES = {
     "PLAYER_DISCONNECT": EventPlayerDisconnected,
     "MATCH_STARTED": EventMatchStart,
     "PLAYER_STATS": EventPlayerStats,
+    "PLAYER_QUAD": EventPlayerQuad,
 }

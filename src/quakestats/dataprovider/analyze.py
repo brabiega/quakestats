@@ -17,7 +17,7 @@ from quakestats.dataprovider.analyzer.badges import (
     Badger,
 )
 from quakestats.dataprovider.analyzer.events import (
-    Event,
+    Event, EventPlayerQuad
 )
 from quakestats.dataprovider.analyzer.scores import (
     PlayerScores,
@@ -185,6 +185,7 @@ class Analyzer:
             "PLAYER_KILL": self.on_player_kill,
             "PLAYER_SWITCHTEAM": self.on_player_switchteam,
             "PLAYER_STATS": self.on_player_stats,
+            "PLAYER_QUAD": self.on_player_quad,
         }
 
         try:
@@ -262,6 +263,11 @@ class Analyzer:
             "damage_taken": event.damage_taken,
             "weapons": event.weapon_stats,
         }
+
+    def on_player_quad(self, event: EventPlayerQuad):
+        self.special_scores.scores['QUAD_TAKEN'].append((
+            event.time, event.player_id, event.player_id, 1
+        ))
 
 
 # This could probably be done with some fancy subclassing

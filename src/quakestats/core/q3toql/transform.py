@@ -77,6 +77,7 @@ class Quake3Game(QuakeGame):
     [-] - PLAYER_MEDAL, not supported no such info in Quake3 logs
     [*] - MATCH_REPORT, partial implementation
     [ ] - ROUND_OVER
+    [?] - Q3_PLAYER_QUAD - Is there an event for taking an item?
     """
     def __init__(self):
         super().__init__("Q3")
@@ -152,7 +153,7 @@ class Quake3Game(QuakeGame):
                     ev.data['KILLER']['STEAM_ID'].resolve()
                 )
             elif ev.type in [
-                'PLAYER_CONNECT', 'PLAYER_STATS', 'PLAYER_DISCONNECT'
+                'PLAYER_CONNECT', 'PLAYER_STATS', 'PLAYER_DISCONNECT', 'PLAYER_QUAD'
             ]:
                 ev.data['STEAM_ID'] = ev.data['STEAM_ID'].resolve()
 
@@ -221,6 +222,14 @@ class Quake3Game(QuakeGame):
         self.valid_end = True
         self.metadata.duration = (ev.time - self.start_time) / 1000
 
+    def item(self, ev: q3_events.Q3EVItem):
+        if ev.item_name != 'item_quad':
+            return
+
+        ql_ev: qlevents.PlayerQuad = self.add_event(ev.time, qlevents.PlayerQuad)
+        client = self.get_client(ev.client_id)
+        ql_ev.set_data(client.lazy_identity)
+
 
 class Q3toQL():
     """
@@ -256,6 +265,8 @@ class Q3toQL():
                 self.game.kill(event)
             elif isinstance(event, q3_events.Q3EVClientDisconnect):
                 self.game.client_disconnect(event)
+            elif isinstance(event, q3_events.Q3EVItem):
+                self.game.item(event)
 
             # Exit event can be produced before player stats in q3
             # for compatibility with QL we will always emmit

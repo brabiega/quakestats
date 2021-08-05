@@ -106,3 +106,10 @@ class Q3EVServerTime(Q3GameEvent):
     def __init__(self, ev_time: int, dt: datetime):
         super().__init__(ev_time)
         self.dt = dt
+
+
+class Q3EVItem(Q3GameEvent):
+    def __init__(self, ev_time: int, client_id: int, item_name: str):
+        super().__init__(ev_time)
+        self.client_id = client_id
+        self.item_name = item_name
