@@ -69,6 +69,14 @@ class TestDefaultParser():
         ev = parser.parse_client_disconnect(raw_event)
         assert ev.client_id == 8
 
+    def test_parse_item(self):
+        raw_data = r'3 item_quad'
+        raw_event = RawEvent(0, '', raw_data)
+        parser = BaseQ3ParserMixin()
+        ev = parser.parse_item(raw_event)
+        assert ev.client_id == 3
+        assert ev.item_name == 'item_quad'
+
 
 class TestOspParser():
     def test_parse_weapon_stats(self):

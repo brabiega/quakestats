@@ -61,9 +61,7 @@ def test_quake3_analyze_nodm9(q3_dump):
 
     # nodm9
     game_log = game_logs[-1]
-    parser_api.parse_game_log(game_log)
     game = q3toql_api.transform(parser_api.parse_game_log(game_log))
-
     fmi = FullMatchInfo(
         events=game.get_events(),
         match_guid=game.game_guid,
@@ -120,6 +118,10 @@ def test_quake3_analyze_nodm9(q3_dump):
     assert result.special_scores['KILLING_SPREE'][2] == (
         64.9, '6179638dba55b8f5d2da7838',
         'a8f9128a42e1e6a4168f26fc', 1)
+
+    assert result.special_scores['QUAD_TAKEN'][-2] == (
+        861.9, 'a8f9128a42e1e6a4168f26fc', 'a8f9128a42e1e6a4168f26fc', 1
+    )
 
     e = result.player_stats
     # _regen_stats_asserts(result)  # to regenerate
@@ -180,7 +182,6 @@ def test_quake3_analyze_ktsdm3(q3_dump):
 
     # nodm9
     game_log = game_logs[15]
-    parser_api.parse_game_log(game_log)
     game = q3toql_api.transform(parser_api.parse_game_log(game_log))
 
     fmi = FullMatchInfo(
