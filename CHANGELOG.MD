@@ -4,7 +4,7 @@ Changelog
 NEXT RELEASE
 -------------------
 
-v1.5.1 (2021-08-05)
+v1.5.1 (TBD)
 -------------------
 - Feature: Added special score for taking Quad Damage
 - Feature: Blue star appears on score chart when player picks Quad Damage
