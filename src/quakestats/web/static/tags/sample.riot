@@ -165,13 +165,55 @@
       type: 'scatter',
       mode: 'markers',
       marker: {
-        symbol: "star", size:16, color: "gold",
+        symbol: "star", size: 14, color: "gold",
+        line: {width: 1, color: "red"},
       },
       name: 'Headhunter',
     }
   )
   this.series.push(head_hunter)
 
+  var quad_taken = (this.specials_by_type['QUAD_TAKEN'] || []).map(
+    (special) => {
+      var score = this.scores.filter((e) => {
+        return (
+          e.game_time <= special.game_time &&
+          e.player_id == special.killer_id
+        )
+      })
+      // this shall always work as every player starts with score 0 due to swtichteam
+      score = score[score.length -1] || 0
+      return {
+        x: special.game_time,
+        y: score.score,
+        victim_id: special.victim_id,
+        killer_id: special.killer_id,
+      }
+
+    }
+  ).reduce(
+    (prev, cur) => {
+      prev.x.push(cur.x)
+      prev.y.push(cur.y)
+      prev.hovertext.push(
+        `${context.players[cur.killer_id].name} took Quad Damage`
+      )
+      return prev
+    },
+    {
+      x: [],
+      y: [],
+      hovertext: [],
+      type: 'scatter',
+      mode: 'markers',
+      marker: {
+        symbol: "star", size: 14, color: "cyan",
+        line: {width: 1, color: "blue"}
+      },
+      name: 'Quad Damage',
+    }
+  )
+  this.series.push(quad_taken)
   this.on('mount', function() {
     Plotly.newPlot(
       'score-chart',

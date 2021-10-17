@@ -329,6 +329,29 @@ class RoundOver(QLEvent):
     name = 'ROUND_OVER'
 
 
+@__register
+class PlayerQuad(QLEvent):
+    name = 'PLAYER_QUAD'
+    payload = {
+        'STEAM_ID': None
+    }
+
+    def set_data(self, steam_id):
+        self.data['STEAM_ID'] = steam_id
+
+    @property
+    def steam_id(self):
+        return self.data['STEAM_ID']
+
+    @steam_id.setter
+    def steam_id(self, val: str):
+        self.data['STEAM_ID'] = val
+
+    @property
+    def time(self):
+        return self.data['TIME']
+
+
 def create_from_ql_dict(data: dict) -> QLEvent:
     cls = EV_CLS_MAP[data['TYPE']]
     obj = cls()
