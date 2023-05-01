@@ -1,5 +1,5 @@
 click
-Flask==1.0.2
+Flask==2.3.2
 Flask-PyMongo==2.1.0
 pandas
 passlib==1.7.1
