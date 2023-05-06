@@ -55,7 +55,6 @@ setup(
     install_requires=[
         'Flask>=1.0',
         'Flask-PyMongo',
-        'click>6.5,<7',
         'pandas',
         'passlib',
         'pymongo',

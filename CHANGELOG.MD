@@ -3,6 +3,8 @@ Changelog
 
 NEXT RELEASE
 -------------------
+- Code: Fixed dependencies for Python3.10
+- Code: Bumped flask version
 
 v1.5.1 (2021-10-17)
 -------------------
