@@ -1,8 +1,7 @@
 click
-Flask==1.0.2
+Flask>2
 Flask-PyMongo==2.1.0
 pandas
 passlib==1.7.1
 pymongo==3.6.1
 pyzmq
-Werkzeug==0.14.1
