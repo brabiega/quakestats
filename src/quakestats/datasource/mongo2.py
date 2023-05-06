@@ -197,7 +197,8 @@ class DataStoreMongo:
                     "by": kill[3],
                 }
             )
-        self.db.kill.insert_many(results)
+        if results:
+            self.db.kill.insert_many(results)
 
     def store_special_scores(self, analysis_report):
         match_guid = analysis_report.match_metadata.match_guid
