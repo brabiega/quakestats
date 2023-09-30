@@ -1,6 +1,7 @@
 import logging
 import re
 from datetime import (
+    datetime,
     timedelta,
 )
 from typing import (
@@ -91,6 +92,69 @@ class GameLogParser():
         will be ignored in further processing
         """
         raise NotImplementedError()
+
+
+class GameLogParserBaseQ3(GameLogParser, BaseQ3ParserMixin):
+    event_format = r" *(\d+\:\d+) (.+?):(.*)"
+
+    def __init__(self):
+        # time of game init event
+        super().__init__()
+
+    def parse_line(self, line: str):
+        raw_event = self.line_to_raw_event(line)
+        event = self.parse_event(raw_event)
+        return event
+
+    def line_to_raw_event(self, line: str) -> events.RawEvent:
+        match = re.search(self.event_format, line)
+        if match:
+            ev_time = match.group(1)
+            ev_name = match.group(2)
+            ev_payload = match.group(3).strip()
+            return events.RawEvent(
+                self.mktime(ev_time), ev_name,
+                ev_payload if ev_payload else None
+            )
+        else:
+            raise Exception(f"Malformed line, {line}")
+
+    def populate_dates(self, game: Q3Game) -> Q3Game:
+        init_ev: events.Q3EVInitGame = None
+        exit_ev: events.Q3EventExit = None
+        for event in game.events:
+            if isinstance(event, events.Q3EVInitGame):
+                assert not init_ev
+                init_ev = event
+            elif isinstance(event, events.Q3EventExit):
+                assert not exit_ev
+                exit_ev = event
+
+        game.start_date = datetime.utcnow()
+        if all([init_ev, exit_ev]):
+
+            game_length = exit_ev.time - init_ev.time
+            game.finish_date = game.start_date + timedelta(milliseconds=game_length)
+
+        return game
+
+    def mktime(self, event_time: str) -> int:
+        minutes, seconds = event_time.split(':')
+        return int(minutes) * 60 * 1000 + int(seconds) * 1000
+
+    def parse_event(self, raw_event: events.RawEvent) -> events.Q3GameEvent:
+        if raw_event.name == 'InitGame':
+            return self.parse_init_game(raw_event)
+        elif raw_event.name == 'ClientUserinfoChanged':
+            return self.parse_user_info(raw_event)
+        elif raw_event.name == 'Kill':
+            return self.parse_kill(raw_event)
+        elif raw_event.name == 'ClientDisconnect':
+            return self.parse_client_disconnect(raw_event)
+        elif raw_event.name == 'Exit':
+            return self.parse_exit(raw_event)
+        elif raw_event.name == 'Item':
+            return self.parse_item(raw_event)
 
 
 class GameLogParserOsp(GameLogParser, BaseQ3ParserMixin, OspParserMixin):

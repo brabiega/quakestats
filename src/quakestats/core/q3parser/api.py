@@ -12,6 +12,7 @@ from typing import (
 )
 
 from .parser import (
+    GameLogParserBaseQ3,
     GameLogParserEdawn,
     GameLogParserOsp,
     Q3Game,
@@ -36,6 +37,8 @@ class Q3ParserAPI():
             parser = GameLogParserEdawn()
         elif game_log.mod == 'osp':
             parser = GameLogParserOsp()
+        elif game_log.mod == 'baseq3':
+            parser = GameLogParserBaseQ3()
         else:
             raise Exception(f"Unsupported mod {game_log.mod}")
         return parser.parse(game_log)

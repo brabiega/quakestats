@@ -1,5 +1,4 @@
 # Quake Stats
-[![Build Status](https://travis-ci.org/brabiega/quakestats.svg?branch=master)](https://travis-ci.org/brabiega/quakestats)
 [![PyPI](https://img.shields.io/pypi/v/quakestats)](https://pypi.org/project/quakestats/)
 [![PyPI - Wheel](https://img.shields.io/pypi/wheel/quakestats)](https://pypi.org/project/quakestats/#files)
 
@@ -139,6 +138,17 @@ You need an ```ADMIN_TOKEN``` set in configuration.
 ```bash
 curl -X POST --form file=@/path/to/your/games.log --form token=adminsecrettoken host:port/api/v2/upload
 ```
+
+To send vanila q3 log use
+```
+curl -X POST --form file=@/path/to/your/games.log --form token=adminsecrettoken host:port/api/v2/upload/baseq3
+```
+
+To send edawn log use
+```
+curl -X POST --form file=@/path/to/your/games.log --form token=adminsecrettoken host:port/api/v2/upload/edawn
+
+```
 All log files with extracted matches are stored in directory determined by ```RAW_DATA_DIR``` config entry
 
 ### Using automated script to send logs
@@ -200,3 +210,9 @@ Some of the assets are missing it would be nice to find some free ones or draw t
 ```bash
 bumpversion <major|minor|patch> --commit --tag
 ```
+
+## Troubleshooting
+### Can't use mongodb 5.0+ without AVX on Ubuntu 20+
+This problem occurs on older hardware when mongodb 5.0+ is being used.
+You can't use official mongodb packages with version higher than 4.x. 4.x series is the last one not using AVX. BUT it requires libssl1.1 and it's no longer shipped with Ubuntu.
+Fortunately it's possible to install libssl1.1 from http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/. Then just install mongodb 4.x.

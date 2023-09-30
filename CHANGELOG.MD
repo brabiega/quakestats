@@ -3,6 +3,7 @@ Changelog
 
 NEXT RELEASE
 -------------------
+- Feature: Support baseq3 vanila logs
 - Code: Fixed dependencies for Python3.10
 - Code: Bumped flask version
 
